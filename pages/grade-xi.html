@@ -507,7 +507,7 @@
 <footer class="footer">© PHYSICS DECODED · Richesh Sharma · Migrated from Blogger to Vercel</footer>
 <script>
 document.querySelectorAll('a[href^="/search/label/"]').forEach((link) => {
-  const label = link.getAttribute('href').replace('/search/label/', '').replace(/-/g, ' ');
+  const label = decodeURIComponent(link.getAttribute('href').replace('/search/label/', '')).replace(/-/g, ' ').trim();
   link.setAttribute('href', '/search.html?q=' + encodeURIComponent(label));
 });
 </script>
