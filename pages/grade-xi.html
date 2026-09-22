@@ -6,7 +6,7 @@
 <a href="/index.html">All Topics</a>
 <form class="search" action="/search.html"><input name="q" placeholder="Search Physics..." aria-label="Search"></form>
 </nav></header><main class="container"><a class="back" href="/index.html">← Back to PHYSICS DECODED</a><article class="post"><div class="meta">2026-01-06 · </div><h1>Grade xi</h1><style>
-.syllabus-wrap{margin:20px 0}
+.sylla-bus-wrap{margin:20px 0}
 .chapter{border:1px solid #ddd;border-radius:6px;margin-bottom:14px}
 .chapter summary{
   padding:14px;
@@ -504,4 +504,11 @@
 <p><strong>Total Teaching Hours: 128 (NEB)</strong></p>
 <p><em>© PHYSICS DECODED – Based strictly on NEB Curriculum 2076</em></p>
 </article></main>
-<footer class="footer">© PHYSICS DECODED · Richesh Sharma · Migrated from Blogger to Vercel</footer></body></html>
+<footer class="footer">© PHYSICS DECODED · Richesh Sharma · Migrated from Blogger to Vercel</footer>
+<script>
+document.querySelectorAll('a[href^="/search/label/"]').forEach((link) => {
+  const label = link.getAttribute('href').replace('/search/label/', '').replace(/-/g, ' ');
+  link.setAttribute('href', '/search.html?q=' + encodeURIComponent(label));
+});
+</script>
+</body></html>
