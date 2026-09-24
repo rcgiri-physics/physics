@@ -3,100 +3,123 @@
 Grade XI & XII physics notes and MCQ practice (NEB Curriculum 2076) by Richesh Sharma —
 <https://richeshsharma.com.np>
 
-This is a plain static site. Lessons are written as standalone HTML pages. A small
-Python script (`build.py`, standard library only) wraps them with the site navigation.
-It also generates the home page, grade pages, search and sitemap.
+A static website: lesson files go in, a small Python script (`build.py`, standard library only)
+turns them into the finished site, and Vercel publishes it automatically on every push.
 
-## Folder layout
+**Writing content?** Read [docs/AUTHORING.md](docs/AUTHORING.md). Ready-to-paste AI prompts
+are in [docs/prompts/](docs/prompts/).
+
+## How it fits together
 
 ```
-src/                       ← EDIT THESE
-  content.json             site info, syllabus of each grade, list of lessons
-  lessons/<slug>.html      one complete HTML page per lesson (notes or MCQ set)
-
-assets/                    ← shared design (edit to restyle the whole site)
-  css/site.css             design tokens + styles for home / grade / search pages
-  css/lesson-bar.css       top bar & footer that get added to every lesson
-  js/search.js             search page logic
-  favicon.svg
-  search-index.json        (generated)
-
-build.py                   generator — run after any change in src/
-
-index.html  search.html  404.html  sitemap.xml   (generated — do not edit)
-pages/grade-xi.html  pages/grade-xii.html         (generated — do not edit)
-posts/<slug>.html                                  (generated — do not edit)
-robots.txt
+src/
+  content.json               site name, links, and the full syllabus of each grade
+  lessons/
+    <name>.json              an MCQ set: data only
+    <name>.html              notes: content-only HTML with a small metadata block on top
+  assets/
+    css/tokens.css           ALL colours, fonts, radii (light + dark mode)
+    css/site.css             layout: header, cards, grade pages, search, footer
+    css/lesson.css           notes building blocks + quiz
+    css/lesson-bar.css       site bar for the 12 legacy lesson pages
+    js/quiz.js               answering, scoring, filters, saved progress
+    js/notes.js              "On this page" highlighting + LaTeX (KaTeX)
+    js/search.js             search page
+docs/
+  AUTHORING.md               how to write lessons
+  prompts/                   prompts for any AI to generate content
+  examples/example-notes.html  every notes building block (built to /styleguide.html)
+build.py                     validates src/ and builds public/
+vercel.json                  build settings, Blogger redirects, headers
+public/                      generated site (not committed)
 ```
 
-Generated files are committed, so the hosting setup does not change: the repository
-root is still the website root and every URL stays the same.
+The separation is deliberate:
 
-## Adding a new lesson
+- **Content** (`src/lessons/`) has no styling or scripts, so an AI only has to produce text and data.
+- **Design** (`src/assets/css/`) is shared. Change `tokens.css` and every page changes.
+- **Behaviour** (`src/assets/js/`) is shared. Improve `quiz.js` once and all MCQ sets improve.
+- **Validation** (`build.py`) stops broken files from reaching students. It checks JSON syntax,
+  answer indexes, duplicate options, chapter numbers, dates, and banned tags in notes.
 
-1. Save the lesson as `src/lessons/<slug>.html`. Use a full HTML document with its own
-   `<head>`, `<style>` and `<body>`, the same way the existing lessons are written.
-   The slug becomes the URL: `/posts/<slug>.html`.
-2. Add an entry to the `"posts"` list in `src/content.json`:
-   ```json
-   { "slug": "alternating-current-mcq", "title": "Alternating Current — 40 MCQs",
-     "grade": "XII", "chapters": [15], "kind": "mcq", "date": "2026-10-01" }
-   ```
-   - `grade`: `"XI"` or `"XII"`
-   - `chapters`: chapter number(s) from that grade's syllabus. A lesson can cover
-     several chapters, e.g. `[7, 8, 9]`.
-   - `kind`: `"notes"` or `"mcq"`
-3. Run:
-   ```
-   python build.py
-   ```
-   The lesson now shows up automatically on the home page (“Recently added”), on its
-   chapter in the grade page, in search, in the sitemap, and in the “Also in this chapter”
-   links of related lessons.
+## Common tasks
 
-`python build.py --check` validates `content.json` without writing anything. It
-catches missing files, unknown chapters, duplicate slugs and bad dates.
-
-To **edit** a lesson, change `src/lessons/<slug>.html` and rebuild. Never edit
-`posts/*.html` by hand, because the next build overwrites them.
-
-To **change the syllabus** (topics, chapter names, content areas), edit
-`"grades"` in `src/content.json` and rebuild.
+| Task | How |
+|---|---|
+| Add a lesson | Add one file to `src/lessons/` ([guide](docs/AUTHORING.md)) |
+| Fix a typo in a lesson | Edit the file in `src/lessons/` |
+| Change the syllabus / chapter names | Edit `grades` in `src/content.json` |
+| Change colours | Edit `src/assets/css/tokens.css` |
+| Preview locally | `python build.py` then `python -m http.server 8000 -d public` → <http://localhost:8000> |
+| Check files without building | `python build.py --check` |
 
 ## Design system
 
-All colours and sizes are CSS variables at the top of `assets/css/site.css`.
+| Token | Light | Dark | Used for |
+|---|---|---|---|
+| `--brand-600` | `#3949ab` | `#3949ab` | header, hero, footer backgrounds |
+| `--brand-ink` | `#3949ab` | `#aab4ff` | indigo text (headings, numbers) |
+| `--accent` | `#ffb300` | `#ffb300` | primary button, keyboard focus ring |
+| `--notes` | `#1e63d6` | `#7aa7ff` | Notes badges and boxes |
+| `--mcq` / `--good` | `#17753a` | `#5fd08a` | MCQ badges, correct answers, tips |
+| `--video` / `--bad` | `#b3261e` | `#ff8a80` | video links, wrong answers, warnings |
+| `--warn` | `#8a5300` | `#ffc86b` | worked examples, "medium" difficulty |
 
-| Token | Value | Used for |
-|---|---|---|
-| `--brand-900 / 700 / 600` | `#1a237e` `#283593` `#3949ab` | header, hero, footer (the indigo already used in the MCQ lessons) |
-| `--accent` | `#ffb300` | primary buttons, keyboard focus ring |
-| `--notes` | `#1e63d6` | anything marked **Notes** |
-| `--mcq` | `#1f8f47` | anything marked **MCQ** |
-| `--video` | `#d93025` | YouTube links |
-| `--bg / --surface / --border` | light greys | page background, cards |
+System font stack (Segoe UI / Roboto / San Francisco), with no web-font downloads. Dark mode
+follows the device setting. Every text/background pair meets WCAG AA contrast (4.5:1).
 
-Dark mode is automatic, via `prefers-color-scheme`. Font: Segoe UI / system font stack
-(no external font downloads).
+### Accessibility and quality checks (last run 2026-09-24)
 
-Lessons keep their own individual look. `lesson-bar.css` only adds the fixed top bar
-and the footer. It uses `.pd-` class names so a lesson's own CSS can't break it.
+axe-core (WCAG 2.0/2.1 A + AA) was run on the home, grade, search, MCQ, notes (styleguide) and
+404 pages, in light and dark mode, with quiz answers shown: **0 violations**. Pages have a
+skip link, a visible focus ring, labelled search fields, keyboard-operable quiz buttons,
+reduced-motion support, and no horizontal scrolling at 375px width.
 
-## Local preview
+The 12 legacy notes pages are not covered. Five of them fail contrast checks because of their
+own hard-coded colours (`ideal-gas`, `rate-of-flow-of-heat`, `quantity-of-heat`,
+`periodic-motion`, `rotational-dynamics`). Rewriting them in the new format fixes this.
 
-```
-python -m http.server 8000
-```
-Then open <http://localhost:8000>. (The custom 404 page only works on the real host.)
+## Hosting on Vercel (moving from Blogger)
 
-## Known content issues (to fix in the lesson files)
+`vercel.json` already contains the build settings, so no extra configuration is needed:
 
-- `src/lessons/wave-motion-2.html` is **truncated**. It stops in the middle of an SVG
-  diagram (section on stationary waves at t = T/4). The rest was lost before this
-  repository was created and must be pasted in again from the original.
-- `src/lessons/rotational-dynamics.html` loads 5 images from `image.qwenlm.ai`. They
-  should be downloaded into `assets/img/` so they can't disappear.
-- `heat-and-temperature` and `thermal-expansion` load `plotly-latest`, which is frozen at
-  v1.58. Pin a current version (e.g. `https://cdn.plot.ly/plotly-2.35.2.min.js`).
-- Grade XI has notes for chapters 9–13 only, and no MCQ sets yet. On the grade pages
-  these chapters show “coming soon”.
+1. On [vercel.com](https://vercel.com) → **Add New… → Project** → import this GitHub repository.
+   Leave every setting at its default (Vercel reads `vercel.json`) and deploy.
+2. Check the `*.vercel.app` preview address.
+3. **Settings → Domains** → add `richeshsharma.com.np` (and `www.`). Vercel shows the DNS
+   records to set at the domain registrar. They replace the records that currently point to Blogger.
+4. Once the domain works on Vercel, submit `https://richeshsharma.com.np/sitemap.xml` in
+   Google Search Console.
+
+Old Blogger links keep working through redirects in `vercel.json`:
+
+| Old Blogger URL | Goes to |
+|---|---|
+| `/2026/01/<slug>.html` | `/posts/<slug>.html` |
+| `/p/grade-xi.html` | `/pages/grade-xi.html` |
+| `/search/label/Wave-Motion-MCQ` | `/search.html?q=Wave-Motion-MCQ` |
+| `/search?q=…` | `/search.html?q=…` |
+| `/<slug>.html` (old root copies) | `/posts/<slug>.html` |
+
+Every push to `main` redeploys the site. If a lesson file has an error, the build fails and
+the previous version stays online. The same check also runs on GitHub for every pull request
+(`.github/workflows/check.yml`).
+
+## Known content issues
+
+- `src/lessons/wave-motion-2.html` is **truncated**. It stops partway through the stationary-waves
+  SVG diagram. The rest must be pasted in again from the original.
+- `src/lessons/rotational-dynamics.html` loads 5 images from `image.qwenlm.ai`. Download them into
+  `src/assets/img/` so they can't disappear.
+- `heat-and-temperature` and `thermal-expansion` load `plotly-latest` (frozen at v1.58).
+- `thermoelectric-effect.json` question 12 originally had only one option. Three wrong unit
+  options were added (A/K, W·m, Ω/K), so please review.
+- Grade XI has notes for chapters 9–13 only, and no MCQ sets yet.
+
+## Roadmap
+
+1. Rewrite the 12 legacy notes in the new format (start with the five that fail contrast checks).
+2. MCQ sets for Grade XI chapters 9–13, then the remaining chapters of both grades.
+3. Download all external images into `src/assets/img/`.
+4. Optional later: link YouTube videos per chapter (a `video` field in `content.json`), a "practice
+   test" page that mixes questions from several chapters, and Vercel Web Analytics.
