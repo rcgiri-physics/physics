@@ -1,29 +1,47 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Page not found | PHYSICS DECODED</title>
-  <script>
-    (function () {
-      const prefix = '/search/label/';
-      const path = window.location.pathname;
-
-      if (path.startsWith(prefix)) {
-        const label = decodeURIComponent(path.slice(prefix.length))
-          .replace(/\/+$/, '')
-          .replace(/-/g, ' ')
-          .trim();
-
-        window.location.replace('/search.html?q=' + encodeURIComponent(label));
-      }
-    }());
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page not found | Physics Decoded</title>
+<meta name="description" content="Learn physics with clarity — concepts, calculations, visuals and exam strategies, explained simply.">
+<link rel="canonical" href="https://richeshsharma.com.np/404.html">
+<meta property="og:title" content="Page not found | Physics Decoded">
+<meta property="og:description" content="Learn physics with clarity — concepts, calculations, visuals and exam strategies, explained simply.">
+<meta name="theme-color" content="#1a237e">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
-  <main>
-    <h1>Page not found</h1>
-    <p><a href="/index.html">Return to PHYSICS DECODED</a></p>
-  </main>
+<header class="site-header">
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="/"><img src="/assets/favicon.svg" alt=""> Physics Decoded</a>
+    <div class="nav-links">
+      <a href="/pages/grade-xi.html">Grade XI</a><a href="/pages/grade-xii.html">Grade XII</a><a href="/search.html">All lessons</a>
+    </div>
+    <form class="nav-search" action="/search.html" role="search"><input name="q" placeholder="Search topics…" aria-label="Search topics"></form>
+  </nav>
+</header>
+<main class="container">
+<script>
+(function () {
+  var prefix = '/search/label/', path = location.pathname;
+  if (path.indexOf(prefix) === 0) {
+    var label = decodeURIComponent(path.slice(prefix.length)).replace(/\/+$/, '').replace(/-/g, ' ').trim();
+    location.replace('/search.html?q=' + encodeURIComponent(label));
+  } else if (/^\/[a-z0-9-]+\.html$/.test(path)) {
+    location.replace('/posts' + path);  // lessons used to be duplicated at the site root
+  }
+}());
+</script>
+<section class="hero"><h1>Page not found</h1><p>That page has moved or never existed. Try searching for the topic instead.</p>
+<form class="hero-search" action="/search.html" role="search"><input name="q" placeholder="Search topics…" aria-label="Search topics"><button class="btn">Search</button></form></section>
+</main>
+<footer class="footer"><div class="footer-inner">
+  <strong>Physics Decoded</strong><span>by Richesh Sharma · NEB Curriculum 2076</span>
+  <span class="spacer"></span>
+  <a href="/pages/grade-xi.html">Grade XI</a><a href="/pages/grade-xii.html">Grade XII</a>
+  <a href="https://youtube.com/@rsaphysics" target="_blank" rel="noopener">YouTube ▶</a>
+</div></footer>
 </body>
 </html>
