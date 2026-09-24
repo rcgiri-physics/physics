@@ -1,6 +1,6 @@
 # Prompt: Convert an old lesson to the new notes format
 
-The 12 older notes pages (from Blogger) are complete web pages with their own styling.
+The older notes pages (from Blogger) are complete web pages with their own styling.
 Use this prompt to turn one into the new content-only format, then **delete** the old file
 and save the new one under the **same file name** so its web address doesn't change.
 

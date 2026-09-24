@@ -21,7 +21,7 @@ src/
     css/tokens.css           ALL colours, fonts, radii (light + dark mode)
     css/site.css             layout: header, cards, grade pages, search, footer
     css/lesson.css           notes building blocks + quiz
-    css/lesson-bar.css       site bar for the 12 legacy lesson pages
+    css/lesson-bar.css       site bar for the legacy lesson pages
     js/quiz.js               answering, scoring, filters, saved progress
     js/notes.js              "On this page" highlighting + LaTeX (KaTeX)
     js/search.js             search page
@@ -75,8 +75,8 @@ axe-core (WCAG 2.0/2.1 A + AA) was run on the home, grade, search, MCQ, notes (s
 skip link, a visible focus ring, labelled search fields, keyboard-operable quiz buttons,
 reduced-motion support, and no horizontal scrolling at 375px width.
 
-The 12 legacy notes pages are not covered. Five of them fail contrast checks because of their
-own hard-coded colours (`ideal-gas`, `rate-of-flow-of-heat`, `quantity-of-heat`,
+The 11 legacy notes pages are not covered. Four of them fail contrast checks because of their
+own hard-coded colours (`ideal-gas`, `rate-of-flow-of-heat`,
 `periodic-motion`, `rotational-dynamics`). Rewriting them in the new format fixes this.
 
 ## Hosting on Vercel (moving from Blogger)
@@ -114,11 +114,11 @@ the previous version stays online. The same check also runs on GitHub for every 
 - `heat-and-temperature` and `thermal-expansion` load `plotly-latest` (frozen at v1.58).
 - `thermoelectric-effect.json` question 12 originally had only one option. Three wrong unit
   options were added (A/K, W·m, Ω/K), so please review.
-- Grade XI has notes for chapters 9–13 only, and no MCQ sets yet.
+- Grade XI has notes for chapters 9–13 only, and one MCQ set (chapter 11).
 
 ## Roadmap
 
-1. Rewrite the 12 legacy notes in the new format (start with the five that fail contrast checks).
+1. Rewrite the 11 remaining legacy notes in the new format (start with the four that fail contrast checks). `quantity-of-heat` is done and is the reference example of a converted page.
 2. MCQ sets for Grade XI chapters 9–13, then the remaining chapters of both grades.
 3. Download all external images into `src/assets/img/`.
 4. Optional later: link YouTube videos per chapter (a `video` field in `content.json`), a "practice
