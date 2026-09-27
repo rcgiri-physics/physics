@@ -1,0 +1,214 @@
+{
+  "title": "Gravity and Gravitation — 25 MCQs",
+  "grade": "XI",
+  "chapters": [7],
+  "date": "2026-09-27",
+  "description": "Advanced MCQs on gravitational field, orbital motion, escape velocity, satellite motion and planetary motion.",
+  "questions": [
+    {
+      "q": "The Moon's mass is about 1/81 that of the Earth, and the Earth-Moon distance is d. At what distance from the Earth (measured along the line joining them) does the net gravitational field due to the Earth and Moon become zero?",
+      "options": ["0.1d", "0.5d", "0.9d", "0.99d"],
+      "answer": 2,
+      "explanation": "At the null point, the gravitational field due to Earth equals the field due to the Moon: GM/x² = G(M/81)/(d−x)². Solving gives x = 0.9d.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Along the axis of a uniform ring of mass M and radius R, the gravitational field strength E(x) at a distance x from the centre (along the axis) is E(x) = GMx/(R² + x²)^(3/2). At what value of x is this field strength maximum?",
+      "options": ["R", "R/√2", "R/2", "2R"],
+      "answer": 1,
+      "explanation": "Differentiating E(x) and setting dE/dx = 0 gives R² = 2x², so x = R/√2.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A narrow frictionless tunnel is drilled straight through the centre of the Earth (assumed a uniform sphere of density ρ, radius R, surface gravity g). A ball is dropped into the tunnel from the surface. Its subsequent motion is:",
+      "options": [
+        "Uniform velocity throughout the tunnel",
+        "Simple harmonic motion with time period T = 2π√(R/g)",
+        "Uniformly accelerated motion throughout, reaching maximum speed at the far end",
+        "The ball cannot pass through the centre"
+      ],
+      "answer": 1,
+      "explanation": "Inside a uniform sphere, the gravitational field varies linearly with distance from the centre, producing a restoring force proportional to displacement, which is SHM.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Due to the Earth's rotation about its own axis, the apparent weight of a body at the equator is less than its true weight. If ω is the Earth's angular velocity and R its radius, the reduction in the effective value of g at the equator is:",
+      "options": ["ω²R", "ωR²", "ω²R²", "2ωR"],
+      "answer": 0,
+      "explanation": "The required centripetal force is mω²R, so the apparent weight is reduced by this amount: g_apparent = g − ω²R.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "A satellite is projected horizontally from a point at distance r from a planet's centre with a speed v that is less than the circular orbital velocity v₀ at that radius. The resulting orbit is an ellipse in which the point of projection is:",
+      "options": ["The perigee (nearest point)", "The apogee (farthest point)", "The centre of the ellipse", "Undefined — the satellite falls directly to the surface"],
+      "answer": 1,
+      "explanation": "If the speed is below circular speed, gravity pulls the satellite inward more than required for a circle, so the point of projection is the farthest point, i.e. the apogee.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A satellite is projected horizontally from a point at distance r with a speed v such that v₀ < v < vₑ (greater than the local circular velocity but less than the local escape velocity). The point of projection is then the orbit's:",
+      "options": ["Apogee", "Perigee", "Focus", "Point of inflection"],
+      "answer": 1,
+      "explanation": "When the launch speed exceeds circular orbital speed, the satellite moves outward afterward, so the projection point is the nearest point of the orbit: the perigee.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The time period of a satellite orbiting very close to the surface of a planet (r ≈ R) depends only on:",
+      "options": ["The planet's radius alone", "The planet's mass alone", "The planet's mean density", "The planet's surface gravity alone, independent of density"],
+      "answer": 2,
+      "explanation": "For a close orbit, T² = 4π²R³/GM and M = (4/3)πR³ρ, so T depends on density alone and not on radius.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A planet has the same mean density as the Earth but a radius twice that of the Earth. The ratio of the escape velocity from this planet's surface to that from the Earth's surface is:",
+      "options": ["1:1", "2:1", "4:1", "1:2"],
+      "answer": 1,
+      "explanation": "Since vₑ ∝ R for fixed density, doubling radius doubles escape velocity.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A planet moves in an elliptical orbit around the Sun. Its distances from the Sun at perihelion and aphelion are in the ratio rₚ : rₐ = 1 : 2. The ratio of its orbital speeds vₚ : vₐ at these two points is:",
+      "options": ["1:2", "2:1", "1:4", "4:1"],
+      "answer": 1,
+      "explanation": "By conservation of angular momentum, rₚvₚ = rₐvₐ. Hence vₚ/vₐ = rₐ/rₚ = 2.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "A satellite of mass 500 kg orbits the Earth in a circular orbit of radius 7.0 × 10⁶ m. Calculate the energy required to raise it to a new circular orbit of radius 1.4 × 10⁷ m. (M_Earth = 6.0 × 10²⁴ kg, G = 6.674 × 10⁻¹¹ N m² kg⁻²)",
+      "options": ["3.58 × 10⁹ J", "7.15 × 10⁹ J", "1.43 × 10¹⁰ J", "2.86 × 10¹⁰ J"],
+      "answer": 1,
+      "explanation": "The required energy is the increase in total orbital energy: ΔE = GMm/(4r₁) = 7.15 × 10⁹ J.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A rocket is launched vertically from the Earth's surface with a speed greater than the escape velocity vₑ. Neglecting the Earth's rotation and atmospheric resistance, its speed when it is very far from the Earth (in terms of its launch speed v and vₑ) is:",
+      "options": ["v − vₑ", "√(v² − vₑ²)", "v", "√(v² + vₑ²)"],
+      "answer": 1,
+      "explanation": "Using energy conservation, the residual speed at infinity is √(v² − vₑ²).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A satellite in a low circular orbit experiences a small amount of atmospheric drag, which does negative work on it over many orbits. As the satellite's orbit gradually shrinks as a result, its orbital speed:",
+      "options": ["Decreases, since friction always slows a moving body", "Increases, even though friction is removing mechanical energy", "Remains unchanged, since drag only affects the orbit's shape", "Becomes zero as soon as drag acts"],
+      "answer": 1,
+      "explanation": "As the orbit shrinks, the satellite becomes more tightly bound, and since v₀ = √(GM/r), its speed increases even while total energy decreases.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Two stars of masses m and 2m, separated by a fixed distance d, orbit their common centre of mass. Their common orbital time period is:",
+      "options": ["T = 2π√(d³/Gm)", "T = 2π√(d³/2Gm)", "T = 2π√(d³/3Gm)", "T = 2π√(d³/4Gm)"],
+      "answer": 2,
+      "explanation": "Using Kepler’s third law for a two-body system, T² = 4π²d³ / [G(m₁ + m₂)] = 4π²d³ / (3Gm).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "For the same binary star system (masses m and 2m, separated by distance d, orbiting their common centre of mass), the ratio of the orbital radius of the lighter star (r₁) to that of the heavier star (r₂) is:",
+      "options": ["1:1", "1:2", "2:1", "4:1"],
+      "answer": 2,
+      "explanation": "The centre of mass condition gives m r₁ = 2m r₂, so r₁ = 2r₂.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The orbital radius of a satellite is increased by exactly 1%, with no other quantities changed. Using the relation T² ∝ r³, the approximate percentage increase in its time period is:",
+      "options": ["0.5%", "1%", "1.5%", "3%"],
+      "answer": 2,
+      "explanation": "From T² ∝ r³, 2(dT/T) = 3(dr/r). With dr/r = 1%, the fractional increase is 1.5%.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "An astronaut inside a satellite orbiting the Earth experiences apparent weightlessness. The correct physical explanation for this is:",
+      "options": [
+        "There is no gravitational force acting at that altitude",
+        "The satellite and the astronaut are both in continuous free fall around the Earth, falling with the same acceleration",
+        "The gravitational force is exactly cancelled by the centrifugal force at that point",
+        "The normal reaction from the cabin floor balances the astronaut's weight"
+      ],
+      "answer": 1,
+      "explanation": "In orbit, both the cabin and the astronaut accelerate toward Earth together, so they do not press against one another and no normal reaction is felt.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "A straight frictionless tunnel is drilled through a uniform-density Earth along a chord that does NOT pass through the centre. A ball released from one end of this tunnel will:",
+      "options": [
+        "Not oscillate at all, since the tunnel misses the centre",
+        "Oscillate, but with a period different from that of a diametric tunnel",
+        "Oscillate with exactly the same period as a diametric tunnel, T = 2π√(R/g)",
+        "Fall straight through to the other end without ever returning"
+      ],
+      "answer": 2,
+      "explanation": "For any chord through a uniform sphere, the component of gravity along the chord is proportional to displacement from the midpoint, so SHM has the same time period as a diametric tunnel.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Three point masses, each of mass m, are placed at the corners of an equilateral triangle of side a. The total gravitational potential energy of this three-mass system is:",
+      "options": ["−Gm²/a", "−2Gm²/a", "−3Gm²/a", "−6Gm²/a"],
+      "answer": 2,
+      "explanation": "There are three distinct pairs and each pair contributes −Gm²/a, so the total is −3Gm²/a.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "A satellite orbits a planet in a circular orbit of radius 1.0 × 10⁷ m with a time period of 1.0 × 10⁴ s. Using Kepler's third law, estimate the mass of the planet. (G = 6.674 × 10⁻¹¹ N m² kg⁻²)",
+      "options": ["5.92 × 10²² kg", "5.92 × 10²³ kg", "5.92 × 10²⁴ kg", "5.92 × 10²⁵ kg"],
+      "answer": 2,
+      "explanation": "From T² = 4π²r³/GM, M = 4π²r³/GT² ≈ 5.92 × 10²⁴ kg.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A body is projected from the Earth's surface with exactly the escape velocity vₑ, directed vertically upward. Ignoring air resistance and the Earth's rotation, its trajectory as it recedes to infinity is best described as:",
+      "options": [
+        "Elliptical, since all orbits under gravity are ellipses",
+        "A straight radial line, reaching infinity with zero residual velocity",
+        "Hyperbolic, with a large residual velocity at infinity",
+        "Circular, at constant distance from Earth"
+      ],
+      "answer": 1,
+      "explanation": "With zero angular momentum, the object moves radially outward and slows asymptotically to zero velocity at infinity, exactly matching escape conditions.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A planet moves in a circular orbit around a star. If the gravitational force of attraction were instead to vary as 1/r³ rather than 1/r² (with all other conditions unchanged), which relation between orbital speed v and radius r would then hold for a stable circular orbit?",
+      "options": ["v ∝ r", "v ∝ 1/r", "v ∝ 1/√r", "v ∝ r²"],
+      "answer": 1,
+      "explanation": "For a circular orbit, F = mv²/r and F ∝ 1/r³, so v² ∝ 1/r² and therefore v ∝ 1/r.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A body weighs W newtons at the Earth's surface. If it is taken to a height equal to the Earth's radius R above the surface, its weight becomes:",
+      "options": ["W", "W/2", "W/4", "W/8"],
+      "answer": 2,
+      "explanation": "At height h = R, the distance from Earth’s centre is 2R, so weight scales as 1/(2R)² = 1/4 of the surface value.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "A satellite is revolving around the Earth in an orbit of radius r with time period T. If the same satellite is to be placed in an orbit of radius 4r, its new time period T′ is related to the original as:",
+      "options": ["T′ = 2T", "T′ = 4T", "T′ = 8T", "T′ = 16T"],
+      "answer": 2,
+      "explanation": "From Kepler’s law, T² ∝ r³, so when r becomes 4r, T becomes (4)^(3/2)T = 8T.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Two identical satellites, each of mass m, orbit the Earth in the same circular orbit of radius r but in exactly opposite directions. They collide head-on and stick together (a perfectly inelastic collision). Immediately after the collision, the combined wreckage (mass 2m) will:",
+      "options": [
+        "Continue in the same circular orbit, since total mass is conserved",
+        "Have zero velocity at that instant and fall essentially straight toward the Earth",
+        "Move off tangentially at the same speed v₀ as before",
+        "Immediately escape the Earth's gravity"
+      ],
+      "answer": 1,
+      "explanation": "The opposite velocities cancel in momentum, so the wreckage has zero velocity and cannot maintain orbit; it falls inward under gravity.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The gravitational field strength E(r) inside a uniform solid sphere of mass M and radius R (for r < R) and outside it (for r > R) are correctly described, respectively, by:",
+      "options": [
+        "E(r) ∝ r for r < R; E(r) ∝ 1/r² for r > R",
+        "E(r) ∝ 1/r² for both regions",
+        "E(r) = 0 for r < R; E(r) ∝ 1/r² for r > R",
+        "E(r) ∝ r² for r < R; E(r) ∝ 1/r for r > R"
+      ],
+      "answer": 0,
+      "explanation": "Inside a uniform solid sphere, the enclosed mass gives E ∝ r; outside, the mass acts as though concentrated at the centre, so E ∝ 1/r².",
+      "difficulty": "medium"
+    }
+  ]
+}
