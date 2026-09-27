@@ -69,7 +69,7 @@
       "difficulty": "easy"
     },
     {
-      "q": "When rounding 7.25 to 3 significant figures using the "round half to even" rule, the result is:",
+      "q": "When rounding 7.25 to 3 significant figures using the \"round half to even\" rule, the result is:",
       "options": ["7.3", "7.2", "7.25", "7.20"],
       "answer": 1,
       "explanation": "When exactly halfway, round to the nearest even digit: 7.2 is even.",
@@ -126,7 +126,7 @@
     },
     {
       "q": "Which of the following CANNOT be determined using dimensional analysis alone?",
-      "options": ["Whether an equation is dimensionally consistent", "The dimensional formula of a derived quantity", "The value of a dimensionless proportionality constant", "The relation between length and time dimensions of velocity"],
+      "options": ["Whether an equation is dimensionally consistent", "The dimensional formula of a derived quantity", "The value of a dimensionless proportionality constant", "The relation between two physical quantities"],
       "answer": 2,
       "explanation": "Dimensional analysis cannot determine dimensionless constants like 2π, ½ or numerical coefficients.",
       "difficulty": "medium"
@@ -140,7 +140,7 @@
     },
     {
       "q": "Converting a physical quantity from one system of units to another using dimensional analysis relies on the fact that:",
-      "options": ["The unit system does not affect the quantity's dimension", "The numerical value of the quantity itself changes with the unit system", "The physical quantity itself remains unchanged, though its numerical value and unit both change consistently", "Dimensions differ between CGS and SI systems"],
+      "options": ["The unit system does not affect the quantity's dimension", "The numerical value of the quantity itself changes with the unit system", "The physical quantity itself remains unchanged while the unit and numerical value change", "Only SI units are valid"],
       "answer": 2,
       "explanation": "A physical quantity is invariant; only the numerical value and unit change, maintaining the same dimension.",
       "difficulty": "medium"
@@ -175,14 +175,14 @@
     },
     {
       "q": "A quantity Q depends on four independent physical quantities. Using only [M], [L], [T] as base dimensions, dimensional analysis to find Q's formula will:",
-      "options": ["Always succeed with a unique answer", "Fail, since there are more unknown powers than available equations", "Give exactly two possible answers", "Automatically determine the constant k"],
+      "options": ["Always succeed with a unique answer", "Fail, since there are more unknown powers than available equations", "Give exactly two possible answers", "Automatically determine the coefficient"],
       "answer": 1,
       "explanation": "Four unknowns (the powers) but only three independent equations (M, L, T) means the system is underdetermined.",
       "difficulty": "hard"
     },
     {
       "q": "The length of a wire is measured as 25.4 cm using a metre scale (least count 0.1 cm) and as 25.38 cm using a vernier calliper (least count 0.01 cm). Which statement is correct?",
-      "options": ["The metre scale reading is more precise", "Both readings have equal precision", "The vernier calliper reading is more precise", "Precision cannot be compared between different instruments"],
+      "options": ["The metre scale reading is more precise", "Both readings have equal precision", "The vernier calliper reading is more precise", "Precision cannot be compared between different measuring devices"],
       "answer": 2,
       "explanation": "Vernier has smaller least count, so it provides more precision (finer resolution).",
       "difficulty": "hard"
@@ -203,7 +203,7 @@
     },
     {
       "q": "A student proposes the formula E = mc for the energy E of a particle of mass m moving with speed c, instead of E = mc². Using dimensional analysis, this proposed formula:",
-      "options": ["Is dimensionally correct, since m and c are both used", "Is dimensionally incorrect, since [mc] ≠ [ML²T⁻²]", "Cannot be tested using dimensional analysis", "Is correct only in the CGS system"],
+      "options": ["Is dimensionally correct, since m and c are both used", "Is dimensionally incorrect, since [mc] ≠ [ML²T⁻²]", "Cannot be tested using dimensional analysis", "Is correct only for photons"],
       "answer": 1,
       "explanation": "[mc] = [M][LT⁻¹] = [MLT⁻¹], which is momentum, not energy [ML²T⁻²].",
       "difficulty": "hard"
