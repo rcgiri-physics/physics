@@ -1,0 +1,44 @@
+{
+  "title": "Quantity of Heat — MCQs",
+  "grade": "XI",
+  "chapters": [11],
+  "date": "2026-09-24",
+  "description": "Newton's law of cooling, water equivalent, latent heat and change of phase.",
+  "questions": [
+    {
+      "q": "Newton's law of cooling is valid when:",
+      "options": ["The temperature difference is more than 30 °C", "The body is perfectly black", "The temperature difference is small (about 20 °C or less)", "Convection is the main mode of heat loss"],
+      "answer": 2,
+      "explanation": "The law holds only for small temperature differences between the body and its surroundings, when the rate of heat loss is proportional to the temperature difference.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "In the method of mixture, the heat capacity of the calorimeter is usually expressed as its:",
+      "options": ["Specific heat", "Water equivalent", "Thermal conductivity", "Emissivity"],
+      "answer": 1,
+      "explanation": "The water equivalent W = m_cal c_cal / c_w is the mass of water that absorbs the same heat as the calorimeter for the same temperature rise.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "While ice is melting at 0 °C, the heat supplied is used to:",
+      "options": ["Increase the kinetic energy of the molecules", "Raise the temperature", "Overcome the intermolecular forces", "Increase the pressure"],
+      "answer": 2,
+      "explanation": "During a change of phase the temperature (and hence the average kinetic energy) stays constant; the latent heat increases the potential energy by working against intermolecular forces.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The SI unit of specific latent heat is:",
+      "options": ["J", "J kg⁻¹", "J K⁻¹", "J kg⁻¹ K⁻¹"],
+      "answer": 1,
+      "explanation": "Specific latent heat is heat per unit mass, L = Q/m, so its unit is J kg⁻¹. There is no temperature term because the temperature does not change.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "When steam condenses to water at 100 °C, it:",
+      "options": ["Absorbs latent heat", "Releases latent heat", "Rises in temperature", "Decreases in density"],
+      "answer": 1,
+      "explanation": "Condensation is the reverse of vaporization, so the latent heat of vaporization is released. This is why a steam burn is more severe than a burn from water at 100 °C.",
+      "difficulty": "easy"
+    }
+  ]
+}

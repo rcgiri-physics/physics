@@ -143,7 +143,7 @@ Chapter numbers come from `src/content.json` (and are shown on the grade pages).
 
 ## Old ("legacy") lessons
 
-Twelve notes pages from the Blogger days are complete stand-alone web pages (they start with
+Eleven notes pages from the Blogger days are complete stand-alone web pages (they start with
 `<!doctype html>` after the metadata block). They still work: the build adds the site bar and
 footer. But they don't follow the shared design, and several fail contrast checks. When a
 chapter is revised, rewrite it in the new notes format using [`prompts/convert-legacy-notes.md`](prompts/convert-legacy-notes.md),

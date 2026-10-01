@@ -2,453 +2,230 @@
 title: Quantity of Heat
 grade: XI
 chapters: [11]
-date: 2026-03-21
+date: 2026-09-24
+description: Newton's law of cooling, specific heat by the methods of cooling and mixture, change of phase, latent heat and its measurement.
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade XI Physics – Thermal Physics (Part 2) | NEB Syllabus (2080)</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        }
-        h1, h2, h3 {
-            color: #1a5276;
-        }
-        h1 {
-            text-align: center;
-            border-bottom: 3px solid #2980b9;
-            padding-bottom: 10px;
-        }
-        h2 {
-            border-left: 5px solid #3498db;
-            padding-left: 10px;
-            margin-top: 30px;
-        }
-        .definition {
-            background-color: #e8f4fc;
-            padding: 15px;
-            border-radius: 5px;
-            border-left: 4px solid #2980b9;
-            margin: 15px 0;
-        }
-        .formula {
-            background-color: #f0f8ff;
-            padding: 12px;
-            font-family: 'Cambria Math', serif;
-            text-align: center;
-            font-size: 1.3em;
-            border-radius: 5px;
-            margin: 15px 0;
-            border: 1px dashed #2980b9;
-        }
-        .derivation {
-            background-color: #fef9e7;
-            padding: 15px;
-            border-radius: 5px;
-            border-left: 4px solid #f39c12;
-        }
-        .example {
-            background-color: #eafaf1;
-            padding: 15px;
-            border-radius: 5px;
-            border-left: 4px solid #27ae60;
-        }
-        .mcq {
-            background-color: #fdf2f2;
-            padding: 15px;
-            border-radius: 5px;
-            border-left: 4px solid #e74c3c;
-        }
-        .answer-key {
-            margin-top: 20px;
-            padding: 15px;
-            background: #d5f5e3;
-            border-radius: 5px;
-        }
-        figure {
-            text-align: center;
-            margin: 25px 0;
-        }
-        figcaption {
-            font-style: italic;
-            margin-top: 8px;
-            color: #555;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        th, td {
-            border: 1px solid #999;
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #3498db;
-            color: white;
-        }
-        .highlight {
-            background-color: #fff9c4;
-            padding: 2px 6px;
-            border-radius: 3px;
-        }
-        details summary {
-            font-weight: bold;
-            cursor: pointer;
-            color: #27ae60;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Thermal Physics </h1>
-        <p style="text-align: center; color: #7f8c8d;">
-            <em> QUANTITY OF HEAT | Grade XI |- RICHESH SHARMA</em>
-        </p>
 
-        <!-- Topic 1: Newton's Law of Cooling -->
-        <h2>1. Newton’s Law of Cooling</h2>
-        
-        <div class="definition">
-            <strong>Statement:</strong> <em>The rate of loss of heat of a body is directly proportional to the difference in temperature between the body and its surroundings, provided the temperature difference is small (≤ 20°C) and the nature of the radiating surface remains unchanged.</em>
-        </div>
+<h2>Newton's law of cooling</h2>
 
-        <div class="formula">
-            <p>Mathematically:</p>
-            <p>− dQ/dt ∝ (T − T₀)</p>
-            <p>Since dQ = mc dT, ⇒ − mc (dT/dt) = k (T − T₀)</p>
-            <p>∴ <strong>dT/dt = −K (T − T₀)</strong></p>
-            <p>where K = k/(mc) is a constant.</p>
-        </div>
+<div class="box law">
+  <p>The rate of loss of heat of a body is directly proportional to the difference in temperature between the body and its surroundings, provided the temperature difference is small (about 20 °C or less) and the nature of the radiating surface remains unchanged.</p>
+</div>
 
-        <h3>Solution of the Differential Equation</h3>
-        <div class="derivation">
-            <p>Integrating: ∫ dT/(T − T₀) = −K ∫ dt</p>
-            <p>⇒ ln(T − T₀) = −Kt + C</p>
-            <p>⇒ T − T₀ = e<sup>−Kt + C</sup> = A e<sup>−Kt</sup></p>
-            <p>∴ <strong>T = T₀ + A e<sup>−Kt</sup></strong></p>
-            <p>This shows that temperature decays exponentially toward T₀.</p>
-        </div>
+<p>If a body of mass \(m\) and specific heat \(c\) is at temperature \(T\) in surroundings at \(T_0\):</p>
 
-        <figure>
-            <svg width="500" height="300" viewBox="0 0 500 300" style="background:#f8f9fa; border:1px solid #ddd; border-radius:5px;">
-                <!-- Axes -->
-                <line x1="50" y1="250" x2="450" y2="250" stroke="black"/>
-                <line x1="50" y1="250" x2="50" y2="50" stroke="black"/>
-                <text x="460" y="265" font-size="12">Time (t)</text>
-                <text x="15" y="60" font-size="12" transform="rotate(-90 15,60)">Temperature (T)</text>
-                <!-- Exponential decay curve -->
-                <path d="M 50 80 
-                         C 100 100, 200 180, 450 240" 
-                      fill="none" stroke="#e74c3c" stroke-width="3"/>
-                <!-- Ambient line -->
-                <line x1="50" y1="240" x2="450" y2="240" stroke="#27ae60" stroke-dasharray="5,5"/>
-                <text x="460" y="245" font-size="12" fill="#27ae60">T₀ = Room Temp</text>
-                <circle cx="50" cy="80" r="4" fill="#c0392b"/>
-                <text x="60" y="75" font-size="12">T₁ (initial)</text>
-            </svg>
-            <figcaption>Figure 1: Exponential cooling curve (T vs t) — approaches T₀ asymptotically.</figcaption>
-        </figure>
+<div class="formula">
+  \[ -\frac{dQ}{dt} \propto (T - T_0) \quad\Rightarrow\quad -mc\,\frac{dT}{dt} = k\,(T - T_0) \]
+  \[ \frac{dT}{dt} = -K\,(T - T_0) \]
+  <span class="where">where \(K = \dfrac{k}{mc}\) is a constant for the given body and surroundings.</span>
+</div>
 
-        <h3>Verification (NEB Practical Focus)</h3>
-        <p>Plot <strong>ln(T − T₀) vs t</strong> → should give a straight line with slope = −K.</p>
-        <div class="formula">
-            ln(T − T₀) = −Kt + ln A
-        </div>
+<h3>Solution of the differential equation</h3>
+<p>Separating the variables and integrating:</p>
+<div class="formula">
+  \[ \int \frac{dT}{T - T_0} = -K \int dt \quad\Rightarrow\quad \ln(T - T_0) = -Kt + C \]
+  \[ T = T_0 + A\,e^{-Kt} \]
+  <span class="where">where \(A = e^{C}\) is fixed by the initial temperature: at \(t = 0\), \(A = T_1 - T_0\).</span>
+</div>
+<p>The temperature therefore falls <strong>exponentially</strong> towards the room temperature \(T_0\), quickly at first and more slowly as the body approaches \(T_0\).</p>
 
-        <!-- Topic 2: Specific Heat of Liquid by Method of Cooling -->
-        <h2>2. Specific Heat of Liquid by Method of Cooling</h2>
-        <p>This experimental method uses **Newton’s Law of Cooling** to compare the cooling rates of two liquids.</p>
+<figure>
+  <svg viewBox="0 0 500 290" role="img" aria-label="Graph of temperature against time: an exponential curve falling from the initial temperature T1 towards a dashed horizontal line at room temperature T0">
+    <line x1="60" y1="250" x2="470" y2="250" stroke="currentColor"/>
+    <line x1="60" y1="250" x2="60" y2="30" stroke="currentColor"/>
+    <text x="470" y="272" font-size="13" text-anchor="end" fill="currentColor">Time t</text>
+    <text x="22" y="140" font-size="13" text-anchor="middle" fill="currentColor" transform="rotate(-90 22 140)">Temperature T</text>
+    <line x1="60" y1="215" x2="470" y2="215" stroke="currentColor" stroke-dasharray="6 5" stroke-opacity=".6"/>
+    <text x="466" y="207" font-size="13" text-anchor="end" fill="currentColor">T₀ (room temperature)</text>
+    <path d="M60 55 C 120 150, 220 200, 470 213" fill="none" stroke="currentColor" stroke-width="3"/>
+    <circle cx="60" cy="55" r="4" fill="currentColor"/>
+    <text x="70" y="50" font-size="13" fill="currentColor">T₁ (initial)</text>
+  </svg>
+  <figcaption>Figure 1: Cooling curve. The temperature approaches T₀ asymptotically.</figcaption>
+</figure>
 
-        <div class="definition">
-            <strong>Principle:</strong> For two bodies of equal mass, same surface area, same initial excess temperature (T − T₀), the ratio of their specific heat capacities is inversely proportional to the ratio of their rates of cooling.
-        </div>
+<h3>Verification (practical)</h3>
+<p>Taking logs of the solution gives a straight-line relation:</p>
+<div class="formula">\[ \ln(T - T_0) = -Kt + \ln A \]</div>
+<p>A graph of \(\ln(T - T_0)\) against \(t\) is a straight line with slope \(-K\). This verifies the law.</p>
 
-        <div class="derivation">
-            <p>From Newton’s Law: dT/dt = −K(T − T₀), and K = k/(mc)</p>
-            <p>At same (T − T₀), (dT/dt) ∝ 1/(mc)</p>
-            <p>If masses are equal: (dT/dt) ∝ 1/c</p>
-            <p>∴ <strong>c₁ / c₂ = (dT/dt)₂ / (dT/dt)₁</strong></p>
-            
-            <p>In practice, we use average rate of cooling over a temperature range:</p>
-            <div class="formula">
-                c₁ / c₂ = [(θ₂ − θ₁)/t₂] / [(θ₂ − θ₁)/t₁] = t₁ / t₂
-            </div>
-            <p>where t₁, t₂ = time taken by liquid 1 and 2 to cool through same Δθ.</p>
-        </div>
+<h2>Specific heat of a liquid by the method of cooling</h2>
 
-        <div class="example">
-            <strong>Example (NEB 2078 Practical):</strong> Water and unknown liquid (equal mass) cool from 50°C to 40°C. Water takes 120 s, liquid takes 90 s. Find c<sub>liquid</sub>. (c<sub>w</sub> = 4200 J kg⁻¹ K⁻¹)
-            <details open>
-                <summary><strong>Solution:</strong></summary>
-                <p>c<sub>w</sub> / c<sub>l</sub> = t<sub>l</sub> / t<sub>w</sub>   (∵ same Δθ, same mass)</p>
-                <p>⇒ 4200 / c<sub>l</sub> = 90 / 120 = 3/4</p>
-                <p>⇒ c<sub>l</sub> = 4200 × 4 / 3 = <strong>5600 J kg⁻¹ K⁻¹</strong></p>
-            </details>
-        </div>
+<div class="box law" data-title="Principle">
+  <p>Two liquids of equal mass are cooled in identical calorimeters under the same conditions (same surface, same surroundings). At the same excess temperature, they lose heat at the same rate, so the liquid with the <strong>larger</strong> specific heat cools more <strong>slowly</strong>.</p>
+</div>
 
-        <!-- Topic 3: Specific Heat of Solid by Method of Mixture -->
-        <h2>3. Specific Heat of Solid by Method of Mixture</h2>
-        <p>This is the most common NEB practical experiment (see Grade XI Lab Manual).</p>
+<p>From Newton's law, \(\dfrac{dT}{dt} = -\dfrac{k}{mc}(T - T_0)\). For equal masses at the same \((T - T_0)\):</p>
+<div class="formula">
+  \[ \left|\frac{dT}{dt}\right| \propto \frac{1}{c} \quad\Rightarrow\quad \frac{c_1}{c_2} = \frac{(dT/dt)_2}{(dT/dt)_1} \]
+</div>
+<p>If both liquids cool through the same range \(\Delta\theta\) in times \(t_1\) and \(t_2\), the average rates are \(\Delta\theta/t_1\) and \(\Delta\theta/t_2\), so</p>
+<div class="formula">
+  \[ \frac{c_1}{c_2} = \frac{t_1}{t_2} \]
+  <span class="where">The liquid that takes longer to cool has the higher specific heat.</span>
+</div>
 
-        <div class="definition">
-            <strong>Principle:</strong> Based on the <strong>Principle of Calorimetry</strong> — heat lost by hot solid = heat gained by cold water + calorimeter.
-        </div>
+<div class="box example">
+  <p>Equal masses of water and an unknown liquid cool from 50 °C to 40 °C in identical calorimeters. Water takes 120 s and the liquid takes 90 s. Find the specific heat of the liquid. (\(c_w = 4200\ \text{J kg}^{-1}\text{K}^{-1}\))</p>
+  <details class="solution">
+    <summary>Show solution</summary>
+    <p>\(\dfrac{c_l}{c_w} = \dfrac{t_l}{t_w} = \dfrac{90}{120} = \dfrac{3}{4}\)</p>
+    <p>\(c_l = \dfrac{3}{4} \times 4200 = \mathbf{3150\ \text{J kg}^{-1}\text{K}^{-1}}\)</p>
+    <p>The liquid cools faster than water, so its specific heat is lower, as expected.</p>
+  </details>
+</div>
 
-        <div class="derivation">
-            <p>Let:<br>
-            m = mass of solid,<br>
-            c = specific heat of solid (unknown),<br>
-            T₁ = initial temp of solid,<br>
-            m<sub>w</sub>, c<sub>w</sub>, T₂ = mass, sp. heat, temp of water,<br>
-            m<sub>cal</sub>, c<sub>cal</sub> = mass & sp. heat of calorimeter (or use water equivalent W),<br>
-            T = final equilibrium temperature.</p>
+<div class="box warning">
+  <p>Do not invert the ratio. A shorter cooling time means a <em>smaller</em> specific heat: \(c \propto t\), not \(c \propto 1/t\).</p>
+</div>
 
-            <p><strong>Heat lost by solid:</strong> Q₁ = m c (T₁ − T)</p>
-            <p><strong>Heat gained by water + calorimeter:</strong><br>
-            Q₂ = m<sub>w</sub> c<sub>w</sub> (T − T₂) + m<sub>cal</sub> c<sub>cal</sub> (T − T₂)<br>
-            or = (m<sub>w</sub> c<sub>w</sub> + W) (T − T₂), where W = water equivalent.</p>
+<h2>Specific heat of a solid by the method of mixture</h2>
 
-            <p>By calorimetry: Q₁ = Q₂</p>
-            <div class="formula">
-                m c (T₁ − T) = (m<sub>w</sub> c<sub>w</sub> + W) (T − T₂)
-            </div>
-            <p>⇒ <strong>c = [(m<sub>w</sub> c<sub>w</sub> + W)(T − T₂)] / [m (T₁ − T)]</strong></p>
-        </div>
+<div class="box law" data-title="Principle of calorimetry">
+  <p>When a hot body is mixed with a cold one and no heat is lost to the surroundings, heat lost by the hot body = heat gained by the cold body.</p>
+</div>
 
-        <figure>
-            <svg width="400" height="240" viewBox="0 0 400 240" style="background:#f8f9fa; border:1px solid #ddd; border-radius:5px;">
-                <!-- Calorimeter -->
-                <rect x="120" y="100" width="160" height="100" fill="#ecf0f1" stroke="#95a5a6"/>
-                <rect x="130" y="110" width="140" height="80" fill="#3498db" opacity="0.2"/>
-                <text x="200" y="155" text-anchor="middle" fill="#2c3e50">Water + Calorimeter</text>
-                <text x="200" y="170" text-anchor="middle" fill="#7f8c8d">(at T₂)</text>
+<p>Let a solid of mass \(m\) and unknown specific heat \(c\) at temperature \(T_1\) be dropped into a calorimeter containing water of mass \(m_w\) at \(T_2\). The final steady temperature is \(T\).</p>
 
-                <!-- Hot solid -->
-                <circle cx="200" cy="40" r="20" fill="#e67e22"/>
-                <text x="200" y="45" text-anchor="middle" fill="white" font-weight="bold">Solid</text>
-                <text x="200" y="65" text-anchor="middle" fill="#e67e22">(at T₁)</text>
+<div class="box definition" data-title="Water equivalent">
+  <p>The <strong>water equivalent</strong> \(W\) of a calorimeter is the mass of water that would absorb the same heat as the calorimeter for the same rise in temperature: \(W = \dfrac{m_{cal}\,c_{cal}}{c_w}\) (in kg).</p>
+</div>
 
-                <!-- Arrow down -->
-                <line x1="200" y1="60" x2="200" y2="100" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrow)"/>
+<div class="formula">
+  \[ \underbrace{m\,c\,(T_1 - T)}_{\text{heat lost by solid}} = \underbrace{(m_w + W)\,c_w\,(T - T_2)}_{\text{heat gained by water + calorimeter}} \]
+  \[ c = \frac{(m_w + W)\,c_w\,(T - T_2)}{m\,(T_1 - T)} \]
+</div>
 
-                <defs>
-                    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto">
-                        <path d="M0,0 L0,6 L9,3 z" fill="#e74c3c" />
-                    </marker>
-                </defs>
-            </svg>
-            <figcaption>Figure 2: Method of mixture — hot solid added to calorimeter.</figcaption>
-        </figure>
+<figure>
+  <svg viewBox="0 0 400 240" role="img" aria-label="A hot solid at temperature T1 being dropped into a calorimeter containing water at temperature T2">
+    <defs>
+      <marker id="qoh-arrow" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L9,3 z" fill="currentColor"/>
+      </marker>
+    </defs>
+    <circle cx="200" cy="40" r="22" fill="none" stroke="currentColor" stroke-width="2.5"/>
+    <text x="200" y="45" font-size="13" text-anchor="middle" fill="currentColor">Solid</text>
+    <text x="236" y="45" font-size="13" fill="currentColor">at T₁</text>
+    <line x1="200" y1="64" x2="200" y2="98" stroke="currentColor" stroke-width="2" marker-end="url(#qoh-arrow)"/>
+    <path d="M120 105 V200 H280 V105" fill="none" stroke="currentColor" stroke-width="2.5"/>
+    <line x1="126" y1="125" x2="274" y2="125" stroke="currentColor" stroke-dasharray="4 4" stroke-opacity=".6"/>
+    <text x="200" y="160" font-size="13" text-anchor="middle" fill="currentColor">Water + calorimeter</text>
+    <text x="200" y="178" font-size="13" text-anchor="middle" fill="currentColor">at T₂</text>
+  </svg>
+  <figcaption>Figure 2: Method of mixture: a hot solid is transferred quickly into the calorimeter.</figcaption>
+</figure>
 
-        <!-- Topic 4 & 5: Change of Phase & Latent Heat -->
-        <h2>4. Change of Phase and Latent Heat</h2>
+<h2>Change of phase and latent heat</h2>
 
-        <div class="definition">
-            <strong>Change of Phase:</strong> The transformation of a substance from one state (solid, liquid, gas) to another at constant temperature is called change of phase.
-        </div>
+<div class="box definition" data-title="Change of phase">
+  <p>The change of a substance from one state (solid, liquid or gas) to another at constant temperature is called a change of phase.</p>
+</div>
 
-        <p>During phase change:<br>
-        → Temperature remains constant.<br>
-        → Heat supplied is used to overcome intermolecular forces (not to raise temperature).<br>
-        → This heat is called <strong>Latent Heat</strong>.</p>
+<p>During a change of phase:</p>
+<ul>
+  <li>the temperature stays constant;</li>
+  <li>the heat supplied works against the intermolecular forces (increasing potential energy), not to raise the temperature;</li>
+  <li>this heat is called <strong>latent heat</strong>.</li>
+</ul>
 
-        <div class="definition">
-            <strong>Latent Heat (L):</strong> Heat energy per unit mass required to change the phase of a substance without change in temperature.<br>
-            Unit: J kg⁻¹
-        </div>
+<div class="box definition" data-title="Specific latent heat">
+  <p>The specific latent heat \(L\) of a substance is the heat required to change the phase of unit mass of it without any change in temperature. SI unit: J kg⁻¹.</p>
+</div>
 
-        <h3>Types:</h3>
-        <table>
-            <tr><th>Type</th><th>Symbol</th><th>Definition</th><th>Example</th></tr>
-            <tr>
-                <td>Latent Heat of Fusion</td>
-                <td>L<sub>f</sub></td>
-                <td>Heat to melt 1 kg solid → liquid at melting point</td>
-                <td>Ice → Water at 0°C</td>
-            </tr>
-            <tr>
-                <td>Latent Heat of Vaporization</td>
-                <td>L<sub>v</sub></td>
-                <td>Heat to vaporize 1 kg liquid → vapour at boiling point</td>
-                <td>Water → Steam at 100°C</td>
-            </tr>
-        </table>
+<div class="formula">\[ Q = mL \]</div>
 
-        <div class="formula">
-            Total heat for phase change: <strong>Q = m L</strong>
-        </div>
+<table>
+  <thead><tr><th>Type</th><th>Symbol</th><th>Heat required to…</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>Latent heat of fusion</td><td>\(L_f\)</td><td>melt 1 kg of solid into liquid at its melting point</td><td>Ice → water at 0 °C</td></tr>
+    <tr><td>Latent heat of vaporization</td><td>\(L_v\)</td><td>turn 1 kg of liquid into vapour at its boiling point</td><td>Water → steam at 100 °C</td></tr>
+  </tbody>
+</table>
 
-        <h3>Important Values (NEB Reference)</h3>
-        <table>
-            <tr><th>Substance</th><th>L<sub>f</sub> (J kg⁻¹)</th><th>L<sub>v</sub> (J kg⁻¹)</th></tr>
-            <tr><td>Water / Ice</td><td>3.36 × 10⁵</td><td>2.26 × 10⁶</td></tr>
-            <tr><td>Lead</td><td>2.5 × 10⁴</td><td>8.7 × 10⁵</td></tr>
-            <tr><td>Oxygen</td><td>1.4 × 10⁴</td><td>2.1 × 10⁵</td></tr>
-        </table>
+<h3>Typical values</h3>
+<table>
+  <thead><tr><th>Substance</th><th>\(L_f\) (J kg⁻¹)</th><th>\(L_v\) (J kg⁻¹)</th></tr></thead>
+  <tbody>
+    <tr><td>Water / ice</td><td>3.36 × 10⁵</td><td>2.26 × 10⁶</td></tr>
+    <tr><td>Lead</td><td>2.5 × 10⁴</td><td>8.7 × 10⁵</td></tr>
+    <tr><td>Oxygen</td><td>1.4 × 10⁴</td><td>2.1 × 10⁵</td></tr>
+  </tbody>
+</table>
 
-        <figure>
-            <svg width="500" height="200" viewBox="0 0 500 200" style="background:#f8f9fa; border:1px solid #ddd; border-radius:5px;">
-                <!-- Horizontal lines for phase changes -->
-                <line x1="80" y1="150" x2="180" y2="150" stroke="#e67e22" stroke-width="3"/>
-                <line x1="280" y1="80" x2="380" y2="80" stroke="#e67e22" stroke-width="3"/>
-                <!-- Sloped lines for temp rise -->
-                <line x1="30" y1="180" x2="80" y2="150" stroke="#27ae60" stroke-width="2"/>
-                <line x1="180" y1="150" x2="280" y2="80" stroke="#27ae60" stroke-width="2"/>
-                <line x1="380" y1="80" x2="470" y2="40" stroke="#27ae60" stroke-width="2"/>
-                <!-- Labels -->
-                <text x="55" y="185" font-size="12">Solid</text>
-                <text x="120" y="140" font-size="12" fill="#e67e22">Melting (L<sub>f</sub>)</text>
-                <text x="220" y="120" font-size="12">Liquid</text>
-                <text x="320" y="70" font-size="12" fill="#e67e22">Boiling (L<sub>v</sub>)</text>
-                <text x="420" y="60" font-size="12">Vapour</text>
-                <text x="80" y="165" font-size="12">0°C</text>
-                <text x="280" y="95" font-size="12">100°C</text>
-            </svg>
-            <figcaption>Figure 3: Heating curve showing plateaus (latent heat regions). Temperature constant during phase change.</figcaption>
-        </figure>
+<figure>
+  <svg viewBox="0 0 500 230" role="img" aria-label="Heating curve: temperature rises through the solid phase, stays flat at 0 degrees while melting, rises through the liquid phase, stays flat at 100 degrees while boiling, then rises as vapour">
+    <line x1="40" y1="200" x2="480" y2="200" stroke="currentColor"/>
+    <line x1="40" y1="200" x2="40" y2="20" stroke="currentColor"/>
+    <text x="480" y="220" font-size="13" text-anchor="end" fill="currentColor">Heat supplied</text>
+    <text x="16" y="110" font-size="13" text-anchor="middle" fill="currentColor" transform="rotate(-90 16 110)">Temperature</text>
+    <polyline points="40,190 90,160 190,160 290,80 390,80 470,40" fill="none" stroke="currentColor" stroke-width="3"/>
+    <text x="52" y="152" font-size="12" fill="currentColor">Solid</text>
+    <text x="140" y="152" font-size="12" text-anchor="middle" fill="currentColor">Melting (L_f)</text>
+    <text x="140" y="178" font-size="12" text-anchor="middle" fill="currentColor">0 °C</text>
+    <text x="232" y="135" font-size="12" fill="currentColor">Liquid</text>
+    <text x="340" y="72" font-size="12" text-anchor="middle" fill="currentColor">Boiling (L_v)</text>
+    <text x="340" y="98" font-size="12" text-anchor="middle" fill="currentColor">100 °C</text>
+    <text x="420" y="40" font-size="12" fill="currentColor">Vapour</text>
+  </svg>
+  <figcaption>Figure 3: Heating curve of water. The flat parts are phase changes, where heat is absorbed as latent heat at constant temperature.</figcaption>
+</figure>
 
-        <!-- Topic 6: Measurement of Specific Latent Heat -->
-        <h2>5. Measurement of Specific Latent Heat</h2>
+<h2>Measurement of specific latent heat</h2>
 
-        <h3>(a) Latent Heat of Fusion of Ice (by Mixture Method)</h3>
-        <div class="derivation">
-            <p><strong>Procedure:</strong> Warm water in calorimeter → add dried ice at 0°C → find final temp.</p>
-            <p><strong>Heat gained by ice:</strong><br>
-            = Heat to melt ice + heat to warm melted ice (water) from 0°C to T<br>
-            = m<sub>i</sub>L<sub>f</sub> + m<sub>i</sub>c<sub>w</sub>(T − 0)</p>
+<h3>(a) Latent heat of fusion of ice (method of mixture)</h3>
+<p>Dry ice at 0 °C is added to warm water (temperature \(T_1\)) in a calorimeter, and the final temperature \(T\) is noted.</p>
+<ul>
+  <li>Heat gained by ice = heat to melt it + heat to warm the melted ice from 0 °C to \(T\) = \(m_i L_f + m_i c_w T\)</li>
+  <li>Heat lost by water and calorimeter = \((m_w + W)\,c_w\,(T_1 - T)\)</li>
+</ul>
+<div class="formula">
+  \[ m_i L_f + m_i c_w T = (m_w + W)\,c_w\,(T_1 - T) \]
+  \[ L_f = \frac{(m_w + W)\,c_w\,(T_1 - T) - m_i c_w T}{m_i} \]
+</div>
 
-            <p><strong>Heat lost by (water + calorimeter):</strong><br>
-            = (m<sub>w</sub>c<sub>w</sub> + W)(T₁ − T)</p>
+<div class="box example">
+  <p>A calorimeter of water equivalent 0.02 kg contains 0.2 kg of water at 40 °C. When 0.044 kg of ice at 0 °C is added and melts completely, the final temperature is 20 °C. Find \(L_f\). (\(c_w = 4200\ \text{J kg}^{-1}\text{K}^{-1}\))</p>
+  <details class="solution">
+    <summary>Show solution</summary>
+    <p>Heat lost by water + calorimeter \(= (0.2 + 0.02) \times 4200 \times (40 - 20) = 924 \times 20 = 18\,480\ \text{J}\)</p>
+    <p>Heat gained by ice \(= 0.044\,L_f + 0.044 \times 4200 \times 20 = 0.044\,L_f + 3696\)</p>
+    <p>\(0.044\,L_f + 3696 = 18\,480 \;\Rightarrow\; 0.044\,L_f = 14\,784\)</p>
+    <p>\(L_f = \dfrac{14\,784}{0.044} = \mathbf{3.36 \times 10^5\ \text{J kg}^{-1}}\)</p>
+  </details>
+</div>
 
-            <p>By calorimetry:</p>
-            <div class="formula">
-                m<sub>i</sub>L<sub>f</sub> + m<sub>i</sub>c<sub>w</sub>T = (m<sub>w</sub>c<sub>w</sub> + W)(T₁ − T)
-            </div>
-            <p>⇒ <strong>L<sub>f</sub> = [(m<sub>w</sub>c<sub>w</sub> + W)(T₁ − T) − m<sub>i</sub>c<sub>w</sub>T] / m<sub>i</sub></strong></p>
-        </div>
+<h3>(b) Latent heat of vaporization of water (method of condensation)</h3>
+<p>Dry steam at 100 °C is passed into cold water (temperature \(T_1\)) in a calorimeter until the temperature rises to \(T\). The mass of steam condensed, \(m_s\), is found from the increase in mass.</p>
+<ul>
+  <li>Heat lost by steam = heat released on condensing + heat released as the condensed water cools from 100 °C to \(T\) = \(m_s L_v + m_s c_w (100 - T)\)</li>
+  <li>Heat gained by water and calorimeter = \((m_w + W)\,c_w\,(T - T_1)\)</li>
+</ul>
+<div class="formula">
+  \[ m_s L_v + m_s c_w (100 - T) = (m_w + W)\,c_w\,(T - T_1) \]
+  \[ L_v = \frac{(m_w + W)\,c_w\,(T - T_1) - m_s c_w (100 - T)}{m_s} \]
+</div>
 
-        <div class="example">
-            <strong>Example:</strong> A calorimeter (W = 0.02 kg) contains 0.2 kg water at 30°C. 0.02 kg ice at 0°C is added. Final temp = 15°C. Find L<sub>f</sub>.
-            <details open>
-                <summary><strong>Solution:</strong></summary>
-                <p>Heat lost = (0.2 × 4200 + 0.02 × 4200)(30 − 15) = (840 + 84) × 15 = 924 × 15 = 13,860 J</p>
-                <p>Heat gained by ice = 0.02 × L<sub>f</sub> + 0.02 × 4200 × 15 = 0.02L<sub>f</sub> + 1260</p>
-                <p>Equating: 0.02L<sub>f</sub> + 1260 = 13860</p>
-                <p>⇒ 0.02L<sub>f</sub> = 12600</p>
-                <p>⇒ L<sub>f</sub> = 12600 / 0.02 = <strong>6.3 × 10⁵ J kg⁻¹</strong> (≈ theoretical 3.36×10⁵? → error due to assumption; real experiment accounts for heat loss)</p>
-                <p><em>Note: NEB expects correct formula application — value may differ due to idealization.</em></p>
-            </details>
-        </div>
+<div class="box example">
+  <p>0.01 kg of steam at 100 °C is passed into 0.24 kg of water at 20 °C in a copper calorimeter of mass 0.02 kg. The final temperature is 40 °C. Find \(L_v\). (\(c_w = 4200\), \(c_{Cu} = 385\ \text{J kg}^{-1}\text{K}^{-1}\))</p>
+  <details class="solution">
+    <summary>Show solution</summary>
+    <p>Water equivalent \(W = \dfrac{0.02 \times 385}{4200} = 0.00183\ \text{kg}\)</p>
+    <p>Heat gained \(= (0.24 + 0.00183) \times 4200 \times (40 - 20) = 1015.7 \times 20 = 20\,314\ \text{J}\)</p>
+    <p>Heat lost by steam \(= 0.01\,L_v + 0.01 \times 4200 \times (100 - 40) = 0.01\,L_v + 2520\)</p>
+    <p>\(0.01\,L_v + 2520 = 20\,314 \;\Rightarrow\; L_v = \mathbf{1.78 \times 10^6\ \text{J kg}^{-1}}\)</p>
+    <p>This is lower than the accepted \(2.26 \times 10^6\ \text{J kg}^{-1}\). In a real experiment, some heat from the steam escapes to the surroundings instead of reaching the water, so less heat appears to come from each kilogram of steam.</p>
+  </details>
+</div>
 
-        <h3>(b) Latent Heat of Vaporization of Water (by Condensation Method)</h3>
-        <div class="derivation">
-            <p><strong>Procedure:</strong> Pass steam at 100°C into cold water in calorimeter. Collect condensed steam (mass m<sub>s</sub>).</p>
+<div class="box tip">
+  <p>Always state the assumptions: no heat is lost to the surroundings, stirring gives uniform temperature, the ice is dry and at 0 °C, and the steam is dry and at 100 °C.</p>
+</div>
 
-            <p><strong>Heat lost by steam:</strong><br>
-            = Heat released during condensation + heat released by condensed water cooling from 100°C to T<br>
-            = m<sub>s</sub>L<sub>v</sub> + m<sub>s</sub>c<sub>w</sub>(100 − T)</p>
-
-            <p><strong>Heat gained by (water + calorimeter):</strong><br>
-            = (m<sub>w</sub>c<sub>w</sub> + W)(T − T₁)</p>
-
-            <p>By calorimetry:</p>
-            <div class="formula">
-                m<sub>s</sub>L<sub>v</sub> + m<sub>s</sub>c<sub>w</sub>(100 − T) = (m<sub>w</sub>c<sub>w</sub> + W)(T − T₁)
-            </div>
-            <p>⇒ <strong>L<sub>v</sub> = [(m<sub>w</sub>c<sub>w</sub> + W)(T − T₁) − m<sub>s</sub>c<sub>w</sub>(100 − T)] / m<sub>s</sub></strong></p>
-        </div>
-
-        <div class="example">
-            <strong>Example (NEB 2076):</strong> 0.01 kg steam at 100°C is passed into 0.24 kg water at 20°C in a 0.02 kg copper calorimeter. Final temp = 40°C. Find L<sub>v</sub>. (c<sub>w</sub>=4200, c<sub>Cu</sub>=385 J kg⁻¹ K⁻¹)
-            <details open>
-                <summary><strong>Solution:</strong></summary>
-                <p>W = m<sub>cal</sub>c<sub>cal</sub>/c<sub>w</sub> = (0.02 × 385)/4200 = 0.00183 kg (or use directly)</p>
-                <p>Heat gained = (0.24×4200 + 0.02×385)(40−20) = (1008 + 7.7) × 20 = 1015.7 × 20 = 20,314 J</p>
-                <p>Heat lost by steam = 0.01 L<sub>v</sub> + 0.01×4200×(100−40) = 0.01L<sub>v</sub> + 2520</p>
-                <p>Equating: 0.01L<sub>v</sub> + 2520 = 20314</p>
-                <p>⇒ 0.01L<sub>v</sub> = 17794</p>
-                <p>⇒ L<sub>v</sub> = 1.7794 × 10⁶ J kg⁻¹ ≈ <strong>1.78 × 10⁶ J kg⁻¹</strong> (close to 2.26×10⁶ — error due to heat loss; NEB accepts method)</p>
-            </details>
-        </div>
-
-        <!-- MCQs -->
-        <h2>6. NEB-Style MCQs</h2>
-        <p><em>Choose the correct answer (1 mark each)</em></p>
-
-        <div class="mcq">
-            <strong>Q1.</strong> Newton’s law of cooling is valid when:
-            <br>
-            (a) Temperature difference > 30°C     (b) Body is black<br>
-            (c) Temperature difference is small (≤20°C)     (d) Convection dominates
-        </div>
-
-        <div class="mcq">
-            <strong>Q2.</strong> In the method of mixture, the calorimeter’s heat capacity is often expressed as:
-            <br>
-            (a) Specific heat     (b) Water equivalent     (c) Thermal conductivity     (d) Emissivity
-        </div>
-
-        <div class="mcq">
-            <strong>Q3.</strong> During melting of ice, the heat supplied is used to:
-            <br>
-            (a) Increase kinetic energy     (b) Increase temperature<br>
-            (c) Break molecular bonds     (d) Increase pressure
-        </div>
-
-        <div class="mcq">
-            <strong>Q4.</strong> The SI unit of latent heat is:
-            <br>
-            (a) J     (b) J kg⁻¹     (c) J K⁻¹     (d) cal g⁻¹ °C⁻¹
-        </div>
-
-        <div class="mcq">
-            <strong>Q5.</strong> When steam condenses to water at 100°C, it:
-            <br>
-            (a) Absorbs latent heat     (b) Releases latent heat<br>
-            (c) Temperature increases     (d) Density decreases
-        </div>
-
-        <div class="answer-key">
-            <h3>Answer Key:</h3>
-            <p><strong>Q1:</strong> (c) Temperature difference is small (≤20°C)<br>
-            <strong>Q2:</strong> (b) Water equivalent<br>
-            <strong>Q3:</strong> (c) Break molecular bonds<br>
-            <strong>Q4:</strong> (b) J kg⁻¹<br>
-            <strong>Q5:</strong> (b) Releases latent heat</p>
-        </div>
-
-        <h2>7. NEB Exam Tips</h2>
-        <ul>
-            <li>🔹 <strong>Newton’s Law of Cooling:</strong> Must know derivation (1st order DE), graph, and verification method (ln(T−T₀) vs t).</li>
-            <li>🔹 <strong>Method of Cooling (liquid):</strong> c ∝ 1/t (equal mass, same Δθ). NEB often asks 2-mark numerical.</li>
-            <li>🔹 <strong>Method of Mixture (solid):</strong> Most important practical — memorize formula for c.</li>
-            <li>🔹 <strong>Latent Heat Experiments:</strong> Focus on energy balance equations (L<sub>f</sub> and L<sub>v</sub>). NEB gives 4-mark numerical.</li>
-            <li>🔹 Always write <strong>assumptions</strong>: no heat loss, complete mixing, steam/dry ice at exact phase-change temp.</li>
-            <li>🔹 Use <strong>water equivalent (W)</strong> when calorimeter material is given.</li>
-        </ul>
-
-        <hr>
-        <p style="text-align: center; font-size: 0.9em; color: #7f8c8d;">
-        </p>
-
-    </div>
-</body>
-</html>
+<h2>Exam tips</h2>
+<ul class="key-points">
+  <li><strong>Newton's law of cooling:</strong> know the derivation (first-order differential equation), the exponential cooling graph, and the \(\ln(T - T_0)\) vs \(t\) verification.</li>
+  <li><strong>Method of cooling:</strong> for equal masses and the same temperature fall, \(c_1/c_2 = t_1/t_2\). A common 2-mark numerical.</li>
+  <li><strong>Method of mixture:</strong> the most important practical, so memorise the formula for \(c\).</li>
+  <li><strong>Latent heat experiments:</strong> write the heat balance equation first. Numericals on \(L_f\) and \(L_v\) are common 4-mark questions.</li>
+  <li>Use the <strong>water equivalent</strong> \(W = m_{cal}c_{cal}/c_w\) when the calorimeter's material is given.</li>
+</ul>
