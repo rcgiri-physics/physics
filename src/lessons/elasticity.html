@@ -3,483 +3,589 @@ title: Elasticity
 grade: XI
 chapters: [8]
 date: 2026-09-30
+description: Hooke's law, stress and strain, the stress–strain curve, elastic moduli, Poisson's ratio and elastic potential energy.
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elasticity — Grade XI Physics</title>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
-<h2>Chapter 8: Elasticity</h2>
-<p><b>Class:</b> Grade XI &nbsp;|&nbsp; <b>Board:</b> National Examination Board (NEB), Nepal</p>
 
-<hr>
+<h2>Introduction</h2>
+<p>A rigid body is an idealisation. In reality, every solid changes its shape or size, however slightly, when forces are applied to it. A steel wire lengthens when a load is hung from it, a rubber band stretches, and a spring compresses. This ability of solids to resist deformation and recover their original form when the applied force is removed is called <strong>elasticity</strong>. In this chapter we study the relation between force and deformation, stress and strain, elastic moduli, and the energy stored in deformed bodies.</p>
 
-<h3>Introduction</h3>
-<p>A rigid body is an idealisation. In reality, every solid changes its shape or size, however slightly, when forces are applied to it. A steel wire lengthens when a load is hung from it, a rubber band stretches, and a spring compresses. This ability of solids to resist deformation and recover their original form when the applied force is removed is called elasticity. In this chapter we study the relation between force and deformation, stress and strain, elastic moduli, and the energy stored in deformed bodies.</p>
+<h2>8.1 Hooke's law and the force constant</h2>
 
-<hr>
+<h3>Deforming force and restoring force</h3>
+<div class="box definition">
+  <p>A <strong>deforming force</strong> is an external force that changes the length, volume or shape of a body. When a body is deformed, its atoms or molecules are displaced from their equilibrium positions, and the body develops internal <strong>restoring forces</strong> that oppose the deformation.</p>
+</div>
 
-<h3>8.1 Hooke's Law: Force Constant</h3>
-
-<h4>8.1.1 Deforming Force and Restoring Force</h4>
-<p>A <b>deforming force</b> is an external force that changes the length, volume or shape of a body. When a body is deformed, the atoms or molecules of which it is made are displaced from their equilibrium positions. The body develops internal restoring forces that oppose the deformation.</p>
-
-<h4>8.1.2 Statement of Hooke's Law</h4>
+<h3>Statement of Hooke's law</h3>
 <p>Robert Hooke (1678) found experimentally that, for small deformations, the deformation produced is directly proportional to the deforming force.</p>
-<p><b>Hooke's law:</b> Within the elastic limit, the extension (or compression) produced in a body is directly proportional to the deforming force applied.</p>
-<p>For a spring or a wire, if a force F produces an extension x, then</p>
-<p><b>F = kx</b></p>
-<p>where k is a constant of proportionality called the <b>force constant</b> (or spring constant). The restoring force exerted by the spring on the agent that stretches it has the same magnitude but opposite direction. Hence</p>
-<p><b>F<sub>restoring</sub> = &minus;kx</b></p>
-<p>The negative sign indicates that the restoring force is always directed opposite to the displacement x measured from the natural (unstretched) length.</p>
+<div class="box law" data-title="Hooke's law">
+  <p>Within the elastic limit, the extension (or compression) produced in a body is directly proportional to the deforming force applied.</p>
+</div>
+<p>For a spring or a wire, if a force \(F\) produces an extension \(x\):</p>
+<div class="formula">
+  \[ F = kx \qquad F_{\text{restoring}} = -kx \]
+  <span class="where">where \(k\) is the <strong>force constant</strong> (spring constant). The negative sign shows that the restoring force is always opposite to the displacement \(x\) measured from the natural length.</span>
+</div>
 
-<h4>8.1.3 Force Constant</h4>
-<p>The <b>force constant</b> k is defined as the force required per unit extension:</p>
-<p><b>k = F / x</b></p>
-<p>Its SI unit is newton per metre (N m<sup>&minus;1</sup>) and its dimensional formula is [M L<sup>0</sup> T<sup>&minus;2</sup>]. A large value of k means a stiff spring, which needs a large force to produce a small extension.</p>
+<h3>Force constant</h3>
+<p>The force constant is the force required per unit extension:</p>
+<div class="formula">\[ k = \frac{F}{x} \]</div>
+<p>SI unit: N m⁻¹. Dimensional formula: [M L⁰ T⁻²]. A large \(k\) means a stiff spring, which needs a large force to produce a small extension.</p>
 
-<pre>
-   Force F
-     |                     /
-     |                    /  &lt;-- straight line: F = kx
-     |                   /
-     |                  /
-     |                 /
-     |                /
-     |               /
-     |              /   slope of the line = k
-     |             /
-     +------------/----------------- Extension x
-     0
-     (valid only up to the proportional / elastic limit)
-</pre>
-<p>The slope of the force&ndash;extension graph gives the force constant k.</p>
+<figure>
+  <svg viewBox="0 0 420 260" role="img" aria-label="Force against extension graph: a straight line through the origin whose slope is the force constant k">
+    <line x1="50" y1="220" x2="400" y2="220" stroke="currentColor"/>
+    <line x1="50" y1="220" x2="50" y2="20" stroke="currentColor"/>
+    <text x="400" y="242" font-size="13" text-anchor="end" fill="currentColor">Extension x</text>
+    <text x="20" y="120" font-size="13" text-anchor="middle" fill="currentColor" transform="rotate(-90 20 120)">Force F</text>
+    <text x="40" y="238" font-size="13" fill="currentColor">O</text>
+    <line x1="50" y1="220" x2="320" y2="50" stroke="currentColor" stroke-width="3"/>
+    <line x1="200" y1="125" x2="280" y2="125" stroke="currentColor" stroke-dasharray="5 4" stroke-opacity=".7"/>
+    <line x1="280" y1="125" x2="280" y2="75" stroke="currentColor" stroke-dasharray="5 4" stroke-opacity=".7"/>
+    <text x="240" y="142" font-size="13" text-anchor="middle" fill="currentColor">Δx</text>
+    <text x="288" y="104" font-size="13" fill="currentColor">ΔF</text>
+    <text x="330" y="60" font-size="13" fill="currentColor">F = kx</text>
+    <text x="150" y="200" font-size="13" fill="currentColor">slope = ΔF/Δx = k</text>
+  </svg>
+  <figcaption>Figure 1: Force–extension graph. The slope gives the force constant (valid only up to the proportional limit).</figcaption>
+</figure>
 
-<h4>8.1.4 Force Constant of a Wire</h4>
-<p>A wire of natural length L and cross-sectional area A, made of a material of Young's modulus Y (defined in Section 8.3), obeys Y = (F/A)/(&Delta;L/L). Rearranging,</p>
-<p>F = (YA/L) &Delta;L, and comparing with F = kx (with x = &Delta;L):</p>
-<p><b>k = YA / L</b></p>
-<p>Thus the force constant of a wire is directly proportional to its cross-sectional area and inversely proportional to its length. A thicker wire is stiffer; a longer wire is softer.</p>
+<h3>Force constant of a wire</h3>
+<p>A wire of natural length \(L\) and cross-sectional area \(A\), made of a material of Young modulus \(Y\) (section 8.3), obeys \(Y = \dfrac{F/A}{\Delta L/L}\). Rearranging gives \(F = \dfrac{YA}{L}\,\Delta L\), and comparing with \(F = kx\) (with \(x = \Delta L\)):</p>
+<div class="formula">\[ k = \frac{YA}{L} \]</div>
+<p>The force constant of a wire is directly proportional to its cross-sectional area and inversely proportional to its length. A thicker wire is stiffer; a longer wire is softer.</p>
 
-<h4>8.1.5 Combination of Springs</h4>
-<p><b>(a) Springs in series.</b> Two springs of force constants k<sub>1</sub> and k<sub>2</sub> are joined end to end and a force F is applied. Each spring carries the same force F, so the extensions add:</p>
-<p>F/k<sub>s</sub> = F/k<sub>1</sub> + F/k<sub>2</sub></p>
-<p><b>1/k<sub>s</sub> = 1/k<sub>1</sub> + 1/k<sub>2</sub></b>, i.e. k<sub>s</sub> = k<sub>1</sub>k<sub>2</sub>/(k<sub>1</sub> + k<sub>2</sub>)</p>
-<p><b>(b) Springs in parallel.</b> Two springs are connected side by side so that both are stretched by the same extension x. The forces add: F = F<sub>1</sub> + F<sub>2</sub> = k<sub>1</sub>x + k<sub>2</sub>x.</p>
-<p><b>k<sub>p</sub> = k<sub>1</sub> + k<sub>2</sub></b></p>
-<p><b>(c) Cutting a spring.</b> A spring of force constant k, cut into n equal parts, gives parts each of force constant nk. Reason: the original spring is equivalent to n identical pieces in series, so the effective constant becomes k/n? Wait: for a spring of length L, the force constant is inversely proportional to length. Hence each half has twice the constant; each one-third has triple the constant. For n equal parts, the constant of each part is nk.</p>
+<h3>Combination of springs</h3>
+<div class="cols">
+  <div>
+    <p><strong>Series.</strong> Each spring carries the same force \(F\), so the extensions add:</p>
+    <p>\[ \frac{F}{k_s} = \frac{F}{k_1} + \frac{F}{k_2} \]</p>
+    <p>\[ \frac{1}{k_s} = \frac{1}{k_1} + \frac{1}{k_2}, \quad k_s = \frac{k_1k_2}{k_1 + k_2} \]</p>
+  </div>
+  <div>
+    <p><strong>Parallel.</strong> Both springs have the same extension \(x\), so the forces add: \(F = k_1x + k_2x\).</p>
+    <p>\[ k_p = k_1 + k_2 \]</p>
+  </div>
+</div>
+<p><strong>Cutting a spring.</strong> The force constant of a spring is inversely proportional to its length. If a spring of force constant \(k\) is cut into \(n\) equal parts, each part has force constant \(nk\). (Check: the \(n\) parts joined in series give back \(\dfrac{nk}{n} = k\).) So each half has \(2k\), and each third has \(3k\).</p>
 
-<h4>8.1.6 Limits of Hooke's Law</h4>
-<p>Hooke's law is not a universal law of nature but an approximation valid for small deformations. Beyond a certain value of the deforming force, called the <b>proportional limit</b>, the extension is no longer proportional to the force. If the material is loaded beyond the elastic limit, it may not return fully to its original shape after the force is removed.</p>
+<h3>Limits of Hooke's law</h3>
+<p>Hooke's law is not a universal law of nature but an approximation valid for small deformations. Beyond the <strong>proportional limit</strong>, the extension is no longer proportional to the force. If the material is loaded beyond the elastic limit, it does not return fully to its original shape when the force is removed.</p>
 
-<h4>Common Misconception</h4>
-<p>The force constant k is not the same as Young's modulus Y. Y is a property of the material only; k also depends on the length and cross-section of the particular specimen (k = YA/L for a wire).</p>
+<div class="box warning">
+  <p>The force constant \(k\) is not the same as the Young modulus \(Y\). \(Y\) is a property of the material only; \(k\) also depends on the length and cross-section of the particular specimen (\(k = YA/L\) for a wire).</p>
+</div>
 
-<h4>Real-Life Applications</h4>
+<div class="box note" data-title="Real-life applications">
+  <ul>
+    <li>Spring balances measure weight because the extension of the spring is proportional to the load.</li>
+    <li>Vehicle suspension springs and shock absorbers are chosen with a suitable \(k\) for the load they must carry.</li>
+    <li>Mechanical watches, weighing scales and force gauges all rely on a linear elastic response.</li>
+  </ul>
+</div>
+
+<div class="box example" data-title="Worked example 1 (easy)">
+  <p>A force of 10 N stretches a spring by 5 cm. Find (a) the force constant, (b) the force needed to stretch the same spring by 8 cm.</p>
+  <details class="solution"><summary>Show solution</summary>
+    <p>(a) \(k = F/x = 10/0.05 = 200\ \text{N m}^{-1}\)</p>
+    <p>(b) \(F = kx = 200 \times 0.08 = 16\ \text{N}\)</p>
+    <p><strong>Answer:</strong> \(k = 200\ \text{N m}^{-1}\); \(F = 16\ \text{N}\).</p>
+  </details>
+</div>
+
+<div class="box example" data-title="Worked example 2 (practice)">
+  <p>Two springs of force constants 200 N m⁻¹ and 300 N m⁻¹ are joined (a) in parallel, (b) in series. Find the equivalent force constant in each case and the extension produced by a force of 30 N.</p>
+  <details class="solution"><summary>Show solution</summary>
+    <p>(a) Parallel: \(k_p = 200 + 300 = 500\ \text{N m}^{-1}\); \(x = 30/500 = 0.06\ \text{m} = 6\ \text{cm}\).</p>
+    <p>(b) Series: \(k_s = \dfrac{200 \times 300}{200 + 300} = 120\ \text{N m}^{-1}\); \(x = 30/120 = 0.25\ \text{m} = 25\ \text{cm}\).</p>
+    <p><strong>Answer:</strong> \(k_p = 500\ \text{N m}^{-1}\), \(x = 6\) cm; \(k_s = 120\ \text{N m}^{-1}\), \(x = 25\) cm.</p>
+  </details>
+</div>
+
+<div class="box example" data-title="Worked example 3 (NEB pattern)">
+  <p>A spring of force constant 600 N m⁻¹ is cut into three equal parts. Two of the parts are connected in parallel and a mass of 6 kg is hung from the combination. Find the extension.</p>
+  <details class="solution"><summary>Show solution</summary>
+    <p>Each part: \(k' = nk = 3 \times 600 = 1800\ \text{N m}^{-1}\).</p>
+    <p>Two parts in parallel: \(k_p = 1800 + 1800 = 3600\ \text{N m}^{-1}\).</p>
+    <p>Load: \(F = mg = 6 \times 9.8 = 58.8\ \text{N}\).</p>
+    <p>\(x = F/k_p = 58.8/3600 = 0.0163\ \text{m}\)</p>
+    <p><strong>Answer:</strong> \(k' = 1800\ \text{N m}^{-1}\); \(x \approx 1.63\ \text{cm}\).</p>
+  </details>
+</div>
+
+<h2>8.2 Stress, strain, elasticity and plasticity</h2>
+
+<h3>Elasticity and plasticity</h3>
+<div class="box definition">
+  <p><strong>Elasticity</strong> is the property of a material by which it tends to regain its original size and shape when the deforming force is removed. A body that completely regains its original form is <strong>perfectly elastic</strong>.</p>
+  <p><strong>Plasticity</strong> is the property by which a material does not regain its original size and shape when the deforming force is removed, but keeps the deformation wholly or partly. Such a body is called <strong>plastic</strong>.</p>
+</div>
+
+<h3>Stress</h3>
+<div class="box definition">
+  <p><strong>Stress</strong> is the restoring force developed per unit area of cross-section of a deformed body. At equilibrium it equals the applied force divided by the area.</p>
+</div>
+<div class="formula">\[ \text{Stress} = \frac{F}{A} \]</div>
+<p>SI unit: N m⁻² or pascal (Pa). Dimensional formula: [M L⁻¹ T⁻²]. Although stress is force per unit area, it is a tensor quantity, not a vector.</p>
 <ul>
-<li>Spring balances measure weight because the extension of the spring is proportional to the load.</li>
-<li>Vehicle suspension springs and shock absorbers are chosen with a suitable k for the load they must carry.</li>
-<li>Mechanical watches, weighing scales and force gauges all rely on linear elastic response.</li>
+  <li><strong>Longitudinal (normal) stress:</strong> the force acts perpendicular to the area. It is <strong>tensile</strong> if it tends to lengthen the body and <strong>compressive</strong> if it tends to shorten it.</li>
+  <li><strong>Volume (bulk) stress:</strong> a normal force acts uniformly over the whole surface, as when a body is immersed in a fluid. The volume stress equals the increase in pressure \(\Delta P\).</li>
+  <li><strong>Shear (tangential) stress:</strong> the force acts tangentially to the surface: shear stress \(= F_t/A\).</li>
 </ul>
 
-<h4>Worked Example 1 (Easy &ndash; Concept Clarity)</h4>
-<p><b>Problem:</b> A force of 10 N stretches a spring by 5 cm. Find (a) the force constant, (b) the force needed to stretch the same spring by 8 cm.</p>
-<p><b>Solution:</b></p>
-<p>(a) k = F/x = 10 N / 0.05 m = 200 N m<sup>&minus;1</sup></p>
-<p>(b) F = kx = 200 &times; 0.08 = 16 N</p>
-<div style="border:1px solid #333; padding:6px; margin:6px 0;"><b>Answer: k = 200 N m<sup>&minus;1</sup>; F = 16 N</b></div>
-
-<h4>Worked Example 2 (Moderate &ndash; Practice Level)</h4>
-<p><b>Problem:</b> Two springs of force constants 200 N m<sup>&minus;1</sup> and 300 N m<sup>&minus;1</sup> are joined (a) in parallel, (b) in series. Find the equivalent force constant in each case.</p>
-<p><b>Solution:</b></p>
-<p>(a) Parallel: k<sub>p</sub> = 200 + 300 = 500 N m<sup>&minus;1</sup>. If a force of 30 N is applied, extension x = F/k<sub>p</sub> = 30/500 = 0.06 m = 6 cm.</p>
-<p>(b) Series: k<sub>s</sub> = (200 &times; 300)/(200 + 300) = 60000/500 = 120 N m<sup>&minus;1</sup>. Extension x = F/k<sub>s</sub> = 30/120 = 0.25 m = 25 cm.</p>
-<div style="border:1px solid #333; padding:6px; margin:6px 0;"><b>Answer: k<sub>p</sub> = 500 N m<sup>&minus;1</sup>, x = 6 cm; k<sub>s</sub> = 120 N m<sup>&minus;1</sup>, x = 25 cm</b></div>
-
-<h4>Worked Example 3 (Exam-Level &ndash; NEB Pattern)</h4>
-<p><b>Problem:</b> A spring of force constant 600 N m<sup>&minus;1</sup> is cut into three equal parts. Two of the parts are connected in parallel and a mass of 6 kg is hung from the combination.</p>
-<p><b>Solution:</b></p>
-<p>Each part has force constant k&prime; = nk = 3 &times; 600 = 1800 N m<sup>&minus;1</sup>.</p>
-<p>Two parts in parallel: k<sub>p</sub> = 1800 + 1800 = 3600 N m<sup>&minus;1</sup>.</p>
-<p>Load F = mg = 6 &times; 9.8 = 58.8 N.</p>
-<p>Extension x = F/k<sub>p</sub> = 58.8/3600 = 0.01633 m</p>
-<div style="border:1px solid #333; padding:6px; margin:6px 0;"><b>Answer: k&prime; = 1800 N m<sup>&minus;1</sup>; x &asymp; 1.63 cm</b></div>
-
-<hr>
-
-<h3>8.2 Stress, Strain, Elasticity and Plasticity</h3>
-
-<h4>8.2.1 Elasticity and Plasticity</h4>
-<p><b>Elasticity</b> is the property of a material by virtue of which it tends to regain its original size and shape when the deforming force is removed. A body that completely regains its original form is said to be perfectly elastic.</p>
-<p><b>Plasticity</b> is the property by which a material does not regain its original size and shape on removal of the deforming force, but retains, wholly or partly, the deformation. A body that does not regain its shape is called plastic.</p>
-
-<h4>8.2.2 Stress</h4>
-<p>When a body is deformed, internal restoring forces develop. <b>Stress</b> is defined as the restoring force developed per unit area of cross-section of the deformed body. At equilibrium, it equals the applied force divided by the area.</p>
-<p><b>Stress = F / A</b></p>
-<p>SI unit: N m<sup>&minus;2</sup> or pascal (Pa). Dimensional formula: [M L<sup>&minus;1</sup> T<sup>&minus;2</sup>]. Although stress is force per unit area, it is a tensor quantity, not a vector quantity.</p>
+<h3>Strain</h3>
+<div class="box definition">
+  <p><strong>Strain</strong> is the fractional deformation produced in a body under stress. It is a ratio of two like quantities, so it has no unit and no dimensions.</p>
+</div>
 <ul>
-<li><b>Longitudinal (normal) stress:</b> the force acts perpendicular to the area. If it tends to lengthen the body it is <b>tensile stress</b>; if it tends to shorten it, <b>compressive stress</b>.</li>
-<li><b>Volume (bulk) stress:</b> a normal force acts uniformly over the entire surface of the body, as when a body is immersed in a fluid. The volume stress equals the increase in pressure &Delta;P applied.</li>
-<li><b>Shear (tangential) stress:</b> the force acts tangential to the surface. Shear stress = F<sub>t</sub>/A, where F<sub>t</sub> is the tangential force and A is the area of the face on which it acts.</li>
+  <li><strong>Longitudinal strain</strong> \(= \dfrac{\Delta L}{L}\)</li>
+  <li><strong>Volume strain</strong> \(= \dfrac{\Delta V}{V}\)</li>
+  <li><strong>Shear strain</strong> \(= \theta \approx \tan\theta = \dfrac{\Delta x}{h}\), where \(\Delta x\) is the relative displacement of two faces a distance \(h\) apart.</li>
 </ul>
 
-<h4>8.2.3 Strain</h4>
-<p><b>Strain</b> is the fractional deformation produced in a body under stress. It is a ratio of two like quantities, hence dimensionless and unitless.</p>
-<ul>
-<li><b>Longitudinal strain</b> = change in length / original length = &Delta;L / L</li>
-<li><b>Volume strain</b> = change in volume / original volume = &Delta;V / V</li>
-<li><b>Shear strain</b> = angle &theta; through which a face is displaced (in radians) = &Delta;x / h, where &Delta;x is the relative displacement of the two faces and h is the distance between them.</li>
-</ul>
+<figure>
+  <svg viewBox="0 0 600 220" role="img" aria-label="Three diagrams: a rod fixed at one end stretched by a force F by an amount delta L; a cube under uniform pressure P on all faces; a block with fixed base whose top face is pushed sideways by delta x through angle theta">
+    <!-- (a) longitudinal -->
+    <line x1="20" y1="50" x2="20" y2="130" stroke="currentColor" stroke-width="3"/>
+    <rect x="20" y="80" width="110" height="20" fill="none" stroke="currentColor"/>
+    <rect x="130" y="80" width="25" height="20" fill="none" stroke="currentColor" stroke-dasharray="4 3"/>
+    <line x1="155" y1="90" x2="185" y2="90" stroke="currentColor" stroke-width="2"/>
+    <path d="M185 90 l-8 -5 v10 z" fill="currentColor"/>
+    <text x="190" y="94" font-size="13" fill="currentColor">F</text>
+    <text x="75" y="120" font-size="13" text-anchor="middle" fill="currentColor">L</text>
+    <text x="142" y="120" font-size="13" text-anchor="middle" fill="currentColor">ΔL</text>
+    <text x="100" y="190" font-size="13" text-anchor="middle" fill="currentColor">(a) strain = ΔL/L</text>
+    <!-- (b) volume -->
+    <rect x="260" y="65" width="60" height="60" fill="none" stroke="currentColor"/>
+    <g stroke="currentColor" stroke-width="2">
+      <line x1="290" y1="35" x2="290" y2="58"/><line x1="290" y1="155" x2="290" y2="132"/>
+      <line x1="230" y1="95" x2="253" y2="95"/><line x1="350" y1="95" x2="327" y2="95"/>
+    </g>
+    <g fill="currentColor">
+      <path d="M290 63 l-5 -8 h10 z"/><path d="M290 127 l-5 8 h10 z"/>
+      <path d="M258 95 l-8 -5 v10 z"/><path d="M322 95 l8 -5 v10 z"/>
+    </g>
+    <text x="300" y="45" font-size="13" fill="currentColor">P</text>
+    <text x="290" y="190" font-size="13" text-anchor="middle" fill="currentColor">(b) strain = ΔV/V</text>
+    <!-- (c) shear -->
+    <line x1="420" y1="140" x2="560" y2="140" stroke="currentColor" stroke-width="3"/>
+    <rect x="440" y="70" width="80" height="70" fill="none" stroke="currentColor" stroke-dasharray="4 3" stroke-opacity=".6"/>
+    <path d="M440 140 L460 70 H540 L520 140 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+    <line x1="470" y1="55" x2="530" y2="55" stroke="currentColor" stroke-width="2"/>
+    <path d="M538 55 l-8 -5 v10 z" fill="currentColor"/>
+    <text x="545" y="59" font-size="13" fill="currentColor">F</text>
+    <text x="450" y="66" font-size="12" fill="currentColor">Δx</text>
+    <text x="425" y="108" font-size="13" fill="currentColor">h</text>
+    <text x="447" y="128" font-size="12" fill="currentColor">θ</text>
+    <text x="490" y="190" font-size="13" text-anchor="middle" fill="currentColor">(c) strain = Δx/h</text>
+  </svg>
+  <figcaption>Figure 2: (a) longitudinal, (b) volume and (c) shear strain.</figcaption>
+</figure>
 
-<pre>
- (a) Longitudinal strain          (b) Volume strain          (c) Shear strain
-
-  fixed                                  ______                    F
-  |=========|====&gt; F                   |      |                 ------&gt;
-  |&lt;--  L  --&gt;|&lt;&gt;                    |      |  &lt;-- P          _________        _________
-              &Delta;L                      |______|                 |         |      /         /
-                                      (uniform pressure P         |         |  h  /         /
-  strain = &Delta;L / L                   on all faces)             |_________|    /_________/
-                                      strain = &Delta;V / V          (fixed base)      &lt;-&Delta;x-&gt;
-                                                                  strain = tan&theta; = &Delta;x / h
-</pre>
-
-<h4>8.2.4 Stress&ndash;Strain Curve</h4>
+<h3>Stress–strain curve</h3>
 <p>When a wire is loaded gradually and the stress is plotted against the resulting strain, a characteristic curve is obtained.</p>
-<pre>
-  Stress
-    |                          D
-    |                      .-'''-.
-    |                  .-''        '-.
-    |               C .'               '. E  (fracture)
-    |              .-'                    *
-    |           B *
-    |         A *
-    |         /
-    |       /            OA : straight line (Hooke's law)
-    |     /              A  : proportional limit
-    |   /                B  : elastic limit
-    | /                  C  : yield point
-    +--------------------------------------- Strain
-    O                    D  : ultimate tensile strength
-                         E  : fracture (breaking) point
-</pre>
-<ul>
-<li><b>O to A (proportional region):</b> stress is proportional to strain. Hooke's law holds. The slope is Young's modulus. A is the <b>proportional limit</b>.</li>
-<li><b>A to B:</b> the wire is still elastic (returns to original length on unloading) but stress is no longer proportional to strain. B is the <b>elastic limit</b>: the maximum stress up to which the material regains its original form.</li>
-<li><b>B to C:</b> beyond the elastic limit, permanent (plastic) deformation sets in. At the <b>yield point</b> C, the strain increases rapidly with little or no increase in stress.</li>
-<li><b>C to D:</b> strain hardening; more stress is required for further strain. D corresponds to the <b>ultimate tensile strength</b>, the maximum stress the material can withstand.</li>
-<li><b>D to E:</b> the wire develops a local narrowing (necking), the stress falls, and the wire breaks at E. The stress at which the wire breaks is the <b>breaking stress</b>.</li>
-</ul>
-<p>For many materials the proportional limit and elastic limit are very close together, and they are often not distinguished at school level. Strictly, they are different points.</p>
 
-<h4>8.2.5 Ductile and Brittle Materials; Some Related Terms</h4>
-<ul>
-<li><b>Ductile materials</b> (copper, mild steel, aluminium) show a large plastic region between the elastic limit and the breaking point, and can be drawn into wires.</li>
-<li><b>Brittle materials</b> (glass, cast iron, ceramics) break soon after the elastic limit with very little plastic deformation.</li>
-<li><b>Elastic hysteresis:</b> when a material is loaded and then unloaded, the stress&ndash;strain curves for loading and unloading may not coincide (this is very pronounced in rubber). The area enclosed represents energy lost as heat.</li>
-<li><b>Elastic fatigue:</b> the loss of strength of a material after it has been subjected to repeated cycles of stress. Bridges, aircraft parts and machine components fail by fatigue after many cycles.</li>
-<li><b>Factor of safety:</b> the ratio of the breaking stress to the maximum working stress allowed in a design. Structures are built with a factor of safety greater than 1 to allow for uncertainties.</li>
-</ul>
+<figure>
+  <svg viewBox="0 0 460 290" role="img" aria-label="Stress-strain curve: straight from O to A, curving to the elastic limit B and yield point C, rising to a maximum D, then falling to fracture at E">
+    <line x1="50" y1="250" x2="440" y2="250" stroke="currentColor"/>
+    <line x1="50" y1="250" x2="50" y2="20" stroke="currentColor"/>
+    <text x="440" y="272" font-size="13" text-anchor="end" fill="currentColor">Strain</text>
+    <text x="20" y="135" font-size="13" text-anchor="middle" fill="currentColor" transform="rotate(-90 20 135)">Stress</text>
+    <text x="40" y="268" font-size="13" fill="currentColor">O</text>
+    <path d="M50 250 L110 120 Q120 100 135 95 Q150 92 160 100 Q175 105 190 100 Q270 50 330 55 Q370 60 400 100" fill="none" stroke="currentColor" stroke-width="3"/>
+    <g fill="currentColor">
+      <circle cx="110" cy="120" r="4"/><circle cx="135" cy="95" r="4"/><circle cx="160" cy="100" r="4"/>
+      <circle cx="330" cy="55" r="4"/><circle cx="400" cy="100" r="4"/>
+    </g>
+    <text x="95" y="120" font-size="13" fill="currentColor">A</text>
+    <text x="125" y="85" font-size="13" fill="currentColor">B</text>
+    <text x="160" y="120" font-size="13" fill="currentColor">C</text>
+    <text x="325" y="45" font-size="13" fill="currentColor">D</text>
+    <text x="408" y="104" font-size="13" fill="currentColor">E</text>
+  </svg>
+  <figcaption>Figure 3: Stress–strain curve for a ductile wire. A proportional limit, B elastic limit, C yield point, D ultimate tensile strength, E fracture.</figcaption>
+</figure>
 
-<h4>Common Misconceptions</h4>
 <ul>
-<li>A material that stretches more is not more elastic. Steel is more elastic than rubber in the physics sense because, for the same stress, steel shows a much smaller strain and regains its shape more completely.</li>
-<li>Stress is not the same as pressure, although both have units of N m<sup>&minus;2</sup>. Pressure is a normal force per unit area exerted by a fluid, whereas stress is an internal restoring force per unit area within a solid.</li>
-<li>Strain is dimensionless. Never attach a unit to it.</li>
+  <li><strong>O to A (proportional region):</strong> stress is proportional to strain and Hooke's law holds. The slope is the Young modulus. A is the <strong>proportional limit</strong>.</li>
+  <li><strong>A to B:</strong> the wire is still elastic (returns to its original length when unloaded), but stress is no longer proportional to strain. B is the <strong>elastic limit</strong>: the maximum stress up to which the material regains its original form.</li>
+  <li><strong>B to C:</strong> permanent (plastic) deformation sets in. At the <strong>yield point</strong> C, the strain increases rapidly with little or no increase in stress.</li>
+  <li><strong>C to D:</strong> strain hardening: more stress is needed for further strain. D is the <strong>ultimate tensile strength</strong>, the maximum stress the material can withstand.</li>
+  <li><strong>D to E:</strong> the wire narrows locally (necking), the stress falls, and the wire breaks at E. The stress at which it breaks is the <strong>breaking stress</strong>.</li>
+</ul>
+<p>For many materials the proportional limit and the elastic limit are very close and are often not distinguished at school level. Strictly, they are different points.</p>
+
+<h3>Ductile and brittle materials; related terms</h3>
+<ul>
+  <li><strong>Ductile materials</strong> (copper, mild steel, aluminium) have a large plastic region between the elastic limit and the breaking point, and can be drawn into wires.</li>
+  <li><strong>Brittle materials</strong> (glass, cast iron, ceramics) break soon after the elastic limit with very little plastic deformation.</li>
+  <li><strong>Elastic hysteresis:</strong> when a material is loaded and then unloaded, the loading and unloading curves may not coincide (very pronounced in rubber). The enclosed area is the energy lost as heat.</li>
+  <li><strong>Elastic fatigue:</strong> the loss of strength of a material after repeated cycles of stress. Bridges, aircraft parts and machine components can fail by fatigue.</li>
+  <li><strong>Factor of safety:</strong> the ratio of the breaking stress to the maximum working stress allowed in a design. Structures are built with a factor of safety greater than 1.</li>
 </ul>
 
-<h4>Real-Life Applications</h4>
+<div class="box warning">
+  <ul>
+    <li>A material that stretches more is not more elastic. Steel is more elastic than rubber in the physics sense: for the same stress, steel shows a much smaller strain and regains its shape more completely.</li>
+    <li>Stress is not the same as pressure, although both are measured in N m⁻². Pressure is a normal force per unit area exerted by a fluid; stress is an internal restoring force per unit area within a solid.</li>
+    <li>Strain is dimensionless. Never attach a unit to it.</li>
+  </ul>
+</div>
+
+<div class="box note" data-title="Real-life applications">
+  <ul>
+    <li>Crane ropes are made by twisting many thin wires together. Thin wires are more flexible, and a thin wire of a given metal has a higher breaking stress than a thick rod.</li>
+    <li>Bridge beams and building girders have an I-shaped cross-section to resist bending with minimum material.</li>
+    <li>Engineers apply a factor of safety when designing lifts, cables and pressure vessels.</li>
+  </ul>
+</div>
+
+<div class="box example" data-title="Worked example 4 (easy)">
+  <p>A steel wire of cross-sectional area 2 mm² and length 2 m is stretched by a force of 100 N and its length increases by 0.5 mm. Find the tensile stress, the longitudinal strain and the Young modulus.</p>
+  <details class="solution"><summary>Show solution</summary>
+    <p>\(A = 2 \times 10^{-6}\ \text{m}^2\), \(\Delta L = 5 \times 10^{-4}\ \text{m}\).</p>
+    <p>Stress \(= F/A = 100/(2 \times 10^{-6}) = 5 \times 10^{7}\ \text{N m}^{-2}\)</p>
+    <p>Strain \(= \Delta L/L = 5 \times 10^{-4}/2 = 2.5 \times 10^{-4}\)</p>
+    <p>\(Y = \text{stress}/\text{strain} = 5 \times 10^{7}/2.5 \times 10^{-4} = 2 \times 10^{11}\ \text{Pa}\)</p>
+    <p><strong>Answer:</strong> stress \(= 5 \times 10^7\) Pa; strain \(= 2.5 \times 10^{-4}\); \(Y = 2 \times 10^{11}\) Pa.</p>
+  </details>
+</div>
+
+<h2>8.3 Elastic moduli: Young, bulk and shear</h2>
+
+<h3>Modulus of elasticity</h3>
+<p>Within the limit of proportionality, Hooke's law can be restated: stress is proportional to strain. The constant of proportionality is the <strong>modulus of elasticity</strong>.</p>
+<div class="formula">
+  \[ \text{Elastic modulus} = \frac{\text{stress}}{\text{strain}} \]
+  <span class="where">Unit: Pa (N m⁻²); dimensions [M L⁻¹ T⁻²]. It depends only on the material, not on the size or shape of the specimen.</span>
+</div>
+
+<h3>Young modulus (Y)</h3>
+<div class="box definition">
+  <p>The <strong>Young modulus</strong> is the ratio of longitudinal (tensile or compressive) stress to longitudinal strain.</p>
+</div>
+<div class="formula">
+  \[ Y = \frac{F/A}{\Delta L/L} = \frac{FL}{A\,\Delta L} = \frac{4FL}{\pi d^2\,\Delta L} \]
+  <span class="where">The last form is for a wire of diameter \(d\), with \(A = \pi d^2/4\).</span>
+</div>
+<p><em>Physical meaning:</em> \(Y\) measures the stiffness of a material against stretching or compression. A larger \(Y\) means a larger stress is needed for a given strain. \(Y\) is defined for solids only.</p>
+
+<h3>Extension of a rod under its own weight</h3>
+<p><em>Assumptions:</em> a uniform rod of length \(L\), cross-section \(A\), density \(\rho\) and Young modulus \(Y\) hangs vertically from a rigid support; strains are small.</p>
+<p>Take a small element of length \(dy\) at a distance \(y\) from the lower (free) end. The tension there supports the weight of the rod below it: \(T(y) = \rho A y g\). The extension of the element is</p>
+<div class="formula">\[ d(\Delta L) = \frac{T(y)\,dy}{AY} = \frac{\rho g}{Y}\,y\,dy \]</div>
+<p>Integrating over the whole rod:</p>
+<div class="formula">
+  \[ \Delta L = \frac{\rho g}{Y}\int_0^L y\,dy = \frac{\rho g L^2}{2Y} = \frac{MgL}{2AY} \]
+  <span class="where">where \(M = \rho A L\) is the mass of the rod.</span>
+</div>
+<p>This is half the extension that would result if the whole weight \(Mg\) hung from the free end, because the tension falls uniformly from \(Mg\) at the top to zero at the bottom.</p>
+
+<h3>Bulk modulus (K)</h3>
+<div class="box definition">
+  <p>When a uniform pressure change \(\Delta P\) acts over the whole surface of a body and its volume changes by \(\Delta V\), the <strong>bulk modulus</strong> is the ratio of volume stress to volume strain.</p>
+</div>
+<div class="formula">
+  \[ K = -\frac{\Delta P}{\Delta V/V} = -\frac{V\,\Delta P}{\Delta V} \]
+  <span class="where">The negative sign makes \(K\) positive, since an increase in pressure decreases the volume. The reciprocal \(1/K\) is the <strong>compressibility</strong>.</span>
+</div>
+<p><em>Physical meaning:</em> \(K\) measures resistance to uniform compression. It is defined for solids, liquids and gases. Solids and liquids have large \(K\) (nearly incompressible); gases have small \(K\).</p>
+
+<h3>Shear modulus (η), or modulus of rigidity</h3>
+<div class="box definition">
+  <p>When a tangential force \(F\) acts on the top face (area \(A\)) of a body whose base is fixed, the body is sheared through an angle \(\theta\). The <strong>shear modulus</strong> is the ratio of shear stress to shear strain.</p>
+</div>
+<div class="formula">
+  \[ \eta = \frac{F/A}{\theta} = \frac{F}{A\theta} \]
+  <span class="where">where \(\theta = \Delta x/h\) in radians, for small angles.</span>
+</div>
+<p><em>Physical meaning:</em> \(\eta\) measures resistance to a change of shape at constant volume. It applies only to solids, since liquids and gases cannot sustain a shear stress.</p>
+
+<h3>Approximate values</h3>
+<table>
+  <thead><tr><th>Material</th><th>Y (Pa)</th><th>K (Pa)</th><th>η (Pa)</th></tr></thead>
+  <tbody>
+    <tr><td>Steel</td><td>2.0 × 10¹¹</td><td>1.6 × 10¹¹</td><td>8 × 10¹⁰</td></tr>
+    <tr><td>Copper</td><td>1.1 × 10¹¹</td><td>–</td><td>4 × 10¹⁰</td></tr>
+    <tr><td>Aluminium</td><td>7 × 10¹⁰</td><td>–</td><td>2.5 × 10¹⁰</td></tr>
+    <tr><td>Water</td><td>–</td><td>2.2 × 10⁹</td><td>0</td></tr>
+    <tr><td>Rubber</td><td>10⁶ to 10⁷</td><td>–</td><td>–</td></tr>
+  </tbody>
+</table>
+<p>These are typical values; exact figures vary slightly between reference books. In examination problems, use the values given in the question.</p>
+
+<div class="box warning">
+  <ul>
+    <li>The Young, bulk and shear moduli are constants of the material, unlike the force constant \(k\), which depends on the specimen.</li>
+    <li>Only the bulk modulus is defined for liquids and gases. The Young and shear moduli apply to solids only.</li>
+    <li>The larger the elastic modulus, the stiffer (less deformable) the material, not the more stretchable.</li>
+  </ul>
+</div>
+
+<div class="box note" data-title="Real-life applications">
+  <ul>
+    <li>The Young modulus governs the choice of material for cables, columns and beams.</li>
+    <li>The bulk modulus of a fluid determines the speed of sound in it (\(v = \sqrt{K/\rho}\)); the compressibility of water matters in the design of submarines and deep-sea equipment.</li>
+    <li>The shear modulus governs the twisting of shafts and the design of rubber mounts and rivets.</li>
+  </ul>
+</div>
+
+<div class="box example" data-title="Worked example 5 (easy)">
+  <p>The pressure on a sample of water is increased by 2 × 10⁷ Pa. If the bulk modulus of water is 2.2 × 10⁹ Pa, find the fractional decrease in its volume.</p>
+  <details class="solution"><summary>Show solution</summary>
+    <p>\(\left|\dfrac{\Delta V}{V}\right| = \dfrac{\Delta P}{K} = \dfrac{2 \times 10^{7}}{2.2 \times 10^{9}} = 9.09 \times 10^{-3}\)</p>
+    <p><strong>Answer:</strong> \(\Delta V/V \approx 9.1 \times 10^{-3}\), a decrease of about 0.91%.</p>
+  </details>
+</div>
+
+<div class="box example" data-title="Worked example 6 (practice)">
+  <p>The top face of a cube of side 10 cm, of shear modulus 2 × 10¹⁰ Pa, is acted on by a tangential force of 5 × 10³ N while the base is fixed. Find the angle of shear and the displacement of the top face.</p>
+  <details class="solution"><summary>Show solution</summary>
+    <p>\(A = 0.1 \times 0.1 = 0.01\ \text{m}^2\), \(h = 0.1\ \text{m}\).</p>
+    <p>Shear stress \(= F/A = 5 \times 10^{3}/0.01 = 5 \times 10^{5}\ \text{Pa}\)</p>
+    <p>\(\theta = \text{stress}/\eta = 5 \times 10^{5}/2 \times 10^{10} = 2.5 \times 10^{-5}\ \text{rad}\)</p>
+    <p>\(\Delta x = \theta h = 2.5 \times 10^{-5} \times 0.1 = 2.5 \times 10^{-6}\ \text{m}\)</p>
+    <p><strong>Answer:</strong> \(\theta = 2.5 \times 10^{-5}\) rad; \(\Delta x = 2.5\ \mu\text{m}\).</p>
+  </details>
+</div>
+
+<div class="box example" data-title="Worked example 7 (NEB pattern)">
+  <p>A steel wire of length 2 m and diameter 1 mm supports a mass of 10 kg. Calculate (a) the stress, (b) the strain, (c) the extension. (\(Y = 2 \times 10^{11}\) Pa, \(g = 9.8\) m s⁻²)</p>
+  <details class="solution"><summary>Show solution</summary>
+    <p>\(F = mg = 98\ \text{N}\); \(A = \pi d^2/4 = \pi (10^{-3})^2/4 = 7.854 \times 10^{-7}\ \text{m}^2\).</p>
+    <p>(a) Stress \(= 98/7.854 \times 10^{-7} = 1.248 \times 10^{8}\ \text{Pa}\)</p>
+    <p>(b) Strain \(= 1.248 \times 10^{8}/2 \times 10^{11} = 6.24 \times 10^{-4}\)</p>
+    <p>(c) \(\Delta L = 6.24 \times 10^{-4} \times 2 = 1.248 \times 10^{-3}\ \text{m}\)</p>
+    <p><strong>Answer:</strong> stress \(\approx 1.25 \times 10^8\) Pa; strain \(\approx 6.24 \times 10^{-4}\); extension \(\approx 1.25\) mm.</p>
+  </details>
+</div>
+
+<div class="box example" data-title="Worked example 8 (ratio problem)">
+  <p>Two wires A and B of the same material carry the same load. Their lengths are in the ratio 1 : 2 and their diameters in the ratio 2 : 1. Find the ratio of their extensions.</p>
+  <details class="solution"><summary>Show solution</summary>
+    <p>\(\Delta L = \dfrac{FL}{AY}\). With \(F\) and \(Y\) the same and \(A \propto d^2\), \(\Delta L \propto L/d^2\).</p>
+    <p>\(\dfrac{\Delta L_A}{\Delta L_B} = \dfrac{L_A}{L_B}\left(\dfrac{d_B}{d_A}\right)^2 = \dfrac12 \times \left(\dfrac12\right)^2 = \dfrac18\)</p>
+    <p><strong>Answer:</strong> \(\Delta L_A : \Delta L_B = 1 : 8\).</p>
+  </details>
+</div>
+
+<div class="box example" data-title="Worked example 9 (own weight)">
+  <p>A vertical steel rod 100 m long hangs from a rigid support. Find its extension due to its own weight. (\(\rho = 7800\) kg m⁻³, \(Y = 2 \times 10^{11}\) Pa, \(g = 9.8\) m s⁻²)</p>
+  <details class="solution"><summary>Show solution</summary>
+    <p>\(\Delta L = \dfrac{\rho g L^2}{2Y} = \dfrac{7800 \times 9.8 \times 100^2}{2 \times 2 \times 10^{11}} = \dfrac{7.644 \times 10^{8}}{4 \times 10^{11}} = 1.91 \times 10^{-3}\ \text{m}\)</p>
+    <p><strong>Answer:</strong> \(\Delta L \approx 1.9\) mm.</p>
+  </details>
+</div>
+
+<h2>8.4 Poisson's ratio</h2>
+
+<h3>Lateral strain and Poisson's ratio</h3>
+<p>When a wire or bar is stretched along its length it becomes thinner; when compressed it becomes thicker. The strain produced perpendicular to the applied force is the <strong>lateral strain</strong>.</p>
+
+<figure>
+  <svg viewBox="0 0 360 230" role="img" aria-label="A bar of length L and diameter d before stretching, and after tension: longer by delta L and narrower by delta d">
+    <rect x="70" y="30" width="60" height="150" fill="none" stroke="currentColor" stroke-width="2"/>
+    <text x="100" y="22" font-size="13" text-anchor="middle" fill="currentColor">d</text>
+    <text x="55" y="110" font-size="13" text-anchor="end" fill="currentColor">L</text>
+    <text x="100" y="215" font-size="13" text-anchor="middle" fill="currentColor">before</text>
+    <rect x="235" y="30" width="40" height="175" fill="none" stroke="currentColor" stroke-width="2"/>
+    <rect x="225" y="30" width="60" height="150" fill="none" stroke="currentColor" stroke-dasharray="4 3" stroke-opacity=".5"/>
+    <text x="255" y="22" font-size="13" text-anchor="middle" fill="currentColor">d − Δd</text>
+    <text x="295" y="120" font-size="13" fill="currentColor">L + ΔL</text>
+    <text x="255" y="225" font-size="13" text-anchor="middle" fill="currentColor">after tension</text>
+  </svg>
+  <figcaption>Figure 4: A stretched bar extends along its length and contracts sideways.</figcaption>
+</figure>
+
+<p>If a bar of diameter \(d\) and length \(L\) is stretched so that its length increases by \(\Delta L\) and its diameter decreases by \(\Delta d\):</p>
 <ul>
-<li>Crane ropes are made by twisting many thin wires together. A thin wire is more flexible and, for a given metal, has a high breaking stress per unit area than a thick rod.</li>
-<li>Bridge beams and building girders are given an I-shaped cross-section to resist bending with minimum material.</li>
-<li>Engineers apply a factor of safety in designing lifts, cables and pressure vessels.</li>
+  <li>Longitudinal strain \(= \Delta L/L\)</li>
+  <li>Lateral strain \(= -\Delta d/d\) (negative because the diameter decreases as the length increases)</li>
 </ul>
+<div class="box definition">
+  <p><strong>Poisson's ratio</strong> \(\sigma\) is the ratio of lateral strain to longitudinal strain, taken with a sign that makes it normally positive.</p>
+</div>
+<div class="formula">
+  \[ \sigma = -\frac{\text{lateral strain}}{\text{longitudinal strain}} = \frac{\Delta d/d}{\Delta L/L} \]
+  <span class="where">with \(\Delta d\) the magnitude of the contraction. \(\sigma\) has no unit or dimensions.</span>
+</div>
+<p><em>Physical meaning:</em> \(\sigma\) tells how much a material narrows for a given lengthening. A material with \(\sigma = 0.3\), stretched by 1%, contracts sideways by 0.3%.</p>
 
-<h4>Worked Example 4 (Easy &ndash; Concept Clarity)</h4>
-<p><b>Problem:</b> A steel wire of cross-sectional area 2 mm<sup>2</sup> and length 2 m is stretched by a force of 100 N and its length increases by 0.5 mm. Find the tensile stress, the longitudinal strain and Young's modulus.</p>
-<p><b>Solution:</b></p>
-<p>A = 2 mm<sup>2</sup> = 2 &times; 10<sup>&minus;6</sup> m<sup>2</sup>; &Delta;L = 0.5 mm = 5 &times; 10<sup>&minus;4</sup> m.</p>
-<p>Stress = F/A = 100 / (2 &times; 10<sup>&minus;6</sup>) = 5 &times; 10<sup>7</sup> N m<sup>&minus;2</sup></p>
-<p>Strain = &Delta;L/L = (5 &times; 10<sup>&minus;4</sup>) / 2 = 2.5 &times; 10<sup>&minus;4</sup></p>
-<p>Y = stress / strain = (5 &times; 10<sup>7</sup>) / (2.5 &times; 10<sup>&minus;4</sup>) = 2 &times; 10<sup>11</sup> N m<sup>&minus;2</sup></p>
-<div style="border:1px solid #333; padding:6px; margin:6px 0;"><b>Answer: stress = 5 &times; 10<sup>7</sup> Pa; strain = 2.5 &times; 10<sup>&minus;4</sup>; Y = 2 &times; 10<sup>11</sup> Pa</b></div>
+<h3>Change in volume under tension</h3>
+<p><em>Assumptions:</em> a cylindrical wire of an isotropic material; small strains. The volume is \(V = \pi r^2 L\). Taking logarithms and differentiating:</p>
+<div class="formula">
+  \[ \frac{\Delta V}{V} = 2\frac{\Delta r}{r} + \frac{\Delta L}{L} = -2\sigma\frac{\Delta L}{L} + \frac{\Delta L}{L} \]
+  \[ \frac{\Delta V}{V} = (1 - 2\sigma)\frac{\Delta L}{L} \]
+</div>
+<p>A body stretched by tension cannot decrease in volume, so \(\Delta V/V \ge 0\), which requires \(1 - 2\sigma \ge 0\), i.e. \(\sigma \le 0.5\). The value \(\sigma = 0.5\) corresponds to a perfectly incompressible material.</p>
 
-<hr>
+<h3>Relations among Y, K, η and σ</h3>
+<p><strong>(a) Y, K and σ.</strong> <em>Assumption:</em> a cube of an isotropic material is under a uniform pressure \(P\) on all six faces.</p>
+<p>Along one edge, the compressive stress \(P\) on that edge produces a compressive strain \(P/Y\). The stresses \(P\) along the other two directions each produce a lateral (extensional) strain \(\sigma P/Y\) along this edge. The net linear strain is</p>
+<div class="formula">\[ \frac{\Delta L}{L} = -\frac{P}{Y} + \frac{2\sigma P}{Y} = -\frac{P}{Y}(1 - 2\sigma) \]</div>
+<p>For small strains the volume strain is three times the linear strain (\(V = L^3\), so \(dV/V = 3\,dL/L\)):</p>
+<div class="formula">\[ \frac{\Delta V}{V} = -\frac{3P}{Y}(1 - 2\sigma) \]</div>
+<p>Since \(K = -P/(\Delta V/V)\):</p>
+<div class="formula">\[ K = \frac{Y}{3(1 - 2\sigma)} \quad\text{or}\quad Y = 3K(1 - 2\sigma) \]</div>
+<p>Because \(K\) is positive, this again requires \(\sigma &lt; 0.5\).</p>
+<p><strong>(b) Y, η and σ.</strong> A pure shear stress \(\tau\) is equivalent to a tensile stress \(+\tau\) along one diagonal of the element together with a compressive stress \(-\tau\) along the other. This leads to</p>
+<div class="formula">\[ Y = 2\eta(1 + \sigma) \]</div>
+<p>Since \(\eta &gt; 0\) and \(Y &gt; 0\), this requires \(\sigma &gt; -1\). Theoretically, therefore, \(-1 &lt; \sigma &lt; 0.5\); in practice \(\sigma\) for real materials lies between 0 and 0.5.</p>
+<p><strong>(c) Eliminating σ.</strong> From the two relations, \(1 - 2\sigma = Y/3K\) and \(2(1 + \sigma) = Y/\eta\). Adding gives \(3 = Y/3K + Y/\eta\), so</p>
+<div class="formula">
+  \[ \frac{9}{Y} = \frac{3}{\eta} + \frac{1}{K} \]
+  <span class="where">useful when two of the three moduli are given and the third is required.</span>
+</div>
 
-<h3>8.3 Elastic Modulus: Young Modulus, Bulk Modulus, Shear Modulus</h3>
+<div class="box warning">
+  <p>Poisson's ratio is not the ratio of the change in diameter to the change in length. It is the ratio of the <em>fractional</em> changes, \(\Delta d/d\) divided by \(\Delta L/L\).</p>
+</div>
 
-<h4>8.3.1 Elastic Modulus</h4>
-<p>Within the limit of proportionality, Hooke's law can be restated: stress is proportional to strain. The constant of proportionality is called the <b>modulus of elasticity</b> (elastic modulus).</p>
-<p><b>Elastic modulus = stress / strain</b></p>
-<p>Since strain is dimensionless, the elastic modulus has the same unit and dimensions as stress: pascal (N m<sup>&minus;2</sup>), [M L<sup>&minus;1</sup> T<sup>&minus;2</sup>]. It depends only on the material, not on the size or shape of the specimen.</p>
+<div class="box note" data-title="Real-life applications">
+  <ul>
+    <li>Rubber gaskets and seals rely on \(\sigma \approx 0.5\): squeezing them in one direction makes them bulge sideways and fill gaps.</li>
+    <li>Cork stoppers (\(\sigma \approx 0\)) can be pushed into a bottle neck without bulging sideways.</li>
+    <li>Engineers use \(\sigma\) to compute the change in cross-section of cables and columns under load.</li>
+  </ul>
+</div>
 
-<h4>8.3.2 Young Modulus (Y)</h4>
-<p>The ratio of longitudinal (tensile or compressive) stress to longitudinal strain is the <b>Young modulus</b>.</p>
-<p><b>Y = (F/A) / (&Delta;L/L) = FL / (A&Delta;L)</b></p>
-<p>For a wire of circular cross-section of diameter d, A = &pi;d<sup>2</sup>/4, so Y = 4FL / (&pi;d<sup>2</sup>&Delta;L).</p>
-<p><i>Physical meaning:</i> Y measures the stiffness of a material against stretching or compression. A larger Y means a larger stress is needed to produce a given strain. Y is defined for solids only.</p>
+<div class="box example" data-title="Worked example 10 (easy)">
+  <p>A wire 2 m long and 2 mm in diameter is stretched so that its length increases by 1 mm. If Poisson's ratio is 0.30, find the decrease in diameter.</p>
+  <details class="solution"><summary>Show solution</summary>
+    <p>Longitudinal strain \(= 1/2000 = 5 \times 10^{-4}\)</p>
+    <p>Lateral strain \(= \sigma \times 5 \times 10^{-4} = 1.5 \times 10^{-4}\)</p>
+    <p>\(\Delta d = 1.5 \times 10^{-4} \times 2\ \text{mm} = 3 \times 10^{-4}\ \text{mm} = 3 \times 10^{-7}\ \text{m}\)</p>
+    <p><strong>Answer:</strong> the diameter decreases by \(3 \times 10^{-7}\) m.</p>
+  </details>
+</div>
 
-<h4>Elongation of a Rod under Its Own Weight (Extension)</h4>
-<p><i>Assumptions:</i> a uniform rod of length L, cross-sectional area A, density &rho; and Young modulus Y hangs vertically from a rigid support; strains are small.</p>
-<p>Consider a small element of length dy at a distance y from the lower (free) end. The tension in the rod at this section supports the weight of the rod below it: T(y) = &rho;Ayg. The element's extension is</p>
-<p>d(&Delta;L) = T(y) dy / (AY) = &rho;Ayg dy / (AY) = (&rho;g/Y) y dy</p>
-<p>Total extension:</p>
-<p>&Delta;L = (&rho;g/Y) &int;<sub>0</sub><sup>L</sup> y dy = (&rho;g/Y)(L<sup>2</sup>/2)</p>
-<p><b>&Delta;L = &rho;gL<sup>2</sup> / 2Y = MgL / 2AY</b> &nbsp;(where M = &rho;AL is the mass of the rod)</p>
-<p>This is half the extension that would result if the whole weight Mg were hung at the free end, because the tension decreases uniformly from Mg at the top to zero at the bottom.</p>
+<div class="box example" data-title="Worked example 11 (practice)">
+  <p>For the wire in Example 10, find the fractional change in its volume.</p>
+  <details class="solution"><summary>Show solution</summary>
+    <p>\(\dfrac{\Delta V}{V} = (1 - 2\sigma)\dfrac{\Delta L}{L} = 0.40 \times 5 \times 10^{-4} = 2 \times 10^{-4}\)</p>
+    <p><strong>Answer:</strong> \(\Delta V/V = 2 \times 10^{-4}\) (the volume increases by 0.02%).</p>
+  </details>
+</div>
 
-<h4>8.3.3 Bulk Modulus (K)</h4>
-<p>When a uniform pressure change &Delta;P is applied over the whole surface of a body, its volume changes by &Delta;V. The <b>bulk modulus</b> is the ratio of volume stress to volume strain:</p>
-<p><b>K = &minus; &Delta;P / (&Delta;V/V) = &minus; V &Delta;P / &Delta;V</b></p>
-<p>The negative sign is included because an increase in pressure (&Delta;P &gt; 0) decreases the volume (&Delta;V &lt; 0), and K is defined to be a positive quantity. The reciprocal of the bulk modulus is the compressibility.</p>
-<p><i>Physical meaning:</i> K measures resistance to uniform compression. It is defined for solids, liquids and gases. Liquids and solids have large K (they are nearly incompressible); gases have small K.</p>
+<div class="box example" data-title="Worked example 12 (NEB pattern)">
+  <p>For a metal, \(Y = 2.0 \times 10^{11}\) Pa and \(K = 1.67 \times 10^{11}\) Pa. Find Poisson's ratio and the shear modulus.</p>
+  <details class="solution"><summary>Show solution</summary>
+    <p>\(1 - 2\sigma = \dfrac{Y}{3K} = \dfrac{2.0 \times 10^{11}}{3 \times 1.67 \times 10^{11}} = 0.399\), so \(\sigma = 0.30\).</p>
+    <p>\(\eta = \dfrac{Y}{2(1 + \sigma)} = \dfrac{2.0 \times 10^{11}}{2.60} = 7.7 \times 10^{10}\ \text{Pa}\)</p>
+    <p><em>Check:</em> \(9/Y = 4.5 \times 10^{-11}\); \(3/\eta + 1/K = 3.9 \times 10^{-11} + 0.6 \times 10^{-11} = 4.5 \times 10^{-11}\ \text{Pa}^{-1}\).</p>
+    <p><strong>Answer:</strong> \(\sigma \approx 0.30\); \(\eta \approx 7.7 \times 10^{10}\) Pa.</p>
+  </details>
+</div>
 
-<h4>8.3.4 Shear Modulus (&eta;), also called Modulus of Rigidity</h4>
-<p>When a tangential force F is applied to the top face of area A of a body whose bottom face is fixed, the body is sheared through an angle &theta;. The <b>shear modulus</b> is the ratio of shear stress to shear strain:</p>
-<p><b>&eta; = (F/A) / &theta; = F / (A&theta;)</b></p>
-<p>where &theta; = &Delta;x/h (in radians, for small angles). <i>Physical meaning:</i> &eta; measures resistance to change of shape at constant volume. It is meaningful only for solids, since liquids and gases cannot sustain shear stress.</p>
+<h2>8.5 Elastic potential energy</h2>
+<p>To deform an elastic body, work must be done against the internal restoring forces. If the body is deformed slowly and within its elastic limit, this work is stored as <strong>elastic potential energy</strong>.</p>
 
-<h4>8.3.5 Approximate Values of Elastic Moduli</h4>
-<ul>
-<li>Steel: Y &asymp; 2.0 &times; 10<sup>11</sup> Pa; K &asymp; 1.6 &times; 10<sup>11</sup> Pa; &eta; &asymp; 8 &times; 10<sup>10</sup> Pa</li>
-<li>Copper: Y &asymp; 1.1 &times; 10<sup>11</sup> Pa; &eta; &asymp; 4 &times; 10<sup>10</sup> Pa</li>
-<li>Aluminium: Y &asymp; 7 &times; 10<sup>10</sup> Pa; &eta; &asymp; 2.5 &times; 10<sup>10</sup> Pa</li>
-<li>Water: K &asymp; 2.2 &times; 10<sup>9</sup> Pa; &eta; = 0</li>
-<li>Rubber: Y of the order of 10<sup>6</sup> to 10<sup>7</sup> Pa</li>
+<h3>Energy stored in a stretched spring</h3>
+<p><em>Assumptions:</em> the spring obeys Hooke's law throughout; the stretching is slow, so kinetic energy is negligible.</p>
+<p>At extension \(x\) the applied force is \(F = kx\). The work done for a further small extension \(dx\) is \(dW = kx\,dx\), so</p>
+<div class="formula">
+  \[ W = \int_0^x kx\,dx = \tfrac12 kx^2 \]
+  \[ U = \tfrac12 kx^2 = \tfrac12 Fx \]
+</div>
+<p>Because the force increases linearly from 0 to \(F\), the work equals the average force \(F/2\) times the extension. It is the area under the force–extension graph.</p>
+
+<figure>
+  <svg viewBox="0 0 400 250" role="img" aria-label="Force against extension: the triangular area under the straight line from 0 to x is shaded and equals one half F x">
+    <line x1="50" y1="210" x2="380" y2="210" stroke="currentColor"/>
+    <line x1="50" y1="210" x2="50" y2="20" stroke="currentColor"/>
+    <text x="380" y="232" font-size="13" text-anchor="end" fill="currentColor">Extension</text>
+    <text x="20" y="115" font-size="13" text-anchor="middle" fill="currentColor" transform="rotate(-90 20 115)">Force</text>
+    <path d="M50 210 L280 50 V210 Z" fill="currentColor" fill-opacity=".18"/>
+    <line x1="50" y1="210" x2="300" y2="36" stroke="currentColor" stroke-width="3"/>
+    <line x1="280" y1="50" x2="280" y2="210" stroke="currentColor" stroke-dasharray="5 4"/>
+    <line x1="50" y1="50" x2="280" y2="50" stroke="currentColor" stroke-dasharray="5 4" stroke-opacity=".6"/>
+    <text x="280" y="228" font-size="13" text-anchor="middle" fill="currentColor">x</text>
+    <text x="40" y="55" font-size="13" text-anchor="end" fill="currentColor">F</text>
+    <text x="200" y="175" font-size="13" text-anchor="middle" fill="currentColor">U = ½Fx</text>
+  </svg>
+  <figcaption>Figure 5: The elastic potential energy equals the shaded area under the force–extension line.</figcaption>
+</figure>
+
+<h3>Energy stored in a stretched wire</h3>
+<p>For a wire of length \(L\), cross-section \(A\) and Young modulus \(Y\), the force for an extension \(l\) is \(F = (YA/L)\,l\). Stretching it from 0 to \(\Delta L\):</p>
+<div class="formula">
+  \[ U = \int_0^{\Delta L} \frac{YA}{L}\,l\,dl = \frac12\,\frac{YA}{L}(\Delta L)^2 = \frac12 F\,\Delta L = \frac{F^2 L}{2AY} \]
+  <span class="where">where \(F = YA\,\Delta L/L\) is the final stretching force.</span>
+</div>
+
+<h3>Energy per unit volume</h3>
+<p>Dividing by the volume \(AL\):</p>
+<div class="formula">
+  \[ u = \frac{U}{AL} = \frac12\,\frac{F}{A}\,\frac{\Delta L}{L} \]
+  \[ u = \tfrac12 \times \text{stress} \times \text{strain} = \tfrac12 Y(\text{strain})^2 = \frac{(\text{stress})^2}{2Y} \]
+  <span class="where">Unit: J m⁻³. This holds for any elastic deformation.</span>
+</div>
+
+<div class="box warning">
+  <ul>
+    <li>When a load \(Mg\) is hung on a wire and let go, gravity does work \(Mg\,\Delta L\), but the wire stores only \(\tfrac12 Mg\,\Delta L\). The other half is dissipated as heat and sound as the load oscillates and settles.</li>
+    <li>Elastic potential energy is proportional to the <em>square</em> of the extension. Doubling the extension of a spring quadruples the stored energy.</li>
+    <li>For a given load, a thicker wire stores less energy than a thin wire of the same length and material, since \(U = F^2L/(2AY) \propto 1/A\).</li>
+  </ul>
+</div>
+
+<div class="box note" data-title="Real-life applications">
+  <ul>
+    <li>Bows, catapults, trampolines and pole-vault poles store elastic energy and release it as kinetic energy.</li>
+    <li>Wind-up toys and mechanical watches store energy in coiled springs.</li>
+    <li>Elastic energy stored in tendons makes running more efficient in animals.</li>
+    <li>Shock absorbers convert elastic energy into heat through hysteresis and damping.</li>
+  </ul>
+</div>
+
+<div class="box example" data-title="Worked example 13 (easy)">
+  <p>A spring of force constant 200 N m⁻¹ is stretched by 5 cm. Find the elastic potential energy stored.</p>
+  <details class="solution"><summary>Show solution</summary>
+    <p>\(U = \tfrac12 kx^2 = \tfrac12 \times 200 \times (0.05)^2 = 0.25\ \text{J}\)</p>
+  </details>
+</div>
+
+<div class="box example" data-title="Worked example 14 (practice)">
+  <p>A steel wire of length 2 m and cross-sectional area 1 mm² is stretched by a load of 100 N. Find the energy stored and the energy per unit volume. (\(Y = 2 \times 10^{11}\) Pa)</p>
+  <details class="solution"><summary>Show solution</summary>
+    <p>\(\Delta L = \dfrac{FL}{AY} = \dfrac{100 \times 2}{10^{-6} \times 2 \times 10^{11}} = 10^{-3}\ \text{m}\)</p>
+    <p>\(U = \tfrac12 F\,\Delta L = \tfrac12 \times 100 \times 10^{-3} = 0.05\ \text{J}\)</p>
+    <p>Volume \(= AL = 2 \times 10^{-6}\ \text{m}^3\); \(u = 0.05/2 \times 10^{-6} = 2.5 \times 10^{4}\ \text{J m}^{-3}\)</p>
+    <p><em>Check:</em> stress \(= 10^8\) Pa, strain \(= 5 \times 10^{-4}\); \(\tfrac12 \times 10^8 \times 5 \times 10^{-4} = 2.5 \times 10^4\ \text{J m}^{-3}\).</p>
+    <p><strong>Answer:</strong> \(U = 0.05\) J; \(u = 2.5 \times 10^4\) J m⁻³.</p>
+  </details>
+</div>
+
+<div class="box example" data-title="Worked example 15 (NEB pattern)">
+  <p>A metal wire of length 3 m and cross-sectional area 1.5 mm² is stretched by 3 mm. If \(Y = 2 \times 10^{11}\) Pa, find (a) the tension, (b) the energy stored, (c) the energy density.</p>
+  <details class="solution"><summary>Show solution</summary>
+    <p>(a) \(F = \dfrac{YA\,\Delta L}{L} = \dfrac{2 \times 10^{11} \times 1.5 \times 10^{-6} \times 3 \times 10^{-3}}{3} = 300\ \text{N}\)</p>
+    <p>(b) \(U = \tfrac12 F\,\Delta L = \tfrac12 \times 300 \times 3 \times 10^{-3} = 0.45\ \text{J}\)</p>
+    <p>(c) Volume \(= 4.5 \times 10^{-6}\ \text{m}^3\); \(u = 0.45/4.5 \times 10^{-6} = 1 \times 10^{5}\ \text{J m}^{-3}\)</p>
+    <p><em>Check:</em> strain \(= 10^{-3}\); \(\tfrac12 Y(\text{strain})^2 = \tfrac12 \times 2 \times 10^{11} \times 10^{-6} = 10^5\ \text{J m}^{-3}\).</p>
+    <p><strong>Answer:</strong> \(F = 300\) N; \(U = 0.45\) J; \(u = 10^5\) J m⁻³.</p>
+  </details>
+</div>
+
+<h2>Exam tips</h2>
+<div class="box tip">
+  <ul>
+    <li><strong>Formulas to memorise:</strong> \(F = kx\); \(k = YA/L\); \(k_s = k_1k_2/(k_1 + k_2)\), \(k_p = k_1 + k_2\); stress \(= F/A\); strain \(= \Delta L/L\); \(Y = FL/A\Delta L\); \(K = -\Delta P/(\Delta V/V)\); \(\eta = F/A\theta\); \(U = \tfrac12 kx^2\); \(u = \tfrac12\) stress × strain.</li>
+    <li><strong>Common board questions:</strong> state Hooke's law and define force constant; define stress and strain and distinguish the three types; draw and explain the stress–strain curve; derive relations among \(Y\), \(K\), \(\eta\) and \(\sigma\).</li>
+    <li><strong>Typical numericals:</strong> stress, strain and extension from load, length and diameter; ratio of extensions of two wires; energy stored in springs or wires.</li>
+    <li>Convert mm² to m² (1 mm² = 10⁻⁶ m²) and lengths to metres before substituting. If only the diameter is given, use \(A = \pi d^2/4\).</li>
+    <li>Do not attach units to strain or Poisson's ratio.</li>
+    <li>In energy problems, remember the factor ½. Using \(F\,\Delta L\) instead is the most frequent error.</li>
+    <li>In stress–strain diagrams, put stress on the vertical axis and strain on the horizontal axis, mark all the key points, and state the meaning of each region.</li>
+  </ul>
+</div>
+
+<h2>Key points</h2>
+<ul class="key-points">
+  <li>Hooke's law: within the elastic limit, \(F = kx\); for a wire \(k = YA/L\).</li>
+  <li>Springs in series: \(1/k_s = 1/k_1 + 1/k_2\); in parallel: \(k_p = k_1 + k_2\); each of \(n\) equal parts has \(nk\).</li>
+  <li>Stress \(= F/A\) (Pa); strain is a dimensionless ratio.</li>
+  <li>\(Y\), \(K\) and \(\eta\) are stress/strain for length, volume and shape changes; only \(K\) applies to fluids.</li>
+  <li>Poisson's ratio \(\sigma = (\Delta d/d)/(\Delta L/L)\); \(Y = 3K(1-2\sigma) = 2\eta(1+\sigma)\); \(9/Y = 3/\eta + 1/K\).</li>
+  <li>Elastic energy \(U = \tfrac12 F\,\Delta L\); energy density \(u = \tfrac12\) stress × strain.</li>
 </ul>
-<p>These are typical values; the exact figures vary slightly between reference books. In examination problems, use the values given in the question.</p>
-
-<h4>Common Misconceptions</h4>
-<ul>
-<li>Young modulus, bulk modulus and shear modulus are all constants of the material, unlike the force constant k, which depends on the specimen.</li>
-<li>Bulk modulus is the only one of the three defined for liquids and gases. Young modulus and shear modulus apply to solids only.</li>
-<li>The larger the elastic modulus, the less deformable (the "stiffer") the material, not the more stretchable.</li>
-</ul>
-
-<h4>Real-Life Applications</h4>
-<ul>
-<li>The Young modulus governs the choice of material for cables, columns and beams.</li>
-<li>The bulk modulus of a medium determines the speed of sound in it (v = &radic;(K/&rho;) in a fluid), and the compressibility of water is important for the design of submarines and deep-sea equipment.</li>
-<li>The shear modulus governs the twisting of shafts and the design of rubber mounts and rivets.</li>
-</ul>
-
-<h4>Worked Example 5 (Easy &ndash; Concept Clarity)</h4>
-<p><b>Problem:</b> The pressure on a sample of water is increased by 2 &times; 10<sup>7</sup> Pa. If the bulk modulus of water is 2.2 &times; 10<sup>9</sup> Pa, find the fractional decrease in its volume.</p>
-<p><b>Solution:</b></p>
-<p>K = &minus;&Delta;P/(&Delta;V/V), so |&Delta;V/V| = &Delta;P/K = (2 &times; 10<sup>7</sup>)/(2.2 &times; 10<sup>9</sup>) = 9.09 &times; 10<sup>&minus;3</sup></p>
-<div style="border:1px solid #333; padding:6px; margin:6px 0;"><b>Answer: &Delta;V/V &asymp; 9.1 &times; 10<sup>&minus;3</sup> (a decrease of about 0.91%)</b></div>
-
-<h4>Worked Example 6 (Moderate &ndash; Practice Level)</h4>
-<p><b>Problem:</b> The top face of a cube of side 10 cm made of a material of shear modulus 2 &times; 10<sup>10</sup> Pa is acted upon by a tangential force of 5 &times; 10<sup>3</sup> N, while the base is fixed. Find the angle of shear and the relative displacement of the top face.</p>
-<p><b>Solution:</b></p>
-<p>Area of face A = 0.1 &times; 0.1 = 0.01 m<sup>2</sup>; h = 0.1 m.</p>
-<p>Shear stress = F/A = 5 &times; 10<sup>3</sup>/0.01 = 5 &times; 10<sup>5</sup> Pa</p>
-<p>&theta; = stress/&eta; = (5 &times; 10<sup>5</sup>)/(2 &times; 10<sup>10</sup>) = 2.5 &times; 10<sup>&minus;5</sup> rad</p>
-<p>&Delta;x = &theta;h = 2.5 &times; 10<sup>&minus;5</sup> &times; 0.1 = 2.5 &times; 10<sup>&minus;6</sup> m</p>
-<div style="border:1px solid #333; padding:6px; margin:6px 0;"><b>Answer: stress = 5 &times; 10<sup>5</sup> Pa; &theta; = 2.5 &times; 10<sup>&minus;5</sup> rad; &Delta;x = 2.5 &micro;m</b></div>
-
-<h4>Worked Example 7 (Exam-Level &ndash; NEB Pattern)</h4>
-<p><b>Problem:</b> A steel wire of length 2 m and diameter 1 mm supports a mass of 10 kg. Calculate (a) the stress, (b) the strain, (c) the extension. (Y = 2 &times; 10<sup>11</sup> Pa, g = 9.8 m s<sup>&minus;2</sup>)</p>
-<p><b>Solution:</b></p>
-<p>F = mg = 10 &times; 9.8 = 98 N</p>
-<p>A = &pi;d<sup>2</sup>/4 = &pi;(1 &times; 10<sup>&minus;3</sup>)<sup>2</sup>/4 = 7.854 &times; 10<sup>&minus;7</sup> m<sup>2</sup></p>
-<p>(a) Stress = F/A = 98/(7.854 &times; 10<sup>&minus;7</sup>) = 1.248 &times; 10<sup>8</sup> Pa</p>
-<p>(b) Strain = stress/Y = (1.248 &times; 10<sup>8</sup>)/(2 &times; 10<sup>11</sup>) = 6.24 &times; 10<sup>&minus;4</sup></p>
-<p>(c) &Delta;L = strain &times; L = 6.24 &times; 10<sup>&minus;4</sup> &times; 2 = 1.248 &times; 10<sup>&minus;3</sup> m</p>
-<div style="border:1px solid #333; padding:6px; margin:6px 0;"><b>Answer: stress &asymp; 1.25 &times; 10<sup>8</sup> Pa; strain &asymp; 6.24 &times; 10<sup>&minus;4</sup>; extension &asymp; 1.25 mm</b></div>
-
-<h4>Worked Example 8 (Exam-Level &ndash; Ratio Problem)</h4>
-<p><b>Problem:</b> Two wires A and B of the same material are subjected to the same load. The lengths are in the ratio 1 : 2 and the diameters in the ratio 2 : 1. Find the ratio of their extensions.</p>
-<p><b>Solution:</b> From Y = FL/(A&Delta;L), &Delta;L = FL/(AY). With F and Y the same and A &prop; d<sup>2</sup>, &Delta;L &prop; L/d<sup>2</sup>.</p>
-<p>&Delta;L<sub>A</sub>/&Delta;L<sub>B</sub> = (L<sub>A</sub>/L<sub>B</sub>) &times; (d<sub>B</sub>/d<sub>A</sub>)<sup>2</sup> = (1/2) &times; (1/2)<sup>2</sup> = 1/8</p>
-<div style="border:1px solid #333; padding:6px; margin:6px 0;"><b>Answer: &Delta;L<sub>A</sub> : &Delta;L<sub>B</sub> = 1 : 8</b></div>
-
-<h4>Worked Example 9 (Exam-Level &ndash; Own Weight)</h4>
-<p><b>Problem:</b> A vertical steel rod 100 m long hangs from a rigid support. Find its extension due to its own weight. (&rho; = 7800 kg m<sup>&minus;3</sup>, Y = 2 &times; 10<sup>11</sup> Pa, g = 9.8 m s<sup>&minus;2</sup>)</p>
-<p><b>Solution:</b></p>
-<p>&Delta;L = &rho;gL<sup>2</sup>/2Y = (7800 &times; 9.8 &times; 100<sup>2</sup>)/(2 &times; 2 &times; 10<sup>11</sup>) = (7.644 &times; 10<sup>8</sup>)/(4 &times; 10<sup>11</sup>) = 1.91 &times; 10<sup>&minus;3</sup> m</p>
-<div style="border:1px solid #333; padding:6px; margin:6px 0;"><b>Answer: &Delta;L &asymp; 1.9 mm</b></div>
-
-<hr>
-
-<h3>8.4 Poisson's Ratio</h3>
-
-<h4>8.4.1 Lateral Strain and Poisson's Ratio</h4>
-<p>When a wire or bar is stretched along its length, it becomes thinner; when it is compressed, it becomes thicker. The strain produced perpendicular to the applied force is called <b>lateral strain</b>.</p>
-<pre>
-      before                       after tension
-     +-------+                      +-----+
-     |       |                      |     |
-     |       | d                    |     |  d - &Delta;d   (contracts)
-     |       |                      |     |
-     |       |  L                   |     |  L + &Delta;L   (extends)
-     |       |                      |     |
-     +-------+                      |     |
-                                     +-----+
-</pre>
-<p>If a bar of original diameter d and length L is stretched so that its length increases by &Delta;L and its diameter decreases by &Delta;d, then</p>
-<ul>
-<li>Longitudinal strain = &Delta;L / L</li>
-<li>Lateral strain = &minus;&Delta;d / d (negative when the diameter decreases as the length increases)</li>
-</ul>
-<p><b>Poisson's ratio</b> &sigma; is defined as the ratio of lateral strain to longitudinal strain, taken with a sign so that the ratio is normally positive:</p>
-<p><b>&sigma; = &minus; (lateral strain) / (longitudinal strain) = (&Delta;d / d) / (&Delta;L / L)</b> &nbsp; (with &Delta;d taken as the magnitude of the contraction)</p>
-<p>Poisson's ratio is dimensionless and has no unit.</p>
-<p><i>Physical meaning:</i> &sigma; tells how much a material narrows for a given lengthening. A material with &sigma; = 0.3, stretched by 1%, contracts laterally by 0.3%.</p>
-
-<h4>8.4.2 Limits of Poisson's Ratio</h4>
-<p><b>Volume change under tension.</b> <i>Assumptions:</i> a cylindrical wire, small strains, isotropic material. The volume is V = &pi;r<sup>2</sup>L. Taking natural logarithms,</p>
-<p><b>&Delta;V / V = (1 &minus; 2&sigma;) &Delta;L / L</b></p>
-<p>A body stretched by a tensile force cannot decrease in volume, so &Delta;V/V &ge; 0, which requires 1 &minus; 2&sigma; &ge; 0, i.e. &sigma; &le; 0.5. The value &sigma; = 0.5 corresponds to a perfectly incompressible material.</p>
-
-<h4>8.4.3 Relations Among Y, K, &eta; and &sigma;</h4>
-<p><b>(a) Relation between Y, K and &sigma;.</b> <i>Assumption:</i> a cube of an isotropic material is subjected to a uniform pressure P on all six faces.</p>
-<p>Consider the strain along one edge. The compressive stress P along that edge alone produces a compressive strain P/Y. The stresses P applied along the other two perpendicular directions each cause lateral strain &sigma;P/Y. Hence the net linear strain is</p>
-<p>&Delta;L/L = &minus;P/Y + 2&sigma;P/Y = &minus;(P/Y)(1 &minus; 2&sigma;)</p>
-<p>For small strains, the volume strain is three times the linear strain (V = L<sup>3</sup>, so dV/V = 3 dL/L):</p>
-<p>&Delta;V/V = &minus;3(P/Y)(1 &minus; 2&sigma;)</p>
-<p>By definition K = &minus;P/(&Delta;V/V). Therefore</p>
-<p><b>K = Y / 3(1 &minus; 2&sigma;)</b> &nbsp; or &nbsp; <b>Y = 3K(1 &minus; 2&sigma;)</b></p>
-<p>Since K must be positive, this again requires &sigma; &lt; 0.5.</p>
-<p><b>(b) Relation between Y, &eta; and &sigma;.</b> A pure shear stress &tau; is equivalent to a tensile stress +&tau; along one diagonal of the element together with a compressive stress &minus;&tau; along the other diagonal. This gives</p>
-<p><b>Y = 2&eta;(1 + &sigma;)</b></p>
-<p>Since &eta; &gt; 0, this requires &sigma; &gt; &minus;1, which is the lower limit stated above.</p>
-<p><b>(c) Eliminating &sigma;.</b> From the two relations, 1 &minus; 2&sigma; = Y/3K and 2(1 + &sigma;) = Y/&eta;. Adding gives 3 = Y/3K + Y/&eta;, so</p>
-<p><b>9/Y = 3/&eta; + 1/K</b></p>
-<p>which is useful when any two of the three moduli are given and the third is required.</p>
-
-<h4>Common Misconception</h4>
-<p>Poisson's ratio is not the ratio of the change in diameter to the change in length. It is the ratio of the <i>fractional</i> (relative) changes, &Delta;d/d divided by &Delta;L/L.</p>
-
-<h4>Real-Life Applications</h4>
-<ul>
-<li>Rubber gaskets and seals rely on &sigma; &asymp; 0.5: squeezing them in one direction makes them bulge sideways and fill gaps.</li>
-<li>Cork stoppers (&sigma; &asymp; 0) can be pushed into a bottle neck without bulging sideways.</li>
-<li>Engineers use &sigma; to compute the change in cross-section of cables and columns under load.</li>
-</ul>
-
-<h4>Worked Example 10 (Easy &ndash; Concept Clarity)</h4>
-<p><b>Problem:</b> A wire 2 m long and 2 mm in diameter is stretched so that its length increases by 1 mm. If Poisson's ratio of the material is 0.30, find the decrease in diameter.</p>
-<p><b>Solution:</b></p>
-<p>Longitudinal strain = 1 mm / 2000 mm = 5 &times; 10<sup>&minus;4</sup></p>
-<p>Lateral strain = &sigma; &times; longitudinal strain = 0.30 &times; 5 &times; 10<sup>&minus;4</sup> = 1.5 &times; 10<sup>&minus;4</sup></p>
-<p>&Delta;d = lateral strain &times; d = 1.5 &times; 10<sup>&minus;4</sup> &times; 2 mm = 3 &times; 10<sup>&minus;4</sup> mm = 3 &times; 10<sup>&minus;7</sup> m</p>
-<div style="border:1px solid #333; padding:6px; margin:6px 0;"><b>Answer: the diameter decreases by 3 &times; 10<sup>&minus;7</sup> m</b></div>
-
-<h4>Worked Example 11 (Moderate &ndash; Practice Level)</h4>
-<p><b>Problem:</b> For the wire in Example 10, find the fractional change in its volume.</p>
-<p><b>Solution:</b></p>
-<p>&Delta;V/V = (1 &minus; 2&sigma;) &Delta;L/L = (1 &minus; 0.60) &times; 5 &times; 10<sup>&minus;4</sup> = 0.40 &times; 5 &times; 10<sup>&minus;4</sup> = 2 &times; 10<sup>&minus;4</sup></p>
-<div style="border:1px solid #333; padding:6px; margin:6px 0;"><b>Answer: &Delta;V/V = 2 &times; 10<sup>&minus;4</sup> (volume increases by 0.02%)</b></div>
-
-<h4>Worked Example 12 (Exam-Level &ndash; NEB Pattern)</h4>
-<p><b>Problem:</b> For a metal, Young's modulus is 2.0 &times; 10<sup>11</sup> Pa and bulk modulus is 1.67 &times; 10<sup>11</sup> Pa. Find Poisson's ratio and the shear modulus.</p>
-<p><b>Solution:</b></p>
-<p>From Y = 3K(1 &minus; 2&sigma;): 1 &minus; 2&sigma; = Y/3K = (2.0 &times; 10<sup>11</sup>)/(3 &times; 1.67 &times; 10<sup>11</sup>) = 0.399</p>
-<p>&sigma; = (1 &minus; 0.399)/2 = 0.30</p>
-<p>From Y = 2&eta;(1 + &sigma;): &eta; = Y/[2(1 + &sigma;)] = (2.0 &times; 10<sup>11</sup>)/(2 &times; 1.30) = 7.7 &times; 10<sup>10</sup> Pa</p>
-<p><i>Check:</i> 9/Y = 4.5 &times; 10<sup>&minus;11</sup> and 3/&eta; + 1/K = 3.9 &times; 10<sup>&minus;11</sup> + 0.6 &times; 10<sup>&minus;11</sup> = 4.5 &times; 10<sup>&minus;11</sup> (Pa<sup>&minus;1</sup>)</p>
-<div style="border:1px solid #333; padding:6px; margin:6px 0;"><b>Answer: &sigma; &asymp; 0.30; &eta; &asymp; 7.7 &times; 10<sup>10</sup> Pa</b></div>
-
-<hr>
-
-<h3>8.5 Elastic Potential Energy</h3>
-
-<h4>8.5.1 Concept</h4>
-<p>To deform an elastic body, work must be done against the internal restoring forces. If the body is deformed within its elastic limit and the deformation is carried out slowly, this work is stored as elastic potential energy.</p>
-
-<h4>8.5.2 Elastic Potential Energy of a Stretched Spring</h4>
-<p><i>Assumptions:</i> the spring obeys Hooke's law throughout; the stretching is done slowly so that kinetic energy is negligible.</p>
-<p>When the extension is x, the applied force is F = kx. The work done in producing a further small extension dx is</p>
-<p>dW = F dx = kx dx</p>
-<p>The total work done in stretching the spring from zero to an extension x is</p>
-<p>W = &int;<sub>0</sub><sup>x</sup> kx dx = k [x<sup>2</sup>/2]<sub>0</sub><sup>x</sup></p>
-<p><b>U = &frac12; k x<sup>2</sup> = &frac12; F x</b></p>
-<p>Because the force increases linearly from 0 to F, the work done equals the average force (F/2) multiplied by the extension.</p>
-<pre>
-  Force F
-    |               /|
-    |             /  |
-    |           /////|  &lt;-- shaded area (triangle)
-    |         ///////|      = &frac12; x F = elastic potential energy
-    |       /////////|
-    |     ///////////|
-    |   /////////////|
-    | ///////////////|
-    +-----------------+------ Extension x
-    0                 x
-</pre>
-<p>The energy stored equals the area under the force&ndash;extension graph.</p>
-
-<h4>8.5.3 Elastic Potential Energy of a Stretched Wire</h4>
-<p>For a wire of length L, cross-section A and Young modulus Y, the force needed to produce an extension l is F = (YA/L) l. The work done in stretching it from l = 0 to l = &Delta;L is</p>
-<p>W = &int;<sub>0</sub><sup>&Delta;L</sup> (YA/L) l dl = (YA/L) (&Delta;L)<sup>2</sup>/2</p>
-<p><b>U = &frac12; (YA/L)(&Delta;L)<sup>2</sup> = &frac12; F &Delta;L</b>, where F = YA&Delta;L/L is the final stretching force.</p>
-<p>Equivalently, U = F<sup>2</sup>L / (2AY).</p>
-
-<h4>8.5.4 Elastic Energy per Unit Volume (Energy Density)</h4>
-<p>The volume of the wire is AL. Dividing U by AL:</p>
-<p>u = U / (AL) = &frac12; (F/A)(&Delta;L/L)</p>
-<p><b>u = &frac12; &times; stress &times; strain = &frac12; Y (strain)<sup>2</sup> = (stress)<sup>2</sup> / 2Y</b></p>
-<p>The unit of u is J m<sup>&minus;3</sup>. This is a very general result: the energy density stored in any elastic deformation is half the product of stress and strain.</p>
-
-<h4>Common Misconceptions</h4>
-<ul>
-<li>When a load Mg is slowly hung from a wire, the work done by gravity is Mg&Delta;L, but the energy stored in the wire is only &frac12; Mg&Delta;L. The other half is dissipated as heat and sound.</li>
-<li>Elastic potential energy is proportional to the square of the extension, not the extension itself. Doubling the extension of a spring quadruples the stored energy.</li>
-<li>For a given load, a thicker wire stores less elastic energy than a thin wire of the same length and material, since U = F<sup>2</sup>L/(2AY) &prop; 1/A.</li>
-</ul>
-
-<h4>Real-Life Applications</h4>
-<ul>
-<li>Bows, catapults, trampolines and pole-vault poles store elastic energy and release it as kinetic energy.</li>
-<li>Wind-up toys and mechanical watches store energy in coiled springs.</li>
-<li>Elastic energy stored in tendons contributes to efficient running in animals.</li>
-<li>Shock absorbers convert elastic energy into heat through hysteresis and damping.</li>
-</ul>
-
-<h4>Worked Example 13 (Easy &ndash; Concept Clarity)</h4>
-<p><b>Problem:</b> A spring of force constant 200 N m<sup>&minus;1</sup> is stretched by 5 cm. Find the elastic potential energy stored.</p>
-<p><b>Solution:</b></p>
-<p>U = &frac12; kx<sup>2</sup> = &frac12; &times; 200 &times; (0.05)<sup>2</sup> = 100 &times; 0.0025 = 0.25 J</p>
-<div style="border:1px solid #333; padding:6px; margin:6px 0;"><b>Answer: U = 0.25 J</b></div>
-
-<h4>Worked Example 14 (Moderate &ndash; Practice Level)</h4>
-<p><b>Problem:</b> A steel wire of length 2 m and cross-sectional area 1 mm<sup>2</sup> is stretched by a load of 100 N. Find the elastic energy stored and the energy per unit volume. (Y = 2 &times; 10<sup>11</sup> Pa)</p>
-<p><b>Solution:</b></p>
-<p>A = 1 mm<sup>2</sup> = 10<sup>&minus;6</sup> m<sup>2</sup></p>
-<p>&Delta;L = FL/(AY) = (100 &times; 2)/(10<sup>&minus;6</sup> &times; 2 &times; 10<sup>11</sup>) = 200/(2 &times; 10<sup>5</sup>) = 10<sup>&minus;3</sup> m</p>
-<p>U = &frac12; F &Delta;L = &frac12; &times; 100 &times; 10<sup>&minus;3</sup> = 0.05 J</p>
-<p>Volume = AL = 10<sup>&minus;6</sup> &times; 2 = 2 &times; 10<sup>&minus;6</sup> m<sup>3</sup>; u = 0.05/(2 &times; 10<sup>&minus;6</sup>) = 2.5 &times; 10<sup>4</sup> J m<sup>&minus;3</sup></p>
-<p><i>Check:</i> stress = 100/10<sup>&minus;6</sup> = 10<sup>8</sup> Pa; strain = 10<sup>&minus;3</sup>/2 = 5 &times; 10<sup>&minus;4</sup>; &frac12; &times; stress &times; strain = &frac12; &times; 10<sup>8</sup> &times; 5 &times; 10<sup>&minus;4</sup> = 2.5 &times; 10<sup>4</sup> J m<sup>&minus;3</sup></p>
-<div style="border:1px solid #333; padding:6px; margin:6px 0;"><b>Answer: U = 0.05 J; u = 2.5 &times; 10<sup>4</sup> J m<sup>&minus;3</sup></b></div>
-
-<h4>Worked Example 15 (Exam-Level &ndash; NEB Pattern)</h4>
-<p><b>Problem:</b> A metal wire of length 3 m and cross-sectional area 1.5 mm<sup>2</sup> is stretched by 3 mm. If Y = 2 &times; 10<sup>11</sup> Pa, find (a) the tension in the wire, (b) the elastic energy stored, (c) the energy density.</p>
-<p><b>Solution:</b></p>
-<p>A = 1.5 &times; 10<sup>&minus;6</sup> m<sup>2</sup>; &Delta;L = 3 &times; 10<sup>&minus;3</sup> m.</p>
-<p>(a) F = YA&Delta;L/L = (2 &times; 10<sup>11</sup> &times; 1.5 &times; 10<sup>&minus;6</sup> &times; 3 &times; 10<sup>&minus;3</sup>)/3 = 300 N</p>
-<p>(b) U = &frac12; F&Delta;L = &frac12; &times; 300 &times; 3 &times; 10<sup>&minus;3</sup> = 0.45 J</p>
-<p>(c) Volume = AL = 1.5 &times; 10<sup>&minus;6</sup> &times; 3 = 4.5 &times; 10<sup>&minus;6</sup> m<sup>3</sup>; u = 0.45/(4.5 &times; 10<sup>&minus;6</sup>) = 1 &times; 10<sup>5</sup> J m<sup>&minus;3</sup></p>
-<p><i>Check:</i> strain = 3 &times; 10<sup>&minus;3</sup>/3 = 10<sup>&minus;3</sup>; &frac12; Y (strain)<sup>2</sup> = &frac12; &times; 2 &times; 10<sup>11</sup> &times; 10<sup>&minus;6</sup> = 1 &times; 10<sup>5</sup> J m<sup>&minus;3</sup></p>
-<div style="border:1px solid #333; padding:6px; margin:6px 0;"><b>Answer: F = 300 N; U = 0.45 J; u = 1 &times; 10<sup>5</sup> J m<sup>&minus;3</sup></b></div>
-
-<hr>
-
-<h3>Exam Tips</h3>
-<ul>
-<li><b>Important formulas to memorise:</b> F = kx; k = YA/L; springs: k<sub>s</sub> = k<sub>1</sub>k<sub>2</sub>/(k<sub>1</sub> + k<sub>2</sub>), k<sub>p</sub> = k<sub>1</sub> + k<sub>2</sub>; stress = F/A; strain = &Delta;L/L; Y = FL/A&Delta;L; K = &minus;&Delta;P/(&Delta;V/V); &eta; = F/(A&theta;); U = &frac12; kx<sup>2</sup>; u = &frac12; stress &times; strain.</li>
-<li><b>Common board questions:</b> (i) State Hooke's law and define force constant. (ii) Define stress and strain; distinguish the three types. (iii) Draw and explain the stress&ndash;strain curve. (iv) Derive relations among Y, K, &eta; and &sigma;.</li>
-<li><b>Typical numerical patterns:</b> (i) Given load, length, diameter: find stress, strain, extension. (ii) Two wires with different lengths, radii or materials under the same load: find the ratio of extensions. (iii) Energy stored in stretched springs or wires.</li>
-<li>Always convert area from mm<sup>2</sup> to m<sup>2</sup> (1 mm<sup>2</sup> = 10<sup>&minus;6</sup> m<sup>2</sup>) and lengths to metres before substituting. When only the diameter is given, calculate area using A = &pi;d<sup>2</sup>/4.</li>
-<li>Do not attach units to strain or Poisson's ratio.</li>
-<li>In energy problems, use the factor &frac12;. Forgetting it, and using F&Delta;L, is the most frequent error.</li>
-<li>In stress&ndash;strain diagrams, label the axes correctly (stress on the vertical axis, strain on the horizontal axis), mark all the key points, and state the physical meaning of each region.</li>
-</ul>
-</body>
-</html>

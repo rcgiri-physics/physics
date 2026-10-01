@@ -3,6 +3,7 @@ title: Gravity and Gravitation
 grade: XI
 chapters: [7]
 date: 2026-09-27
+description: Newton's law of gravitation, gravitational field and potential, variation of g, satellites and escape velocity.
 ---
 
 <h2>7.1 Newton's Law of Gravitation</h2>
@@ -12,9 +13,7 @@ date: 2026-09-27
 
 <p>If two point masses m₁ and m₂ are separated by a distance r, the magnitude of the mutual gravitational force F is:</p>
 
-<div class="box">
-<strong>F = G m₁m₂ / r²</strong>
-</div>
+<div class="formula">F = G m₁m₂ / r²</div>
 
 <p>where G is the <strong>universal gravitational constant</strong>, whose value in SI units is:</p>
 <p><strong>G = 6.674 × 10⁻¹¹ N m² kg⁻²</strong></p>
@@ -24,9 +23,7 @@ date: 2026-09-27
 <h3>7.1.2 Vector Form of the Law</h3>
 <p>Since gravitational force is attractive and directed along the line joining the two masses, it can be written in vector form. If <strong>r⃗</strong> is the position vector of m₂ relative to m₁, and <strong>r̂</strong> is the unit vector along this direction, the force on m₂ due to m₁ is:</p>
 
-<div class="box">
-<strong>F⃗₂₁ = −G m₁m₂ / r² · r̂</strong>
-</div>
+<div class="formula">F⃗₂₁ = −G m₁m₂ / r² · r̂</div>
 
 <p>The negative sign indicates that the force is attractive, i.e. directed opposite to <strong>r̂</strong> (opposite to the direction of increasing separation), pulling m₂ toward m₁. By Newton's third law, the force on m₁ due to m₂ is equal in magnitude and opposite in direction: <strong>F⃗₁₂ = −F⃗₂₁</strong>.</p>
 
@@ -44,19 +41,19 @@ date: 2026-09-27
 <h3>7.1.4 Principle of Superposition</h3>
 <p>If a mass m experiences gravitational forces F⃗₁, F⃗₂, F⃗₃, … due to masses M₁, M₂, M₃, … respectively, the resultant force on m is the vector sum:</p>
 
-<div class="box">
-<strong>F⃗ₙₑₜ = F⃗₁ + F⃗₂ + F⃗₃ + …</strong>
-</div>
+<div class="formula">F⃗ₙₑₜ = F⃗₁ + F⃗₂ + F⃗₃ + …</div>
 
 <p>This principle is essential when calculating the gravitational effect of extended or multiple bodies, such as the net pull on a satellite from the Earth, Moon, and Sun simultaneously.</p>
 
-<h3>Worked Example: Gravitational Force Between Two Masses</h3>
-<p><strong>Problem:</strong> Calculate the gravitational force of attraction between two point masses of 50 kg and 80 kg separated by a distance of 2 m. (G = 6.674 × 10⁻¹¹ N m² kg⁻²)</p>
-<p><strong>Solution:</strong></p>
+<div class="box example" data-title="Worked example: Gravitational Force Between Two Masses">
+<p>Calculate the gravitational force of attraction between two point masses of 50 kg and 80 kg separated by a distance of 2 m. (G = 6.674 × 10⁻¹¹ N m² kg⁻²)</p>
+<details class="solution"><summary>Show solution</summary>
 <p>F = G m₁m₂ / r² = (6.674 × 10⁻¹¹ × 50 × 80) / (2)²</p>
 <p>F = (6.674 × 10⁻¹¹ × 4000) / 4 = (2.6696 × 10⁻⁷) / 4</p>
 <p><strong>F = 6.674 × 10⁻⁸ N</strong></p>
 <p><em>Physical interpretation:</em> This force is extraordinarily small compared to everyday forces, which explains why the gravitational attraction between ordinary objects is never noticed — gravitational effects only become significant when at least one of the masses is astronomically large.</p>
+</details>
+</div>
 
 <hr>
 
@@ -68,9 +65,7 @@ date: 2026-09-27
 <h3>7.2.2 Definition of Gravitational Field Strength</h3>
 <p>The <strong>gravitational field strength</strong> (also called gravitational field intensity) at a point is defined as the gravitational force experienced per unit mass placed at that point.</p>
 
-<div class="box">
-<strong>E⃗ = F⃗ / m</strong>
-</div>
+<div class="formula">E⃗ = F⃗ / m</div>
 
 <p>It is a vector quantity, directed toward the source mass, with SI unit N kg⁻¹, which is dimensionally equivalent to m s⁻² (the unit of acceleration). This is not a coincidence: gravitational field strength at a point is numerically equal to the acceleration a test mass would experience if released there.</p>
 
@@ -78,24 +73,18 @@ date: 2026-09-27
 <p>Consider a point mass M. By Newton's law of gravitation, the force it exerts on a small test mass m placed at a distance r is F = GMm/r². Using the definition above:</p>
 <p>E = F/m = GMm/r² ÷ m</p>
 
-<div class="box">
-<strong>E = GM / r²</strong>
-</div>
+<div class="formula">E = GM / r²</div>
 
 <p>This is directed radially toward the mass M. Near the surface of the Earth (mass Mₑ, radius Rₑ), this field strength is exactly the familiar acceleration due to gravity:</p>
 
-<div class="box">
-<strong>g = GMₑ / Rₑ²</strong>
-</div>
+<div class="formula">g = GMₑ / Rₑ²</div>
 
 <p>This equation is one of the most important relations in the chapter, since it connects the macroscopic, measurable quantity g (≈ 9.8 m s⁻²) to the fundamental constant G and the Earth's mass and radius.</p>
 
 <h3>7.2.4 Field Due to a System of Masses</h3>
 <p>By the superposition principle, the net gravitational field at a point due to several masses is the vector sum of the fields due to each mass considered separately:</p>
 
-<div class="box">
-<strong>E⃗ₙₑₜ = E⃗₁ + E⃗₂ + E⃗₃ + …</strong>
-</div>
+<div class="formula">E⃗ₙₑₜ = E⃗₁ + E⃗₂ + E⃗₃ + …</div>
 
 <hr>
 
@@ -114,36 +103,32 @@ date: 2026-09-27
 
 <p>Taking U(∞) = 0, the gravitational potential energy at distance r is:</p>
 
-<div class="box">
-<strong>U(r) = −GMm / r</strong>
-</div>
+<div class="formula">U(r) = −GMm / r</div>
 
 <p><em>Physical interpretation:</em> The negative sign shows that the gravitational potential energy is always negative for a bound (attractive) system, with the least (most negative) value at r = 0 and increasing (becoming less negative) as r increases, approaching zero as r → ∞. This reflects the fact that work must be done against gravity to separate two masses to infinity.</p>
 
 <h3>7.3.2 Gravitational Potential: Definition and Derivation</h3>
 <p>The <strong>gravitational potential</strong> V at a point in a gravitational field is defined as the gravitational potential energy per unit mass at that point, or equivalently, the work done per unit mass in bringing a small test mass from infinity to that point without acceleration.</p>
 
-<div class="box">
-<strong>V(r) = U(r) / m = −GM / r</strong>
-</div>
+<div class="formula">V(r) = U(r) / m = −GM / r</div>
 
 <p>Gravitational potential is a <strong>scalar</strong> quantity with SI unit J kg⁻¹. It is always negative for a real (attractive) gravitational field, with V = 0 conventionally set at infinity, which represents the point of maximum potential.</p>
 
 <h3>7.3.3 Relation Between Gravitational Field Strength and Potential</h3>
 <p>Since potential energy is related to force by F = −dU/dr, dividing throughout by m gives the corresponding relation between field strength and potential:</p>
 
-<div class="box">
-<strong>E = −dV/dr</strong>
-</div>
+<div class="formula">E = −dV/dr</div>
 
 <p>This states that gravitational field strength at a point equals the negative gradient (rate of change) of gravitational potential with respect to distance. The negative sign indicates that the field points in the direction of decreasing potential.</p>
 
-<h3>Worked Example: Gravitational Potential Energy of a Satellite</h3>
-<p><strong>Problem:</strong> Find the gravitational potential energy of a 2000 kg satellite located at a distance of 7000 km from the centre of the Earth. (Mass of Earth M = 6.0 × 10²⁴ kg, G = 6.674 × 10⁻¹¹ N m² kg⁻²)</p>
-<p><strong>Solution:</strong></p>
+<div class="box example" data-title="Worked example: Gravitational Potential Energy of a Satellite">
+<p>Find the gravitational potential energy of a 2000 kg satellite located at a distance of 7000 km from the centre of the Earth. (Mass of Earth M = 6.0 × 10²⁴ kg, G = 6.674 × 10⁻¹¹ N m² kg⁻²)</p>
+<details class="solution"><summary>Show solution</summary>
 <p>U = −GMm/r = −(6.674 × 10⁻¹¹ × 6.0 × 10²⁴ × 2000) / (7 × 10⁶)</p>
 <p>U = −(6.674 × 6.0 × 2000 × 10¹³) / (7 × 10⁶) = −(80088 × 10¹³) / (7 × 10⁶)</p>
 <p><strong>U ≈ −1.14 × 10¹¹ J</strong></p>
+</details>
+</div>
 
 <hr>
 
@@ -158,15 +143,11 @@ date: 2026-09-27
 <p>Dividing the two expressions:</p>
 <p>gₕ/g = R²/(R+h)² = 1/(1 + h/R)²</p>
 
-<div class="box">
-<strong>gₕ = g (1 + h/R)⁻²</strong>
-</div>
+<div class="formula">gₕ = g (1 + h/R)⁻²</div>
 
 <p>For heights much smaller than the Earth's radius (h ≪ R), using the binomial approximation (1+x)ⁿ ≈ 1 + nx for small x:</p>
 
-<div class="box">
-<strong>gₕ ≈ g (1 − 2h/R)</strong>
-</div>
+<div class="formula">gₕ ≈ g (1 − 2h/R)</div>
 
 <p><em>Physical interpretation:</em> The value of g decreases as altitude increases, since the point of measurement moves farther from the centre of mass of the Earth. This is why astronauts in low Earth orbit still experience substantial gravitational pull — their weightlessness is due to being in continuous free fall, not due to zero gravity.</p>
 
@@ -181,18 +162,18 @@ date: 2026-09-27
 
 <p>Since g = GM/R² = (4/3)πGρR, we can write (4/3)πGρ = g/R. Substituting:</p>
 
-<div class="box">
-<strong>gd = g (1 − d/R)</strong>
-</div>
+<div class="formula">gd = g (1 − d/R)</div>
 
 <p><em>Physical interpretation:</em> The value of g decreases linearly with depth (assuming uniform density) and becomes zero at the centre of the Earth (d = R), since at the exact centre the gravitational pull from all directions cancels out completely.</p>
 
-<h3>Worked Example: Variation of g with Altitude</h3>
-<p><strong>Problem:</strong> At what height above the Earth's surface does the acceleration due to gravity reduce to 4% less than its value at the surface? (Take R = 6400 km, and use the approximation for h ≪ R.)</p>
-<p><strong>Solution:</strong></p>
+<div class="box example" data-title="Worked example: Variation of g with Altitude">
+<p>At what height above the Earth's surface does the acceleration due to gravity reduce to 4% less than its value at the surface? (Take R = 6400 km, and use the approximation for h ≪ R.)</p>
+<details class="solution"><summary>Show solution</summary>
 <p>Using gₕ ≈ g(1 − 2h/R), the fractional decrease is 2h/R = 0.04</p>
 <p>h = (0.04 × R)/2 = (0.04 × 6400)/2 = 256/2</p>
 <p><strong>h = 128 km</strong></p>
+</details>
+</div>
 
 <hr>
 
@@ -201,9 +182,7 @@ date: 2026-09-27
 <h3>7.5.1 Centre of Mass</h3>
 <p>The <strong>centre of mass (COM)</strong> of a system of particles is the point at which the entire mass of the system may be considered to be concentrated for the purpose of describing its translational motion. For a system of n particles of masses m₁, m₂, …, mₙ located at position vectors r⃗₁, r⃗₂, …, r⃗ₙ, the position vector of the centre of mass is defined as:</p>
 
-<div class="box">
-<strong>R⃗cm = (m₁r⃗₁ + m₂r⃗₂ + … + mₙr⃗ₙ) / (m₁ + m₂ + … + mₙ)</strong>
-</div>
+<div class="formula">R⃗cm = (m₁r⃗₁ + m₂r⃗₂ + … + mₙr⃗ₙ) / (m₁ + m₂ + … + mₙ)</div>
 
 <p>Along a single coordinate axis, this reduces to:</p>
 <p>Xcm = Σmᵢxᵢ / Σmᵢ</p>
@@ -239,15 +218,11 @@ date: 2026-09-27
 <p>Cancelling m from both sides and one factor of r:</p>
 <p>GM/r = v₀²</p>
 
-<div class="box">
-<strong>v₀ = √(GM/r)</strong>
-</div>
+<div class="formula">v₀ = √(GM/r)</div>
 
 <p>This is the <strong>orbital velocity</strong> — the speed a satellite must maintain in a circular orbit of radius r to avoid either falling toward the planet or drifting away. If the orbit is close to the planet's surface (r ≈ R), and using GM = gR², this simplifies to:</p>
 
-<div class="box">
-<strong>v₀ = √(gR)</strong>
-</div>
+<div class="formula">v₀ = √(gR)</div>
 
 <p><em>Physical interpretation:</em> Orbital velocity decreases as the orbital radius increases — satellites in higher orbits move more slowly than those in lower orbits, since the gravitational pull (and hence the required centripetal acceleration) is weaker farther from the planet.</p>
 
@@ -256,21 +231,21 @@ date: 2026-09-27
 
 <p>T = 2πr / v₀ = 2πr / √(GM/r) = 2πr · √(r/GM) = 2π √(r³/GM)</p>
 
-<div class="box">
-<strong>T = 2π √(r³/GM)</strong>
-</div>
+<div class="formula">T = 2π √(r³/GM)</div>
 
 <p>Squaring both sides gives T² = (4π²/GM) r³, i.e. <strong>T² ∝ r³</strong>, which is precisely <strong>Kepler's third law</strong> of planetary motion, here derived directly from Newton's law of gravitation combined with the dynamics of uniform circular motion. This connection — showing that Kepler's empirically discovered law follows necessarily from Newtonian gravitation — is one of the most historically significant results in the whole of classical physics.</p>
 
-<h3>Worked Example: Orbital Velocity and Period of a Satellite</h3>
-<p><strong>Problem:</strong> A satellite revolves around the Earth in a circular orbit at a height of 1600 km above the Earth's surface. Calculate its orbital velocity and time period. (R = 6400 km, g = 9.8 m s⁻²)</p>
-<p><strong>Solution:</strong></p>
+<div class="box example" data-title="Worked example: Orbital Velocity and Period of a Satellite">
+<p>A satellite revolves around the Earth in a circular orbit at a height of 1600 km above the Earth's surface. Calculate its orbital velocity and time period. (R = 6400 km, g = 9.8 m s⁻²)</p>
+<details class="solution"><summary>Show solution</summary>
 <p>Orbital radius: r = R + h = 6400 + 1600 = 8000 km = 8 × 10⁶ m</p>
 <p>Using GM = gR²: GM = 9.8 × (6.4 × 10⁶)² = 9.8 × 4.096 × 10¹³ = 4.014 × 10¹⁴ m³s⁻²</p>
 <p>Orbital velocity: v₀ = √(GM/r) = √(4.014 × 10¹⁴ / 8 × 10⁶) = √(5.02 × 10⁷)</p>
 <p><strong>v₀ ≈ 7085 m s⁻¹ ≈ 7.09 km s⁻¹</strong></p>
 <p>Time period: T = 2πr/v₀ = (2 × 3.1416 × 8 × 10⁶) / 7085 = (5.027 × 10⁷) / 7085</p>
 <p><strong>T ≈ 7095 s ≈ 1.97 hours</strong></p>
+</details>
+</div>
 
 <hr>
 
@@ -292,24 +267,18 @@ date: 2026-09-27
 <p>½mvₑ² − GMm/R = 0</p>
 <p>½vₑ² = GM/R</p>
 
-<div class="box">
-<strong>vₑ = √(2GM/R)</strong>
-</div>
+<div class="formula">vₑ = √(2GM/R)</div>
 
 <p>Using GM = gR², this can also be written as:</p>
 
-<div class="box">
-<strong>vₑ = √(2gR)</strong>
-</div>
+<div class="formula">vₑ = √(2gR)</div>
 
 <p>For the Earth (g = 9.8 m s⁻², R = 6.4 × 10⁶ m), this gives vₑ ≈ 11.2 km s⁻¹.</p>
 
 <h3>7.7.3 Relation Between Escape Velocity and Orbital Velocity</h3>
 <p>Comparing vₑ = √(2GM/R) with the orbital velocity at the same radius, v₀ = √(GM/R):</p>
 
-<div class="box">
-<strong>vₑ = √2 · v₀</strong>
-</div>
+<div class="formula">vₑ = √2 · v₀</div>
 
 <p><em>Physical interpretation:</em> Escape velocity is always √2 (≈ 1.414) times the orbital velocity at the same distance from the centre of the planet. This is why a satellite cannot simply "speed up slightly" to escape orbit — it must increase its speed by a factor of √2, roughly a 41% increase in speed (a much larger increase in kinetic energy).</p>
 
@@ -321,37 +290,29 @@ date: 2026-09-27
 <p>For a satellite of mass m in a circular orbit of radius r with orbital velocity v₀ = √(GM/r), the kinetic energy is:</p>
 <p>KE = ½mv₀² = ½m · (GM/r)</p>
 
-<div class="box">
-<strong>KE = GMm / 2r</strong>
-</div>
+<div class="formula">KE = GMm / 2r</div>
 
 <h3>7.8.2 Potential Energy of an Orbiting Satellite</h3>
 <p>From the derivation in Section 7.3, the gravitational potential energy of the satellite-planet system at orbital radius r is:</p>
 
-<div class="box">
-<strong>PE = −GMm / r</strong>
-</div>
+<div class="formula">PE = −GMm / r</div>
 
 <h3>7.8.3 Total Mechanical Energy of the Satellite</h3>
 <p>The total mechanical energy is the sum of kinetic and potential energy:</p>
 <p>E = KE + PE = GMm/2r + (−GMm/r) = GMm/2r − GMm/r = GMm/2r − 2GMm/2r</p>
 
-<div class="box">
-<strong>E = −GMm / 2r</strong>
-</div>
+<div class="formula">E = −GMm / 2r</div>
 
 <p><em>Physical interpretation:</em> The total energy of an orbiting satellite is negative, which is the mathematical signature of a <strong>bound system</strong> — the satellite does not have enough energy to escape to infinity and remains gravitationally trapped in orbit. Note also the important relation E = −KE, and PE = 2E, which follow directly from combining the expressions above; this factor-of-two relationship between kinetic and total energy is a general feature of any inverse-square-law circular orbit (a result related to the virial theorem).</p>
 
 <h3>7.8.4 Binding Energy of a Satellite</h3>
 <p>The <strong>binding energy</strong> of a satellite is the minimum energy that must be supplied to it to remove it from orbit to infinity (where its total energy becomes zero). Since the satellite's energy in orbit is E = −GMm/2r, the binding energy is simply the magnitude of this quantity:</p>
 
-<div class="box">
-<strong>Binding Energy = GMm / 2r</strong>
-</div>
+<div class="formula">Binding Energy = GMm / 2r</div>
 
-<h3>Worked Example: Energy of an Orbiting Satellite</h3>
-<p><strong>Problem:</strong> A satellite of mass 400 kg orbits the Earth at a height where its orbital radius is 7200 km. Calculate its kinetic energy, potential energy, and total energy. (M = 6.0 × 10²⁴ kg, G = 6.674 × 10⁻¹¹ N m² kg⁻²)</p>
-<p><strong>Solution:</strong></p>
+<div class="box example" data-title="Worked example: Energy of an Orbiting Satellite">
+<p>A satellite of mass 400 kg orbits the Earth at a height where its orbital radius is 7200 km. Calculate its kinetic energy, potential energy, and total energy. (M = 6.0 × 10²⁴ kg, G = 6.674 × 10⁻¹¹ N m² kg⁻²)</p>
+<details class="solution"><summary>Show solution</summary>
 <p>GMm = 6.674 × 10⁻¹¹ × 6.0 × 10²⁴ × 400 = 1.602 × 10¹⁶</p>
 <p>KE = GMm/2r = 1.602 × 10¹⁶ / (2 × 7.2 × 10⁶) = 1.602 × 10¹⁶ / 1.44 × 10⁷</p>
 <p><strong>KE ≈ 1.113 × 10⁹ J</strong></p>
@@ -359,6 +320,8 @@ date: 2026-09-27
 <p><strong>PE ≈ −2.225 × 10⁹ J</strong></p>
 <p>Total energy E = KE + PE = 1.113 × 10⁹ − 2.225 × 10⁹</p>
 <p><strong>E ≈ −1.113 × 10⁹ J</strong> (note that E = −KE, confirming the general relation)</p>
+</details>
+</div>
 
 <hr>
 
@@ -377,21 +340,16 @@ date: 2026-09-27
 <p>T² = 4π²r³/GM</p>
 <p>r³ = GMT² / 4π²</p>
 
-<div class="box">
-<strong>r = (GMT² / 4π²)^(1/3)</strong>
-</div>
+<div class="formula">r = (GMT² / 4π²)^(1/3)</div>
 
 <p>Substituting G = 6.674 × 10⁻¹¹ N m² kg⁻², M = 6.0 × 10²⁴ kg, and T = 24 × 3600 s = 86400 s, this calculation yields:</p>
 
-<div class="box">
-<strong>r ≈ 4.22 × 10⁷ m = 42,200 km</strong> (measured from the Earth's centre)
+<div class="formula">r ≈ 4.22 × 10⁷ m = 42,200 km</strong> (measured from the Earth's centre)
 </div>
 
 <p>Since the Earth's radius R ≈ 6400 km, the height of the geostationary orbit above the Earth's surface is:</p>
 
-<div class="box">
-<strong>h = r − R ≈ 42,200 − 6400 ≈ 35,800 km</strong>
-</div>
+<div class="formula">h = r − R ≈ 42,200 − 6400 ≈ 35,800 km</div>
 
 <h3>7.9.3 Applications of Geostationary Satellites</h3>
 <ul>
