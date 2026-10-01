@@ -1,0 +1,219 @@
+{
+  "title": "Physical Quantities — 30 MCQs",
+  "grade": "XI",
+  "chapters": [1],
+  "date": "2026-09-27",
+  "description": "Precision and significant figures, dimensions and uses of dimensional analysis. Covers foundational concepts, applied reasoning and derivations.",
+  "questions": [
+    {
+      "q": "Which of the following is a fundamental physical quantity?",
+      "options": ["Velocity", "Force", "Mass", "Pressure"],
+      "answer": 2,
+      "explanation": "Mass is a fundamental quantity independent of others. Velocity, force and pressure are derived quantities.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The number of significant figures in 0.00420 is:",
+      "options": ["2", "3", "5", "6"],
+      "answer": 1,
+      "explanation": "Leading zeros are not significant; only 4, 2 and 0 are significant, giving 3 significant figures.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Precision of a measurement primarily depends on:",
+      "options": ["The person taking the reading", "The least count of the instrument", "The unit system used", "The true value of the quantity"],
+      "answer": 1,
+      "explanation": "Precision is determined by the instrument's ability to resolve fine differences, which is the least count.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "A set of repeated measurements cluster tightly together but are far from the true value. This measurement is:",
+      "options": ["Accurate but not precise", "Precise but not accurate", "Both accurate and precise", "Neither accurate nor precise"],
+      "answer": 1,
+      "explanation": "Close clustering means precision; distance from true value means lack of accuracy. This is a systematic error.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Trailing zeros in a number without a decimal point (e.g. 4500) are:",
+      "options": ["Always significant", "Never significant", "Ambiguous", "Significant only if the number is even"],
+      "answer": 2,
+      "explanation": "Ambiguous; use scientific notation to clarify: 4.5 × 10³ (2 SF) or 4.50 × 10³ (3 SF).",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The dimensional formula of velocity is:",
+      "options": ["[M°L¹T¹]", "[M°L¹T⁻¹]", "[M¹L¹T⁻¹]", "[M°L²T⁻¹]"],
+      "answer": 1,
+      "explanation": "Velocity = displacement / time, so [v] = [L] / [T] = [M⁰L¹T⁻¹].",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which base dimension symbol represents electric current in the SI system?",
+      "options": ["[C]", "[I]", "[A]", "[E]"],
+      "answer": 2,
+      "explanation": "[A] stands for ampere, the SI unit of electric current.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The dimensional formula [M¹L²T⁻²] represents:",
+      "options": ["Power", "Force", "Work or energy", "Momentum"],
+      "answer": 2,
+      "explanation": "Work = force × displacement = [MLT⁻²][L] = [ML²T⁻²]. Energy has the same dimension.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "According to the principle of homogeneity, an equation is dimensionally correct only if:",
+      "options": ["All terms have the same numerical value", "All terms being added or equated have the same dimensions", "All terms are measured in SI units", "The equation contains no constants"],
+      "answer": 1,
+      "explanation": "Only quantities with identical dimensions can be added, subtracted or equated.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "When rounding 7.25 to 3 significant figures using the \"round half to even\" rule, the result is:",
+      "options": ["7.3", "7.2", "7.25", "7.20"],
+      "answer": 1,
+      "explanation": "When exactly halfway, round to the nearest even digit: 7.2 is even.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "In the addition 15.62 + 2.3, the result should be reported to:",
+      "options": ["4 significant figures", "2 decimal places", "1 decimal place", "3 significant figures"],
+      "answer": 2,
+      "explanation": "For addition, match the least number of decimal places. 2.3 has 1 decimal place, so result = 17.9 (1 d.p.).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "In the multiplication 4.56 × 1.4, the result should be reported to:",
+      "options": ["2 significant figures", "3 significant figures", "1 decimal place", "4 significant figures"],
+      "answer": 0,
+      "explanation": "For multiplication, match the least number of significant figures. 1.4 has 2 SF, so result = 6.4.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Two physical quantities can be added together only if they have:",
+      "options": ["The same numerical value", "The same dimensions", "The same SI unit prefix", "The same number of significant figures"],
+      "answer": 1,
+      "explanation": "Only quantities with the same dimensions (e.g. both lengths) can be meaningfully added.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which of the following pairs of physical quantities have the same dimensional formula?",
+      "options": ["Force and pressure", "Work and torque", "Momentum and impulse of different types", "Velocity and acceleration"],
+      "answer": 1,
+      "explanation": "Both work and torque have dimension [ML²T⁻²], though they represent different physical concepts.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A student reports the length of a rod as 12.300 cm using a vernier calliper. The number of significant figures is:",
+      "options": ["2", "3", "5", "6"],
+      "answer": 2,
+      "explanation": "All five digits are significant: 1, 2, 3, 0 and 0 (trailing zero after decimal point).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Dimensional analysis fails to derive relations involving:",
+      "options": ["Products of physical quantities", "Powers of physical quantities", "Sums of two or more terms", "Ratios of physical quantities"],
+      "answer": 2,
+      "explanation": "Dimensional analysis handles products and powers, but cannot derive formulas with sums of different types of terms.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The equation s = ut + ½at² is checked using dimensional analysis. What is the dimension of each term on the right-hand side?",
+      "options": ["[LT⁻¹]", "[LT⁻²]", "[L]", "[T]"],
+      "answer": 2,
+      "explanation": "[ut] = [LT⁻¹][T] = [L] and [½at²] = [LT⁻²][T²] = [L]. Both equal [s].",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which of the following CANNOT be determined using dimensional analysis alone?",
+      "options": ["Whether an equation is dimensionally consistent", "The dimensional formula of a derived quantity", "The value of a dimensionless proportionality constant", "The relation between two physical quantities"],
+      "answer": 2,
+      "explanation": "Dimensional analysis cannot determine dimensionless constants like 2π, ½ or numerical coefficients.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A physical quantity Q is assumed to depend on quantities X, Y, and Z as Q = k X^a Y^b Z^c. The values of a, b, c are found by:",
+      "options": ["Measuring Q experimentally", "Equating powers of M, L, T on both sides", "Assuming a = b = c = 1", "Trial and error with units only"],
+      "answer": 1,
+      "explanation": "Write both sides with dimensional formulas, then equate the exponents of each base dimension.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Converting a physical quantity from one system of units to another using dimensional analysis relies on the fact that:",
+      "options": ["The unit system does not affect the quantity's dimension", "The numerical value of the quantity itself changes with the unit system", "The physical quantity itself remains unchanged while the unit and numerical value change", "Only SI units are valid"],
+      "answer": 2,
+      "explanation": "A physical quantity is invariant; only the numerical value and unit change, maintaining the same dimension.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Using dimensional analysis, the time period T of a simple pendulum of length l in a gravitational field g is found to be proportional to:",
+      "options": ["l²/g", "√(l/g)", "√(g/l)", "l/g²"],
+      "answer": 1,
+      "explanation": "Assuming T = k l^a m^b g^c and equating powers gives a = ½, b = 0, c = −½, so T ∝ √(l/g).",
+      "difficulty": "hard"
+    },
+    {
+      "q": "In the pendulum derivation T = k · l^a m^b g^c, equating the power of mass M on both sides gives:",
+      "options": ["b = 1", "b = 0", "b = −1", "b = ½"],
+      "answer": 1,
+      "explanation": "On the left, [T] has M⁰. On the right, only m carries M, so b must be 0 for dimensions to match.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "If the viscous force F on a sphere is assumed to depend on viscosity η, velocity v, and radius r as F = k η^a v^b r^c, the power of mass M in [η] = [ML⁻¹T⁻¹] directly fixes:",
+      "options": ["a = 1", "b = 1", "c = 1", "a = 0"],
+      "answer": 0,
+      "explanation": "F has [M¹L¹T⁻²]. Only η carries M, so a = 1 is required for the M exponent to balance.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "For the Stokes' law derivation (F = k η^a v^b r^c), solving the power equations gives the final relation:",
+      "options": ["F = k η v² r", "F = k η v r", "F = k η² v r", "F = k η v r²"],
+      "answer": 1,
+      "explanation": "Equating M, L, T powers yields a = 1, b = 1, c = 1, so F = k η v r.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A quantity Q depends on four independent physical quantities. Using only [M], [L], [T] as base dimensions, dimensional analysis to find Q's formula will:",
+      "options": ["Always succeed with a unique answer", "Fail, since there are more unknown powers than available equations", "Give exactly two possible answers", "Automatically determine the coefficient"],
+      "answer": 1,
+      "explanation": "Four unknowns (the powers) but only three independent equations (M, L, T) means the system is underdetermined.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The length of a wire is measured as 25.4 cm using a metre scale (least count 0.1 cm) and as 25.38 cm using a vernier calliper (least count 0.01 cm). Which statement is correct?",
+      "options": ["The metre scale reading is more precise", "Both readings have equal precision", "The vernier calliper reading is more precise", "Precision cannot be compared between different measuring devices"],
+      "answer": 2,
+      "explanation": "Vernier has smaller least count, so it provides more precision (finer resolution).",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A rectangular plate has length 8.42 cm and breadth 3.7 cm, both measured experimentally. Its area, reported with the correct number of significant figures, should be:",
+      "options": ["31.154 cm²", "31 cm²", "31.2 cm²", "31.15 cm²"],
+      "answer": 1,
+      "explanation": "Area = 8.42 × 3.7 = 31.154 cm². Since 3.7 has 2 SF, round to 2 SF: 31 cm².",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which of the following equations is dimensionally INCORRECT, given v = velocity, r = radius, T = time period, and g = acceleration due to gravity?",
+      "options": ["v = 2πr/T", "v² = gr", "v = gr²", "v² = 2gr"],
+      "answer": 2,
+      "explanation": "[gr²] = [LT⁻²][L²] = [L³T⁻²] ≠ [L²T⁻²] = [v²]. This equation fails dimensional analysis.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A student proposes the formula E = mc for the energy E of a particle of mass m moving with speed c, instead of E = mc². Using dimensional analysis, this proposed formula:",
+      "options": ["Is dimensionally correct, since m and c are both used", "Is dimensionally incorrect, since [mc] ≠ [ML²T⁻²]", "Cannot be tested using dimensional analysis", "Is correct only for photons"],
+      "answer": 1,
+      "explanation": "[mc] = [M][LT⁻¹] = [MLT⁻¹], which is momentum, not energy [ML²T⁻²].",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The centripetal force F on a body of mass m moving with speed v in a circle of radius r is assumed to be F = k · m^a v^b r^c. Using dimensional analysis, the derived relation is:",
+      "options": ["F = kmv²/r", "F = kmv/r²", "F = kmv² r", "F = kmvr"],
+      "answer": 0,
+      "explanation": "Equating powers of M, L, T yields a = 1, b = 2, c = −1, giving F = kmv²/r.",
+      "difficulty": "hard"
+    }
+  ]
+}

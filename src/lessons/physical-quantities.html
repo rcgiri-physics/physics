@@ -1,0 +1,255 @@
+---
+title: Physical Quantities
+grade: XI
+chapters: [1]
+date: 2026-09-27
+description: Precision, significant figures, dimensions and dimensional analysis.
+---
+
+<h2>Introduction</h2>
+<p>Physics is an experimental science. Every measurement is limited by the instrument used, and therefore every measured value has some uncertainty. To describe a quantity properly, we must know not only its magnitude and unit, but also how precise the measurement is.</p>
+
+<div class="box definition">
+  <p>A <strong>physical quantity</strong> is a quantity that can be measured and expressed as a numerical value multiplied by a unit. For example, length = 1.5 m, where 1.5 is the magnitude and m is the unit.</p>
+</div>
+
+<div class="formula">
+  \[ \text{Physical quantity} = \text{Numerical value} \times \text{Unit} \]
+</div>
+
+<p>Physical quantities are divided into two groups:</p>
+<ul>
+  <li><strong>Fundamental quantities:</strong> independent quantities such as length, mass, time, current, temperature, luminous intensity and amount of substance.</li>
+  <li><strong>Derived quantities:</strong> combinations of fundamental quantities such as velocity, force and pressure.</li>
+</ul>
+
+<h2>Accuracy and precision</h2>
+<p>Two measurements may look similar, but their meaning is different. <strong>Accuracy</strong> tells us how close a measured value is to the true value, while <strong>precision</strong> tells us how close repeated measurements are to one another.</p>
+
+<div class="box note">
+  <p>Precise measurements may still be inaccurate if there is a systematic error, such as a zero error in a measuring instrument.</p>
+</div>
+
+<ul>
+  <li><strong>Precise but not accurate:</strong> repeated readings are close together but far from the true value.</li>
+  <li><strong>Accurate but not precise:</strong> the average is near the true value, but individual readings vary widely.</li>
+  <li><strong>Best result:</strong> both accurate and precise.</li>
+</ul>
+
+<p>A vernier caliper with a smaller least count gives a more precise reading than a metre scale, but if the instrument has a zero error, it may still be inaccurate.</p>
+
+<h2>Significant figures</h2>
+<p>The <strong>significant figures</strong> of a measurement are the digits that carry meaningful information about its precision. They include all digits known with certainty and one estimated digit.</p>
+
+<div class="box law">
+  <p>The number of significant figures reflects the instrument's resolution. Reporting a length as 12.3 cm gives more precision than 12 cm, and 12.30 cm is even more precise because the last zero was measured.</p>
+</div>
+
+<h3>Rules for identifying significant figures</h3>
+<ul>
+  <li><strong>Rule 1:</strong> all non-zero digits are significant. Example: 245 has 3 significant figures.</li>
+  <li><strong>Rule 2:</strong> zeros between two non-zero digits are significant. Example: 2005 has 4 significant figures.</li>
+  <li><strong>Rule 3:</strong> leading zeros are not significant. Example: 0.0025 has 2 significant figures.</li>
+  <li><strong>Rule 4:</strong> trailing zeros in a number with a decimal point are significant. Example: 2.500 has 4 significant figures.</li>
+  <li><strong>Rule 5:</strong> trailing zeros in a number without a decimal point are ambiguous; use scientific notation to avoid confusion. Example: 2500 may mean 2, 3 or 4 significant figures.</li>
+  <li><strong>Rule 6:</strong> in scientific notation, all digits in the coefficient are significant. Example: \(1.20 \times 10^4\) has 3 significant figures.</li>
+</ul>
+
+<h3>Worked example</h3>
+<div class="box example">
+  <p><strong>Problem:</strong> State the number of significant figures in (a) 0.00520, (b) 3.0400 and (c) \(1.20 \times 10^4\).</p>
+  <details class="solution">
+    <summary>Show solution</summary>
+    <p>(a) 0.00520: leading zeros are not significant; 5, 2 and 0 are significant, so the number has <strong>3 significant figures</strong>.</p>
+    <p>(b) 3.0400: all digits are significant, so it has <strong>5 significant figures</strong>.</p>
+    <p>(c) \(1.20 \times 10^4\): only the digits in the coefficient count, so it has <strong>3 significant figures</strong>.</p>
+  </details>
+</div>
+
+<h2>Significant figures in calculations</h2>
+<p>When physical quantities are combined, the result cannot be more precise than the least precise measurement used. The final answer must be rounded according to the operation.</p>
+
+<ul>
+  <li><strong>Addition or subtraction:</strong> round to the same number of decimal places as the quantity with the fewest decimal places.
+    <p>Example: \(12.63 + 4.2 = 16.83\), which is rounded to 16.8.</p>
+  </li>
+  <li><strong>Multiplication or division:</strong> round to the same number of significant figures as the quantity with the fewest significant figures.
+    <p>Example: \(3.24 \times 2.1 = 6.804\), which is rounded to 6.8.</p>
+  </li>
+</ul>
+
+<h3>Rounding rules</h3>
+<ul>
+  <li>If the discarded digit is less than 5, the preceding digit remains unchanged.</li>
+  <li>If it is greater than 5, the preceding digit is increased by 1.</li>
+  <li>If it is exactly 5 followed by zeros, round to the nearest even digit. This is the "round half to even" rule.</li>
+</ul>
+
+<div class="box warning">
+  <p>Calculators often display many digits, but a result is not automatically more accurate. Reporting extra digits beyond the true precision is called <strong>false precision</strong>.</p>
+</div>
+
+<h2>Dimensions and dimensional analysis</h2>
+<p>The <strong>dimensions</strong> of a physical quantity indicate the nature of the quantity in terms of the fundamental quantities. In SI system, the base dimensions are:</p>
+<ul>
+  <li>Length: \([L]\)</li>
+  <li>Mass: \([M]\)</li>
+  <li>Time: \([T]\)</li>
+  <li>Electric current: \([A]\)</li>
+  <li>Temperature: \([K]\)</li>
+  <li>Amount of substance: \([mol]\)</li>
+  <li>Luminous intensity: \([cd]\)</li>
+</ul>
+
+<p>At Grade XI level, we mostly use mass, length and time: \([M]\), \([L]\) and \([T]\).</p>
+
+<h3>Dimensional formula</h3>
+<p>If a quantity depends on mass, length and time as \(M^a L^b T^c\), its dimensional formula is written as \([M^a L^b T^c]\).</p>
+
+<div class="formula">
+  \[ [v] = [L][T^{-1}] = [M^0L^1T^{-1}] \]
+  \[ [a] = [L][T^{-2}] = [M^0L^1T^{-2}] \]
+  \[ [F] = [M][L][T^{-2}] = [M^1L^1T^{-2}] \]
+</div>
+
+<p>Examples of dimensional formulas include:</p>
+<ul>
+  <li>Velocity: \([LT^{-1}]\)</li>
+  <li>Acceleration: \([LT^{-2}]\)</li>
+  <li>Force: \([MLT^{-2}]\)</li>
+  <li>Work / energy: \([ML^2T^{-2}]\)</li>
+  <li>Pressure: \([ML^{-1}T^{-2}]\)</li>
+</ul>
+
+<h3>Principle of homogeneity</h3>
+<div class="box law">
+  <p>A correct physical equation must have the same dimensions on both sides. This is the principle of homogeneity of dimensions.</p>
+</div>
+
+<p>Only quantities with the same dimensions can be added, subtracted or equated.</p>
+
+<h3>Use 1: checking correctness of a formula</h3>
+<p>Dimensional analysis can test whether an equation is dimensionally consistent, although it cannot confirm that the formula is fully correct.</p>
+
+<div class="box example">
+  <p><strong>Example:</strong> Check the equation \(s = ut + \frac12 at^2\).</p>
+  <details class="solution">
+    <summary>Show solution</summary>
+    <p>\([s] = [L]\)</p>
+    <p>\([ut] = [LT^{-1}][T] = [L]\)</p>
+    <p>\([\tfrac12 at^2] = [LT^{-2}][T^2] = [L]\)</p>
+    <p>All three terms have dimension \([L]\), so the equation is dimensionally consistent.</p>
+  </details>
+</div>
+
+<h3>Use 2: deriving relations among quantities</h3>
+<p>If a quantity depends on several variables, we may assume a relation and use dimensional analysis to find the powers of each variable.</p>
+
+<div class="box example">
+  <p><strong>Derivation: time period of a simple pendulum</strong></p>
+  <details class="solution">
+    <summary>Show solution</summary>
+    <p>Assume \(T = k l^a m^b g^c\), where \(l\) is length, \(m\) is mass of bob and \(g\) is acceleration due to gravity.</p>
+    <p>Dimensions:</p>
+    <p>\([T] = [T], [l] = [L], [m] = [M], [g] = [LT^{-2}]\)</p>
+    <p>Substitute: \([T] = [L]^a [M]^b [LT^{-2}]^c = [M^b L^{a+c} T^{-2c}]\)</p>
+    <p>Equating powers:</p>
+    <ul>
+      <li>For mass: \(0 = b\), so \(b=0\)</li>
+      <li>For time: \(1 = -2c\), so \(c = -\tfrac12\)</li>
+      <li>For length: \(0 = a + c\), so \(a = \tfrac12\)</li>
+    </ul>
+    <p>Therefore, \(T = k l^{1/2} g^{-1/2}\), or \[ T = k \sqrt{\frac{l}{g}} \]</p>
+    <p>Experiment gives \(k = 2\pi\), hence \(T = 2\pi\sqrt{l/g}\).</p>
+  </details>
+</div>
+
+<div class="box note">
+  <p>Dimensional analysis can predict the form of the relation and show which variable does not affect the result, but it cannot determine dimensionless constants such as \(2\pi\).</p>
+</div>
+
+<h3>Use 3: converting units</h3>
+<p>A physical quantity remains the same even if units change. Only the numerical value changes.</p>
+
+<div class="formula">
+  \[ n_1 [M_1^a L_1^b T_1^c] = n_2 [M_2^a L_2^b T_2^c] \]
+</div>
+
+<p>This allows conversion between systems of units without re-deriving the physics.</p>
+
+<h2>Limitations of dimensional analysis</h2>
+<ul>
+  <li>It cannot determine dimensionless constants such as \(2\pi\), \(\tfrac12\) or coefficients.</li>
+  <li>It cannot be used directly with trigonometric, logarithmic or exponential functions unless their arguments are dimensionless.</li>
+  <li>It cannot distinguish between quantities with the same dimensions but different physical meaning, such as work and torque.</li>
+  <li>It cannot derive formulas involving sums of terms.</li>
+  <li>It may fail when there are more unknowns than independent dimensions.</li>
+</ul>
+
+<h2>Real-life applications</h2>
+<ul>
+  <li>Engineers use dimensional analysis to test whether formulas are plausible before experiments.</li>
+  <li>Fluid mechanics uses dimensionless groups such as Reynolds number.</li>
+  <li>Significant figures and uncertainty are essential in practical laboratory work and board examinations.</li>
+  <li>Unit conversion by dimensional methods is widely used in numerical problem solving.</li>
+</ul>
+
+<h2>Worked numerical problems</h2>
+
+<h3>Example 1</h3>
+<div class="box example">
+  <p><strong>Problem:</strong> Find the dimensional formula of momentum.</p>
+  <details class="solution">
+    <summary>Show solution</summary>
+    <p>Momentum, \(p = mv\)</p>
+    <p>\([p] = [M]\times [LT^{-1}] = [MLT^{-1}]\)</p>
+    <p><strong>Answer:</strong> \([MLT^{-1}]\)</p>
+  </details>
+</div>
+
+<h3>Example 2</h3>
+<div class="box example">
+  <p><strong>Problem:</strong> Check the dimensional correctness of \(v^2 = u^2 + 2as\).</p>
+  <details class="solution">
+    <summary>Show solution</summary>
+    <p>\([v^2] = [LT^{-1}]^2 = [L^2 T^{-2}]\)</p>
+    <p>\([u^2] = [L^2 T^{-2}]\)</p>
+    <p>\([2as] = [LT^{-2}][L] = [L^2T^{-2}]\)</p>
+    <p>Since all terms have the same dimension, the equation is dimensionally consistent.</p>
+  </details>
+</div>
+
+<h3>Example 3</h3>
+<div class="box example">
+  <p><strong>Problem:</strong> The viscous force on a small sphere moving through a fluid depends on coefficient of viscosity \(\eta\), velocity \(v\) and radius \(r\). Use dimensional analysis to derive the form of the force.</p>
+  <details class="solution">
+    <summary>Show solution</summary>
+    <p>Assume \(F = k \eta^a v^b r^c\).</p>
+    <p>Dimensions: \([F] = [MLT^{-2}], [\eta]=[ML^{-1}T^{-1}], [v]=[LT^{-1}], [r]=[L]\)</p>
+    <p>Substitute: \([MLT^{-2}] = [ML^{-1}T^{-1}]^a [LT^{-1}]^b [L]^c\)</p>
+    <p>Equating powers of mass, length and time gives:</p>
+    <ul>
+      <li>For mass: \(1 = a\)</li>
+      <li>For time: \(-2 = -a - b\), so \(b = 1\)</li>
+      <li>For length: \(1 = -a + b + c\), so \(c = 1\)</li>
+    </ul>
+    <p>Hence, \(F = k \eta v r\). Experiment gives \(k = 6\pi\), so \(F = 6\pi \eta r v\), which is Stokes' law.</p>
+  </details>
+</div>
+
+<h2>Exam tips</h2>
+<ul class="key-points">
+  <li>Remember key dimensional formulas: velocity \([LT^{-1}]\), acceleration \([LT^{-2}]\), force \([MLT^{-2}]\), work \([ML^2T^{-2}]\), power \([ML^2T^{-3}]\), pressure \([ML^{-1}T^{-2}]\).</li>
+  <li>Always apply the leading-zero and trailing-zero rules carefully in significant figure questions.</li>
+  <li>For dimensional analysis, write \(Q = kX^aY^bZ^c\), substitute dimensions, then equate powers of \([M]\), \([L]\) and \([T]\).</li>
+  <li>Dimensional analysis can check formula form, but it cannot determine dimensionless constants.</li>
+</ul>
+
+<div class="box tip">
+  <p>In NEB examinations, show every step when equating powers. Marks are often awarded for the method, not only the final answer.</p>
+</div>
+
+<h2>Summary</h2>
+<p>Physical quantities are measured using units; measurements involve uncertainty; significant figures describe the precision of a reading; dimensions describe the nature of a quantity; and dimensional analysis is a powerful tool for checking equations, deriving relations and converting units.</p>
+
+<p><strong>Key idea:</strong> a formula may be dimensionally correct and still physically wrong, so dimensional analysis is a necessary check, not a complete proof.</p>
