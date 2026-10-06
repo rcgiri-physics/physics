@@ -2,595 +2,136 @@
 title: First Law of Thermodynamics
 grade: XII
 chapters: [10]
-date: 2026-01-19
+date: 2026-10-01
+description: Thermodynamic systems, work, heat, internal energy and the first law for common processes.
 ---
 
-<h2>4.1 Thermodynamic System</h2>
-<p><b>Thermodynamics</b> is the branch of physics that deals with heat, work, temperature, and their relation to energy and the properties of matter. Understanding thermodynamic systems is fundamental to analyzing energy transformations.</p>
-<h3>Definition of Thermodynamic System</h3>
-<div class="box law" data-title="Thermodynamic System"><p><b>"A thermodynamic system is a definite quantity of matter or a region of space chosen for study, separated from its surroundings by a boundary (real or imaginary)."</b></p></div>
-<p>The system contains:</p>
-<ul>
-<li>A fixed quantity of matter (closed system) OR a fixed region of space (open system)</li>
-<li>Properties like pressure (P), volume (V), temperature (T), internal energy (U)</li>
-<li>Energy in forms of heat and work</li>
-</ul><figure>
-<figcaption>Thermodynamic System Concept</figcaption>
-<svg class="panel" viewBox="0 0 900 450" xmlns="http://www.w3.org/2000/svg" fill="currentColor"> <ellipse cx="450" cy="225" rx="200" ry="140" fill="#bfdbfe" stroke="#1e40af" stroke-width="5" stroke-dasharray="10,5"/>  <text x="450" y="210" text-anchor="middle" font-size="22" font-weight="bold" fill="#1e40af">
-SYSTEM
-</text> <text x="450" y="235" text-anchor="middle" font-size="15" fill="#1e40af">
-(Region of interest)
-</text> <text x="450" y="255" text-anchor="middle" font-size="14" fill="#1e3a8a">
-P, V, T, U
-</text>  <text x="680" y="145" font-size="16" font-weight="bold" fill="#dc2626">
-BOUNDARY
-</text> <text x="680" y="165" font-size="13" fill="#dc2626">
-(Real or imaginary)
-</text> <line x1="655" y1="155" x2="600" y2="180" stroke="#dc2626" stroke-width="3" marker-end="url(#arrowred)"/>  <text x="150" y="80" font-size="20" font-weight="bold" fill="#059669">
-SURROUNDINGS
-</text> <text x="150" y="105" font-size="14" fill="#059669">
-(Everything outside system)
-</text> <text x="700" y="380" font-size="20" font-weight="bold" fill="#059669">
-SURROUNDINGS
-</text>  <path d="M 300 120 Q 350 80 400 100" stroke="#f97316" stroke-width="4" fill="none" marker-end="url(#arroworange)"/> <text x="320" y="75" font-size="15" font-weight="bold" fill="#f97316">
-Heat (Q)
-</text>  <path d="M 600 225 L 720 225" stroke="#7c3aed" stroke-width="4" fill="none" marker-end="url(#arrowpurple)"/> <text x="640" y="215" font-size="15" font-weight="bold" fill="#7c3aed">
-Work (W)
-</text>  <path d="M 450 80 L 450 20" stroke="#10b981" stroke-width="4" fill="none" marker-end="url(#arrowgreen)" stroke-dasharray="5,5"/> <text x="470" y="50" font-size="14" fill="#10b981">
-Mass (open system)
-</text>  <rect x="50" y="30" width="800" height="390" fill="none" stroke="#64748b" stroke-width="3" stroke-dasharray="8,8"/> <text x="450" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#64748b">
-UNIVERSE = SYSTEM + SURROUNDINGS
-</text> <defs>
-<marker id="arrowred" markerwidth="10" markerheight="10" refx="9" refy="3" orient="auto">
-<path d="M0,0 L0,6 L9,3 z" fill="#dc2626"/>
-</marker>
-<marker id="arroworange" markerwidth="10" markerheight="10" refx="9" refy="3" orient="auto">
-<path d="M0,0 L0,6 L9,3 z" fill="#f97316"/>
-</marker>
-<marker id="arrowpurple" markerwidth="10" markerheight="10" refx="9" refy="3" orient="auto">
-<path d="M0,0 L0,6 L9,3 z" fill="#7c3aed"/>
-</marker>
-<marker id="arrowgreen" markerwidth="10" markerheight="10" refx="3" refy="0" orient="auto">
-<path d="M0,6 L6,0 L6,6 z" fill="#10b981"/>
-</marker>
-</defs>
-</svg>
-</figure>
-<h3>Key Components</h3>
+<h2>Introduction</h2>
+<p><strong>Thermodynamics</strong> studies heat, work, temperature and the transformations of energy. This chapter develops the first law of thermodynamics, which is the energy-conservation principle applied to thermodynamic systems.</p>
+
+<div class="box definition"><strong>Thermodynamic system</strong> is a definite quantity of matter or a region of space selected for study. Everything outside it is the <em>surroundings</em>, and the real or imaginary surface separating them is the <em>boundary</em>.</div>
+
+<p>The system and surroundings together make the universe. A system is described macroscopically by variables such as pressure <i>P</i>, volume <i>V</i> and absolute temperature <i>T</i>.</p>
+
+<h2>Thermodynamic systems and equilibrium</h2>
 <table>
-<tbody>
-<tr>
-<th>Component</th>
-<th>Description</th>
-</tr>
-<tr>
-<td><b>System</b></td>
-<td>The part of the universe chosen for thermodynamic analysis (e.g., gas in a cylinder, engine, refrigerator)</td>
-</tr>
-<tr>
-<td><b>Surroundings</b></td>
-<td>Everything outside the system that can interact with it (rest of the universe)</td>
-</tr>
-<tr>
-<td><b>Boundary</b></td>
-<td>Real or imaginary surface separating system from surroundings; can be rigid/movable, permeable/impermeable</td>
-</tr>
-<tr>
-<td><b>Universe</b></td>
-<td>System + Surroundings (the totality of system and surroundings)</td>
-</tr>
-</tbody>
-</table><h3>Types of Thermodynamic Systems</h3>
-<div class="box tip" data-title="1. Open System (Control Volume)"><p><b>Definition:</b> A system that can exchange both matter and energy with surroundings.</p>
-<p><b>Boundary:</b> Permeable to matter and energy</p>
-<p><b>Examples:</b></p>
-<ul>
-<li>Boiling water in an open pot (steam escapes, heat enters)</li>
-<li>Car engine (fuel enters, exhaust exits, heat released)</li>
-<li>Human body (food in, waste out, heat exchange)</li>
-<li>Open beaker with chemical reaction</li>
-</ul>
-<h4>2. Closed System (Control Mass)</h4>
-<p><b>Definition:</b> A system that can exchange energy (heat, work) but NOT matter with surroundings.</p>
-<p><b>Boundary:</b> Impermeable to matter but allows energy transfer</p>
-<p><b>Examples:</b></p>
-<ul>
-<li>Gas in a sealed cylinder with movable piston (can do work, exchange heat)</li>
-<li>Refrigerant in a refrigeration cycle</li>
-<li>Water in a pressure cooker (sealed, no mass escapes)</li>
-<li>Gas in a balloon (approximately closed)</li>
-</ul>
-<h4>3. Isolated System</h4>
-<p><b>Definition:</b> A system that exchanges neither matter nor energy with surroundings.</p>
-<p><b>Boundary:</b> Impermeable to both matter and energy</p>
-<p><b>Examples:</b></p>
-<ul>
-<li>Ideal thermos flask (perfectly insulated, sealed)</li>
-<li>The entire universe (by definition, nothing outside it)</li>
-<li>Coffee in a perfectly insulated container (theoretical)</li>
-</ul>
-<p><b>Note:</b> True isolated systems are theoretical; real systems always have some energy exchange.</p></div>
-<h3>Thermodynamic Properties</h3>
-<p><b>State Variables:</b> Properties that define the state of a system</p><table>
-<tbody>
-<tr>
-<th>Property</th>
-<th>Symbol</th>
-<th>Description</th>
-</tr>
-<tr>
-<td>Pressure</td>
-<td>P</td>
-<td>Force per unit area exerted by gas molecules</td>
-</tr>
-<tr>
-<td>Volume</td>
-<td>V</td>
-<td>Space occupied by the system</td>
-</tr>
-<tr>
-<td>Temperature</td>
-<td>T</td>
-<td>Average kinetic energy of molecules</td>
-</tr>
-<tr>
-<td>Internal Energy</td>
-<td>U</td>
-<td>Total energy of molecules (kinetic + potential)</td>
-</tr>
-<tr>
-<td>Entropy</td>
-<td>S</td>
-<td>Measure of disorder or randomness</td>
-</tr>
-<tr>
-<td>Enthalpy</td>
-<td>H</td>
-<td>H = U + PV (heat content at constant pressure)</td>
-</tr>
-</tbody>
-</table><h3>Thermodynamic Equilibrium</h3>
-<div class="box definition" data-title="Thermodynamic Equilibrium"><p>A system is in thermodynamic equilibrium when its macroscopic properties (P, V, T) remain constant over time and there are no net flows of energy or matter within the system.</p>
-<p><b>Three types of equilibrium must be satisfied:</b></p>
-<p><b>1. Thermal Equilibrium:</b></p>
-<ul>
-<li>Temperature uniform throughout system</li>
-<li>No heat flow within system</li>
-<li>Example: Hot coffee left in room eventually reaches room temperature</li>
-</ul>
-<p><b>2. Mechanical Equilibrium:</b></p>
-<ul>
-<li>Pressure uniform throughout (for fluids)</li>
-<li>No unbalanced forces</li>
-<li>No bulk motion or acceleration</li>
-<li>Example: Gas in a cylinder with piston at rest</li>
-</ul>
-<p><b>3. Chemical Equilibrium:</b></p>
-<ul>
-<li>No net chemical reactions occurring</li>
-<li>Composition remains constant</li>
-<li>Example: Reversible reaction at equilibrium (forward rate = reverse rate)</li>
-</ul></div>
-<h3>Thermodynamic State and State Functions</h3>
-<div class="box note" data-title="State vs Path Functions"><p><b>State Functions (Point Functions):</b></p>
-<ul>
-<li>Depend ONLY on current state, NOT on path taken</li>
-<li>Examples: P, V, T, U (internal energy), H (enthalpy), S (entropy)</li>
-<li>Change is independent of process: ΔU = U<sub>final</sub> - U<sub>initial</sub></li>
-<li>Analogy: Altitude on a mountain (doesn't matter which trail you took)</li>
-</ul>
-<p><b>Path Functions (Process Functions):</b></p>
-<ul>
-<li>Depend on the PATH or PROCESS taken</li>
-<li>Examples: Q (heat), W (work)</li>
-<li>Amount depends on how the change occurred</li>
-<li>Analogy: Distance traveled on mountain (depends on which trail)</li>
-</ul>
-<p><b>Important:</b> While Q and W are path-dependent, their difference (Q - W) equals ΔU, which is path-independent. This is the essence of the First Law of Thermodynamics.</p></div>
-<h3>Applications and Importance</h3>
-<ul>
-<li><b>Engineering:</b> Design of engines, refrigerators, power plants, turbines</li>
-<li><b>Chemistry:</b> Understanding chemical reactions, equilibria, reaction spontaneity</li>
-<li><b>Biology:</b> Metabolism, energy transfer in living organisms</li>
-<li><b>Meteorology:</b> Weather patterns, atmospheric thermodynamics</li>
-<li><b>Astrophysics:</b> Star formation, stellar evolution, black holes</li>
-</ul><h2>4.2 Work Done By and On the System</h2>
-<p>In thermodynamics, <b>work</b> is energy transferred when a system changes its volume against external pressure. Understanding work is crucial for energy analysis of thermodynamic processes.</p>
-<h3>Sign Convention for Work</h3>
-<div class="box law" data-title="Sign Convention (Most Common)"><ul>
-<li><b>Work done BY the system (expansion):</b> W > 0 (POSITIVE)</li>
-<li><b>Work done ON the system (compression):</b> W < 0 (NEGATIVE)</li>
-</ul>
-<p><b>Note:</b> Some textbooks use opposite convention. Always check your textbook's convention. NEB typically uses the above convention.</p></div>
-<figure>
-<figcaption>Work Done By Gas During Expansion and Compression</figcaption>
-<svg class="panel" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" fill="currentColor"> <g>
-<text x="200" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#16a34a">
-EXPANSION (Work BY System)
-</text>
-<rect x="50" y="80" width="120" height="140" fill="#e0f2fe" stroke="#0369a1" stroke-width="3"/>
-<rect x="170" y="80" width="30" height="140" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
-<line x1="185" y1="150" x2="230" y2="150" stroke="#dc2626" stroke-width="4" marker-end="url(#arrow1)"/>
-<text x="185" y="135" text-anchor="middle" font-size="14" font-weight="bold" fill="#dc2626">
-F
-</text>
-<text x="110" y="160" text-anchor="middle" font-size="16" fill="#0369a1">
-Gas
-</text>
-<text x="110" y="180" text-anchor="middle" font-size="13" fill="#0369a1">
-P, V₁
-</text>
-<path d="M 250 150 L 300 150" stroke="#10b981" stroke-width="5" marker-end="url(#arrowgreen2)" stroke-dasharray="8,4"/>
-<text x="275" y="140" text-anchor="middle" font-size="14" font-weight="bold" fill="#10b981">
-Piston moves
-</text>
-<rect x="320" y="80" width="180" height="140" fill="#dbeafe" stroke="#0369a1" stroke-width="3"/>
-<rect x="500" y="80" width="30" height="140" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
-<line x1="515" y1="150" x2="560" y2="150" stroke="#dc2626" stroke-width="4" marker-end="url(#arrow1)"/>
-<text x="515" y="135" text-anchor="middle" font-size="14" font-weight="bold" fill="#dc2626">
-F
-</text>
-<text x="410" y="160" text-anchor="middle" font-size="16" fill="#0369a1">
-Gas (Expanded)
-</text>
-<text x="410" y="180" text-anchor="middle" font-size="13" fill="#0369a1">
-P↓, V₂ > V₁
-</text>
-<text x="290" y="250" text-anchor="middle" font-size="15" font-weight="bold" fill="#16a34a">
-W = +PΔV (Positive)
-</text>
-<text x="290" y="270" text-anchor="middle" font-size="13" fill="#15803d">
-System loses energy as work
-</text>
-</g>  <g>
-<text x="700" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#dc2626">
-COMPRESSION (Work ON System)
-</text>
-<rect x="570" y="80" width="180" height="140" fill="#dbeafe" stroke="#0369a1" stroke-width="3"/>
-<rect x="750" y="80" width="30" height="140" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
-<line x1="730" y1="150" x2="765" y2="150" stroke="#16a34a" stroke-width="4" marker-end="url(#arrowgreen3)"/>
-<text x="750" y="135" text-anchor="middle" font-size="14" font-weight="bold" fill="#16a34a">
-F
-<tspan baseline-shift="sub" font-size="11">
-ext
-</tspan>
-</text>
-<text x="660" y="160" text-anchor="middle" font-size="16" fill="#0369a1">
-Gas
-</text>
-<text x="660" y="180" text-anchor="middle" font-size="13" fill="#0369a1">
-P, V₂
-</text>
-<path d="M 850 150 L 800 150" stroke="#dc2626" stroke-width="5" marker-end="url(#arrowred2)" stroke-dasharray="8,4"/>
-<text x="825" y="140" text-anchor="middle" font-size="14" font-weight="bold" fill="#dc2626">
-Piston pushed
-</text>
-<rect x="600" y="330" width="120" height="140" fill="#e0f2fe" stroke="#0369a1" stroke-width="3"/>
-<rect x="720" y="330" width="30" height="140" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
-<line x1="700" y1="400" x2="735" y2="400" stroke="#16a34a" stroke-width="4" marker-end="url(#arrowgreen3)"/>
-<text x="720" y="385" text-anchor="middle" font-size="14" font-weight="bold" fill="#16a34a">
-F
-<tspan baseline-shift="sub" font-size="11">
-ext
-</tspan>
-</text>
-<text x="660" y="410" text-anchor="middle" font-size="16" fill="#0369a1">
-Compressed
-</text>
-<text x="660" y="430" text-anchor="middle" font-size="13" fill="#0369a1">
-P↑, V₁ < V₂
-</text>
-<text x="790" y="385" text-anchor="middle" font-size="15" font-weight="bold" fill="#dc2626">
-W = -PΔV (Negative)
-</text>
-<text x="790" y="405" text-anchor="middle" font-size="13" fill="#b91c1c">
-System gains energy as work
-</text>
-</g> <defs>
-<marker id="arrow1" markerwidth="10" markerheight="10" refx="9" refy="3" orient="auto">
-<path d="M0,0 L0,6 L9,3 z" fill="#dc2626"/>
-</marker>
-<marker id="arrowgreen2" markerwidth="12" markerheight="12" refx="9" refy="3" orient="auto">
-<path d="M0,0 L0,6 L9,3 z" fill="#10b981"/>
-</marker>
-<marker id="arrowred2" markerwidth="12" markerheight="12" refx="9" refy="3" orient="auto">
-<path d="M0,0 L0,6 L9,3 z" fill="#dc2626"/>
-</marker>
-<marker id="arrowgreen3" markerwidth="10" markerheight="10" refx="9" refy="3" orient="auto">
-<path d="M0,0 L0,6 L9,3 z" fill="#16a34a"/>
-</marker>
-</defs>
-</svg>
-</figure>
-<h3>Calculation of Work Done During Volume Change</h3>
-<p><b>Consider a gas in a cylinder with movable piston:</b></p>
-<div class="box note" data-title="Derivation"><p><b>Force exerted by gas on piston:</b> F = P × A</p>
-<p>where P = pressure, A = cross-sectional area of piston</p>
-<p><b>Work done when piston moves distance dx:</b></p>
-<p>dW = F × dx = P × A × dx</p>
-<p><b>But A × dx = dV (change in volume):</b></p>
-<p>dW = P dV</p>
-<p><b>Total work for volume change from V₁ to V₂:</b></p></div>
-<div class="formula"><b>Work Done by Gas:</b> <br><br>
-W = ∫ P dV <br><br><b>For finite volume change from V₁ to V₂:</b> <br><br>
-W = ∫<sub>V₁</sub><sup>V₂</sup> P dV <br><br><b>For constant pressure (isobaric process):</b> <br><br>
-W = P(V₂ - V₁) = PΔV</div>
-<h3>P-V Diagram (Indicator Diagram)</h3>
-<p>A <b>P-V diagram</b> plots pressure (P) on the y-axis versus volume (V) on the x-axis. It's a powerful tool for visualizing thermodynamic processes and calculating work.</p><figure>
-<figcaption>Work Calculation from P-V Diagram</figcaption>
-<svg class="panel" viewBox="0 0 900 550" xmlns="http://www.w3.org/2000/svg" fill="currentColor"> <line x1="100" y1="450" x2="800" y2="450" stroke="#1e293b" stroke-width="3" marker-end="url(#arrowblack1)"/> <line x1="100" y1="450" x2="100" y2="50" stroke="#1e293b" stroke-width="3" marker-end="url(#arrowblack1)"/> <text x="820" y="455" font-size="18" font-weight="bold" fill="#1e293b">
-V
-</text> <text x="75" y="35" font-size="18" font-weight="bold" fill="#1e293b">
-P
-</text>  <path d="M 200 150 Q 350 200 500 300 T 700 400" stroke="#7c3aed" stroke-width="4" fill="none"/>  <path d="M 200 150 Q 350 200 500 300 T 700 400 L 700 450 L 200 450 Z" fill="url(#workGradient)" opacity="0.7" stroke="none"/>  <circle cx="200" cy="150" r="8" fill="#dc2626"/> <text x="200" y="125" text-anchor="middle" font-size="16" font-weight="bold" fill="#dc2626">
-A (V₁, P₁)
-</text> <circle cx="700" cy="400" r="8" fill="#16a34a"/> <text x="700" y="425" text-anchor="middle" font-size="16" font-weight="bold" fill="#16a34a">
-B (V₂, P₂)
-</text>  <line x1="200" y1="450" x2="200" y2="460" stroke="#1e293b" stroke-width="2"/> <text x="200" y="480" text-anchor="middle" font-size="15" fill="#1e293b">
-V₁
-</text> <line x1="700" y1="450" x2="700" y2="460" stroke="#1e293b" stroke-width="2"/> <text x="700" y="480" text-anchor="middle" font-size="15" fill="#1e293b">
-V₂
-</text>  <line x1="200" y1="470" x2="700" y2="470" stroke="#f97316" stroke-width="3" marker-start="url(#arroworange1)" marker-end="url(#arroworange2)"/> <text x="450" y="495" text-anchor="middle" font-size="16" font-weight="bold" fill="#f97316">
-ΔV = V₂ - V₁
-</text>  <text x="450" y="280" text-anchor="middle" font-size="20" font-weight="bold" fill="#7c3aed">
-W = ∫ P dV
-</text> <text x="450" y="310" text-anchor="middle" font-size="16" fill="#6d28d9">
-(Area under curve)
-</text>  <path d="M 350 250 L 550 350" stroke="#10b981" stroke-width="5" marker-end="url(#arrowgreen4)" stroke-dasharray="8,4"/> <text x="450" y="240" text-anchor="middle" font-size="14" font-weight="bold" fill="#10b981">
-Expansion →
-</text>  <rect x="100" y="500" width="700" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/> <text x="450" y="525" text-anchor="middle" font-size="15" font-weight="bold" fill="#92400e">
-Work = Area under P-V curve between V₁ and V₂
-</text> <defs>
-<lineargradient id="workGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-<stop offset="0%" stop-color="#c084fc" stop-opacity="0.8"/>
-<stop offset="100%" stop-color="#e9d5ff" stop-opacity="0.3"/>
-</lineargradient>
-<marker id="arrowblack1" markerwidth="10" markerheight="10" refx="9" refy="3" orient="auto">
-<path d="M0,0 L0,6 L9,3 z" fill="#1e293b"/>
-</marker>
-<marker id="arroworange1" markerwidth="8" markerheight="8" refx="0" refy="3" orient="auto">
-<path d="M6,0 L6,6 L0,3 z" fill="#f97316"/>
-</marker>
-<marker id="arroworange2" markerwidth="8" markerheight="8" refx="6" refy="3" orient="auto">
-<path d="M0,0 L0,6 L6,3 z" fill="#f97316"/>
-</marker>
-<marker id="arrowgreen4" markerwidth="10" markerheight="10" refx="9" refy="3" orient="auto">
-<path d="M0,0 L0,6 L9,3 z" fill="#10b981"/>
-</marker>
-</defs>
-</svg>
-</figure>
-<div class="box tip" data-title="Key Principle: Work = Area Under P-V Curve"><p><b>The work done by a gas during a process equals the area under the P-V curve for that process.</b></p>
-<ul>
-<li><b>Expansion (V₂ > V₁):</b> Area is positive → W > 0 (work done BY system)</li>
-<li><b>Compression (V₂ < V₁):</b> Area is negative → W < 0 (work done ON system)</li>
-<li><b>Cyclic Process:</b> Net work = Area enclosed by the cycle
-<ul>
-<li>Clockwise cycle → W > 0 (net work output, heat engine)</li>
-<li>Counterclockwise cycle → W < 0 (net work input, refrigerator/heat pump)</li>
-</ul></li>
-</ul></div>
-<h3>Work for Different Processes</h3>
+<tr><th>System</th><th>Exchange with surroundings</th><th>Example</th></tr>
+<tr><td>Open</td><td>Matter and energy</td><td>Boiling water in an open vessel; a car engine</td></tr>
+<tr><td>Closed</td><td>Energy, but not matter</td><td>Gas in a sealed cylinder with a movable piston</td></tr>
+<tr><td>Isolated</td><td>Neither matter nor energy</td><td>An ideal sealed, perfectly insulated container</td></tr>
+</table>
+
+<p>A system is in <strong>thermodynamic equilibrium</strong> when its macroscopic properties do not change with time and there are no unbalanced flows within it. Thermal equilibrium requires uniform temperature, mechanical equilibrium requires no unbalanced pressure or force, and chemical equilibrium requires constant composition.</p>
+
+<div class="box law"><strong>State and path functions.</strong> Pressure, volume, temperature, internal energy, enthalpy and entropy are state functions: their changes depend only on the initial and final states. Heat <i>Q</i> and work <i>W</i> are path functions: their values depend on the process used.</div>
+
+<h2>Work done during volume change</h2>
+<p>Consider gas behind a piston of cross-sectional area <i>A</i>. If its pressure is <i>P</i>, the force exerted by the gas is <i>F = PA</i>. When the piston moves through a small distance <i>dx</i>, the volume change is <i>dV = A dx</i>.</p>
+<div class="formula">\[dW = F\,dx = PA\,dx = P\,dV\]</div>
+<p>Therefore, the work done by the gas as its volume changes from <i>V</i><sub>1</sub> to <i>V</i><sub>2</sub> is</p>
+<div class="formula">\[W = \int_{V_1}^{V_2} P\,dV\]</div>
+
+<div class="box note"><strong>Sign convention used here:</strong> work done <em>by</em> the system is positive. Thus an expansion has <i>W &gt; 0</i>, while compression has <i>W &lt; 0</i>. Some books define work done on the system as positive; always state the convention before solving.</div>
+
+<h3>Work at constant pressure</h3>
+<div class="formula">\[W = P(V_2-V_1)=P\Delta V\]</div>
+
+<h3>Work from a P–V diagram</h3>
+<p>On a pressure–volume diagram, the work done is the signed area under the process curve between the initial and final volumes. Expansion to the right gives positive work and compression to the left gives negative work. In a cyclic process, the net work is the area enclosed by the cycle: clockwise cycles produce work, while counter-clockwise cycles require work input.</p>
+
+<figure><svg viewBox="0 0 440 260" role="img" aria-label="Pressure volume graph showing area under an expansion curve" stroke="currentColor" fill="none" stroke-width="2">
+<path d="M55 220V25M55 220H410"/><path d="M95 65 Q210 90 350 175" stroke="currentColor" stroke-width="3"/><path d="M95 65 Q210 90 350 175 V220 H95 Z" fill="currentColor" opacity=".14" stroke="none"/><path d="M95 220V65M350 220V175" stroke-dasharray="5 4"/><circle cx="95" cy="65" r="4" fill="currentColor"/><circle cx="350" cy="175" r="4" fill="currentColor"/><text x="38" y="32" stroke="none" fill="currentColor">P</text><text x="400" y="244" stroke="none" fill="currentColor">V</text><text x="77" y="52" stroke="none" fill="currentColor">A</text><text x="355" y="171" stroke="none" fill="currentColor">B</text><text x="165" y="205" stroke="none" fill="currentColor">W = ∫P dV</text>
+</svg><figcaption>Work done by an expanding gas is the area under the P–V curve.</figcaption></figure>
+
+<h2>Thermodynamic processes</h2>
 <table>
-<tbody>
-<tr>
-<th>Process</th>
-<th>Condition</th>
-<th>Work Formula</th>
-</tr>
-<tr>
-<td><b>Isobaric</b> (Constant P)</td>
-<td>P = constant</td>
-<td>W = P(V₂ - V₁) = PΔV</td>
-</tr>
-<tr>
-<td><b>Isothermal</b> (Constant T)</td>
-<td>T = constant, PV = constant</td>
-<td>W = nRT ln(V₂/V₁) = P₁V₁ ln(V₂/V₁)</td>
-</tr>
-<tr>
-<td><b>Isochoric</b> (Constant V)</td>
-<td>V = constant, ΔV = 0</td>
-<td>W = 0 (no volume change)</td>
-</tr>
-<tr>
-<td><b>Adiabatic</b> (No heat exchange)</td>
-<td>Q = 0, PV<sup>γ</sup> = constant</td>
-<td>W = (P₁V₁ - P₂V₂)/(γ - 1) = nR(T₁ - T₂)/(γ - 1)</td>
-</tr>
-</tbody>
-</table><div class="box note" data-title="Important Points for NEB Exams"><ul>
-<li>Sign convention: Expansion W > 0, Compression W < 0 (most common)</li>
-<li>Work is a path function (depends on process, not just initial and final states)</li>
-<li>Work = ∫ P dV = Area under P-V curve</li>
-<li>For constant pressure: W = PΔV (simplest formula)</li>
-<li>For constant volume: W = 0 (no work if volume doesn't change)</li>
-<li>Different paths between same initial and final states give different work values</li>
-<li>In cyclic processes, net work = area enclosed by cycle on P-V diagram</li>
-</ul></div>
-<h2>4.3 Latent Heat and Internal Energy</h2>
-<p>Understanding <b>latent heat</b> and <b>internal energy</b> is fundamental to thermodynamics. These concepts explain how energy is stored and transferred in matter.</p>
-<h3>Latent Heat</h3>
-<div class="box law" data-title="Latent Heat Definition"><p><b>"Latent heat is the amount of heat energy absorbed or released by a substance during a phase change (change of state) at constant temperature and pressure."</b></p></div>
-<p>During phase transitions (solid ↔ liquid ↔ gas), temperature remains constant while heat is added or removed. This energy changes the intermolecular bonds rather than kinetic energy.</p>
-<div class="formula"><b>Latent Heat Formula:</b> <br><br>
-Q = mL <br><br><b>Where:</b><br>
-Q = Heat absorbed or released (J)<br>
-m = Mass of substance (kg)<br>
-L = Latent heat (J/kg or J/mol)</div>
-<h3>Types of Latent Heat</h3>
-<table>
-<tbody>
-<tr>
-<th>Type</th>
-<th>Phase Change</th>
-<th>Description</th>
-<th>Example for Water</th>
-</tr>
-<tr>
-<td><b>Latent Heat of Fusion (L<sub>f</sub>)</b></td>
-<td>Solid ↔ Liquid</td>
-<td>Heat needed to melt solid or released when liquid freezes</td>
-<td>L<sub>f</sub> = 334 kJ/kg (ice to water at 0°C)</td>
-</tr>
-<tr>
-<td><b>Latent Heat of Vaporization (L<sub>v</sub>)</b></td>
-<td>Liquid ↔ Gas</td>
-<td>Heat needed to boil liquid or released when vapor condenses</td>
-<td>L<sub>v</sub> = 2260 kJ/kg (water to steam at 100°C)</td>
-</tr>
-<tr>
-<td><b>Latent Heat of Sublimation (L<sub>s</sub>)</b></td>
-<td>Solid ↔ Gas</td>
-<td>Heat needed for solid to directly become gas</td>
-<td>Dry ice (CO₂) sublimates at -78°C</td>
-</tr>
-</tbody>
-</table><figure>
-<figcaption>Temperature vs Heat Added for Water</figcaption>
-<svg class="panel" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" fill="currentColor"> <line x1="80" y1="420" x2="850" y2="420" stroke="#1e293b" stroke-width="3" marker-end="url(#arrowblack2)"/> <line x1="80" y1="420" x2="80" y2="50" stroke="#1e293b" stroke-width="3" marker-end="url(#arrowblack2)"/> <text x="870" y="425" font-size="16" font-weight="bold" fill="#1e293b">
-Heat Added (Q) →
-</text> <text x="40" y="30" font-size="16" font-weight="bold" fill="#1e293b">
-T(°C)
-</text>  <line x1="75" y1="350" x2="85" y2="350" stroke="#1e293b" stroke-width="2"/> <text x="60" y="355" text-anchor="end" font-size="14" fill="#1e293b">
-0
-</text> <line x1="75" y1="150" x2="85" y2="150" stroke="#1e293b" stroke-width="2"/> <text x="60" y="155" text-anchor="end" font-size="14" fill="#1e293b">
-100
-</text>   <line x1="100" y1="420" x2="200" y2="350" stroke="#3b82f6" stroke-width="5"/> <text x="150" y="440" text-anchor="middle" font-size="13" font-weight="bold" fill="#3b82f6">
-Ice
-</text> <text x="150" y="455" text-anchor="middle" font-size="12" fill="#1e40af">
-heating
-</text> <circle cx="200" cy="350" r="6" fill="#dc2626"/>  <line x1="200" y1="350" x2="350" y2="350" stroke="#ec4899" stroke-width="5"/> <text x="275" y="330" text-anchor="middle" font-size="14" font-weight="bold" fill="#ec4899">
-Melting
-</text> <text x="275" y="348" text-anchor="middle" font-size="13" fill="#be185d">
-(0°C, T constant)
-</text> <text x="275" y="380" text-anchor="middle" font-size="13" font-weight="bold" fill="#be185d">
-Q = mL
-<tspan baseline-shift="sub" font-size="10">
-f
-</tspan>
-</text> <circle cx="350" cy="350" r="6" fill="#dc2626"/>  <line x1="350" y1="350" x2="500" y2="150" stroke="#10b981" stroke-width="5"/> <text x="425" y="235" text-anchor="middle" font-size="13" font-weight="bold" fill="#10b981">
-Water
-</text> <text x="425" y="250" text-anchor="middle" font-size="12" fill="#15803d">
-heating
-</text> <circle cx="500" cy="150" r="6" fill="#dc2626"/>  <line x1="500" y1="150" x2="720" y2="150" stroke="#f97316" stroke-width="5"/> <text x="610" y="130" text-anchor="middle" font-size="14" font-weight="bold" fill="#f97316">
-Boiling
-</text> <text x="610" y="148" text-anchor="middle" font-size="13" fill="#c2410c">
-(100°C, T constant)
-</text> <text x="610" y="180" text-anchor="middle" font-size="13" font-weight="bold" fill="#c2410c">
-Q = mL
-<tspan baseline-shift="sub" font-size="10">
-v
-</tspan>
-</text> <circle cx="720" cy="150" r="6" fill="#dc2626"/>  <line x1="720" y1="150" x2="820" y2="80" stroke="#a855f7" stroke-width="5"/> <text x="770" y="100" text-anchor="middle" font-size="13" font-weight="bold" fill="#a855f7">
-Steam
-</text> <text x="770" y="115" text-anchor="middle" font-size="12" fill="#7c3aed">
-heating
-</text>  <rect x="150" y="60" width="600" height="60" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/> <text x="450" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#92400e">
-Horizontal segments: Phase change (T constant, intermolecular bonds breaking/forming)
-</text> <text x="450" y="105" text-anchor="middle" font-size="14" font-weight="bold" fill="#92400e">
-Sloped segments: Temperature change (kinetic energy of molecules increasing)
-</text> <defs>
-<marker id="arrowblack2" markerwidth="10" markerheight="10" refx="9" refy="3" orient="auto">
-<path d="M0,0 L0,6 L9,3 z" fill="#1e293b"/>
-</marker>
-</defs>
-</svg>
-</figure>
-<div class="box tip" data-title="Why Does Temperature Remain Constant During Phase Change?"><p>During melting, boiling, or sublimation:</p>
+<tr><th>Process</th><th>Condition</th><th>Work done by gas</th></tr>
+<tr><td>Isobaric</td><td><i>P</i> constant</td><td>\(W=P(V_2-V_1)\)</td></tr>
+<tr><td>Isochoric</td><td><i>V</i> constant</td><td>\(W=0\)</td></tr>
+<tr><td>Isothermal</td><td><i>T</i> constant</td><td>\(W=nRT\ln(V_2/V_1)\), for an ideal gas</td></tr>
+<tr><td>Adiabatic</td><td><i>Q=0</i></td><td>\(W=(P_1V_1-P_2V_2)/(\gamma-1)\)</td></tr>
+<tr><td>Cyclic</td><td>Final state equals initial state</td><td>Net work is the enclosed P–V area</td></tr>
+</table>
+
+<h3>Isothermal process</h3>
+<p>For an ideal gas at constant temperature, \(PV=nRT\), so \(P=nRT/V\). Hence</p>
+<div class="formula">\[W=\int_{V_1}^{V_2}\frac{nRT}{V}\,dV=nRT\ln\left(\frac{V_2}{V_1}\right)\]</div>
+<p>For an ideal gas, internal energy depends only on temperature. Therefore \(\Delta U=0\) in an isothermal process.</p>
+
+<h3>Adiabatic process</h3>
+<p>An adiabatic process occurs without heat exchange with the surroundings. For a reversible adiabatic change of an ideal gas,</p>
+<div class="formula">\[PV^\gamma=\text{constant},\qquad TV^{\gamma-1}=\text{constant}\]</div>
+<p>Expansion causes cooling and compression causes heating. Here \(\gamma=C_P/C_V\).</p>
+
+<h2>Heat and internal energy</h2>
+<p><strong>Heat</strong> is energy transferred because of a temperature difference; it is not a substance stored in a body. <strong>Internal energy</strong> <i>U</i> is the total microscopic energy of the system, including molecular kinetic energy and intermolecular potential energy.</p>
+<div class="formula">\[U=U_{\text{kinetic}}+U_{\text{potential}}\]</div>
+<p>For an ideal gas, intermolecular potential energy is negligible, so internal energy is a function of temperature only. For a monatomic ideal gas,</p>
+<div class="formula">\[U=\frac{3}{2}nRT,\qquad \Delta U=nC_V\Delta T\]</div>
+
+<div class="box definition"><strong>Heat capacity.</strong> The heat capacity of a body is the heat required to raise its temperature by one kelvin. The molar heat capacities are \(C_V\) at constant volume and \(C_P\) at constant pressure.</div>
+
+<h2>First law of thermodynamics</h2>
+<div class="box law"><strong>First law:</strong> The heat supplied to a system is used partly to increase its internal energy and partly to do work by the system.</div>
+<div class="formula">\[\boxed{Q=\Delta U+W}\]</div>
+<p>With this convention, \(Q&gt;0\) means heat enters the system, \(Q&lt;0\) means heat leaves it, \(W&gt;0\) means the system does work, and \(W&lt;0\) means work is done on it.</p>
+
+<h3>Special cases</h3>
 <ul>
-<li><b>Energy is used to break intermolecular bonds</b>, not to increase kinetic energy</li>
-<li>Breaking bonds requires energy (endothermic process)</li>
-<li>Temperature (measure of average KE) stays constant</li>
-<li>Molecular arrangement changes: ordered (solid) → less ordered (liquid) → disordered (gas)</li>
+<li><strong>Isochoric:</strong> \(W=0\), so \(Q=\Delta U\).</li>
+<li><strong>Adiabatic:</strong> \(Q=0\), so \(\Delta U=-W\).</li>
+<li><strong>Isothermal ideal gas:</strong> \(\Delta U=0\), so \(Q=W\).</li>
+<li><strong>Cyclic process:</strong> \(\Delta U=0\), so net heat supplied equals net work done.</li>
 </ul>
-<p><b>Example:</b> Ice at 0°C and water at 0°C have same temperature but different energy states. The water has more internal energy because bonds were broken during melting.</p></div>
-<h3>Internal Energy (U)</h3>
-<div class="box law" data-title="Internal Energy Definition"><p><b>"Internal energy is the total energy contained within a system, including the kinetic energy of molecular motion and the potential energy of intermolecular forces."</b></p></div>
-<div class="formula"><b>Components of Internal Energy:</b> <br><br>
-U = KE + PE <br><br><b>Where:</b><br>
-KE = Kinetic energy of molecules (translational, rotational, vibrational)<br>
-PE = Potential energy due to intermolecular forces <br><br><b>For ideal gas (no intermolecular forces, PE ≈ 0):</b> <br><br>
-U = nC<sub>v</sub>T <br><br><b>Where:</b><br>
-n = number of moles<br>
-C<sub>v</sub> = molar specific heat at constant volume<br>
-T = absolute temperature (K)</div>
-<h3>Types of Molecular Energy</h3>
-<table>
-<tbody>
-<tr>
-<th>Energy Type</th>
-<th>Description</th>
-<th>Dependence</th>
-</tr>
-<tr>
-<td><b>Translational KE</b></td>
-<td>Energy due to linear motion of molecules</td>
-<td>Present in all gases, liquids (some), solids (vibration)</td>
-</tr>
-<tr>
-<td><b>Rotational KE</b></td>
-<td>Energy due to rotation of molecules</td>
-<td>Present in polyatomic molecules</td>
-</tr>
-<tr>
-<td><b>Vibrational KE</b></td>
-<td>Energy due to vibration of atoms within molecules</td>
-<td>Present in solids and molecules at high T</td>
-</tr>
-<tr>
-<td><b>Potential Energy</b></td>
-<td>Energy due to intermolecular attractions/repulsions</td>
-<td>Significant in liquids and solids, negligible in ideal gases</td>
-</tr>
-</tbody>
-</table><h3>Properties of Internal Energy</h3>
-<div class="box definition" data-title="Key Properties"><p><b>1. State Function:</b></p>
-<ul>
-<li>Internal energy depends only on current state (P, V, T), not on path</li>
-<li>ΔU = U<sub>final</sub> - U<sub>initial</sub> is path-independent</li>
+
+<h2>Heat capacities and Mayer's relation</h2>
+<p>For one mole of an ideal gas, the first law gives</p>
+<div class="formula">\[dQ=dU+P\,dV\]</div>
+<p>At constant volume, \(dV=0\), hence \(dQ_V=C_VdT\). At constant pressure, \(dQ_P=C_PdT\). For one mole, using \(PV=RT\),</p>
+<div class="formula">\[C_P-C_V=R\]</div>
+<p>This is <strong>Mayer's relation</strong>. For an ideal gas, \(\gamma=C_P/C_V\), so \(C_P=\gamma R/(\gamma-1)\) and \(C_V=R/(\gamma-1)\).</p>
+
+<h2>Worked examples</h2>
+<div class="box example"><strong>1. Constant-pressure expansion.</strong> A gas expands from \(2.0\times10^{-3}\,\text{m}^3\) to \(5.0\times10^{-3}\,\text{m}^3\) against a constant pressure of \(1.0\times10^5\,\text{Pa}\).<br><br>
+\[W=P\Delta V=(1.0\times10^5)(3.0\times10^{-3})=3.0\times10^2\,\text{J}\]<br>
+The work done by the gas is <strong>300 J</strong>.</div>
+
+<div class="box example"><strong>2. First-law calculation.</strong> A system receives 500 J of heat and does 180 J of work. Find its change in internal energy.<br><br>
+\[\Delta U=Q-W=500-180=320\,\text{J}\]<br>
+The internal energy increases by <strong>320 J</strong>.</div>
+
+<div class="box example"><strong>3. Adiabatic compression.</strong> In an adiabatic compression, 250 J of work is done on the gas. Since work done by the gas is \(W=-250\,\text{J}\) and \(Q=0\),<br><br>
+\[\Delta U=Q-W=0-(-250)=250\,\text{J}\]<br>
+The gas gains 250 J of internal energy and its temperature rises.</div>
+
+<h2>Key points and common mistakes</h2>
+<ul class="key-points">
+<li>Heat and work are transfers of energy, not state properties stored in a system.</li>
+<li>Internal energy is a state function; heat and work depend on the path.</li>
+<li>Use absolute temperature in gas laws and logarithmic isothermal-work formulas.</li>
+<li>Work is the signed area under a P–V curve, not simply pressure times volume in every process.</li>
+<li>At constant volume, no boundary work is done.</li>
+<li>Do not use \(Q=mc\Delta T\) for a phase change or a general thermodynamic process without checking the assumptions.</li>
+<li>State your sign convention. The equation changes appearance if a textbook defines work done on the system as positive.</li>
 </ul>
-<p><b>2. Temperature Dependence:</b></p>
-<ul>
-<li>For ideal gases: U ∝ T (directly proportional to temperature)</li>
-<li>Higher temperature → more molecular kinetic energy → higher U</li>
-</ul>
-<p><b>3. Cannot Be Measured Absolutely:</b></p>
-<ul>
-<li>We can only measure changes in internal energy (ΔU)</li>
-<li>Absolute value of U is unknown (requires quantum mechanics)</li>
-</ul>
-<p><b>4. Extensive Property:</b></p>
-<ul>
-<li>Depends on amount of substance</li>
-<li>Doubling mass doubles internal energy</li>
-</ul></div>
-<h3>Change in Internal Energy</h3>
-<p><b>Internal energy can change by two mechanisms:</b></p>
-<div class="box tip" data-title="1. Heat Transfer (Q)"><ul>
-<li>Energy transferred due to temperature difference</li>
-<li>Heat INTO system → ΔU increases (Q > 0)</li>
-<li>Heat OUT OF system → ΔU decreases (Q < 0)</li>
-</ul>
-<h4>2. Work (W):</h4>
-<ul>
-<li>Energy transferred due to mechanical means (volume change, stirring, etc.)</li>
-<li>Work done ON system → ΔU increases (W < 0 in our convention, -W > 0)</li>
-<li>Work done BY system → ΔU decreases (W > 0 in our convention, -W < 0)</li>
-</ul>
-<p><b>First Law of Thermodynamics combines both:</b></p>
-<p><b>ΔU = Q - W</b></p>
-<p>(We'll explore this in detail in section 4.4)</p></div>
-<h3>For Ideal Gas</h3>
-<div class="formula"><b>Internal Energy of Ideal Gas:</b> <br><br>
-U = nC<sub>v</sub>T <br><br><b>Change in internal energy:</b> <br><br>
-ΔU = nC<sub>v</sub>ΔT <br><br><b>For monatomic gas:</b> C<sub>v</sub> = (3/2)R, so U = (3/2)nRT <br><b>For diatomic gas:</b> C<sub>v</sub> = (5/2)R, so U = (5/2)nRT <br><br><b>Important:</b> For ideal gas, ΔU depends only on temperature change, regardless of process!</div>
-<div class="box note" data-title="Important for NEB Exams"><ul>
-<li>Latent heat formula: Q = mL (no temperature change during phase transition)</li>
-<li>L<sub>f</sub> (fusion) for ice to water: 334 kJ/kg at 0°C</li>
-<li>L<sub>v</sub> (vaporization) for water to steam: 2260 kJ/kg at 100°C</li>
-<li>Internal energy U is a state function (path-independent)</li>
-<li>For ideal gas: U = nC<sub>v</sub>T, so ΔU = nC<sub>v</sub>ΔT</li>
-<li>ΔU depends only on temperature change for ideal gas, not on P or V individually</li>
-<li>During isothermal process (T constant): ΔU = 0 for ideal gas</li>
+
+<h2>Practice questions</h2>
+<ol>
+<li>Define an open, closed and isolated system, with one example of each.</li>
+<li>Why is heat called a path function while internal energy is a state function?</li>
+<li>Derive \(W=P(V_2-V_1)\) for an isobaric process.</li>
+<li>Show that the area under a P–V curve represents work done.</li>
+<li>A gas absorbs 900 J of heat and does 650 J of work. Find \(\Delta U\).</li>
+<li>What are the values of \(Q\), \(W\) and \(\Delta U\) for an ideal gas in an isochoric process?</li>
+<li>Explain why an adiabatic expansion cools a gas.</li>
+<li>Derive Mayer's relation \(C_P-C_V=R\) for one mole of an ideal gas.</li>
+</ol>
+
+<h2>Summary</h2>
+<div class="box tip"><ul>
+<li>\(dW=P\,dV\) and \(W=\int P\,dV\).</li>
+<li>First law: \(Q=\Delta U+W\).</li>
+<li>Isobaric: \(W=P\Delta V\); isochoric: \(W=0\); adiabatic: \(Q=0\).</li>
+<li>For an ideal gas, \(\Delta U=nC_V\Delta T\), and \(C_P-C_V=R\).</li>
+<li>For a reversible adiabatic process, \(PV^\gamma=\text{constant}\).</li>
 </ul></div>
