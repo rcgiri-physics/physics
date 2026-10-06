@@ -143,8 +143,10 @@ Chapter numbers come from `src/content.json` (and are shown on the grade pages).
 
 ## Old ("legacy") lessons
 
-Eleven notes pages from the Blogger days are complete stand-alone web pages (they start with
-`<!doctype html>` after the metadata block). They still work: the build adds the site bar and
-footer. But they don't follow the shared design, and several fail contrast checks. When a
-chapter is revised, rewrite it in the new notes format using [`prompts/convert-legacy-notes.md`](prompts/convert-legacy-notes.md),
-and delete the old file.
+The Blogger-era lessons were complete stand-alone web pages with their own styling. All of them
+have been converted to the notes format, and the build now **rejects** full web pages. If you find
+an old page, convert it with [`prompts/convert-legacy-notes.md`](prompts/convert-legacy-notes.md).
+
+Some converted diagrams use fixed colours. They are marked `<svg class="panel" …>`, which puts
+them on a light panel so they stay readable in dark mode. New diagrams should use
+`stroke="currentColor"` instead and need no class.

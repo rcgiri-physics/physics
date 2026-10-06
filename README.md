@@ -21,7 +21,6 @@ src/
     css/tokens.css           ALL colours, fonts, radii (light + dark mode)
     css/site.css             layout: header, cards, grade pages, search, footer
     css/lesson.css           notes building blocks + quiz
-    css/lesson-bar.css       site bar for the legacy lesson pages
     js/quiz.js               answering, scoring, filters, saved progress
     js/notes.js              "On this page" highlighting + LaTeX (KaTeX)
     js/search.js             search page
@@ -30,7 +29,7 @@ docs/
   prompts/                   prompts for any AI to generate content
   examples/example-notes.html  every notes building block (built to /styleguide.html)
 build.py                     validates src/ and builds public/
-vercel.json                  build settings, Blogger redirects, headers
+vercel.json                  build settings, Blogger redirects, security + cache headers
 public/                      generated site (not committed)
 ```
 
@@ -40,7 +39,8 @@ The separation is deliberate:
 - **Design** (`src/assets/css/`) is shared. Change `tokens.css` and every page changes.
 - **Behaviour** (`src/assets/js/`) is shared. Improve `quiz.js` once and all MCQ sets improve.
 - **Validation** (`build.py`) stops broken files from reaching students. It checks JSON syntax,
-  answer indexes, duplicate options, chapter numbers, dates, and banned tags in notes.
+  answer indexes, duplicate options, chapter numbers, dates, and banned tags in notes. Full web
+  pages (the old Blogger format) are rejected, so every lesson shares one design.
 
 ## Common tasks
 
@@ -75,9 +75,20 @@ axe-core (WCAG 2.0/2.1 A + AA) was run on the home, grade, search, MCQ, notes (s
 skip link, a visible focus ring, labelled search fields, keyboard-operable quiz buttons,
 reduced-motion support, and no horizontal scrolling at 375px width.
 
-The 11 legacy notes pages are not covered. Four of them fail contrast checks because of their
-own hard-coded colours (`ideal-gas`, `rate-of-flow-of-heat`,
-`periodic-motion`, `rotational-dynamics`). Rewriting them in the new format fixes this.
+All notes now use the shared design (the 12 Blogger-era pages were converted on 2026-10-06).
+On 2026-10-06 every page was loaded at 360px width with the production Content-Security-Policy:
+no horizontal scrolling, no broken images, no blocked resources, and all maths rendered.
+
+### Security and performance
+
+- **Content-Security-Policy** (`vercel.json`): scripts only from this site and `cdn.jsdelivr.net`
+  (KaTeX), no plugins, no framing by other sites. Pages contain no inline scripts.
+- **Subresource Integrity**: KaTeX is pinned to 0.16.11 and loaded with SRI hashes (`notes.js`),
+  so a tampered CDN file is refused by the browser.
+- **Caching**: CSS/JS links carry a content hash (`?v=…`, added by `build.py`), so they are cached
+  for a year and still update instantly when changed.
+- **robots.txt** blocks AI-training crawlers (GPTBot, CCBot, ClaudeBot, …) while search engines
+  stay allowed; every page carries a © notice.
 
 ## Hosting on Vercel (moving from Blogger)
 
@@ -107,19 +118,20 @@ the previous version stays online. The same check also runs on GitHub for every 
 
 ## Known content issues
 
-- `src/lessons/wave-motion-2.html` is **truncated**. It stops partway through the stationary-waves
-  SVG diagram. The rest must be pasted in again from the original.
-- `src/lessons/rotational-dynamics.html` loads 5 images from `image.qwenlm.ai`. Download them into
-  `src/assets/img/` so they can't disappear.
-- `heat-and-temperature` and `thermal-expansion` load `plotly-latest` (frozen at v1.58).
+- `src/lessons/wave-motion-2.html` was uploaded **truncated**: it stopped inside a stationary-wave
+  diagram placed after the exam tips. The broken diagram was removed; all text is intact. Paste the
+  diagram again from the original if you still have it.
+- Diagrams in converted pages use fixed colours, so they sit on a light panel (`<svg class="panel">`).
+  New diagrams should use `currentColor` instead.
 - `thermoelectric-effect.json` question 12 originally had only one option. Three wrong unit
   options were added (A/K, W·m, Ω/K), so please review.
 - Grade XI has notes for chapters 9–13 only, and one MCQ set (chapter 11).
 
 ## Roadmap
 
-1. Rewrite the 11 remaining legacy notes in the new format (start with the four that fail contrast checks). `quantity-of-heat` is done and is the reference example of a converted page.
+1. Review the 12 converted notes pages (2026-10-06) side by side with the old versions, and
+   tidy box labels or diagrams where needed.
 2. MCQ sets for Grade XI chapters 9–13, then the remaining chapters of both grades.
-3. Download all external images into `src/assets/img/`.
+3. Keep all images in `src/assets/img/` (no lesson links to external images any more).
 4. Optional later: link YouTube videos per chapter (a `video` field in `content.json`), a "practice
    test" page that mixes questions from several chapters, and Vercel Web Analytics.

@@ -27,6 +27,13 @@
 .notes-body h3 { font-size: 1.18rem; margin: 1.6em 0 .5em; color: var(--brand-ink); scroll-margin-top: 80px; }
 .notes-body p, .notes-body li { font-size: 1.04rem; }
 .notes-body img, .notes-body svg { max-width: 100%; height: auto; }
+/* Diagrams drawn with fixed colours (not currentColor) sit on a light panel so they stay readable in dark mode */
+.notes-body svg.panel { background: #f8fafc; color: #1e293b; border-radius: var(--radius-sm); padding: 6px; }
+/* Long equations scroll sideways inside themselves instead of widening the page on phones */
+.notes-body .katex-display { overflow-x: auto; overflow-y: hidden; padding: 4px 0; }
+/* position: relative keeps KaTeX's hidden screen-reader copy inside these scroll boxes */
+.notes-body table, .notes-body .formula, .notes-body .katex-display { position: relative; }
+.notes-body h4 { font-size: 1.05rem; margin: 1.3em 0 .4em; }
 .notes-body code { font-family: var(--mono); background: var(--surface-2); padding: 1px 6px; border-radius: 4px; font-size: .92em; }
 .notes-body hr { border: 0; border-top: 1px solid var(--border); margin: 2em 0; }
 
