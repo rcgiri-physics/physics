@@ -17,7 +17,20 @@ date: 2026-01-19
 <div class="box tip" data-title="Key point"><strong>💡 Key Point:</strong> In this chapter, we will develop a complete parallel between linear and rotational motion, derive important expressions, and solve problems that are frequently asked in NEB examinations.</div>
 <h2>1.1 Equations of Angular Motion</h2>
 <h3>🔹 Angular Motion: Basic Concepts</h3>
-<p>When a rigid body rotates about a fixed axis, every particle of the body moves in a circle. The motion of the entire body can be described by <strong>angular quantities</strong>.</p><figure><img src="/assets/img/rotational-dynamics-angular-velocity.jpg" alt="Angular Velocity Diagram"><figcaption>Figure 1.1: Angular displacement and angular velocity representation<br><small>Image: ScienceFacts.net</small></figcaption></figure>
+<p>When a rigid body rotates about a fixed axis, every particle of the body moves in a circle. The motion of the entire body can be described by <strong>angular quantities</strong>.</p><figure><svg viewBox="0 0 420 360" role="img" aria-label="Particle moving from A to B on a circle; the radius turns through angle delta theta in time delta t" fill="currentColor" font-family="system-ui, sans-serif" font-size="15" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="av-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#0f766e"/></marker></defs>
+<circle cx="190" cy="180" r="130" fill="none" stroke="currentColor" stroke-width="1.5"/>
+<path d="M40 180H350M190 30V330" stroke="currentColor" stroke-opacity=".4" stroke-dasharray="5 4"/>
+<path d="M190 180L302.6 115L235 57.8Z" fill="#0f766e" fill-opacity=".15"/>
+<path d="M190 180L302.6 115M190 180L235 57.8" stroke="currentColor" stroke-width="2"/>
+<path d="M250 180A60 60 0 0 0 242 150" fill="none" stroke="currentColor"/>
+<path d="M232 156A48 48 0 0 0 206 135" fill="none" stroke="#0f766e" stroke-width="2"/>
+<path d="M306 70A150 150 0 0 0 275 40" fill="none" stroke="#0f766e" stroke-width="2.5" marker-end="url(#av-a)"/>
+<circle cx="302.6" cy="115" r="5" fill="#dc2626"/><circle cx="235" cy="57.8" r="5" fill="#dc2626"/>
+<text x="176" y="198">O</text><text x="312" y="120">A (θ₁, t₁)</text><text x="200" y="45">B (θ₂, t₂)</text>
+<text x="256" y="168">θ₁</text><text x="214" y="128" fill="#0f766e">Δθ</text><text x="300" y="42" fill="#0f766e">ω</text>
+<text x="100" y="350">ω = Δθ / Δt = (θ₂ − θ₁)/(t₂ − t₁)</text>
+</svg><figcaption>Figure 1.1: Angular displacement and angular velocity representation</figcaption></figure>
 <table>
 <thead>
 <tr>
@@ -120,7 +133,19 @@ date: 2026-01-19
 </table><div class="box note" data-title="💡 Key Point: Conversion Rule"><p>To convert any equation from linear to rotational form, simply replace:</p>
 <p><strong>s → θ</strong> | <strong>v (or u) → ω (or ω₀)</strong> | <strong>a → α</strong> | <strong>m → I</strong> | <strong>F → τ</strong> | <strong>p → L</strong></p></div>
 <h2>1.2 Derivation of Rotational Kinetic Energy</h2>
-<p>When a rigid body rotates about a fixed axis, every particle of the body has kinetic energy due to its motion. The total kinetic energy of the rotating body is called <strong>Rotational Kinetic Energy</strong>.</p><figure><img src="/assets/img/rotational-dynamics-rotational-ke-particles.jpg" alt="Rotational Kinetic Energy Particles"><figcaption>Figure 1.2: Particles rotating about a fixed axis with different distances<br><small>Image: scanned from a printed textbook (book not identified)</small></figcaption></figure>
+<p>When a rigid body rotates about a fixed axis, every particle of the body has kinetic energy due to its motion. The total kinetic energy of the rotating body is called <strong>Rotational Kinetic Energy</strong>.</p><figure><svg viewBox="0 0 420 300" role="img" aria-label="Rigid body rotating about axis XX′ through O; particles m1, m2, m3 at distances r1, r2, r3" fill="currentColor" font-family="system-ui, sans-serif" font-size="15" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ke-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#0f766e"/></marker></defs>
+<path d="M120 40C200 20 300 40 330 100C360 170 320 260 230 270C140 280 70 230 70 160C70 100 80 55 120 40Z" fill="currentColor" fill-opacity=".06" stroke="currentColor" stroke-width="1.5"/>
+<path d="M60 70L370 40" stroke="currentColor" stroke-width="2"/>
+<text x="40" y="78">X</text><text x="374" y="44">X′</text>
+<circle cx="200" cy="56" r="4"/><text x="194" y="44">O</text>
+<g stroke="currentColor" stroke-dasharray="5 4"><path d="M200 56L130 150"/><path d="M200 56L205 230"/><path d="M200 56L295 170"/></g>
+<circle cx="130" cy="150" r="6"/><circle cx="205" cy="230" r="6"/><circle cx="295" cy="170" r="6"/>
+<text x="140" y="104">r₁</text><text x="210" y="150">r₂</text><text x="258" y="110">r₃</text>
+<text x="106" y="174">m₁</text><text x="214" y="252">m₂</text><text x="304" y="194">m₃</text>
+<path d="M120 255A120 40 0 0 1 60 215" fill="none" stroke="#0f766e" stroke-width="2.5" marker-end="url(#ke-a)"/>
+<text x="70" y="270" fill="#0f766e">ω</text>
+</svg><figcaption>Figure 1.2: Particles rotating about a fixed axis with different distances</figcaption></figure>
 <h3>Derivation Steps:</h3>
 <p><strong>Consider:</strong> A rigid body rotating about a fixed axis with angular velocity ω.</p><p><strong>Let:</strong> The body consists of many particles of masses m₁, m₂, m₃, ... at distances r₁, r₂, r₃, ... from the axis of rotation.</p>
 <ol>
@@ -184,7 +209,20 @@ date: 2026-01-19
 </ul><h2>1.4 Moment of Inertia of a Thin Uniform Rod</h2>
 <p>We will now derive the moment of inertia of a thin uniform rod about two different axes. These derivations are <strong>very important for NEB exams</strong>.</p>
 <h3>Case 1: Rod Rotating About its Center (Perpendicular to Length)</h3>
-<figure><img src="/assets/img/rotational-dynamics-rod-centre-axis.jpg" alt="Rod Center Axis"><figcaption>Figure 1.3: Moment of inertia of a thin uniform rod about an axis through its centre<br><small>Image: scanned from a printed textbook (book not identified)</small></figcaption></figure>
+<figure><svg viewBox="0 0 460 230" role="img" aria-label="Thin uniform rod AB of length l with axis PQ through its centre O; element dx at distance x from O" fill="currentColor" font-family="system-ui, sans-serif" font-size="15" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="rod-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+<rect x="40" y="96" width="380" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+<rect x="320" y="96" width="14" height="10" fill="#dc2626"/>
+<path d="M230 25V185" stroke="currentColor" stroke-width="2"/>
+<text x="224" y="18">P</text><text x="224" y="205">Q</text><text x="210" y="90">O</text>
+<text x="18" y="106">A</text><text x="428" y="106">B</text>
+<path d="M232 80H318" stroke="currentColor" marker-start="url(#rod-a)" marker-end="url(#rod-a)"/><text x="270" y="74">x</text>
+<text x="318" y="125" fill="#dc2626">dx</text>
+<path d="M42 145H228M232 145H418" stroke="currentColor" marker-start="url(#rod-a)" marker-end="url(#rod-a)"/>
+<text x="124" y="166">l/2</text><text x="314" y="166">l/2</text>
+<text x="30" y="80">−l/2</text><text x="400" y="80">+l/2</text>
+<text x="40" y="222">dI = (M/l) dx · x²  ⇒  I = Ml²/12</text>
+</svg><figcaption>Figure 1.3: Moment of inertia of a thin uniform rod about an axis through its centre</figcaption></figure>
 <p><strong>Given:</strong></p>
 <ul>
 <li>Mass of rod = M</li>
@@ -316,7 +354,21 @@ date: 2026-01-19
 <li>This means L does not change with time: <strong>L = constant</strong></li>
 <li>If moment of inertia changes from I₁ to I₂, and angular velocity changes from ω₁ to ω₂: <strong>Lᵢₙᵢₜᵢₐₗ = Lբᵢₙₐ</strong> → <strong>I₁ω₁ = I₂ω₂</strong></li>
 </ol><h3>🔹 Practical Applications</h3>
-<figure><img src="/assets/img/rotational-dynamics-ice-skater-angular-momentum.jpg" alt="Ice Skater Angular Momentum"><figcaption>Figure 1.6: Conservation of Angular Momentum - Ice Skater Example<br><small>Image: VectorMine / Dreamstime (stock image ID 237077004)</small></figcaption></figure>
+<figure><svg viewBox="0 0 520 300" role="img" aria-label="Skater spinning with arms out (large I, small omega) and arms in (small I, large omega); L = I omega stays constant" fill="currentColor" font-family="system-ui, sans-serif" font-size="15" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="sk-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#0f766e"/></marker></defs>
+<g stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none">
+  <circle cx="130" cy="70" r="16"/><path d="M130 86V180M130 180L112 250M130 180L148 250M130 110H40M130 110H220"/>
+  <circle cx="390" cy="70" r="16"/><path d="M390 86V180M390 180L372 250M390 180L408 250M390 108L372 124L390 134M390 108L408 124L390 134"/>
+</g>
+<path d="M30 132A100 22 0 0 0 230 132" fill="none" stroke="#0f766e" stroke-width="2.5" marker-end="url(#sk-a)"/>
+<path d="M360 150A30 10 0 0 0 420 150" fill="none" stroke="#0f766e" stroke-width="2.5" marker-end="url(#sk-a)"/>
+<path d="M356 190A34 11 0 0 0 424 190" fill="none" stroke="#0f766e" stroke-width="2.5" marker-end="url(#sk-a)"/>
+<path d="M356 230A34 11 0 0 0 424 230" fill="none" stroke="#0f766e" stroke-width="2.5" marker-end="url(#sk-a)"/>
+<path d="M130 40V20M390 40V20" stroke="currentColor" stroke-dasharray="4 4"/>
+<text x="70" y="290">Arms out: I large, ω small</text>
+<text x="320" y="290">Arms in: I small, ω large</text>
+<text x="196" y="30">L = Iω = constant</text>
+</svg><figcaption>Figure 1.6: Conservation of Angular Momentum - Ice Skater Example</figcaption></figure>
 <table>
 <thead>
 <tr>

@@ -121,9 +121,6 @@ the previous version stays online. The same check also runs on GitHub for every 
 - `src/lessons/wave-motion-2.html` was uploaded **truncated**: it stopped inside a stationary-wave
   diagram placed after the exam tips. The broken diagram was removed; all text is intact. Paste the
   diagram again from the original if you still have it.
-- `rotational-dynamics` images: only the torque diagram (OpenStax, CC BY 4.0) is free to reuse.
-  The other four come from ScienceFacts.net, a Dreamstime stock preview and textbook scans, so they
-  are credited but not licensed. Replace them with original diagrams.
 - Chapter 3 (Grade XI) has two notes pages: `kinematics.html` and `kinematics-grade-xi-notes.html`.
   Merge them into one when revising the chapter.
 - Diagrams in converted pages use fixed colours, so they sit on a light panel (`<svg class="panel">`).
