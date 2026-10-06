@@ -7,7 +7,6 @@ Sources (the only things anyone edits):
     src/content.json           site info + syllabus for each grade
     src/lessons/<slug>.json    an MCQ set (data only)          -> /posts/<slug>.html
     src/lessons/<slug>.html    notes (content-only HTML)       -> /posts/<slug>.html
-                               or a legacy full HTML page (starts with <!doctype>)
     src/assets/                shared CSS, JS, images (copied as-is)
     docs/examples/             example files; example-notes.html is built to /styleguide.html
 
@@ -15,10 +14,13 @@ Each lesson file carries its own metadata (see docs/AUTHORING.md), so adding a l
 means adding one file. Vercel runs this script on every push (see vercel.json).
 Only the Python standard library is used.
 """
+import functools
+import hashlib
 import html
 import json
 import re
 import shutil
+from datetime import date
 import sys
 from pathlib import Path
 
@@ -143,13 +145,17 @@ def load():
             meta, body = parse_front_matter(text, rel, problems)
             meta.setdefault("kind", "notes")
             meta["body"] = body
+            meta["format"] = "notes"
             if re.match(r"\s*<!doctype", body, re.I):
-                meta["format"] = "legacy"
+                problems.add(rel, "full web pages are no longer accepted; convert it to content-only notes "
+                                  "(docs/prompts/convert-legacy-notes.md)")
             else:
-                meta["format"] = "notes"
                 for pattern, what in FORBIDDEN_IN_NOTES:
                     if re.search(pattern, body, re.I):
                         problems.add(rel, f"notes must not contain {what} — the site stylesheet handles styling")
+                for svg in re.findall(r"<svg\b[^>]*>", body, re.I):
+                    if not re.search(r"\bviewBox=", svg):
+                        problems.add(rel, "every <svg> needs a viewBox so it can shrink to fit phone screens")
         if meta.get("kind") not in KIND_LABEL:
             problems.add(rel, f"kind must be 'notes' or 'mcq'")
         validate_meta(meta, rel, grades, problems)
@@ -182,6 +188,14 @@ def slugify(text):
     return re.sub(r"[^a-z0-9]+", "-", plain(html.unescape(text)).lower()).strip("-") or "section"
 
 
+@functools.cache
+def asset(rel):
+    """URL of a shared CSS/JS file with a content hash, so browsers can cache it for a year
+    and still pick up every change at once (see the Cache-Control header in vercel.json)."""
+    digest = hashlib.sha256((SRC / "assets" / rel).read_bytes()).hexdigest()[:10]
+    return f"/assets/{rel}?v={digest}"
+
+
 def shell(data, *, title, body, description=None, path="", current=None, css=(), scripts=(), noindex=False):
     site = data["site"]
     full_title = f"{title} | {site['name']}" if title != site["name"] else f"{site['name']} — Grade XI & XII Physics"
@@ -191,8 +205,8 @@ def shell(data, *, title, body, description=None, path="", current=None, css=(),
         cur = ' aria-current="page"' if key == current else ""
         return f'<a href="{href}"{cur}>{label}</a>'
 
-    styles = "".join(f'<link rel="stylesheet" href="/assets/css/{c}.css">\n' for c in ("tokens", "site", *css))
-    js = "".join(f'<script src="/assets/js/{s}.js" defer></script>\n' for s in scripts)
+    styles = "".join(f'<link rel="stylesheet" href="{asset(f"css/{c}.css")}">\n' for c in ("tokens", "site", *css))
+    js = "".join(f'<script src="{asset(f"js/{s}.js")}" defer></script>\n' for s in scripts)
     robots = '<meta name="robots" content="noindex">\n' if noindex else ""
     return f"""<!doctype html>
 <html lang="en">
@@ -225,6 +239,7 @@ def shell(data, *, title, body, description=None, path="", current=None, css=(),
 </main>
 <footer class="footer"><div class="footer-inner">
   <strong>{esc(site['name'])}</strong><span>by {esc(site['author'])} · {esc(site['curriculum'])}</span>
+  <span class="copyright">© {date.today().year} {esc(site['author'])}. Original notes and questions; please don't copy or republish them without permission.</span>
   <span class="spacer"></span>
   <a href="/pages/grade-xi.html">Grade XI</a><a href="/pages/grade-xii.html">Grade XII</a>
   <a href="{site['youtube']}" target="_blank" rel="noopener">YouTube ▶</a>
@@ -347,43 +362,6 @@ def build_notes(data, posts, post, *, path=None, noindex=False):
                  current=post["grade"], css=("lesson",), scripts=("notes",), noindex=noindex)
 
 
-def build_legacy(data, posts, post):
-    """Old standalone pages: keep their own styling, add the site bar and footer."""
-    site = data["site"]
-    doc = post["body"]
-    chaps = chapter_of(data, post)
-    grade_url = f"/pages/{GRADE_SLUG[post['grade']]}.html"
-    full_title = f"{post['title']} | {site['name']}"
-    head = f"""<link rel="canonical" href="{site['url']}{post_url(post)}">
-<meta name="description" content="{esc(post.get('description') or post['title'] + ' — Grade ' + post['grade'] + ' physics notes.')}">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/css/lesson-bar.css">
-"""
-    bar = f"""<div class="pd-bar" role="navigation" aria-label="Site">
-<a class="pd-brand" href="/"><img src="/assets/favicon.svg" alt=""><span>{esc(site['name'])}</span></a>
-<a class="pd-crumb" href="{grade_url}#ch-{chaps[0]['n']}">Grade {post['grade']} › {esc(chaps[0]['title'])}</a>
-<span class="pd-spacer"></span>
-<a class="pd-hide-sm" href="/pages/grade-xi.html">Grade XI</a><a class="pd-hide-sm" href="/pages/grade-xii.html">Grade XII</a><a href="/search.html">Search</a>
-</div>
-"""
-    more = "".join(f'<a href="{post_url(p)}">{KIND_ICON[p["kind"]]} {esc(p["title"])}</a>' for p in related(data, posts, post))
-    foot = f"""<div class="pd-footer" role="contentinfo">
-{f'<div class="pd-more"><span>Also in this chapter:</span>{more}</div>' if more else ''}
-<a href="/">{esc(site['name'])}</a> · {esc(site['author'])} · <a href="{grade_url}">All Grade {post['grade']} chapters</a> · <a href="{site['youtube']}" target="_blank" rel="noopener">YouTube</a>
-</div>
-"""
-    doc, n = re.subn(r"<title>.*?</title>", f"<title>{esc(full_title)}</title>", doc, count=1, flags=re.S | re.I)
-    if not n:
-        head = f"<title>{esc(full_title)}</title>\n" + head
-    doc = re.sub(r"</head>", lambda m: head + "</head>", doc, count=1, flags=re.I)
-    doc = re.sub(r"(<body[^>]*>)", lambda m: m.group(1) + "\n" + bar, doc, count=1, flags=re.I)
-    if re.search(r"</body>", doc, re.I):
-        doc = re.sub(r"</body>(?![\s\S]*</body>)", lambda m: foot + "</body>", doc, count=1, flags=re.I)
-    else:
-        print(f"  warning: {post['file']} has no </body> (file looks truncated)")
-        doc += "\n" + foot + "</body>\n</html>\n"
-    return doc
-
 
 # ---------------------------------------------------------------- site pages
 
@@ -495,6 +473,16 @@ def build_sitemap(data, posts):
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n'
 
 
+# Crawlers that collect pages to train AI models. Search engines (Googlebot, Bingbot) stay allowed.
+AI_CRAWLERS = ["GPTBot", "ChatGPT-User", "CCBot", "Google-Extended", "anthropic-ai", "ClaudeBot", "Claude-Web",
+               "PerplexityBot", "Bytespider", "Amazonbot", "Applebot-Extended", "meta-externalagent", "cohere-ai", "Diffbot"]
+
+
+def build_robots(data):
+    blocked = "".join(f"User-agent: {bot}\nDisallow: /\n\n" for bot in AI_CRAWLERS)
+    return f"{blocked}User-agent: *\nAllow: /\n\nSitemap: {data['site']['url']}/sitemap.xml\n"
+
+
 def build_styleguide(data, posts):
     """docs/examples/example-notes.html rendered like a real lesson, so the components can be previewed."""
     example = ROOT / "docs/examples/example-notes.html"
@@ -536,15 +524,15 @@ def main():
     write("404.html", build_404(data))
     write("styleguide.html", build_styleguide(data, posts))
     write("sitemap.xml", build_sitemap(data, posts))
-    write("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {data['site']['url']}/sitemap.xml\n")
+    write("robots.txt", build_robots(data))
     write("assets/search-index.json", build_search_index(data, posts))
     for g, slug in GRADE_SLUG.items():
         write(f"pages/{slug}.html", build_grade(data, posts, g))
-    builders = {"mcq": build_mcq, "notes": build_notes, "legacy": build_legacy}
+    builders = {"mcq": build_mcq, "notes": build_notes}
     for post in posts:
         write(f"posts/{post['slug']}.html", builders[post["format"]](data, posts, post))
     formats = {f: sum(p["format"] == f for p in posts) for f in builders}
-    print(f"Built {len(posts)} lessons into public/ ({formats['mcq']} MCQ sets, {formats['notes']} notes, {formats['legacy']} legacy pages).")
+    print(f"Built {len(posts)} lessons into public/ ({formats['mcq']} MCQ sets, {formats['notes']} notes).")
 
 
 if __name__ == "__main__":
