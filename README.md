@@ -125,8 +125,6 @@ the previous version stays online. The same check also runs on GitHub for every 
   Merge them into one when revising the chapter.
 - Diagrams in converted pages use fixed colours, so they sit on a light panel (`<svg class="panel">`).
   New diagrams should use `currentColor` instead.
-- `src/lessons/rotational-dynamics.html` loads 5 images from `image.qwenlm.ai`. Download them into
-  `src/assets/img/` so they can't disappear.
 - `thermoelectric-effect.json` question 12 originally had only one option. Three wrong unit
   options were added (A/K, W·m, Ω/K), so please review.
 - Grade XI has notes for chapters 9–13 only, and one MCQ set (chapter 11).
@@ -136,6 +134,6 @@ the previous version stays online. The same check also runs on GitHub for every 
 1. Review the 12 converted notes pages (2026-10-06) side by side with the old versions, and
    tidy box labels or diagrams where needed.
 2. MCQ sets for Grade XI chapters 9–13, then the remaining chapters of both grades.
-3. Download all external images into `src/assets/img/`.
+3. Keep all images in `src/assets/img/` (no lesson links to external images any more).
 4. Optional later: link YouTube videos per chapter (a `video` field in `content.json`), a "practice
    test" page that mixes questions from several chapters, and Vercel Web Analytics.
