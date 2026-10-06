@@ -121,8 +121,6 @@ the previous version stays online. The same check also runs on GitHub for every 
 - `src/lessons/wave-motion-2.html` was uploaded **truncated**: it stopped inside a stationary-wave
   diagram placed after the exam tips. The broken diagram was removed; all text is intact. Paste the
   diagram again from the original if you still have it.
-- Chapter 3 (Grade XI) has two notes pages: `kinematics.html` and `kinematics-grade-xi-notes.html`.
-  Merge them into one when revising the chapter.
 - Diagrams in converted pages use fixed colours, so they sit on a light panel (`<svg class="panel">`).
   New diagrams should use `currentColor` instead.
 - `thermoelectric-effect.json` question 12 originally had only one option. Three wrong unit

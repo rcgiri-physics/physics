@@ -12,6 +12,11 @@
       "permanent": true
     },
     {
+      "source": "/posts/kinematics-grade-xi-notes.html",
+      "destination": "/posts/kinematics.html",
+      "permanent": true
+    },
+    {
       "source": "/search/label/:label",
       "destination": "/search.html?q=:label",
       "permanent": true
