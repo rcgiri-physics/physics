@@ -5,1447 +5,220 @@ chapters: [4]
 date: 2026-01-19
 ---
 
-<h2>7.1 Speed of Wave Motion</h2>
-<p>The speed of wave motion depends on the <b>elastic properties</b> and <b>inertial properties</b> of the medium through which the wave travels. Understanding these factors is essential for calculating wave velocities in different media.</p>
-<h3>General Principle</h3>
-<div class="box law" data-title="Fundamental Relationship"><p><b>The velocity of a wave in any medium depends on:</b></p>
-<ul>
-<li><b>Elastic Property:</b> How quickly the medium restores itself after deformation (restoring force)</li>
-<li><b>Inertial Property:</b> The resistance to motion (mass/density)</li>
-</ul>
-<div class="formula"><b>v = √(Elastic Property / Inertial Property)</b> <br><br>
-Or more specifically:<br><b>v = √(E / ρ)</b> <br><br>
-Where:<br>
-• E = elastic modulus (Pa or N/m²)<br>
-• ρ = density of medium (kg/m³)<br>
-• v = wave velocity (m/s)</div></div>
-<h3>Physical Interpretation</h3>
-<div class="box definition" data-title="Why v ∝ √(Elasticity)?"><ul>
-<li><b>Greater elasticity</b> → stronger restoring force</li>
-<li>Particles return to equilibrium faster</li>
-<li>Disturbance propagates more quickly</li>
-<li><b>Result:</b> Higher wave velocity</li>
-</ul>
-<h4>Why v ∝ 1/√(Density)?</h4>
-<ul>
-<li><b>Greater density</b> → more inertia (resistance to motion)</li>
-<li>Particles accelerate more slowly</li>
-<li>Disturbance propagates more slowly</li>
-<li><b>Result:</b> Lower wave velocity</li>
-</ul></div>
-<h3>Different Types of Elastic Moduli</h3>
-<table>
-<tbody>
-<tr>
-<th>Elastic Modulus</th>
-<th>Definition</th>
-<th>Formula</th>
-<th>Applies To</th>
-</tr>
-<tr>
-<td><b>Young's Modulus (Y)</b></td>
-<td>Resistance to longitudinal strain (stretching/compression)</td>
-<td>Y = (F/A) / (ΔL/L)</td>
-<td>Solids (longitudinal waves in rods)</td>
-</tr>
-<tr>
-<td><b>Bulk Modulus (K)</b></td>
-<td>Resistance to volume change under uniform pressure</td>
-<td>K = -V(ΔP/ΔV)</td>
-<td>Solids & Liquids (volume compression)</td>
-</tr>
-<tr>
-<td><b>Rigidity Modulus (η)</b></td>
-<td>Resistance to shear deformation (shape change)</td>
-<td>η = (F/A) / θ</td>
-<td>Solids (transverse waves)</td>
-</tr>
-<tr>
-<td><b>Adiabatic Bulk Modulus (γP)</b></td>
-<td>Bulk modulus under adiabatic conditions</td>
-<td>K<sub>adiabatic</sub> = γP</td>
-<td>Gases (sound waves)</td>
-</tr>
-</tbody>
-</table><h3>Wave Velocities in Different Media</h3>
-<div class="box law" data-title="General Formulas"><p><b>1. Transverse Waves in Solids (strings, rods):</b></p>
-<div class="formula">v = √(η / ρ)<br>
-or for strings: v = √(T / μ)<br><br>
-Where:<br>
-• η = rigidity modulus<br>
-• T = tension in string (N)<br>
-• μ = mass per unit length (kg/m)</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEB Grade XII Physics - Unit 7: Mechanical Waves</title>
+    
+    <!-- MathJax Configuration -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 
-<p><b>2. Longitudinal Waves in Solids (bulk):</b></p>
-<div class="formula">v = √(Y / ρ)<br><br>
-Where Y = Young's modulus</div>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-<p><b>3. Longitudinal Waves in Liquids:</b></p>
-<div class="formula">v = √(K / ρ)<br><br>
-Where K = Bulk modulus</div>
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #1e293b;
+            background-color: #f8fafc;
+            line-height: 1.6;
+            font-size: 15px;
+            padding-bottom: 40px;
+        }
 
-<p><b>4. Longitudinal Waves in Gases:</b></p>
-<div class="formula">v = √(γP / ρ) = √(γRT / M)<br><br>
-Where:<br>
-• γ = adiabatic index (C<sub>p</sub>/C<sub>v</sub>)<br>
-• P = pressure<br>
-• R = universal gas constant<br>
-• T = absolute temperature<br>
-• M = molar mass</div></div>
-<h3>Factors Affecting Wave Speed</h3>
-<div class="box note" data-title="Key Factors"><p><b>1. Nature of Medium:</b></p>
-<ul>
-<li>Different materials have different elastic properties</li>
-<li>Steel: v ≈ 5000 m/s (very elastic)</li>
-<li>Water: v ≈ 1500 m/s</li>
-<li>Air: v ≈ 343 m/s (less elastic)</li>
-</ul>
-<p><b>2. Temperature (in gases):</b></p>
-<ul>
-<li>Higher temperature → higher velocity</li>
-<li>v ∝ √T</li>
-</ul>
-<p><b>3. Density:</b></p>
-<ul>
-<li>Higher density → lower velocity</li>
-<li>v ∝ 1/√ρ</li>
-</ul>
-<p><b>4. Pressure (in gases at constant temperature):</b></p>
-<ul>
-<li>No effect! (ρ ∝ P, so √(P/ρ) remains constant)</li>
-</ul></div>
-<figure>
-<figcaption>Wave Velocities in Different Media (Approximate Values)</figcaption>
-<svg class="panel" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" fill="currentColor"> <text x="450" y="35" text-anchor="middle" font-size="20" font-weight="bold" fill="#4c1d95">
-Speed of Sound in Various Media
-</text>   <rect x="100" y="100" width="68" height="400" fill="#ef4444" rx="8"/> <text x="134" y="520" text-anchor="middle" font-size="14" font-weight="bold" fill="#0a0a0a">
-Air
-</text> <text x="134" y="85" text-anchor="middle" font-size="16" font-weight="bold" fill="#ef4444">
-343 m/s
-</text>  <rect x="220" y="100" width="68" height="300" fill="#3b82f6" rx="8"/> <rect x="220" y="250" width="300" height="150" fill="#3b82f6" opacity="0.4" rx="8"/> <text x="254" y="520" text-anchor="middle" font-size="14" font-weight="bold" fill="#0a0a0a">
-Water
-</text> <text x="254" y="85" text-anchor="middle" font-size="16" font-weight="bold" fill="#3b82f6">
-1500 m/s
-</text>  <rect x="340" y="100" width="68" height="100" fill="#10b981" rx="8"/> <rect x="340" y="100" width="400" height="100" fill="#10b981" opacity="0.3" rx="8"/> <text x="374" y="520" text-anchor="middle" font-size="14" font-weight="bold" fill="#0a0a0a">
-Steel
-</text> <text x="374" y="85" text-anchor="middle" font-size="16" font-weight="bold" fill="#10b981">
-~5000 m/s
-</text>  <rect x="460" y="100" width="68" height="120" fill="#a855f7" rx="8"/> <rect x="460" y="150" width="350" height="70" fill="#a855f7" opacity="0.3" rx="8"/> <text x="494" y="520" text-anchor="middle" font-size="14" font-weight="bold" fill="#0a0a0a">
-Aluminum
-</text> <text x="494" y="85" text-anchor="middle" font-size="16" font-weight="bold" fill="#a855f7">
-~6400 m/s
-</text>  <rect x="580" y="100" width="68" height="135" fill="#f59e0b" rx="8"/> <rect x="580" y="160" width="280" height="75" fill="#f59e0b" opacity="0.3" rx="8"/> <text x="614" y="520" text-anchor="middle" font-size="14" font-weight="bold" fill="#0a0a0a">
-Glass
-</text> <text x="614" y="85" text-anchor="middle" font-size="16" font-weight="bold" fill="#f59e0b">
-~5600 m/s
-</text>  <rect x="700" y="100" width="68" height="160" fill="#14b8a6" rx="8"/> <rect x="700" y="200" width="150" height="60" fill="#14b8a6" opacity="0.3" rx="8"/> <text x="734" y="520" text-anchor="middle" font-size="14" font-weight="bold" fill="#0a0a0a">
-Wood
-</text> <text x="734" y="85" text-anchor="middle" font-size="16" font-weight="bold" fill="#14b8a6">
-~4000 m/s
-</text>  <line x1="90" y1="500" x2="780" y2="500" stroke="#64748b" stroke-width="3"/>  <rect x="100" y="550" width="700" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/> <text x="450" y="575" text-anchor="middle" font-size="15" font-weight="bold" fill="#78350f">
-Generally: Solids > Liquids > Gases (depends on elasticity and density)
-</text>
-</svg>
-</figure>
-<div class="box note" data-title="Why Sound is Faster in Solids?"><p><b>Although solids are denser (which would slow sound), they are MUCH more elastic (which speeds up sound).</b></p>
-<table>
-<tbody>
-<tr>
-<th>Medium</th>
-<th>Density Effect</th>
-<th>Elasticity Effect</th>
-<th>Net Result</th>
-</tr>
-<tr>
-<td>Gas (Air)</td>
-<td>Very low ✓</td>
-<td>Very low ✗</td>
-<td>Slow (~343 m/s)</td>
-</tr>
-<tr>
-<td>Liquid (Water)</td>
-<td>Medium ✗</td>
-<td>Medium ✓</td>
-<td>Medium (~1500 m/s)</td>
-</tr>
-<tr>
-<td>Solid (Steel)</td>
-<td>High ✗✗</td>
-<td>Very High ✓✓✓</td>
-<td>Fast (~5000 m/s)</td>
-</tr>
-</tbody>
-</table>
-<p><b>Key Insight:</b> The elastic property increases MORE dramatically than density when going from gases to solids, so elasticity dominates!</p></div>
-<div class="box note" data-title="Important for NEB Exams"><ul>
-<li><b>General formula:</b> v = √(Elastic Property / Inertial Property)</li>
-<li><b>Basic form:</b> v = √(E/ρ) where E is appropriate elastic modulus</li>
-<li>Higher elasticity → faster wave propagation</li>
-<li>Higher density → slower wave propagation</li>
-<li>Different moduli for different wave types (Y, K, η, γP)</li>
-<li>Sound fastest in solids, slowest in gases (elasticity dominates)</li>
-<li>In gases: v ∝ √T (temperature dependent)</li>
-<li>Pressure has no effect on sound speed in gases at constant T</li>
-</ul></div>
-<h2>7.2 Velocity of Sound in Solid and Liquid</h2>
-<p>Sound waves travel as <b>longitudinal waves</b> in both solids and liquids. The velocity depends on the elastic modulus and density of the medium.</p>
-<h3>Velocity of Sound in Solids</h3>
-<div class="box law" data-title="For Longitudinal Waves in Solid Rods/Bars"><div class="formula"><b>v = √(Y / ρ)</b> <br><br>
-Where:<br>
-• v = velocity of sound in solid (m/s)<br>
-• Y = Young's modulus of elasticity (Pa or N/m²)<br>
-• ρ = density of solid (kg/m³)</div>
+        .top-banner {
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #2563eb;
+            font-family: system-ui, -apple-system, sans-serif;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
 
-<p><b>Young's Modulus (Y):</b></p>
-<ul>
-<li>Measures resistance to longitudinal strain (stretching/compression)</li>
-<li>Y = (Stress) / (Strain) = (F/A) / (ΔL/L)</li>
-<li>Higher Y → stiffer material → faster sound</li>
-</ul></div>
-<h3>Derivation for Velocity in Solid</h3>
-<div class="box note" data-title="Step-by-Step Derivation"><p><b>Step 1: Consider a solid rod</b></p>
-<p>When a compression pulse travels through a solid rod of cross-section A and density ρ.</p>
-<p><b>Step 2: Dimensional Analysis</b></p>
-<p>Velocity must depend on:</p>
-<ul>
-<li>Elastic property: Young's modulus Y (units: Pa = N/m² = kg/(m·s²))</li>
-<li>Inertial property: Density ρ (units: kg/m³)</li>
-</ul>
-<p><b>Step 3: Form the expression</b></p>
-<p>v ∝ Y<sup>a</sup> × ρ<sup>b</sup></p>
-<p>Dimensional analysis:</p>
-<p>[L/T] = [M/(L·T²)]<sup>a</sup> × [M/L³]<sup>b</sup></p>
-<p>[M⁰L¹T⁻¹] = [M<sup>a+b</sup> L<sup>-a-3b</sup> T<sup>-2a</sup>]</p>
-<p>Comparing powers:</p>
-<ul>
-<li>M: 0 = a + b → a = -b</li>
-<li>T: -1 = -2a → a = 1/2</li>
-<li>Therefore: b = -1/2</li>
-</ul>
-<p><b>Step 4: Final Result</b></p>
-<p>v = k × Y<sup>1/2</sup> × ρ<sup>-1/2</sup></p>
-<p>Where k = 1 (determined by detailed wave theory)</p>
-<div class="formula"><b>v = √(Y / ρ)</b></div></div>
-<h3>Velocity of Sound in Liquids</h3>
-<div class="box law" data-title="For Longitudinal Waves in Liquids"><div class="formula"><b>v = √(K / ρ)</b> <br><br>
-Where:<br>
-• v = velocity of sound in liquid (m/s)<br>
-• K = Bulk modulus of elasticity (Pa or N/m²)<br>
-• ρ = density of liquid (kg/m³)</div>
+        .top-banner-title {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            color: #38bdf8;
+        }
 
-<p><b>Bulk Modulus (K):</b></p>
-<ul>
-<li>Measures resistance to volume change under pressure</li>
-<li>K = -V(ΔP/ΔV) = -(ΔP)/(ΔV/V)</li>
-<li>Liquids cannot support shear stress (no transverse waves)</li>
-<li>Only longitudinal waves can propagate</li>
-</ul></div>
-<h3>Why Different Moduli?</h3>
-<div class="box definition" data-title="Understanding the Choice of Elastic Modulus"><p><b>In Solids (use Young's modulus Y):</b></p>
-<ul>
-<li>Solids can support both compression/extension AND shear</li>
-<li>For longitudinal waves in thin rods: lateral expansion is free</li>
-<li>Young's modulus describes longitudinal elasticity</li>
-<li>Appropriate for sound in rods, bars, beams</li>
-</ul>
-<p><b>In Liquids (use Bulk modulus K):</b></p>
-<ul>
-<li>Liquids cannot support shear stress</li>
-<li>Only volume compression/expansion occurs</li>
-<li>Bulk modulus describes volume elasticity</li>
-<li>No transverse waves in liquids (only longitudinal)</li>
-</ul>
-<p><b>Note on Extended Solids:</b></p>
-<p>For sound in extended solid media (not thin rods), the formula becomes more complex and involves both bulk and shear moduli. For NEB exams, focus on v = √(Y/ρ) for solids.</p></div>
-<h3>Comparison: Solids vs Liquids</h3>
-<table>
-<tbody>
-<tr>
-<th>Property</th>
-<th>Solids</th>
-<th>Liquids</th>
-</tr>
-<tr>
-<td><b>Formula</b></td>
-<td>v = √(Y/ρ)</td>
-<td>v = √(K/ρ)</td>
-</tr>
-<tr>
-<td><b>Elastic Modulus</b></td>
-<td>Young's modulus (Y)</td>
-<td>Bulk modulus (K)</td>
-</tr>
-<tr>
-<td><b>Type of Strain</b></td>
-<td>Longitudinal (length change)</td>
-<td>Volume change</td>
-</tr>
-<tr>
-<td><b>Typical Velocity</b></td>
-<td>3000-6000 m/s</td>
-<td>1000-1500 m/s</td>
-</tr>
-<tr>
-<td><b>Transverse Waves</b></td>
-<td>Yes (can propagate)</td>
-<td>No (cannot propagate)</td>
-</tr>
-<tr>
-<td><b>Longitudinal Waves</b></td>
-<td>Yes</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td><b>Example</b></td>
-<td>Steel: ~5200 m/s</td>
-<td>Water: ~1480 m/s</td>
-</tr>
-</tbody>
-</table><h3>Typical Values</h3>
-<div class="box note" data-title="Sound Velocities in Common Materials"><p><b>SOLIDS:</b></p>
-<table>
-<tbody>
-<tr>
-<th>Material</th>
-<th>Y (×10¹⁰ Pa)</th>
-<th>ρ (kg/m³)</th>
-<th>v (m/s)</th>
-</tr>
-<tr>
-<td>Aluminum</td>
-<td>7.0</td>
-<td>2700</td>
-<td>~5100</td>
-</tr>
-<tr>
-<td>Steel</td>
-<td>20.0</td>
-<td>7800</td>
-<td>~5100</td>
-</tr>
-<tr>
-<td>Copper</td>
-<td>13.0</td>
-<td>8900</td>
-<td>~3800</td>
-</tr>
-<tr>
-<td>Glass</td>
-<td>7.0</td>
-<td>2500</td>
-<td>~5300</td>
-</tr>
-</tbody>
-</table>
-<p><b>LIQUIDS:</b></p>
-<table>
-<tbody>
-<tr>
-<th>Material</th>
-<th>K (×10⁹ Pa)</th>
-<th>ρ (kg/m³)</th>
-<th>v (m/s)</th>
-</tr>
-<tr>
-<td>Water (20°C)</td>
-<td>2.2</td>
-<td>1000</td>
-<td>~1480</td>
-</tr>
-<tr>
-<td>Sea Water</td>
-<td>2.3</td>
-<td>1025</td>
-<td>~1500</td>
-</tr>
-<tr>
-<td>Mercury</td>
-<td>28.5</td>
-<td>13600</td>
-<td>~1450</td>
-</tr>
-<tr>
-<td>Ethanol</td>
-<td>1.0</td>
-<td>790</td>
-<td>~1160</td>
-</tr>
-</tbody>
-</table></div>
-<div class="box tip" data-title="Key Observations"><ul>
-<li><b>Solids generally faster than liquids</b> because Young's modulus >> Bulk modulus (relative to density difference)</li>
-<li><b>Steel vs Aluminum:</b> Steel has higher Y but also higher ρ; effects nearly cancel, giving similar velocities</li>
-<li><b>Mercury:</b> Despite very high bulk modulus, very high density results in moderate sound speed</li>
-<li><b>Temperature effect:</b> Slight increase in v with temperature (K increases slightly, ρ decreases slightly)</li>
-</ul></div>
-<figure>
-<figcaption>Sound Wave Propagation in Solid vs Liquid</figcaption>
-<svg class="panel" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" fill="currentColor"> <g>
-<text x="250" y="35" text-anchor="middle" font-size="18" font-weight="bold" fill="#a855f7">
-SOLID (Longitudinal Wave)
-</text>
-<g id="solid-particles">
-<circle cx="100" cy="100" r="10" fill="#a855f7"/>
-<circle cx="150" cy="100" r="10" fill="#a855f7"/>
-<circle cx="200" cy="100" r="10" fill="#a855f7"/>
-<circle cx="240" cy="100" r="10" fill="#ef4444"/>
-<circle cx="270" cy="100" r="10" fill="#ef4444"/>
-<circle cx="300" cy="100" r="10" fill="#ef4444"/>
-<circle cx="350" cy="100" r="10" fill="#a855f7"/>
-<circle cx="400" cy="100" r="10" fill="#a855f7"/>
-<circle cx="450" cy="100" r="10" fill="#a855f7"/>
-</g>
-<line x1="480" y1="100" x2="520" y2="100" stroke="#fbbf24" stroke-width="4" marker-end="url(#arrowyellow)"/>
-<text x="540" y="105" font-size="14" fill="#fbbf24">
-v = √(Y/ρ)
-</text>
-<rect x="50" y="150" width="450" height="80" fill="#4c1d95" rx="10"/>
-<text x="275" y="175" text-anchor="middle" font-size="14" fill="#ffffff">
-✓ Strong intermolecular forces
-</text>
-<text x="275" y="195" text-anchor="middle" font-size="14" fill="#ffffff">
-✓ Fixed positions (ordered structure)
-</text>
-<text x="275" y="215" text-anchor="middle" font-size="14" fill="#ffffff">
-✓ High Young's modulus → Fast propagation
-</text>
-</g>  <g>
-<text x="250" y="290" text-anchor="middle" font-size="18" font-weight="bold" fill="#3b82f6">
-LIQUID (Longitudinal Wave)
-</text>
-<g id="liquid-particles">
-<circle cx="105" cy="355" r="10" fill="#3b82f6"/>
-<circle cx="145" cy="345" r="10" fill="#3b82f6"/>
-<circle cx="195" cy="360" r="10" fill="#3b82f6"/>
-<circle cx="245" cy="355" r="10" fill="#ef4444"/>
-<circle cx="275" cy="350" r="10" fill="#ef4444"/>
-<circle cx="305" cy="360" r="10" fill="#ef4444"/>
-<circle cx="355" cy="355" r="10" fill="#3b82f6"/>
-<circle cx="395" cy="345" r="10" fill="#3b82f6"/>
-<circle cx="445" cy="358" r="10" fill="#3b82f6"/>
-</g>
-<line x1="480" y1="355" x2="520" y2="355" stroke="#fbbf24" stroke-width="4" marker-end="url(#arrowyellow2)"/>
-<text x="540" y="360" font-size="14" fill="#fbbf24">
-v = √(K/ρ)
-</text>
-<rect x="50" y="405" width="450" height="80" fill="#1e3a8a" rx="10"/>
-<text x="275" y="430" text-anchor="middle" font-size="14" fill="#ffffff">
-✓ Weaker intermolecular forces than solids
-</text>
-<text x="275" y="450" text-anchor="middle" font-size="14" fill="#ffffff">
-✓ Free to flow (no fixed positions)
-</text>
-<text x="275" y="470" text-anchor="middle" font-size="14" fill="#ffffff">
-✓ Lower Bulk modulus → Slower than solids
-</text>
-</g>  <rect x="560" y="60" width="310" height="420" fill="#fef3c7" stroke="#f59e0b" stroke-width="3" rx="12"/> <text x="715" y="95" text-anchor="middle" font-size="17" font-weight="bold" fill="#78350f">
-Comparison
-</text> <text x="715" y="135" text-anchor="middle" font-size="14" font-weight="bold" fill="#92400e">
-FORMULA:
-</text> <text x="715" y="157" text-anchor="middle" font-size="13" fill="#92400e">
-Solid: v = √(Y/ρ)
-</text> <text x="715" y="177" text-anchor="middle" font-size="13" fill="#92400e">
-Liquid: v = √(K/ρ)
-</text> <text x="715" y="217" text-anchor="middle" font-size="14" font-weight="bold" fill="#92400e">
-ELASTICITY:
-</text> <text x="715" y="239" text-anchor="middle" font-size="13" fill="#92400e">
-Y (solids) > K (liquids)
-</text> <text x="715" y="279" text-anchor="middle" font-size="14" font-weight="bold" fill="#92400e">
-VELOCITY:
-</text> <text x="715" y="301" text-anchor="middle" font-size="13" fill="#92400e">
-Solid: ~5000 m/s
-</text> <text x="715" y="321" text-anchor="middle" font-size="13" fill="#92400e">
-Liquid: ~1500 m/s
-</text> <text x="715" y="361" text-anchor="middle" font-size="14" font-weight="bold" fill="#92400e">
-WAVE TYPES:
-</text> <text x="715" y="383" text-anchor="middle" font-size="13" fill="#92400e">
-Solid: Both L & T waves
-</text> <text x="715" y="403" text-anchor="middle" font-size="13" fill="#92400e">
-Liquid: Only L waves
-</text> <text x="715" y="445" text-anchor="middle" font-size="13" font-weight="bold" fill="#78350f">
-L = Longitudinal
-</text> <text x="715" y="465" text-anchor="middle" font-size="13" font-weight="bold" fill="#78350f">
-T = Transverse
-</text> <defs>
-<marker id="arrowyellow" markerwidth="10" markerheight="10" refx="8" refy="3" orient="auto">
-<path d="M0,0 L0,6 L9,3 z" fill="#fbbf24"/>
-</marker>
-<marker id="arrowyellow2" markerwidth="10" markerheight="10" refx="8" refy="3" orient="auto">
-<path d="M0,0 L0,6 L9,3 z" fill="#fbbf24"/>
-</marker>
-</defs>
-</svg>
-</figure>
-<div class="box note" data-title="Important for NEB Exams"><ul>
-<li><b>Solid formula:</b> v = √(Y/ρ) using Young's modulus</li>
-<li><b>Liquid formula:</b> v = √(K/ρ) using Bulk modulus</li>
-<li>Both formulas follow v = √(Elasticity/Density) pattern</li>
-<li>Solids: Can support longitudinal AND transverse waves</li>
-<li>Liquids: Only longitudinal waves (no shear resistance)</li>
-<li>Sound generally faster in solids than liquids (higher elasticity)</li>
-<li>Know typical values: Steel ~5000 m/s, Water ~1500 m/s</li>
-<li>Both Y and K have units of pressure (Pa or N/m²)</li>
-</ul></div>
-<h2>7.3 Velocity of Sound in Gas</h2>
-<p>Sound propagates through gases as <b>longitudinal pressure waves</b>. The derivation of the velocity formula involves understanding whether the compressions and rarefactions occur under <b>isothermal</b> or <b>adiabatic</b> conditions.</p>
-<h3>Newton's Formula (Isothermal Assumption)</h3>
-<div class="box law" data-title="Newton&#x27;s Original Formula"><p>Isaac Newton assumed that compressions and rarefactions in sound waves occur <b>isothermally</b> (at constant temperature).</p>
-<p><b>For isothermal process:</b></p>
-<p>The bulk modulus K = P (pressure itself)</p>
-<p>Using v = √(K/ρ):</p>
-<div class="formula"><b>v = √(P / ρ)</b> <br><br>
-Newton's Formula (INCORRECT)<br><br>
-Where:<br>
-• P = pressure of gas (Pa)<br>
-• ρ = density of gas (kg/m³)</div></div>
-<h3>Derivation of Newton's Formula</h3>
-<div class="box note" data-title="Step-by-Step Derivation"><p><b>Step 1: Isothermal Bulk Modulus</b></p>
-<p>For an ideal gas undergoing isothermal compression:</p>
-<p>PV = constant (Boyle's law at constant T)</p>
-<p>Differentiating: P dV + V dP = 0</p>
-<p>P dV = -V dP</p>
-<p>dP = -P (dV/V)</p>
-<p><b>Step 2: Define Bulk Modulus</b></p>
-<p>K = -V(dP/dV) = -(dP)/(dV/V)</p>
-<p>K = P (for isothermal process)</p>
-<p><b>Step 3: Apply Wave Velocity Formula</b></p>
-<p>v = √(K/ρ)</p>
-<p>v = √(P/ρ)</p>
-<p><b>Step 4: Alternative form using ideal gas law</b></p>
-<p>From PV = nRT and ρ = m/V = nM/V:</p>
-<p>P = ρRT/M</p>
-<p>Therefore:</p>
-<div class="formula">v = √(P/ρ) = √(RT/M) <br><br>
-Where:<br>
-• R = universal gas constant (8.314 J/(mol·K))<br>
-• T = absolute temperature (K)<br>
-• M = molar mass of gas (kg/mol)</div></div>
-<h3>Problem with Newton's Formula</h3>
-<div class="box tip" data-title="Why Newton&#x27;s Formula Failed"><p><b>Experimental Observation:</b></p>
-<p>At 0°C and 1 atm, the experimental velocity of sound in air = 332 m/s</p>
-<p><b>Newton's prediction:</b></p>
-<p>Using v = √(P/ρ):</p>
-<ul>
-<li>P = 1.013 × 10⁵ Pa</li>
-<li>ρ = 1.293 kg/m³</li>
-<li>v = √(1.013 × 10⁵ / 1.293) = 280 m/s</li>
-</ul>
-<p><b>Discrepancy:</b></p>
-<p><b>Calculated: 280 m/s vs Experimental: 332 m/s</b></p>
-<p>Newton's formula gives ~16% error!</p>
-<p><b>Reason for Failure:</b></p>
-<ul>
-<li>Newton assumed <b>isothermal</b> compressions (constant temperature)</li>
-<li>In reality, sound waves involve <b>rapid compressions and rarefactions</b></li>
-<li>Too fast for heat exchange with surroundings</li>
-<li>Process is actually <b>adiabatic</b> (no heat transfer)!</li>
-</ul></div>
-<h3>Laplace Correction</h3>
-<div class="box law" data-title="Laplace&#x27;s Improvement (1816)"><p><b>Pierre-Simon Laplace corrected Newton's formula by recognizing that sound propagation in gases is an ADIABATIC process, not isothermal.</b></p>
-<p><b>Key Insight:</b></p>
-<ul>
-<li>Sound waves are too rapid for heat exchange</li>
-<li>Compressions → temperature increase (adiabatic heating)</li>
-<li>Rarefactions → temperature decrease (adiabatic cooling)</li>
-<li>No time for thermal equilibrium with surroundings</li>
-</ul>
-<p><b>For adiabatic process:</b></p>
-<p>PV<sup>γ</sup> = constant</p>
-<p>Where γ = C<sub>p</sub>/C<sub>v</sub> (adiabatic index)</p></div>
-<h3>Derivation of Laplace Formula</h3>
-<div class="box note" data-title="Complete Derivation"><p><b>Step 1: Adiabatic Bulk Modulus</b></p>
-<p>For adiabatic process: PV<sup>γ</sup> = constant</p>
-<p>Differentiating:</p>
-<p>P·γ·V<sup>γ-1</sup>·dV + V<sup>γ</sup>·dP = 0</p>
-<p>γ·P·dV + V·dP = 0</p>
-<p>dP = -γ·P·(dV/V)</p>
-<p><b>Step 2: Calculate Bulk Modulus</b></p>
-<p>K<sub>adiabatic</sub> = -V(dP/dV) = -(dP)/(dV/V)</p>
-<p>K<sub>adiabatic</sub> = γP</p>
-<p><b>Step 3: Apply to Velocity Formula</b></p>
-<p>v = √(K/ρ)</p>
-<p>v = √(γP/ρ)</p>
-<div class="formula"><b>v = √(γP / ρ)</b> <br><br>
-Laplace's Corrected Formula (CORRECT)<br><br>
-Where:<br>
-• γ = C<sub>p</sub>/C<sub>v</sub> (adiabatic index)<br>
-• P = pressure of gas<br>
-• ρ = density of gas</div>
+        .badge {
+            background-color: #2563eb;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
 
-<p><b>Step 4: Alternative Form Using Ideal Gas Law</b></p>
-<p>From P = ρRT/M:</p>
-<div class="formula"><b>v = √(γRT / M)</b> <br><br>
-Alternative Laplace Formula<br><br>
-Where:<br>
-• γ = adiabatic index<br>
-• R = 8.314 J/(mol·K)<br>
-• T = absolute temperature (K)<br>
-• M = molar mass (kg/mol)</div></div>
-<h3>Verification of Laplace Formula</h3>
-<div class="box definition" data-title="Testing Laplace&#x27;s Correction"><p><b>For air at 0°C (273 K):</b></p>
-<ul>
-<li>γ = 1.4 (for diatomic gases like O₂, N₂)</li>
-<li>P = 1.013 × 10⁵ Pa</li>
-<li>ρ = 1.293 kg/m³</li>
-</ul>
-<p><b>Calculation:</b></p>
-<p>v = √(γP/ρ)</p>
-<p>v = √(1.4 × 1.013 × 10⁵ / 1.293)</p>
-<p>v = √(109,644)</p>
-<p>v = 331 m/s</p>
-<p><b>Laplace prediction: 331 m/s ≈ Experimental: 332 m/s ✓</b></p>
-<p><b>Success!</b> Laplace's correction perfectly matches experimental results!</p></div>
-<h3>Comparison: Newton vs Laplace</h3>
-<table>
-<tbody>
-<tr>
-<th>Aspect</th>
-<th>Newton's Formula</th>
-<th>Laplace's Formula</th>
-</tr>
-<tr>
-<td><b>Assumption</b></td>
-<td>Isothermal process (constant T)</td>
-<td>Adiabatic process (no heat exchange)</td>
-</tr>
-<tr>
-<td><b>Bulk Modulus</b></td>
-<td>K = P</td>
-<td>K = γP</td>
-</tr>
-<tr>
-<td><b>Formula</b></td>
-<td>v = √(P/ρ)</td>
-<td>v = √(γP/ρ)</td>
-</tr>
-<tr>
-<td><b>Alternative Form</b></td>
-<td>v = √(RT/M)</td>
-<td>v = √(γRT/M)</td>
-</tr>
-<tr>
-<td><b>Predicted v (air, 0°C)</b></td>
-<td>~280 m/s</td>
-<td>~331 m/s</td>
-</tr>
-<tr>
-<td><b>Experimental v</b></td>
-<td>332 m/s</td>
-<td>332 m/s</td>
-</tr>
-<tr>
-<td><b>Accuracy</b></td>
-<td>16% error ✗</td>
-<td>< 1% error ✓</td>
-</tr>
-<tr>
-<td><b>Status</b></td>
-<td>Incorrect (historical)</td>
-<td>Correct (accepted)</td>
-</tr>
-</tbody>
-</table><h3>Values of γ for Different Gases</h3>
-<div class="box note" data-title="Steps"><h4>Adiabatic Index (γ = C<sub>p</sub>/C<sub>v</sub>):</h4>
-<table>
-<tbody>
-<tr>
-<th>Gas Type</th>
-<th>Examples</th>
-<th>γ</th>
-<th>Reasoning</th>
-</tr>
-<tr>
-<td><b>Monatomic</b></td>
-<td>He, Ar, Ne</td>
-<td>1.67</td>
-<td>3 degrees of freedom (translation only)</td>
-</tr>
-<tr>
-<td><b>Diatomic</b></td>
-<td>O₂, N₂, H₂, Air</td>
-<td>1.40</td>
-<td>5 degrees of freedom (3 trans + 2 rot)</td>
-</tr>
-<tr>
-<td><b>Polyatomic</b></td>
-<td>CO₂, NH₃, CH₄</td>
-<td>1.33</td>
-<td>6+ degrees of freedom (more complex)</td>
-</tr>
-</tbody>
-</table>
-<p><b>For most calculations involving air, use γ = 1.4</b></p></div>
-<figure>
-<figcaption>Isothermal vs Adiabatic Compressions in Sound Waves</figcaption>
-<svg class="panel" viewBox="0 0 900 550" xmlns="http://www.w3.org/2000/svg" fill="currentColor"> <g>
-<text x="250" y="35" text-anchor="middle" font-size="18" font-weight="bold" fill="#ef4444">
-ISOTHERMAL (Newton - Wrong)
-</text>
-<rect x="50" y="60" width="400" height="180" fill="#fee2e2" stroke="#dc2626" stroke-width="3" rx="10"/>
-<text x="250" y="90" text-anchor="middle" font-size="15" font-weight="bold" fill="#991b1b">
-Assumption: T = constant
-</text>
-<text x="250" y="120" text-anchor="middle" font-size="14" fill="#991b1b">
-• Heat exchanges with surroundings
-</text>
-<text x="250" y="142" text-anchor="middle" font-size="14" fill="#991b1b">
-• Temperature remains constant
-</text>
-<text x="250" y="164" text-anchor="middle" font-size="14" fill="#991b1b">
-• Slow process (equilibrium maintained)
-</text>
-<text x="250" y="195" text-anchor="middle" font-size="16" font-weight="bold" fill="#7f1d1d">
-K = P → v = √(P/ρ)
-</text>
-<text x="250" y="220" text-anchor="middle" font-size="15" fill="#991b1b">
-Result: v ≈ 280 m/s (16% error)
-</text>
-</g>  <g>
-<text x="250" y="285" text-anchor="middle" font-size="18" font-weight="bold" fill="#10b981">
-ADIABATIC (Laplace - Correct)
-</text>
-<rect x="50" y="310" width="400" height="180" fill="#d1fae5" stroke="#059669" stroke-width="3" rx="10"/>
-<text x="250" y="340" text-anchor="middle" font-size="15" font-weight="bold" fill="#065f46">
-Reality: Q = 0 (no heat exchange)
-</text>
-<text x="250" y="370" text-anchor="middle" font-size="14" fill="#065f46">
-• No heat exchange (too rapid)
-</text>
-<text x="250" y="392" text-anchor="middle" font-size="14" fill="#065f46">
-• Compression → T increases
-</text>
-<text x="250" y="414" text-anchor="middle" font-size="14" fill="#065f46">
-• Rarefaction → T decreases
-</text>
-<text x="250" y="445" text-anchor="middle" font-size="16" font-weight="bold" fill="#064e3b">
-K = γP → v = √(γP/ρ)
-</text>
-<text x="250" y="470" text-anchor="middle" font-size="15" fill="#065f46">
-Result: v ≈ 331 m/s (matches experiment!)
-</text>
-</g>  <g>
-<rect x="500" y="60" width="350" height="430" fill="#fef3c7" stroke="#f59e0b" stroke-width="3" rx="12"/>
-<text x="675" y="95" text-anchor="middle" font-size="17" font-weight="bold" fill="#78350f">
-Why Adiabatic?
-</text>
-<text x="675" y="135" text-anchor="middle" font-size="14" font-weight="bold" fill="#92400e">
-Sound Frequency:
-</text>
-<text x="675" y="157" text-anchor="middle" font-size="13" fill="#92400e">
-f ~ 20 Hz to 20,000 Hz
-</text>
-<text x="675" y="187" text-anchor="middle" font-size="14" font-weight="bold" fill="#92400e">
-Period:
-</text>
-<text x="675" y="209" text-anchor="middle" font-size="13" fill="#92400e">
-T ~ 0.00005 to 0.05 seconds
-</text>
-<text x="675" y="245" text-anchor="middle" font-size="14" font-weight="bold" fill="#92400e">
-Heat Transfer Time:
-</text>
-<text x="675" y="267" text-anchor="middle" font-size="13" fill="#92400e">
-Much longer than period
-</text>
-<rect x="520" y="290" width="310" height="70" fill="#fde68a" rx="8"/>
-<text x="675" y="315" text-anchor="middle" font-size="14" font-weight="bold" fill="#78350f">
-Compression/rarefaction
-</text>
-<text x="675" y="335" text-anchor="middle" font-size="14" font-weight="bold" fill="#78350f">
-occurs TOO FAST for
-</text>
-<text x="675" y="355" text-anchor="middle" font-size="14" font-weight="bold" fill="#78350f">
-heat exchange!
-</text>
-<text x="675" y="395" text-anchor="middle" font-size="15" font-weight="bold" fill="#92400e">
-Correction Factor:
-</text>
-<text x="675" y="420" text-anchor="middle" font-size="18" font-weight="bold" fill="#78350f">
-γ ≈ 1.4 (for air)
-</text>
-<text x="675" y="455" text-anchor="middle" font-size="14" fill="#92400e">
-Increases predicted velocity
-</text>
-<text x="675" y="475" text-anchor="middle" font-size="14" fill="#92400e">
-by factor of √1.4 ≈ 1.18
-</text>
-</g>
-</svg>
-</figure>
-<div class="box note" data-title="Important for NEB Exams"><ul>
-<li><b>Newton's formula:</b> v = √(P/ρ) [WRONG - assumed isothermal]</li>
-<li><b>Laplace's formula:</b> v = √(γP/ρ) [CORRECT - adiabatic process]</li>
-<li><b>Alternative form:</b> v = √(γRT/M)</li>
-<li>Sound waves are too rapid for heat exchange → adiabatic</li>
-<li>Laplace correction factor: γ = C<sub>p</sub>/C<sub>v</sub></li>
-<li>For air: γ = 1.4, v ≈ 331 m/s at 0°C</li>
-<li>Newton's prediction: 16% too low</li>
-<li>Monatomic: γ=1.67, Diatomic: γ=1.40, Polyatomic: γ=1.33</li>
-</ul></div>
-<h2>7.4 Laplace Correction in Detail</h2>
-<p>The <b>Laplace correction</b> is the modification made to Newton's formula for the velocity of sound in gases by introducing the adiabatic index γ. This section explores the correction in depth.</p>
-<h3>What is Laplace Correction?</h3>
-<div class="box law" data-title="Definition of Laplace Correction"><p><b>Laplace correction is the introduction of the adiabatic index (γ) into Newton's formula to account for the adiabatic nature of sound wave propagation in gases.</b></p>
-<div class="formula"><b>Newton's Formula: v = √(P/ρ)</b><br><br><b>↓ LAPLACE CORRECTION ↓</b><br><br><b>Corrected Formula: v = √(γP/ρ)</b><br><br>
-The correction factor is <b>γ = C<sub>p</sub>/C<sub>v</sub></b></div></div>
-<h3>Physical Meaning of γ</h3>
-<div class="box definition" data-title="Understanding the Adiabatic Index"><p><b>γ (gamma) = C<sub>p</sub>/C<sub>v</sub></b></p>
-<p><b>Where:</b></p>
-<ul>
-<li><b>C<sub>p</sub>:</b> Molar heat capacity at constant pressure</li>
-<li><b>C<sub>v</sub>:</b> Molar heat capacity at constant volume</li>
-</ul>
-<p><b>Physical Significance:</b></p>
-<ul>
-<li>γ > 1 always (because C<sub>p</sub> > C<sub>v</sub>)</li>
-<li>Measures how much extra energy is needed to heat gas at constant pressure vs constant volume</li>
-<li>Related to degrees of freedom of gas molecules</li>
-<li>Determines how pressure changes with volume in adiabatic process</li>
-</ul>
-<p><b>Why C<sub>p</sub> > C<sub>v</sub>?</b></p>
-<p>When heated at constant pressure, gas must do work to expand. This requires extra energy beyond just increasing temperature.</p>
-<div class="formula">C<sub>p</sub> - C<sub>v</sub> = R<br><br>
-Where R = 8.314 J/(mol·K)</div></div>
-<h3>Values of γ Based on Molecular Structure</h3>
-<div class="box note" data-title="Theoretical Values from Kinetic Theory"><p><b>1. Monatomic Gases (f = 3):</b></p>
-<ul>
-<li>Degrees of freedom: f = 3 (only translational)</li>
-<li>C<sub>v</sub> = (f/2)R = (3/2)R</li>
-<li>C<sub>p</sub> = C<sub>v</sub> + R = (5/2)R</li>
-<li><b>γ = C<sub>p</sub>/C<sub>v</sub> = (5/2)R / (3/2)R = 5/3 = 1.67</b></li>
-<li>Examples: He, Ar, Ne, all noble gases</li>
-</ul>
-<p><b>2. Diatomic Gases (f = 5):</b></p>
-<ul>
-<li>Degrees of freedom: f = 5 (3 trans + 2 rot)</li>
-<li>C<sub>v</sub> = (5/2)R</li>
-<li>C<sub>p</sub> = (7/2)R</li>
-<li><b>γ = 7/5 = 1.40</b></li>
-<li>Examples: O₂, N₂, H₂, CO, air (~1.4)</li>
-</ul>
-<p><b>3. Polyatomic Gases (f ≥ 6):</b></p>
-<ul>
-<li>Degrees of freedom: f ≥ 6 (3 trans + 3 rot + vibrational)</li>
-<li>C<sub>v</sub> = (6/2)R or more</li>
-<li><b>γ ≈ 1.33</b></li>
-<li>Examples: CO₂, H₂O, NH₃, CH₄</li>
-</ul>
-<table>
-<tbody>
-<tr>
-<th>Gas</th>
-<th>Type</th>
-<th>γ (theoretical)</th>
-<th>γ (experimental)</th>
-</tr>
-<tr>
-<td>Helium (He)</td>
-<td>Monatomic</td>
-<td>1.67</td>
-<td>1.66</td>
-</tr>
-<tr>
-<td>Argon (Ar)</td>
-<td>Monatomic</td>
-<td>1.67</td>
-<td>1.67</td>
-</tr>
-<tr>
-<td>Hydrogen (H₂)</td>
-<td>Diatomic</td>
-<td>1.40</td>
-<td>1.41</td>
-</tr>
-<tr>
-<td>Nitrogen (N₂)</td>
-<td>Diatomic</td>
-<td>1.40</td>
-<td>1.40</td>
-</tr>
-<tr>
-<td>Oxygen (O₂)</td>
-<td>Diatomic</td>
-<td>1.40</td>
-<td>1.40</td>
-</tr>
-<tr>
-<td>Air</td>
-<td>Mixture (mainly diatomic)</td>
-<td>1.40</td>
-<td>1.40</td>
-</tr>
-<tr>
-<td>Carbon dioxide (CO₂)</td>
-<td>Polyatomic</td>
-<td>1.33</td>
-<td>1.30</td>
-</tr>
-<tr>
-<td>Methane (CH₄)</td>
-<td>Polyatomic</td>
-<td>1.33</td>
-<td>1.31</td>
-</tr>
-</tbody>
-</table></div>
-<h3>Mathematical Justification</h3>
-<div class="box note" data-title="Why the Correction Works"><p><b>Isothermal vs Adiabatic Bulk Modulus:</b></p>
-<p><b>For Isothermal Process (Newton):</b></p>
-<p>PV = constant</p>
-<p>Differentiating: P dV + V dP = 0</p>
-<p>K<sub>isothermal</sub> = -V(dP/dV) = P</p>
-<p><b>For Adiabatic Process (Laplace):</b></p>
-<p>PV<sup>γ</sup> = constant</p>
-<p>Differentiating: P·γ·V<sup>γ-1</sup>·dV + V<sup>γ</sup>·dP = 0</p>
-<p>K<sub>adiabatic</sub> = -V(dP/dV) = γP</p>
-<p><b>Ratio:</b></p>
-<div class="formula">K<sub>adiabatic</sub> / K<sub>isothermal</sub> = γP / P = γ <br><br>
-Therefore:<br>
-v<sub>adiabatic</sub> / v<sub>isothermal</sub> = √γ</div>
+        .container {
+            max-width: 900px;
+            margin: 24px auto;
+            background: #ffffff;
+            padding: 32px 40px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
 
-<p><b>Numerical Example for Air (γ = 1.4):</b></p>
-<p>v<sub>Laplace</sub> / v<sub>Newton</sub> = √1.4 ≈ 1.183</p>
-<p>Laplace's value is about 18.3% higher than Newton's!</p></div>
-<h3>Experimental Verification</h3>
-<div class="box note" data-title="Testing the Correction"><p><b>Setup: Measure velocity of sound in air at 0°C</b></p>
-<table>
-<tbody>
-<tr>
-<th>Method</th>
-<th>Formula</th>
-<th>Predicted v (m/s)</th>
-<th>Error</th>
-</tr>
-<tr>
-<td><b>Experimental</b></td>
-<td>Direct measurement</td>
-<td>332</td>
-<td>—</td>
-</tr>
-<tr>
-<td><b>Newton</b></td>
-<td>√(P/ρ)</td>
-<td>280</td>
-<td>-16%</td>
-</tr>
-<tr>
-<td><b>Laplace</b></td>
-<td>√(γP/ρ), γ=1.4</td>
-<td>331</td>
-<td>-0.3%</td>
-</tr>
-</tbody>
-</table>
-<p><b>Calculation Details:</b></p>
-<p>At 0°C and 1 atm:</p>
-<ul>
-<li>P = 1.013 × 10⁵ Pa</li>
-<li>ρ = 1.293 kg/m³</li>
-<li>γ = 1.4 (for air)</li>
-</ul>
-<p>Newton: v = √(1.013×10⁵/1.293) = 280 m/s</p>
-<p>Laplace: v = √(1.4×1.013×10⁵/1.293) = 331 m/s</p>
-<p>Experiment: v = 332 m/s</p>
-<p><b>Laplace's correction is spectacularly accurate!</b></p></div>
-<h3>Why the Process is Adiabatic</h3>
-<div class="box law" data-title="Time Scale Analysis"><p><b>Sound Wave Frequency Range:</b></p>
-<ul>
-<li>Audible range: 20 Hz to 20,000 Hz</li>
-<li>Typical: ~1000 Hz</li>
-</ul>
-<p><b>Period of Oscillation:</b></p>
-<p>T = 1/f ≈ 0.001 s = 1 millisecond</p>
-<p><b>Heat Diffusion Time:</b></p>
-<p>Time for heat to travel distance of wavelength λ:</p>
-<p>t<sub>heat</sub> ~ λ²/D (D = thermal diffusivity)</p>
-<p>For air: D ≈ 2 × 10⁻⁵ m²/s</p>
-<p>λ ≈ 0.34 m (at 1000 Hz)</p>
-<p>t<sub>heat</sub> ~ (0.34)² / (2×10⁻⁵) ~ 5800 s ≈ 1.6 hours!</p>
-<p><b>Conclusion:</b></p>
-<div class="formula">t<sub>heat</sub> >> T<sub>sound</sub><br><br>
-Heat diffusion (hours) >> Sound period (milliseconds)<br><br>
-Therefore: Process is ADIABATIC (no time for heat transfer)</div></div>
-<div class="box tip" data-title="Summary of Laplace Correction"><p><b>1. Problem:</b> Newton assumed isothermal compressions → predicted v too low</p>
-<p><b>2. Solution:</b> Laplace recognized adiabatic compressions → introduced γ</p>
-<p><b>3. Correction Factor:</b> γ = C<sub>p</sub>/C<sub>v</sub> (always > 1)</p>
-<p><b>4. Effect:</b> Increases predicted velocity by factor of √γ</p>
-<p><b>5. Values:</b></p>
-<ul>
-<li>Monatomic: γ = 1.67</li>
-<li>Diatomic (air): γ = 1.4</li>
-<li>Polyatomic: γ = 1.33</li>
-</ul>
-<p><b>6. Result:</b> Perfect agreement with experiment!</p>
-<div class="formula"><b>v = √(γP/ρ) = √(γRT/M)</b></div></div>
-<div class="box note" data-title="Important for NEB Exams"><ul>
-<li><b>Laplace correction:</b> Introducing γ into Newton's formula</li>
-<li><b>γ = C<sub>p</sub>/C<sub>v</sub></b> (adiabatic index, ratio of heat capacities)</li>
-<li>Correction needed because sound waves are <b>adiabatic</b>, not isothermal</li>
-<li>γ > 1 always (typically 1.33 to 1.67)</li>
-<li>For air: γ = 1.4 (remember this!)</li>
-<li>Increases velocity by √γ ≈ 1.18 for air</li>
-<li>Monatomic: γ=1.67, Diatomic: γ=1.40, Polyatomic: γ=1.33</li>
-<li>Process is adiabatic because sound waves too fast for heat exchange</li>
-</ul></div>
-<h2>7.5 Effect of Temperature, Pressure, and Humidity on Velocity of Sound</h2>
-<p>The velocity of sound in gases is affected by various physical conditions. Understanding these effects is crucial for practical applications and theoretical understanding.</p>
-<h3>Effect of Temperature</h3>
-<div class="box law" data-title="Temperature Dependence"><p><b>Starting from Laplace formula:</b></p>
-<div class="formula">v = √(γRT/M)</div>
+        h1.document-title {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: #0f172a;
+            border-bottom: 2px solid #0f172a;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
 
-<p>Since γ, R, and M are constants for a given gas:</p>
-<div class="formula"><b>v ∝ √T</b> <br><br>
-Velocity is directly proportional to<br>
-the square root of absolute temperature</div>
+        h2.section-header {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e3a8a;
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 8px 12px;
+            margin: 28px 0 14px 0;
+            text-transform: uppercase;
+        }
 
-<p><b>Physical Meaning:</b></p>
-<ul>
-<li>Higher temperature → faster molecular motion</li>
-<li>Faster molecules → quicker transmission of disturbance</li>
-<li>Sound travels faster in warm air than cold air</li>
-</ul></div>
-<h3>Deriving Temperature Effect</h3>
-<div class="box note" data-title="Complete Derivation"><p><b>Let:</b></p>
-<ul>
-<li>v₀ = velocity at temperature T₀ (usually 0°C = 273 K)</li>
-<li>v<sub>t</sub> = velocity at temperature T</li>
-</ul>
-<p><b>Since v ∝ √T:</b></p>
-<p>v₀/v<sub>t</sub> = √(T₀/T)</p>
-<p>Therefore:</p>
-<div class="formula">v<sub>t</sub> = v₀ × √(T/T₀)</div>
+        h3.subsection-header {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 18px 0 8px 0;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 3px;
+        }
 
-<p><b>Using Celsius temperature:</b></p>
-<p>Let t°C be temperature in Celsius</p>
-<p>T = (273 + t) K</p>
-<p>T₀ = 273 K (at 0°C)</p>
-<p>v<sub>t</sub> = v₀ × √[(273 + t)/273]</p>
-<p>v<sub>t</sub> = v₀ × √[1 + t/273]</p>
-<p><b>For small t (binomial approximation):</b></p>
-<p>√(1 + x) ≈ 1 + x/2 when x << 1</p>
-<p>v<sub>t</sub> ≈ v₀[1 + t/(2×273)]</p>
-<p>v<sub>t</sub> ≈ v₀[1 + t/546]</p>
-<div class="formula"><b>v<sub>t</sub> = v₀(1 + t/546)</b> <br><br>
-Or: v<sub>t</sub> ≈ v₀ + 0.61t<br><br>
-Where:<br>
-• v<sub>t</sub> = velocity at t°C<br>
-• v₀ = velocity at 0°C (≈ 331 m/s for air)<br>
-• t = temperature in Celsius</div>
+        p {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
 
-<p><b>Alternative form:</b></p>
-<div class="formula"><b>v<sub>t</sub> ≈ 331 + 0.6t m/s</b><br><br>
-(Specifically for air at t°C)</div></div>
-<h3>Effect of Pressure (at constant temperature)</h3>
-<div class="box law" data-title="Pressure Dependence"><p><b>From Laplace formula:</b></p>
-<p>v = √(γP/ρ)</p>
-<p><b>From ideal gas law:</b></p>
-<p>PV = nRT</p>
-<p>P = (m/MV)RT = (ρ/M)RT</p>
-<p>P/ρ = RT/M</p>
-<p><b>Substituting into velocity formula:</b></p>
-<p>v = √[γ(P/ρ)] = √(γRT/M)</p>
-<div class="formula"><b>At constant T: v is INDEPENDENT of P</b> <br><br>
-v = √(γRT/M) contains no P term!</div>
+        ul, ol {
+            margin: 0 0 14px 24px;
+        }
 
-<p><b>Physical Explanation:</b></p>
-<ul>
-<li>Increasing pressure → increases both elastic restoring force AND inertia</li>
-<li>P increases but ρ increases proportionally: P/ρ = RT/M (constant at fixed T)</li>
-<li>These effects exactly cancel out!</li>
-<li>Sound travels at same speed at sea level and mountain top (if same T)</li>
-</ul></div>
-<h3>Mathematical Proof: Pressure Independence</h3>
-<div class="box note" data-title="Detailed Proof"><p><b>Consider two states at same temperature T:</b></p>
-<ul>
-<li>State 1: Pressure P₁, density ρ₁</li>
-<li>State 2: Pressure P₂, density ρ₂</li>
-</ul>
-<p><b>From ideal gas law at constant T:</b></p>
-<p>P₁/ρ₁ = RT/M</p>
-<p>P₂/ρ₂ = RT/M</p>
-<p>Therefore: P₁/ρ₁ = P₂/ρ₂</p>
-<p><b>Velocity at each state:</b></p>
-<p>v₁ = √(γP₁/ρ₁)</p>
-<p>v₂ = √(γP₂/ρ₂)</p>
-<p>Since P₁/ρ₁ = P₂/ρ₂:</p>
-<p><b>v₁ = v₂</b></p>
-<p><b>Conclusion:</b> Velocity is same regardless of pressure (at constant T)</p></div>
-<h3>Effect of Humidity</h3>
-<div class="box law" data-title="Humidity (Moisture) Dependence"><p><b>Humid air = mixture of dry air + water vapor</b></p>
-<p><b>Key Insight:</b></p>
-<div class="formula">v = √(γRT/M)<br><br>
-Velocity depends on <b>molar mass M</b></div>
+        li {
+            margin-bottom: 4px;
+        }
 
-<p><b>Molar masses:</b></p>
-<ul>
-<li>Dry air: M<sub>air</sub> ≈ 29 g/mol</li>
-<li>Water vapor: M<sub>H₂O</sub> = 18 g/mol</li>
-</ul>
-<p><b>When humidity increases:</b></p>
-<ul>
-<li>Water vapor (lighter) replaces some air molecules (heavier)</li>
-<li>Average molar mass M<sub>mixture</sub> decreases</li>
-<li>Since v ∝ 1/√M → velocity increases</li>
-</ul>
-<div class="formula"><b>v<sub>humid</sub> > v<sub>dry</sub></b> <br><br>
-Sound travels FASTER in humid air<br>
-(at same temperature and pressure)</div>
+        .law-box {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-left: 4px solid #0284c7;
+            padding: 12px 16px;
+            margin: 14px 0;
+            border-radius: 0 4px 4px 0;
+        }
 
-<p><b>Physical Meaning:</b></p>
-<ul>
-<li>Humid air is less dense (lighter molecules)</li>
-<li>Lower inertia → faster propagation</li>
-<li>Effect is small but measurable (~0.1-0.3% increase)</li>
-</ul></div>
-<h3>Quantitative Analysis of Humidity Effect</h3>
-<div class="box note" data-title="Calculating Effective Molar Mass"><p><b>Let:</b></p>
-<ul>
-<li>x = mole fraction of water vapor</li>
-<li>(1-x) = mole fraction of dry air</li>
-</ul>
-<p><b>Effective molar mass:</b></p>
-<p>M<sub>eff</sub> = x·M<sub>H₂O</sub> + (1-x)·M<sub>air</sub></p>
-<p>M<sub>eff</sub> = 18x + 29(1-x)</p>
-<p>M<sub>eff</sub> = 29 - 11x</p>
-<p><b>Velocity ratio:</b></p>
-<p>v<sub>humid</sub>/v<sub>dry</sub> = √(M<sub>dry</sub>/M<sub>humid</sub>)</p>
-<p>v<sub>humid</sub>/v<sub>dry</sub> = √[29/(29-11x)]</p>
-<p><b>Example:</b> At 100% relative humidity and 30°C, x ≈ 0.04</p>
-<p>M<sub>eff</sub> = 29 - 11(0.04) = 28.56</p>
-<p>v<sub>humid</sub>/v<sub>dry</sub> = √(29/28.56) ≈ 1.008</p>
-<p><b>Result:</b> About 0.8% faster in humid air</p></div>
-<h3>Summary Table: Effects on Sound Velocity</h3>
-<table>
-<tbody>
-<tr>
-<th>Factor</th>
-<th>Effect</th>
-<th>Relation</th>
-<th>Physical Reason</th>
-</tr>
-<tr>
-<td><b>Temperature ↑</b></td>
-<td>Velocity ↑</td>
-<td>v ∝ √T</td>
-<td>Faster molecular motion</td>
-</tr>
-<tr>
-<td><b>Pressure ↑</b><br>
-(at constant T)</td>
-<td>No effect</td>
-<td>v independent of P</td>
-<td>P and ρ increase proportionally; effects cancel</td>
-</tr>
-<tr>
-<td><b>Humidity ↑</b></td>
-<td>Velocity ↑ (slightly)</td>
-<td>v ∝ 1/√M</td>
-<td>Water vapor lighter than air; reduces average M</td>
-</tr>
-<tr>
-<td><b>Density ↑</b><br>
-(other factors constant)</td>
-<td>Velocity ↓</td>
-<td>v ∝ 1/√ρ</td>
-<td>More inertia to overcome</td>
-</tr>
-<tr>
-<td><b>Molar mass ↑</b></td>
-<td>Velocity ↓</td>
-<td>v ∝ 1/√M</td>
-<td>Heavier molecules move slower</td>
-</tr>
-</tbody>
-</table><h3>Practical Examples</h3>
-<div class="box note" data-title="Real-World Applications"><p><b>1. Thunder Delay in Summer vs Winter:</b></p>
-<ul>
-<li>Summer (30°C): v ≈ 349 m/s</li>
-<li>Winter (0°C): v ≈ 331 m/s</li>
-<li>Same lightning distance appears farther in winter (longer delay)</li>
-</ul>
-<p><b>2. Mountain vs Sea Level (same temperature):</b></p>
-<ul>
-<li>Mountain: Lower pressure (but also lower density)</li>
-<li>Sea level: Higher pressure (but also higher density)</li>
-<li>Result: Same sound velocity! (P and ρ change proportionally)</li>
-</ul>
-<p><b>3. Humid Day vs Dry Day:</b></p>
-<ul>
-<li>Humid air: Slightly faster sound (~0.5% increase)</li>
-<li>Makes sound travel very slightly farther</li>
-<li>Effect usually negligible compared to temperature</li>
-</ul>
-<p><b>4. Different Gases at Same Conditions:</b></p>
-<ul>
-<li>Helium (M=4): v ≈ 970 m/s (very light, high γ)</li>
-<li>Air (M=29): v ≈ 343 m/s</li>
-<li>CO₂ (M=44): v ≈ 260 m/s (heavy, lower γ)</li>
-</ul></div>
-<figure>
-<figcaption>Effect of Temperature on Sound Velocity in Air</figcaption>
-<svg class="panel" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" fill="currentColor"> <line x1="100" y1="400" x2="800" y2="400" stroke="#4c1d95" stroke-width="3"/> <line x1="100" y1="400" x2="100" y2="80" stroke="#4c1d95" stroke-width="3"/>  <text x="450" y="440" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a0b2e">
-Temperature (°C)
-</text> <text x="100" y="420" text-anchor="middle" font-size="13" fill="#1a0b2e">
-0
-</text> <text x="240" y="420" text-anchor="middle" font-size="13" fill="#1a0b2e">
-10
-</text> <text x="380" y="420" text-anchor="middle" font-size="13" fill="#1a0b2e">
-20
-</text> <text x="520" y="420" text-anchor="middle" font-size="13" fill="#1a0b2e">
-30
-</text> <text x="660" y="420" text-anchor="middle" font-size="13" fill="#1a0b2e">
-40
-</text> <text x="800" y="420" text-anchor="middle" font-size="13" fill="#1a0b2e">
-50
-</text>  <text x="50" y="250" text-anchor="middle" font-size="16" font-weight="bold" fill="#1a0b2e" transform="rotate(-90 50 250)">
-Velocity (m/s)
-</text> <text x="85" y="405" text-anchor="end" font-size="13" fill="#1a0b2e">
-330
-</text> <text x="85" y="340" text-anchor="end" font-size="13" fill="#1a0b2e">
-340
-</text> <text x="85" y="275" text-anchor="end" font-size="13" fill="#1a0b2e">
-350
-</text> <text x="85" y="210" text-anchor="end" font-size="13" fill="#1a0b2e">
-360
-</text>  <line x1="100" y1="335" x2="800" y2="335" stroke="#d8b4fe" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/> <line x1="100" y1="270" x2="800" y2="270" stroke="#d8b4fe" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/> <line x1="100" y1="205" x2="800" y2="205" stroke="#d8b4fe" stroke-width="1" stroke-dasharray="5,5" opacity="0.5"/>  <path d="M 100 400 Q 240 335, 380 285 T 660 205 T 800 165" stroke="#a855f7" stroke-width="5" fill="none"/>  <line x1="100" y1="400" x2="800" y2="190" stroke="#ef4444" stroke-width="3" stroke-dasharray="10,5"/>  <circle cx="100" cy="400" r="7" fill="#10b981"/> <circle cx="240" cy="335" r="7" fill="#10b981"/> <circle cx="380" cy="285" r="7" fill="#10b981"/> <circle cx="520" cy="245" r="7" fill="#10b981"/> <circle cx="660" cy="210" r="7" fill="#10b981"/>  <text x="110" y="395" font-size="13" font-weight="bold" fill="#065f46">
-331 m/s
-</text> <text x="390" y="280" font-size="13" font-weight="bold" fill="#065f46">
-343 m/s
-</text> <text x="670" y="205" font-size="13" font-weight="bold" fill="#065f46">
-355 m/s
-</text>  <rect x="600" y="100" width="180" height="100" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"/> <text x="690" y="125" text-anchor="middle" font-size="14" font-weight="bold" fill="#78350f">
-Legend
-</text> <line x1="615" y1="145" x2="655" y2="145" stroke="#a855f7" stroke-width="4"/> <text x="665" y="150" font-size="12" fill="#78350f">
-v ∝ √T (exact)
-</text> <line x1="615" y1="170" x2="655" y2="170" stroke="#ef4444" stroke-width="3" stroke-dasharray="8,4"/> <text x="665" y="175" font-size="12" fill="#78350f">
-v = 331 + 0.6t
-</text>  <rect x="150" y="100" width="250" height="70" fill="#e9d5ff" stroke="#a855f7" stroke-width="3" rx="10"/> <text x="275" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#4c1d95">
-v ∝ √T
-</text> <text x="275" y="155" text-anchor="middle" font-size="14" fill="#5b21b6">
-v = 331 + 0.6t m/s
-</text>
-</svg>
-</figure>
-<div class="box note" data-title="Important for NEB Exams"><ul>
-<li><b>Temperature:</b> v ∝ √T, or v<sub>t</sub> = 331 + 0.6t m/s (for air)</li>
-<li><b>Pressure (at constant T):</b> NO effect on velocity</li>
-<li><b>Humidity:</b> Slight increase (water vapor lighter than air)</li>
-<li>v ∝ 1/√M (lighter gases → faster sound)</li>
-<li>Temperature effect most significant in practice</li>
-<li>Each °C increase → ~0.6 m/s increase in air</li>
-<li>Pressure independence: P/ρ = RT/M (constant at fixed T)</li>
-<li>Know formula: v = √(γRT/M) to derive all effects</li>
-</ul></div>
-<h2>7.6 Numerical Problems: Velocity of Sound</h2>
-<p>This section covers solved numerical problems related to calculating velocity of sound in various media and conditions.</p>
-<h3>Problem 1: Basic Velocity Calculation in Gas</h3>
-<div class="box example" data-title="Problem"><p>Calculate the velocity of sound in air at 27°C and 1 atm pressure. Given: R = 8.314 J/(mol·K), M = 29 × 10⁻³ kg/mol, γ = 1.4</p></div>
-<div class="box note" data-title="Solution"><p><b>Given:</b></p>
-<ul>
-<li>T = 27°C = 27 + 273 = 300 K</li>
-<li>R = 8.314 J/(mol·K)</li>
-<li>M = 29 × 10⁻³ kg/mol</li>
-<li>γ = 1.4</li>
-</ul>
-<p><b>Formula:</b></p>
-<p>v = √(γRT/M)</p>
-<p><b>Calculation:</b></p>
-<p>v = √[(1.4 × 8.314 × 300) / (29 × 10⁻³)]</p>
-<p>v = √[3491.88 / 0.029]</p>
-<p>v = √(120,409.66)</p>
-<p>v = 347 m/s</p></div>
-<details class="solution"><summary>Show solution</summary><b>ANSWER:</b> Velocity of sound in air at 27°C = 347 m/s</details>
-<h3>Problem 2: Temperature Effect</h3>
-<div class="box example" data-title="Problem"><p>The velocity of sound in air at 0°C is 331 m/s. Calculate the velocity of sound at:</p>
-<p>(a) 20°C</p>
-<p>(b) 40°C</p></div>
-<div class="box note" data-title="Solution"><p><b>Given:</b></p>
-<ul>
-<li>v₀ = 331 m/s at 0°C</li>
-</ul>
-<p><b>Formula:</b></p>
-<p>v<sub>t</sub> = v₀ + 0.6t</p>
-<p>Or: v<sub>t</sub> = 331 + 0.6t</p>
-<p><b>(a) At 20°C:</b></p>
-<p>v₂₀ = 331 + 0.6(20)</p>
-<p>v₂₀ = 331 + 12</p>
-<p>v₂₀ = 343 m/s</p>
-<p><b>(b) At 40°C:</b></p>
-<p>v₄₀ = 331 + 0.6(40)</p>
-<p>v₄₀ = 331 + 24</p>
-<p>v₄₀ = 355 m/s</p>
-<p><b>Alternative method using √T:</b></p>
-<p>v<sub>t</sub>/v₀ = √(T/T₀)</p>
-<p>For 20°C: v₂₀ = 331 × √(293/273) = 331 × 1.036 = 343 m/s ✓</p></div>
-<details class="solution"><summary>Show solution</summary><b>ANSWERS:</b> (a) v₂₀ = 343 m/s, (b) v₄₀ = 355 m/s</details>
-<h3>Problem 3: Velocity in Different Gases</h3>
-<div class="box example" data-title="Problem"><p>At 0°C and 1 atm, calculate the velocity of sound in:</p>
-<p>(a) Hydrogen (H₂): M = 2 g/mol, γ = 1.4</p>
-<p>(b) Helium (He): M = 4 g/mol, γ = 1.67</p>
-<p>(c) CO₂: M = 44 g/mol, γ = 1.3</p>
-<p>Given: R = 8.314 J/(mol·K)</p></div>
-<div class="box note" data-title="Solution"><p><b>Given:</b></p>
-<ul>
-<li>T = 0°C = 273 K</li>
-<li>R = 8.314 J/(mol·K)</li>
-</ul>
-<p><b>Formula:</b></p>
-<p>v = √(γRT/M)</p>
-<p><b>(a) Hydrogen (H₂):</b></p>
-<p>M = 2 × 10⁻³ kg/mol, γ = 1.4</p>
-<p>v = √[(1.4 × 8.314 × 273) / (2 × 10⁻³)]</p>
-<p>v = √[3173.13 / 0.002]</p>
-<p>v = √(1,586,565)</p>
-<p>v = 1259 m/s</p>
-<p><b>(b) Helium (He):</b></p>
-<p>M = 4 × 10⁻³ kg/mol, γ = 1.67</p>
-<p>v = √[(1.67 × 8.314 × 273) / (4 × 10⁻³)]</p>
-<p>v = √[3790.19 / 0.004]</p>
-<p>v = √(947,547)</p>
-<p>v = 973 m/s</p>
-<p><b>(c) Carbon dioxide (CO₂):</b></p>
-<p>M = 44 × 10⁻³ kg/mol, γ = 1.3</p>
-<p>v = √[(1.3 × 8.314 × 273) / (44 × 10⁻³)]</p>
-<p>v = √[2949.44 / 0.044]</p>
-<p>v = √(67,032.7)</p>
-<p>v = 259 m/s</p></div>
-<details class="solution"><summary>Show solution</summary><b>ANSWERS:</b> (a) H₂: 1259 m/s, (b) He: 973 m/s, (c) CO₂: 259 m/s <br><br>
-Note: Lighter gases have faster sound velocities!</details>
-<h3>Problem 4: Velocity in Solid</h3>
-<div class="box example" data-title="Problem"><p>Calculate the velocity of sound in steel. Given: Young's modulus Y = 2.0 × 10¹¹ Pa, density ρ = 7800 kg/m³</p></div>
-<div class="box note" data-title="Solution"><p><b>Given:</b></p>
-<ul>
-<li>Y = 2.0 × 10¹¹ Pa</li>
-<li>ρ = 7800 kg/m³</li>
-</ul>
-<p><b>Formula for solid:</b></p>
-<p>v = √(Y/ρ)</p>
-<p><b>Calculation:</b></p>
-<p>v = √[(2.0 × 10¹¹) / 7800]</p>
-<p>v = √(25,641,026)</p>
-<p>v = 5064 m/s</p>
-<p>v ≈ 5100 m/s</p></div>
-<details class="solution"><summary>Show solution</summary><b>ANSWER:</b> Velocity of sound in steel ≈ 5100 m/s</details>
-<h3>Problem 5: Velocity in Liquid</h3>
-<div class="box example" data-title="Problem"><p>Calculate the velocity of sound in water. Given: Bulk modulus K = 2.2 × 10⁹ Pa, density ρ = 1000 kg/m³</p></div>
-<div class="box note" data-title="Solution"><p><b>Given:</b></p>
-<ul>
-<li>K = 2.2 × 10⁹ Pa</li>
-<li>ρ = 1000 kg/m³</li>
-</ul>
-<p><b>Formula for liquid:</b></p>
-<p>v = √(K/ρ)</p>
-<p><b>Calculation:</b></p>
-<p>v = √[(2.2 × 10⁹) / 1000]</p>
-<p>v = √(2,200,000)</p>
-<p>v = 1483 m/s</p>
-<p>v ≈ 1480 m/s</p></div>
-<details class="solution"><summary>Show solution</summary><b>ANSWER:</b> Velocity of sound in water ≈ 1480 m/s</details>
-<h3>Problem 6: Newton vs Laplace Comparison</h3>
-<div class="box example" data-title="Problem"><p>At 0°C and 1 atm, calculate the velocity of sound in air using:</p>
-<p>(a) Newton's formula</p>
-<p>(b) Laplace's formula</p>
-<p>(c) Find the percentage error in Newton's formula</p>
-<p>Given: P = 1.013 × 10⁵ Pa, ρ = 1.293 kg/m³, γ = 1.4</p></div>
-<div class="box note" data-title="Solution"><p><b>Given:</b></p>
-<ul>
-<li>P = 1.013 × 10⁵ Pa</li>
-<li>ρ = 1.293 kg/m³</li>
-<li>γ = 1.4</li>
-</ul>
-<p><b>(a) Newton's formula:</b></p>
-<p>v<sub>Newton</sub> = √(P/ρ)</p>
-<p>v<sub>Newton</sub> = √[(1.013 × 10⁵) / 1.293]</p>
-<p>v<sub>Newton</sub> = √(78,331.5)</p>
-<p>v<sub>Newton</sub> = 280 m/s</p>
-<p><b>(b) Laplace's formula:</b></p>
-<p>v<sub>Laplace</sub> = √(γP/ρ)</p>
-<p>v<sub>Laplace</sub> = √[(1.4 × 1.013 × 10⁵) / 1.293]</p>
-<p>v<sub>Laplace</sub> = √(109,664.1)</p>
-<p>v<sub>Laplace</sub> = 331 m/s</p>
-<p><b>(c) Percentage error:</b></p>
-<p>Error = [(Experimental - Newton) / Experimental] × 100%</p>
-<p>Taking experimental ≈ Laplace = 331 m/s:</p>
-<p>Error = [(331 - 280) / 331] × 100%</p>
-<p>Error = (51/331) × 100%</p>
-<p>Error = 15.4% ≈ 16%</p></div>
-<details class="solution"><summary>Show solution</summary><b>ANSWERS:</b> (a) Newton: 280 m/s, (b) Laplace: 331 m/s, (c) Error ≈ 16% <br><br>
-Laplace's correction (factor of √1.4 ≈ 1.18) is essential!</details>
-<h3>Problem 7: Finding Temperature from Velocity</h3>
-<div class="box example" data-title="Problem"><p>The velocity of sound in air is measured to be 349 m/s. At what temperature was this measurement made? (Assume v₀ = 331 m/s at 0°C)</p></div>
-<div class="box note" data-title="Solution"><p><b>Given:</b></p>
-<ul>
-<li>v<sub>t</sub> = 349 m/s</li>
-<li>v₀ = 331 m/s</li>
-</ul>
-<p><b>Formula:</b></p>
-<p>v<sub>t</sub> = v₀ + 0.6t</p>
-<p><b>Solving for t:</b></p>
-<p>349 = 331 + 0.6t</p>
-<p>349 - 331 = 0.6t</p>
-<p>18 = 0.6t</p>
-<p>t = 18/0.6</p>
-<p>t = 30°C</p>
-<p><b>Verification using √T method:</b></p>
-<p>v<sub>t</sub>/v₀ = √(T/T₀)</p>
-<p>349/331 = √(T/273)</p>
-<p>1.054 = √(T/273)</p>
-<p>1.111 = T/273</p>
-<p>T = 303 K = 30°C ✓</p></div>
-<details class="solution"><summary>Show solution</summary><b>ANSWER:</b> Temperature = 30°C</details>
-<h3>Problem 8: Ratio of Velocities</h3>
-<div class="box example" data-title="Problem"><p>Find the ratio of velocity of sound in hydrogen to that in oxygen at the same temperature. Given: M<sub>H₂</sub> = 2 g/mol, M<sub>O₂</sub> = 32 g/mol, γ<sub>H₂</sub> = γ<sub>O₂</sub> = 1.4</p></div>
-<div class="box note" data-title="Solution"><p><b>Given:</b></p>
-<ul>
-<li>M<sub>H₂</sub> = 2 g/mol</li>
-<li>M<sub>O₂</sub> = 32 g/mol</li>
-<li>γ<sub>H₂</sub> = γ<sub>O₂</sub> = 1.4</li>
-<li>Same temperature T</li>
-</ul>
-<p><b>Formula:</b></p>
-<p>v = √(γRT/M)</p>
-<p><b>For hydrogen:</b></p>
-<p>v<sub>H₂</sub> = √(γRT/M<sub>H₂</sub>)</p>
-<p><b>For oxygen:</b></p>
-<p>v<sub>O₂</sub> = √(γRT/M<sub>O₂</sub>)</p>
-<p><b>Ratio:</b></p>
-<p>v<sub>H₂</sub>/v<sub>O₂</sub> = √(M<sub>O₂</sub>/M<sub>H₂</sub>)</p>
-<p>(γ, R, T are same and cancel out)</p>
-<p>v<sub>H₂</sub>/v<sub>O₂</sub> = √(32/2)</p>
-<p>v<sub>H₂</sub>/v<sub>O₂</sub> = √16</p>
-<p>v<sub>H₂</sub>/v<sub>O₂</sub> = 4</p></div>
-<details class="solution"><summary>Show solution</summary><b>ANSWER:</b> v<sub>H₂</sub> : v<sub>O₂</sub> = 4 : 1 <br><br>
-Sound travels 4 times faster in hydrogen than oxygen!</details>
-<div class="box tip" data-title="Problem-Solving Strategy"><p><b>For Gases:</b></p>
-<ul>
-<li>Use v = √(γRT/M) for general calculations</li>
-<li>Use v = √(γP/ρ) when P and ρ given directly</li>
-<li>Use v<sub>t</sub> = 331 + 0.6t for air at Celsius temperatures</li>
-<li>Remember: γ = 1.4 for air and diatomic gases</li>
-</ul>
-<p><b>For Solids:</b></p>
-<ul>
-<li>Use v = √(Y/ρ) with Young's modulus</li>
-<li>Typical values: ~5000 m/s for metals</li>
-</ul>
-<p><b>For Liquids:</b></p>
-<ul>
-<li>Use v = √(K/ρ) with Bulk modulus</li>
-<li>Water: ~1500 m/s</li>
-</ul>
-<p><b>Common Mistakes to Avoid:</b></p>
-<ul>
-<li>Convert temperature to Kelvin (T = t + 273)</li>
-<li>Convert molar mass to kg/mol (divide g/mol by 1000)</li>
-<li>Don't confuse Newton's and Laplace's formulas</li>
-<li>Remember R = 8.314 J/(mol·K), not 8.314 J/(g·K)</li>
-</ul></div>
-<div class="box note" data-title="Important for NEB Exams"><ul>
-<li><b>Gas:</b> v = √(γRT/M) or v = √(γP/ρ)</li>
-<li><b>Solid:</b> v = √(Y/ρ)</li>
-<li><b>Liquid:</b> v = √(K/ρ)</li>
-<li><b>Air temperature:</b> v = 331 + 0.6t m/s</li>
-<li>Always convert to SI units first</li>
-<li>For ratios: cancel common terms (γ, R, T)</li>
-<li>Laplace correction: multiply Newton's result by √γ</li>
-<li>Know typical values: Air ~340 m/s, Water ~1500 m/s, Steel ~5000 m/s</li>
-</ul></div>
+        .law-title {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            color: #0369a1;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        .formula-box {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 6px;
+            padding: 12px;
+            text-align: center;
+            margin: 14px 0;
+            color: #14532d;
+            font-weight: 600;
+        }
+
+        .derivation-step {
+            background-color: #fafafa;
+            border: 1px dashed #cbd5e1;
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 4px;
+        }
+
+        .diagram-container {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 18px 0;
+            text-align: center;
+        }
+
+        .diagram-caption {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 12px;
+            color: #475569;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 13.5px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .example-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-top: 3px solid #2563eb;
+            border-radius: 4px;
+            padding: 14px 18px;
+            margin: 16px 0;
+        }
+
+        .example-title {
+            font-family: system-
