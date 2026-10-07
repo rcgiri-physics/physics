@@ -118,14 +118,23 @@ the previous version stays online. The same check also runs on GitHub for every 
 
 ## Known content issues
 
-- `src/lessons/wave-motion-2.html` was uploaded **truncated**: it stopped inside a stationary-wave
-  diagram placed after the exam tips. The broken diagram was removed; all text is intact. Paste the
-  diagram again from the original if you still have it.
-- Diagrams in converted pages use fixed colours, so they sit on a light panel (`<svg class="panel">`).
-  New diagrams should use `currentColor` instead.
-- `thermoelectric-effect.json` question 12 originally had only one option. Three wrong unit
+- **Full web pages break the whole site.** If a lesson is uploaded as a complete web page
+  (`<!DOCTYPE html>`, Tailwind, `<style>`/`<script>`), the Vercel build fails and the live site
+  stays frozen at the last good version. That happened with 16 lessons uploaded on 2026-10-02…06;
+  they were converted on 2026-10-07. Use the prompts in `docs/prompts/` so lessons come out
+  content-only.
+- Equations must use `\( … \)` and `\[ … \]`. `$…$` is not rendered (converted pages were rewritten).
+- The interactive simulators and calculators in the uploaded pages (photoelectric tube, AC
+  generator, cathode-ray beam, standing waves, ray tracer, work/collision calculators) were removed,
+  because notes cannot contain scripts. The original pages are in git history (commit `0ff021b`) if
+  they are rebuilt later as shared site components.
+- Their quizzes became MCQ sets: `electromagnetic-induction-quiz-mcq.json`, `magnetism-quiz-mcq.json`,
+  `pipes-strings-quiz-mcq.json`, `refraction-quiz-mcq.json`, `work-energy-and-power-quiz-mcq.json`.
+- `photon.html` was an earlier upload of `photons.html` and was removed (its address redirects).
+- Diagrams with fixed colours sit on a light panel (`<svg class="panel">`) so they stay readable in
+  dark mode. New diagrams should use `currentColor` instead.
+- `thermoelectric-effect-mcq.json` question 12 originally had only one option. Three wrong unit
   options were added (A/K, W·m, Ω/K), so please review.
-- Grade XI has notes for chapters 9–13 only, and one MCQ set (chapter 11).
 
 ## Roadmap
 
