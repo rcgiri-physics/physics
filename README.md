@@ -112,17 +112,20 @@ Old Blogger links keep working through redirects in `vercel.json`:
 | `/search?q=…` | `/search.html?q=…` |
 | `/<slug>.html` (old root copies) | `/posts/<slug>.html` |
 
-Every push to `main` redeploys the site. If a lesson file has an error, the build fails and
-the previous version stays online. The same check also runs on GitHub for every pull request
-(`.github/workflows/check.yml`).
+Every push to `main` redeploys the site. If a lesson file has an error, that lesson is **skipped**
+(the Vercel build log lists it under `WARNING`) and every other lesson is still published, so one
+bad upload can't freeze the site. The GitHub check (`.github/workflows/check.yml`) runs
+`python build.py --strict`, which fails on any problem, so errors still show up as a red ✗ on GitHub.
 
 ## Known content issues
 
-- **Full web pages break the whole site.** If a lesson is uploaded as a complete web page
-  (`<!DOCTYPE html>`, Tailwind, `<style>`/`<script>`), the Vercel build fails and the live site
-  stays frozen at the last good version. That happened with 16 lessons uploaded on 2026-10-02…06;
-  they were converted on 2026-10-07. Use the prompts in `docs/prompts/` so lessons come out
-  content-only.
+- **Full web pages are skipped.** A lesson uploaded as a complete web page (`<!DOCTYPE html>`,
+  Tailwind, `<style>`/`<script>`) is left off the site. Until 2026-10-07 such a file stopped the whole
+  build, which froze the live site from 2026-10-02 while 16 lessons were uploaded that way; they were
+  converted on 2026-10-07. Use the prompts in `docs/prompts/` so lessons come out content-only.
+- MCQ options are shown in a fixed shuffled order (`shuffled_options` in `build.py`), because most
+  sets stored the correct answer as option A. Questions with options like "None of these" keep
+  their order.
 - Equations must use `\( … \)` and `\[ … \]`. `$…$` is not rendered (converted pages were rewritten).
 - The interactive simulators and calculators in the uploaded pages (photoelectric tube, AC
   generator, cathode-ray beam, standing waves, ray tracer, work/collision calculators) were removed,
