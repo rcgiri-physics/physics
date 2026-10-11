@@ -1,0 +1,289 @@
+{
+  "title": "Atomic Physics and X-rays — 40 MCQs",
+  "grade": "XII",
+  "chapters": [18],
+  "date": "2026-10-11",
+  "description": "Covers Bohr’s theory of the hydrogen atom, spectral series, excitation and ionization potentials, energy levels, emission and absorption spectra, de Broglie theory and wave-particle duality, the uncertainty principle, nature and production of X-rays, and Bragg’s law.",
+  "questions": [
+    {
+      "q": "According to Bohr’s theory the angular momentum of an electron in a hydrogen atom is",
+      "options": ["nh", "nh/2π", "n²h", "h/2πn"],
+      "answer": 1,
+      "explanation": "Bohr’s quantization condition states that mvr = nh/2π where n = 1, 2, 3, …",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The energy of the electron in the ground state of hydrogen is",
+      "options": ["−13.6 eV", "−3.4 eV", "0 eV", "+13.6 eV"],
+      "answer": 0,
+      "explanation": "E₁ = −13.6 eV for the n = 1 level of hydrogen.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The ionization potential of the hydrogen atom is",
+      "options": ["13.6 V", "3.4 V", "10.2 V", "1.5 V"],
+      "answer": 0,
+      "explanation": "Ionization energy from the ground state is 13.6 eV, so the ionization potential is 13.6 V.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The Lyman series of hydrogen lies in the",
+      "options": ["visible region", "ultraviolet region", "infrared region", "X-ray region"],
+      "answer": 1,
+      "explanation": "All Lyman lines (transitions to n = 1) fall in the ultraviolet.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The Balmer series of hydrogen lies mainly in the",
+      "options": ["ultraviolet", "visible region", "infrared", "microwave"],
+      "answer": 1,
+      "explanation": "Balmer lines (transitions to n = 2) appear in the visible spectrum.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "de Broglie’s relation for the wavelength of a particle is",
+      "options": ["λ = h/p", "λ = p/h", "λ = hν", "λ = mc²"],
+      "answer": 0,
+      "explanation": "The de Broglie wavelength is λ = h/p where p is the momentum of the particle.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Heisenberg’s uncertainty principle states that",
+      "options": ["Δx · Δp ≥ h/4π", "Δx · Δp ≤ h/4π", "Δx · Δp = 0", "Δx · ΔE ≥ h"],
+      "answer": 0,
+      "explanation": "The product of uncertainties in position and momentum is at least h/4π.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "X-rays are",
+      "options": ["longitudinal waves", "electromagnetic waves of short wavelength", "streams of electrons", "sound waves"],
+      "answer": 1,
+      "explanation": "X-rays are high-energy electromagnetic radiation with wavelengths typically 0.01–10 nm.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "X-rays are produced when",
+      "options": ["fast electrons strike a metal target", "protons strike a metal target", "neutrons strike a metal target", "light falls on a metal"],
+      "answer": 0,
+      "explanation": "In an X-ray tube accelerated electrons hit a metal anode and produce X-rays.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Bragg’s law for X-ray diffraction is",
+      "options": ["2d sinθ = nλ", "d sinθ = nλ", "2d cosθ = nλ", "d cosθ = nλ"],
+      "answer": 0,
+      "explanation": "Constructive interference occurs when 2d sinθ = nλ where d is the interplanar spacing.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The energy of the electron in the n = 2 state of hydrogen is",
+      "options": ["−3.4 eV", "−13.6 eV", "−1.51 eV", "−0.85 eV"],
+      "answer": 0,
+      "explanation": "E_n = −13.6/n² eV; for n = 2, E = −13.6/4 = −3.4 eV.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The wavelength of the first line of the Lyman series is given by 1/λ = R(1 − 1/4). If R = 1.097 × 10⁷ m⁻¹ the wavelength is approximately",
+      "options": ["121.6 nm", "656.3 nm", "102.6 nm", "486.1 nm"],
+      "answer": 0,
+      "explanation": "1/λ = R × 3/4 = 1.097e7 × 0.75 ≈ 8.23e6 m⁻¹; λ ≈ 1.216 × 10⁻⁷ m = 121.6 nm.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The excitation potential for the transition from n = 1 to n = 2 in hydrogen is",
+      "options": ["10.2 V", "13.6 V", "3.4 V", "1.9 V"],
+      "answer": 0,
+      "explanation": "ΔE = 13.6 − 3.4 = 10.2 eV; the corresponding potential is 10.2 V.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "An electron is accelerated through 100 V. Its de Broglie wavelength is approximately (h = 6.63 × 10⁻³⁴ J s, m = 9.1 × 10⁻³¹ kg)",
+      "options": ["0.123 nm", "1.23 nm", "0.012 nm", "12.3 nm"],
+      "answer": 0,
+      "explanation": "λ = h / √(2 m e V) ≈ 1.227 / √V nm = 1.227 / 10 ≈ 0.123 nm.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The minimum wavelength of continuous X-rays produced when electrons are accelerated through 50 kV is",
+      "options": ["0.0248 nm", "0.248 nm", "2.48 nm", "0.00248 nm"],
+      "answer": 0,
+      "explanation": "λ_min = hc / eV = 12400 / 50000 Å ≈ 0.248 Å = 0.0248 nm.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "In the Bohr model the radius of the nth orbit is proportional to",
+      "options": ["n", "n²", "1/n", "1/n²"],
+      "answer": 1,
+      "explanation": "r_n = n² a₀ where a₀ is the Bohr radius.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The Paschen series corresponds to transitions ending on",
+      "options": ["n = 1", "n = 2", "n = 3", "n = 4"],
+      "answer": 2,
+      "explanation": "Paschen series lines arise from transitions to the n = 3 level and lie in the infrared.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "When an electron jumps from a higher orbit to a lower orbit it",
+      "options": ["absorbs a photon", "emits a photon", "emits a neutrino", "absorbs a neutron"],
+      "answer": 1,
+      "explanation": "The energy difference is released as a photon, producing an emission line.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Absorption spectra are produced when electrons",
+      "options": ["jump from higher to lower levels", "jump from lower to higher levels", "remain in the same level", "are ejected from the atom"],
+      "answer": 1,
+      "explanation": "Absorption occurs when an atom absorbs a photon and an electron is raised to a higher energy level.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The uncertainty in position of an electron is 0.1 nm. The minimum uncertainty in its momentum is approximately (h = 6.63 × 10⁻³⁴ J s)",
+      "options": ["5.3 × 10⁻²⁵ kg m s⁻¹", "5.3 × 10⁻²⁴ kg m s⁻¹", "1.05 × 10⁻²⁴ kg m s⁻¹", "1.05 × 10⁻²⁵ kg m s⁻¹"],
+      "answer": 0,
+      "explanation": "Δp ≥ h/(4π Δx) = 6.63e-34 / (4 × 3.14 × 0.1 × 10⁻⁹) ≈ 5.28 × 10⁻²⁵ kg m s⁻¹.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Characteristic X-rays are produced by",
+      "options": ["deceleration of electrons", "transitions of electrons between inner shells of the target atoms", "heating of the filament", "collision of photons"],
+      "answer": 1,
+      "explanation": "When an electron from an outer shell fills a vacancy in an inner shell, a characteristic X-ray photon is emitted.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The continuous X-ray spectrum has a short-wavelength limit that depends on",
+      "options": ["the atomic number of the target", "the accelerating voltage", "the temperature of the filament", "the intensity of the beam"],
+      "answer": 1,
+      "explanation": "λ_min = hc / eV; it is determined solely by the tube voltage.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Bragg’s law is used to determine",
+      "options": ["the wavelength of light", "the interplanar spacing in crystals", "the speed of electrons", "the charge of the electron"],
+      "answer": 1,
+      "explanation": "By measuring the angles at which constructive interference occurs, the lattice spacing d can be found.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The wave nature of electrons was first confirmed by",
+      "options": ["the photoelectric effect", "electron diffraction experiments", "the Compton effect", "black-body radiation"],
+      "answer": 1,
+      "explanation": "Davisson–Germer and G. P. Thomson observed diffraction of electrons, confirming de Broglie’s hypothesis.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The ratio of the wavelengths of the first lines of the Lyman and Balmer series is",
+      "options": ["5 : 27", "27 : 5", "4 : 9", "9 : 4"],
+      "answer": 0,
+      "explanation": "1/λ_L = R(1−1/4)=3R/4; 1/λ_B = R(1/4−1/9)=5R/36; λ_L/λ_B = (5R/36)/(3R/4) = 5/27.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The energy required to excite a hydrogen atom from the ground state to the second excited state is",
+      "options": ["12.09 eV", "10.2 eV", "1.51 eV", "13.6 eV"],
+      "answer": 0,
+      "explanation": "Second excited state is n = 3; E₃ = −13.6/9 ≈ −1.51 eV; ΔE = 13.6 − 1.51 = 12.09 eV.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The longest wavelength in the Lyman series is",
+      "options": ["121.6 nm", "102.6 nm", "97.3 nm", "656.3 nm"],
+      "answer": 0,
+      "explanation": "Longest λ corresponds to the smallest energy jump (n = 2 → n = 1): λ = 121.6 nm.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "An electron and a photon have the same de Broglie wavelength. The ratio of their kinetic energies (electron to photon) is",
+      "options": ["less than 1", "equal to 1", "greater than 1", "zero"],
+      "answer": 0,
+      "explanation": "For the electron KE = p²/2m = h²/(2m λ²); for the photon E = pc = hc/λ. Thus KE_e / E_ph = h/(2m c λ) < 1 for typical wavelengths.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The minimum energy of an electron that can produce characteristic K-series X-rays of a target with K-shell binding energy 70 keV is",
+      "options": ["greater than 70 keV", "exactly 70 keV", "less than 70 keV", "35 keV"],
+      "answer": 0,
+      "explanation": "The incident electron must have kinetic energy at least equal to the binding energy of the K-shell electron in order to eject it.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "In a Bragg reflection the first-order maximum occurs at θ = 30°. The second-order maximum will occur at",
+      "options": ["θ = 90°", "θ = 60°", "θ = 15°", "no second-order maximum"],
+      "answer": 0,
+      "explanation": "2d sin30° = λ ⇒ d = λ; for n = 2, 2d sinθ = 2λ ⇒ sinθ = 1 ⇒ θ = 90°.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The radius of the first Bohr orbit is 0.53 Å. The radius of the third orbit is",
+      "options": ["4.77 Å", "1.59 Å", "0.53 Å", "2.12 Å"],
+      "answer": 0,
+      "explanation": "r_n = n² r₁; r₃ = 9 × 0.53 = 4.77 Å.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The frequency of the photon emitted when an electron jumps from n = 3 to n = 1 in hydrogen is (R = 1.097 × 10⁷ m⁻¹, c = 3 × 10⁸ m s⁻¹)",
+      "options": ["2.92 × 10¹⁵ Hz", "1.46 × 10¹⁵ Hz", "4.38 × 10¹⁵ Hz", "7.3 × 10¹⁴ Hz"],
+      "answer": 0,
+      "explanation": "1/λ = R(1−1/9) = 8R/9; ν = c/λ = c × 8R/9 ≈ 3e8 × 8×1.097e7 / 9 ≈ 2.92 × 10¹⁵ Hz.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "If the uncertainty in the position of a particle is equal to its de Broglie wavelength, the minimum uncertainty in its velocity is approximately",
+      "options": ["v/4π", "v", "4π v", "v/2"],
+      "answer": 0,
+      "explanation": "Δx = λ = h/p; Δp ≥ h/(4π Δx) = p/(4π); Δv ≥ (Δp)/m = v/(4π).",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The Moseley plot for Kα lines is a graph of",
+      "options": ["√ν versus Z", "ν versus Z", "λ versus Z", "√λ versus Z"],
+      "answer": 0,
+      "explanation": "Moseley’s law states that √ν = a(Z − b); the plot of √ν against atomic number Z is a straight line.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A photon of energy 12.1 eV is absorbed by a hydrogen atom in the ground state. The electron is excited to the level with principal quantum number",
+      "options": ["n = 2", "n = 3", "n = 4", "n = 1"],
+      "answer": 1,
+      "explanation": "E₃ − E₁ = −1.51 − (−13.6) = 12.09 eV ≈ 12.1 eV, so the electron reaches n = 3.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The ratio of the kinetic energy to the total energy of an electron in a Bohr orbit is",
+      "options": ["−1", "+1", "−2", "+2"],
+      "answer": 0,
+      "explanation": "In the Bohr model KE = −E_total, so KE / E_total = −1.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "X-rays of wavelength 0.1 nm are incident on a crystal. The first-order Bragg maximum is observed at 30°. The interplanar spacing is",
+      "options": ["0.1 nm", "0.2 nm", "0.05 nm", "0.15 nm"],
+      "answer": 0,
+      "explanation": "2d sin30° = 1 × 0.1 ⇒ 2d × 0.5 = 0.1 ⇒ d = 0.1 nm.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The de Broglie wavelength of an electron accelerated through a potential difference of V volts is approximately",
+      "options": ["12.27 / √V Å", "12.27 √V Å", "1.227 / √V Å", "1.227 √V Å"],
+      "answer": 0,
+      "explanation": "λ (in Å) = 12.27 / √V for electrons accelerated by V volts.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The series limit of the Balmer series corresponds to a transition from",
+      "options": ["n = ∞ to n = 2", "n = 3 to n = 2", "n = ∞ to n = 1", "n = 4 to n = 2"],
+      "answer": 0,
+      "explanation": "The series limit is the shortest wavelength, arising from the transition n = ∞ → n = 2.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "If the accelerating voltage of an X-ray tube is doubled, the minimum wavelength of the continuous spectrum becomes",
+      "options": ["half", "double", "unchanged", "four times"],
+      "answer": 0,
+      "explanation": "λ_min ∝ 1/V; doubling V halves λ_min.",
+      "difficulty": "hard"
+    }
+  ]
+}
