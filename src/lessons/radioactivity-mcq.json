@@ -1,0 +1,289 @@
+{
+  "title": "Radioactivity — 40 MCQs",
+  "grade": "XII",
+  "chapters": [24],
+  "date": "2026-10-11",
+  "description": "Covers alpha, beta and gamma radiation, laws of radioactive disintegration, half-life, mean life and decay constant, Geiger-Müller tube, carbon dating, and medical uses and health hazards of nuclear radiation.",
+  "questions": [
+    {
+      "q": "Alpha particles are",
+      "options": ["electrons", "helium nuclei", "electromagnetic radiation", "protons"],
+      "answer": 1,
+      "explanation": "An alpha particle is a helium-4 nucleus consisting of two protons and two neutrons.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Beta particles are",
+      "options": ["helium nuclei", "high-speed electrons or positrons", "photons", "neutrons"],
+      "answer": 1,
+      "explanation": "Beta particles are electrons (β⁻) or positrons (β⁺) emitted from the nucleus.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Gamma rays are",
+      "options": ["charged particles", "electromagnetic radiation of very short wavelength", "helium nuclei", "neutrinos"],
+      "answer": 1,
+      "explanation": "Gamma rays are high-energy photons emitted from excited nuclei.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The penetrating power is greatest for",
+      "options": ["α-particles", "β-particles", "γ-rays", "protons"],
+      "answer": 2,
+      "explanation": "Gamma rays have the highest penetrating power among the three common radiations.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The ionizing power is greatest for",
+      "options": ["α-particles", "β-particles", "γ-rays", "X-rays"],
+      "answer": 0,
+      "explanation": "Alpha particles, being heavy and doubly charged, produce the densest ionization.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The decay constant λ is related to half-life T½ by",
+      "options": ["λ = 0.693 / T½", "λ = T½ / 0.693", "λ = 0.693 × T½", "λ = 1 / T½"],
+      "answer": 0,
+      "explanation": "T½ = ln 2 / λ ≈ 0.693 / λ, therefore λ = 0.693 / T½.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The mean life τ of a radioactive sample is",
+      "options": ["0.693 / λ", "1 / λ", "λ / 0.693", "λ"],
+      "answer": 1,
+      "explanation": "Mean life (average lifetime) τ = 1 / λ.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The unit of activity is the",
+      "options": ["becquerel (Bq)", "sievert", "gray", "roentgen"],
+      "answer": 0,
+      "explanation": "One becquerel equals one disintegration per second.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "A Geiger-Müller tube is used to",
+      "options": ["accelerate particles", "detect ionizing radiation", "produce X-rays", "measure temperature"],
+      "answer": 1,
+      "explanation": "The GM tube detects ionizing radiation by the ionization of a gas and subsequent avalanche.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Carbon dating is based on the radioactive isotope",
+      "options": ["¹²C", "¹⁴C", "¹³C", "¹⁶O"],
+      "answer": 1,
+      "explanation": "Radiocarbon dating uses the decay of ¹⁴C which is continuously produced in the atmosphere.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The half-life of a radioactive substance is 10 days. After 30 days the fraction remaining is",
+      "options": ["1/8", "1/4", "1/2", "1/16"],
+      "answer": 0,
+      "explanation": "Three half-lives elapse: (1/2)³ = 1/8.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A sample has a decay constant of 0.0693 day⁻¹. Its half-life is",
+      "options": ["10 days", "0.1 day", "100 days", "1 day"],
+      "answer": 0,
+      "explanation": "T½ = 0.693 / λ = 0.693 / 0.0693 = 10 days.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The activity of a sample falls from 800 Bq to 100 Bq in 6 hours. The half-life is",
+      "options": ["2 hours", "3 hours", "1.5 hours", "6 hours"],
+      "answer": 0,
+      "explanation": "800 → 400 → 200 → 100 requires three half-lives in 6 h, so T½ = 2 h.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "In alpha decay the mass number of the nucleus decreases by",
+      "options": ["2", "4", "1", "0"],
+      "answer": 1,
+      "explanation": "An α-particle carries away 4 nucleons, so A decreases by 4.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "In beta-minus decay the atomic number of the nucleus",
+      "options": ["decreases by 1", "increases by 1", "remains the same", "decreases by 2"],
+      "answer": 1,
+      "explanation": "A neutron converts into a proton, increasing Z by 1 while A remains unchanged.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The relation between half-life and mean life is",
+      "options": ["T½ = 0.693 τ", "T½ = τ / 0.693", "T½ = τ", "T½ = 1.44 τ"],
+      "answer": 0,
+      "explanation": "T½ = ln 2 / λ = 0.693 τ since τ = 1/λ.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A radioactive sample has an activity of 2 μCi. After two half-lives the activity becomes",
+      "options": ["0.5 μCi", "1 μCi", "0.25 μCi", "4 μCi"],
+      "answer": 0,
+      "explanation": "Activity halves with each half-life: 2 → 1 → 0.5 μCi.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The probability of decay of a nucleus in a short time Δt is",
+      "options": ["λ Δt", "1 / λ Δt", "λ / Δt", "Δt / λ"],
+      "answer": 0,
+      "explanation": "By definition the decay probability in time Δt is λ Δt.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "In a Geiger-Müller tube the gas is usually",
+      "options": ["air at atmospheric pressure", "a low-pressure inert gas with a quenching vapour", "pure oxygen", "liquid helium"],
+      "answer": 1,
+      "explanation": "GM tubes are filled with a noble gas plus a small amount of quenching gas at reduced pressure.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The half-life of ¹⁴C is about 5730 years. The decay constant is approximately",
+      "options": ["1.21 × 10⁻⁴ y⁻¹", "1.21 × 10⁻³ y⁻¹", "5.73 × 10⁻⁴ y⁻¹", "0.693 y⁻¹"],
+      "answer": 0,
+      "explanation": "λ = 0.693 / 5730 ≈ 1.21 × 10⁻⁴ y⁻¹.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A living organism has an activity of 15 decays per minute per gram of carbon. An archaeological sample shows 3.75 decays per minute per gram. The age of the sample is approximately",
+      "options": ["11460 years", "5730 years", "17190 years", "2865 years"],
+      "answer": 0,
+      "explanation": "Activity has fallen to 1/4, which corresponds to two half-lives: 2 × 5730 = 11460 years.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Gamma rays are emitted from a nucleus when",
+      "options": ["it is in an excited state after α or β emission", "a proton is ejected", "an electron is captured from the K-shell only", "the nucleus splits into two equal parts"],
+      "answer": 0,
+      "explanation": "After α or β decay the daughter nucleus is often left in an excited state and de-excites by emitting γ-rays.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The number of nuclei remaining after time t is given by",
+      "options": ["N = N₀ e^{-λt}", "N = N₀ e^{λt}", "N = N₀ λ t", "N = N₀ / λ t"],
+      "answer": 0,
+      "explanation": "The exponential decay law is N = N₀ exp(−λt).",
+      "difficulty": "medium"
+    },
+    {
+      "q": "One curie is equal to",
+      "options": ["3.7 × 10¹⁰ Bq", "3.7 × 10⁸ Bq", "1 Bq", "10¹⁰ Bq"],
+      "answer": 0,
+      "explanation": "1 Ci = 3.7 × 10¹⁰ disintegrations per second = 3.7 × 10¹⁰ Bq.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Medical use of radioisotopes includes",
+      "options": ["diagnosis and therapy (e.g. ¹³¹I, ⁶⁰Co)", "only heating of tissues", "only sterilization of instruments by α-particles", "production of electricity"],
+      "answer": 0,
+      "explanation": "Radioisotopes are widely used for both diagnostic imaging and therapeutic irradiation.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "A radioactive nuclide has a half-life of 5 hours. The fraction of the original sample left after 15 hours is",
+      "options": ["1/8", "1/4", "1/16", "1/2"],
+      "answer": 0,
+      "explanation": "15 h = 3 half-lives; remaining fraction = (1/2)³ = 1/8.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The activity of a sample is 8 × 10¹⁰ Bq. If the decay constant is 0.02 s⁻¹ the number of undecayed nuclei is",
+      "options": ["4 × 10¹²", "1.6 × 10⁹", "4 × 10⁹", "1.6 × 10¹²"],
+      "answer": 0,
+      "explanation": "A = λ N ⇒ N = A / λ = 8 × 10¹⁰ / 0.02 = 4 × 10¹².",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A sample initially contains 10²⁰ nuclei. Its half-life is 10 days. The number of nuclei left after 30 days is",
+      "options": ["1.25 × 10¹⁹", "2.5 × 10¹⁹", "5 × 10¹⁹", "1.25 × 10²⁰"],
+      "answer": 0,
+      "explanation": "After 3 half-lives N = 10²⁰ / 8 = 1.25 × 10¹⁹.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The mean life of a radioisotope is 10 years. Its half-life is approximately",
+      "options": ["6.93 years", "14.4 years", "10 years", "0.693 years"],
+      "answer": 0,
+      "explanation": "T½ = 0.693 τ = 0.693 × 10 ≈ 6.93 years.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "In a GM counter the dead time is the time during which",
+      "options": ["the tube cannot register another count after a pulse", "the tube is being manufactured", "the gas is ionizing continuously", "the voltage is applied"],
+      "answer": 0,
+      "explanation": "After an avalanche the tube is insensitive for a short recovery (dead) time until the ions are cleared.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "An ancient wooden sample has a ¹⁴C activity of 3 counts per minute while a fresh sample has 12 counts per minute. Taking T½ = 5730 y the age of the sample is",
+      "options": ["11460 y", "5730 y", "17190 y", "2865 y"],
+      "answer": 0,
+      "explanation": "Activity ratio = 1/4 ⇒ two half-lives have elapsed ⇒ age = 2 × 5730 = 11460 y.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The number of α-particles emitted per second by 1 g of pure ²²⁶Ra (T½ = 1600 y, N_A = 6.02 × 10²³) is approximately",
+      "options": ["3.7 × 10¹⁰", "3.7 × 10⁸", "1.2 × 10¹⁰", "6.0 × 10²³"],
+      "answer": 0,
+      "explanation": "λ = 0.693/(1600 × 3.16 × 10⁷) s⁻¹; N = 6.02 × 10²³ / 226; A = λN ≈ 3.7 × 10¹⁰ Bq (1 Ci).",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A radioactive source has a half-life of 2 hours. The fraction of the original activity remaining after 6 hours is",
+      "options": ["1/8", "1/4", "1/6", "1/2"],
+      "answer": 0,
+      "explanation": "Six hours = three half-lives; remaining activity fraction = 1/8.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The probability that a given nucleus will decay in the next one second is 10⁻⁶. The half-life of the nucleus is approximately",
+      "options": ["6.93 × 10⁵ s", "10⁻⁶ s", "10⁶ s", "0.693 × 10⁻⁶ s"],
+      "answer": 0,
+      "explanation": "λ = 10⁻⁶ s⁻¹; T½ = 0.693 / λ ≈ 6.93 × 10⁵ s.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Health hazards of ionizing radiation include",
+      "options": ["damage to living cells and increased risk of cancer", "only temporary heating of the body", "increase in body weight", "improvement of eyesight"],
+      "answer": 0,
+      "explanation": "Ionizing radiation can break chemical bonds in DNA, leading to cell death or mutations and cancer risk.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The activity of a radioactive sample is A₀ at t = 0. The activity at time t = 2/λ is",
+      "options": ["A₀ e⁻²", "A₀ e²", "A₀ / 2", "A₀ / e"],
+      "answer": 0,
+      "explanation": "A = A₀ e^{−λt} = A₀ e^{−λ·(2/λ)} = A₀ e⁻².",
+      "difficulty": "hard"
+    },
+    {
+      "q": "In β⁺ decay a proton inside the nucleus is converted into",
+      "options": ["a neutron, a positron and a neutrino", "a neutron and an electron", "two protons", "an alpha particle"],
+      "answer": 0,
+      "explanation": "β⁺ decay: p → n + e⁺ + ν_e.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A source has an initial activity of 1600 Bq and a half-life of 4 days. The activity after 12 days is",
+      "options": ["200 Bq", "400 Bq", "100 Bq", "800 Bq"],
+      "answer": 0,
+      "explanation": "12 days = 3 half-lives; activity = 1600 / 8 = 200 Bq.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The ratio of the number of nuclei left after time t to the initial number is e^{−λt}. The ratio of the number that have decayed to the initial number is",
+      "options": ["1 − e^{−λt}", "e^{−λt}", "1 + e^{−λt}", "λt"],
+      "answer": 0,
+      "explanation": "Number decayed = N₀ − N = N₀(1 − e^{−λt}).",
+      "difficulty": "hard"
+    },
+    {
+      "q": "For carbon dating to be accurate the assumption that must hold is that the",
+      "options": ["production rate of ¹⁴C in the atmosphere has been roughly constant", "half-life of ¹⁴C changes with time", "organism continues to exchange carbon after death", "sample contains no ordinary carbon"],
+      "answer": 0,
+      "explanation": "The method relies on a known, approximately constant atmospheric ¹⁴C/¹²C ratio during the lifetime of the organism.",
+      "difficulty": "hard"
+    }
+  ]
+}
