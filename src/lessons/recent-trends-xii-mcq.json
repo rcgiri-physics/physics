@@ -1,0 +1,289 @@
+{
+  "title": "Recent Trends in Physics — 40 MCQs",
+  "grade": "XII",
+  "chapters": [19],
+  "date": "2026-10-11",
+  "description": "Covers surface waves (Rayleigh and Love), internal seismic waves (P and S), wave patterns of the 2015 Gorkha earthquake, gravitational waves, nanotechnology and the Higgs boson.",
+  "questions": [
+    {
+      "q": "P-waves are",
+      "options": ["transverse seismic waves", "longitudinal (compressional) seismic waves", "surface waves only", "electromagnetic waves"],
+      "answer": 1,
+      "explanation": "P-waves (primary waves) are longitudinal waves that travel by compression and rarefaction of the medium.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "S-waves are",
+      "options": ["longitudinal waves", "transverse (shear) seismic waves", "sound waves in air", "surface waves that travel through liquids"],
+      "answer": 1,
+      "explanation": "S-waves (secondary waves) are transverse waves in which particle motion is perpendicular to the direction of propagation.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Love waves are a type of",
+      "options": ["body wave", "surface wave with horizontal transverse motion", "longitudinal wave", "electromagnetic wave"],
+      "answer": 1,
+      "explanation": "Love waves are surface waves that cause horizontal shearing of the ground perpendicular to the direction of travel.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Rayleigh waves are surface waves that cause",
+      "options": ["only vertical motion", "elliptical particle motion in the vertical plane", "only horizontal motion", "no ground motion"],
+      "answer": 1,
+      "explanation": "Rayleigh waves produce a retrograde elliptical motion of ground particles in the plane of propagation.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Which seismic waves cannot travel through the liquid outer core?",
+      "options": ["P-waves", "S-waves", "Rayleigh waves", "Love waves"],
+      "answer": 1,
+      "explanation": "S-waves are shear waves and cannot propagate through fluids; they are absent beyond the core-mantle boundary.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The 2015 Gorkha earthquake occurred in",
+      "options": ["India", "Nepal", "Bhutan", "China"],
+      "answer": 1,
+      "explanation": "The Gorkha earthquake of 25 April 2015 struck central Nepal with its epicentre near Gorkha district.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Gravitational waves are",
+      "options": ["electromagnetic waves", "ripples in spacetime caused by accelerating masses", "sound waves from black holes", "seismic surface waves"],
+      "answer": 1,
+      "explanation": "Gravitational waves are propagating distortions of spacetime predicted by general relativity and produced by accelerating masses.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "Nanotechnology deals with structures whose size is typically in the range",
+      "options": ["1–100 nm", "1–100 μm", "1–100 mm", "1–100 cm"],
+      "answer": 0,
+      "explanation": "Nanotechnology involves materials and devices with at least one dimension between approximately 1 and 100 nanometres.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The Higgs boson is associated with",
+      "options": ["the strong nuclear force", "the mechanism that gives mass to elementary particles", "the electromagnetic force only", "gravity"],
+      "answer": 1,
+      "explanation": "The Higgs field and its associated boson explain how particles acquire mass through the Higgs mechanism.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "The first direct detection of gravitational waves was announced by",
+      "options": ["CERN", "LIGO", "NASA only", "ISRO"],
+      "answer": 1,
+      "explanation": "LIGO (Laser Interferometer Gravitational-Wave Observatory) detected GW150914 in 2015 and announced it in 2016.",
+      "difficulty": "easy"
+    },
+    {
+      "q": "P-waves travel faster than S-waves because",
+      "options": ["they have longer wavelength", "the bulk modulus contributes in addition to the shear modulus", "they travel only on the surface", "they are transverse"],
+      "answer": 1,
+      "explanation": "The speed of P-waves depends on both bulk and shear moduli, while S-wave speed depends only on the shear modulus, making P-waves faster.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The approximate magnitude of the 2015 Gorkha earthquake was",
+      "options": ["6.5", "7.8", "9.1", "5.2"],
+      "answer": 1,
+      "explanation": "The main shock of the Gorkha earthquake was measured at moment magnitude Mw 7.8.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Love waves travel",
+      "options": ["only through the deep interior", "along the Earth’s surface with horizontal particle motion", "through liquids only", "faster than P-waves"],
+      "answer": 1,
+      "explanation": "Love waves are trapped near the surface and produce side-to-side horizontal shaking.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Rayleigh waves are often the most destructive in an earthquake because",
+      "options": ["they travel the fastest", "they produce both vertical and horizontal ground motion of large amplitude", "they cannot be detected", "they travel only through water"],
+      "answer": 1,
+      "explanation": "Rayleigh waves arrive later, have large amplitudes and cause complex rolling motion that damages structures.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The Higgs boson was discovered at",
+      "options": ["the Large Hadron Collider (LHC) at CERN", "LIGO", "the Hubble Space Telescope", "a nuclear reactor"],
+      "answer": 0,
+      "explanation": "The ATLAS and CMS experiments at the LHC announced the discovery of the Higgs boson in 2012.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Gravitational waves travel at the speed of",
+      "options": ["sound", "light", "P-waves", "S-waves"],
+      "answer": 1,
+      "explanation": "According to general relativity, gravitational waves propagate at the speed of light c.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "One nanometre is equal to",
+      "options": ["10⁻⁹ m", "10⁻⁶ m", "10⁻³ m", "10⁻¹² m"],
+      "answer": 0,
+      "explanation": "1 nm = 10⁻⁹ m.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The shadow zone for S-waves is larger than that for P-waves because",
+      "options": ["S-waves are absorbed completely by the liquid outer core", "P-waves are slower", "S-waves travel only on the surface", "P-waves cannot refract"],
+      "answer": 0,
+      "explanation": "S-waves cannot pass through the liquid outer core, creating a wide shadow zone; P-waves can travel through the core but are refracted.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The 2015 Gorkha earthquake was caused primarily by",
+      "options": ["volcanic activity", "thrust faulting on the Main Himalayan Thrust", "an asteroid impact", "nuclear testing"],
+      "answer": 1,
+      "explanation": "The earthquake resulted from the ongoing collision of the Indian and Eurasian plates along the Main Himalayan Thrust.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Nanoparticles exhibit properties different from bulk material mainly because of",
+      "options": ["increased surface-to-volume ratio and quantum effects", "higher density only", "lower melting point only", "increased mass"],
+      "answer": 0,
+      "explanation": "At the nanoscale a large fraction of atoms lie on the surface and quantum confinement becomes significant, altering physical and chemical behaviour.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The mass of the Higgs boson is approximately",
+      "options": ["125 GeV/c²", "1 GeV/c²", "1000 GeV/c²", "0.5 MeV/c²"],
+      "answer": 0,
+      "explanation": "The Higgs boson mass measured at the LHC is about 125 GeV/c².",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Which type of seismic wave arrives first at a recording station?",
+      "options": ["Rayleigh wave", "Love wave", "P-wave", "S-wave"],
+      "answer": 2,
+      "explanation": "P-waves are the fastest and therefore the first to be recorded on a seismogram.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Gravitational waves were first detected from the merger of",
+      "options": ["two neutron stars only", "two black holes", "a black hole and a star", "two white dwarfs"],
+      "answer": 1,
+      "explanation": "GW150914 originated from the coalescence of two stellar-mass black holes.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "Love waves require a",
+      "options": ["layered structure with a low-velocity surface layer", "completely homogeneous Earth", "liquid outer core", "magnetic field"],
+      "answer": 0,
+      "explanation": "Love waves are guided by a low-speed surface layer overlying a higher-speed substrate.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "The unit “nanometre” is most relevant to",
+      "options": ["atomic sizes and nanotechnology", "planetary distances", "wavelengths of radio waves", "heights of mountains"],
+      "answer": 0,
+      "explanation": "Atomic radii and nanostructures are measured on the nanometre scale.",
+      "difficulty": "medium"
+    },
+    {
+      "q": "If the speed of P-waves in a rock is 6 km s⁻¹ and the speed of S-waves is 3.5 km s⁻¹, the time difference for a station 70 km from the epicentre is approximately",
+      "options": ["8.3 s", "20 s", "4 s", "12 s"],
+      "answer": 0,
+      "explanation": "t_S − t_P = Δ(1/v_S − 1/v_P) = 70(1/3.5 − 1/6) ≈ 70(0.286 − 0.167) ≈ 70 × 0.119 ≈ 8.3 s.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The epicentre of the 2015 Gorkha earthquake was located approximately",
+      "options": ["80 km northwest of Kathmandu", "200 km south of Kathmandu", "in the centre of Kathmandu", "in eastern Nepal"],
+      "answer": 0,
+      "explanation": "The epicentre was near Barpak in Gorkha district, about 80 km northwest of Kathmandu.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The strain sensitivity of a LIGO interferometer is of the order of",
+      "options": ["10⁻²¹", "10⁻⁶", "10⁻³", "10⁻¹⁵"],
+      "answer": 0,
+      "explanation": "LIGO measures fractional length changes of order 10⁻²¹ caused by passing gravitational waves.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A nanoparticle has a diameter of 20 nm. Express this size in metres.",
+      "options": ["2 × 10⁻⁸ m", "2 × 10⁻⁷ m", "2 × 10⁻⁹ m", "2 × 10⁻⁶ m"],
+      "answer": 0,
+      "explanation": "20 nm = 20 × 10⁻⁹ m = 2 × 10⁻⁸ m.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The Higgs field is non-zero in the vacuum. This fact is responsible for",
+      "options": ["giving mass to W and Z bosons and to fermions", "the existence of photons", "the strong force", "the expansion of the universe only"],
+      "answer": 0,
+      "explanation": "The non-zero vacuum expectation value of the Higgs field generates masses for the weak gauge bosons and, through Yukawa couplings, for fermions.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which statement about the 2015 Gorkha earthquake is correct?",
+      "options": ["It produced significant surface rupture across the Kathmandu valley", "It was a deep-focus earthquake (>300 km)", "It occurred on a strike-slip fault", "It was caused by volcanic activity"],
+      "answer": 0,
+      "explanation": "Although the main slip was buried, the earthquake caused strong ground motion and damage throughout the Kathmandu valley; surface rupture was limited but ground failure was extensive.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The speed of Rayleigh waves is typically",
+      "options": ["slightly less than the speed of S-waves", "greater than the speed of P-waves", "equal to the speed of light", "zero in solids"],
+      "answer": 0,
+      "explanation": "Rayleigh-wave speed is approximately 0.92 times the S-wave speed in a homogeneous half-space.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "In nanotechnology the term “bottom-up” approach refers to",
+      "options": ["assembling structures atom by atom or molecule by molecule", "carving bulk material down to nanoscale", "using only optical microscopes", "melting materials"],
+      "answer": 0,
+      "explanation": "Bottom-up fabrication builds nanostructures from atomic or molecular components, in contrast to top-down lithography.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The frequency of gravitational waves detected from binary black-hole mergers is typically in the range",
+      "options": ["tens to hundreds of hertz", "megahertz", "kilohertz only", "infrasound below 1 Hz only"],
+      "answer": 0,
+      "explanation": "Stellar-mass black-hole mergers produce gravitational waves that sweep through the LIGO-sensitive band of roughly 30–300 Hz.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "P-wave shadow zones exist because",
+      "options": ["P-waves are refracted by the liquid outer core and solid inner core", "P-waves cannot travel through solids", "the Earth is flat", "S-waves block them"],
+      "answer": 0,
+      "explanation": "The abrupt change in velocity at the core-mantle boundary refracts P-waves, creating shadow zones between approximately 105° and 140° epicentral distance.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The discovery of the Higgs boson completed the",
+      "options": ["Standard Model of particle physics", "theory of general relativity", "periodic table of elements", "Bohr model of the atom"],
+      "answer": 0,
+      "explanation": "The Higgs boson was the last fundamental particle predicted by the Standard Model to be observed experimentally.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "A seismogram shows a clear S-wave arrival but no surface waves. The most likely explanation is that the station is",
+      "options": ["very close to the epicentre or the event is deep", "located on the Moon", "recording only electromagnetic signals", "faulty"],
+      "answer": 0,
+      "explanation": "Surface waves are generated more efficiently by shallow events and grow with distance; near or deep sources may show weak or absent surface waves.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Quantum dots used in nanotechnology are",
+      "options": ["semiconductor nanocrystals whose optical properties depend on size", "metallic spheres larger than 1 μm", "ordinary atoms", "black holes"],
+      "answer": 0,
+      "explanation": "Quantum dots are nanoscale semiconductor particles that exhibit size-dependent band gaps and fluorescence.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "The energy scale of the Higgs vacuum expectation value is approximately",
+      "options": ["246 GeV", "1 eV", "10¹⁹ GeV", "100 MeV"],
+      "answer": 0,
+      "explanation": "The vacuum expectation value of the Higgs field is v ≈ 246 GeV, setting the electroweak scale.",
+      "difficulty": "hard"
+    },
+    {
+      "q": "Which pair of waves is most responsible for the prolonged shaking felt during the 2015 Gorkha earthquake in Kathmandu?",
+      "options": ["Rayleigh and Love surface waves", "only P-waves", "only S-waves", "gravitational waves"],
+      "answer": 0,
+      "explanation": "After the body waves, large-amplitude surface waves (Rayleigh and Love) caused the extended strong ground motion observed in the valley.",
+      "difficulty": "hard"
+    }
+  ]
+}
