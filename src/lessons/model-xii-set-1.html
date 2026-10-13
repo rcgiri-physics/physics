@@ -1,0 +1,1216 @@
+---
+title: Grade XII Physics Model Question  (Set 1)
+grade: XII
+year: 2082
+date: 2026-10-13
+time: 3 hours
+marks: Full marks 75
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Physics NEB Modelset-1 - Exam with Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f0f4f8;
+            --surface: #ffffff;
+            --ink: #1a202c;
+            --muted: #4a5568;
+            --accent: #2b6cb0;
+            --accent-weak: #ebf8ff;
+            --success: #276749;
+            --success-bg: #f0fff4;
+            --line: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        header h1 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: 0.5rem;
+        }
+        header p { opacity: 0.9; font-size: 1.1rem; }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+        .exam-meta {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+        .meta-item { text-align: center; }
+        .meta-item strong { display: block; color: var(--accent); font-size: 1.1rem; }
+        .group-header {
+            background: var(--accent);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            margin: 2.5rem 0 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            box-shadow: var(--shadow);
+        }
+        .question-card {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--accent);
+        }
+        .question-number {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            text-align: center;
+            border-radius: 50%;
+            font-weight: 700;
+            margin-right: 0.75rem;
+            font-size: 0.9rem;
+        }
+        .question-text {
+            font-family: 'Merriweather', serif;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        .options { margin-left: 2.5rem; margin-bottom: 1rem; }
+        .option { padding: 0.35rem 0; color: var(--muted); }
+        .toggle-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.2s;
+            margin-top: 0.5rem;
+        }
+        .toggle-btn:hover { background: #1a365d; transform: translateY(-1px); }
+        .answer-section {
+            display: none;
+            margin-top: 1rem;
+            padding: 1.25rem;
+            background: var(--success-bg);
+            border-radius: 8px;
+            border: 1px solid #9ae6b4;
+        }
+        .answer-section.visible { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .answer-label { color: var(--success); font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; display: block; }
+        .solution { color: var(--ink); line-height: 1.8; }
+        .solution p { margin-bottom: 0.75rem; }
+        .formula {
+            background: #edf2f7;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            margin: 0.75rem 0;
+            overflow-x: auto;
+        }
+        .marks { float: right; color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+        .sub-question { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px dashed var(--line); }
+        .sub-label { font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; }
+        .or-divider {
+            text-align: center;
+            margin: 2rem 0;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+        .question-image { max-width: 100%; height: auto; display: block; margin: 1rem auto; border-radius: 8px; }
+        footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.9rem; }
+        @media print {
+            body { background: white; }
+            .toggle-btn { display: none; }
+            .answer-section { display: block !important; }
+            .question-card { break-inside: avoid; }
+        }
+        @media (max-width: 600px) {
+            .options { margin-left: 0; }
+            .question-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Model set-1</h1>
+        <p>Physics (Grade XII) &mdash; Full Solutions</p>
+    </header>
+
+    <div class="container">
+        <div class="exam-meta">
+            <div class="meta-item"><strong>Subject</strong>Physics</div>
+            <div class="meta-item"><strong>Grade</strong>XII</div>
+            <div class="meta-item"><strong>Full Marks</strong>75</div>
+            <div class="meta-item"><strong>Pass Marks</strong>30</div>
+            <div class="meta-item"><strong>Time</strong>3 Hours</div>
+        </div>
+
+        <!-- GROUP A -->
+        <div class="group-header">Group A: Multiple Choice Questions [11 &times; 1 = 11]</div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">1</span>
+                If a gymnast on a rotating stool with his arms outstretched suddenly lowers his arms,
+            </div>
+            <div class="options">
+                <div class="option">a) the moment of inertia decreases</div>
+                <div class="option">b) the angular momentum increases</div>
+                <div class="option">c) the angular velocity decreases</div>
+                <div class="option">d) the angular velocity remains constant</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans1')">View Answer</button>
+            <div id="ans1" class="answer-section">
+                <span class="answer-label">Answer: a) the moment of inertia decreases</span>
+                <div class="solution">
+                    <p><strong>Explanation:</strong> When the gymnast lowers his arms, the mass distribution moves closer to the axis of rotation. This reduces the moment of inertia (I = &Sigma;mr&sup2;). Since no external torque acts, angular momentum L = I&omega; is conserved. As I decreases, &omega; increases.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">2</span>
+                The motion of a particle executing simple harmonic motion is given by x = 0.01 sin 100&pi;(t + 0.05), where x is in meters and t in second. The time period in second is
+            </div>
+            <div class="options">
+                <div class="option">a) 0.001</div>
+                <div class="option">b) 0.02</div>
+                <div class="option">c) 0.1</div>
+                <div class="option">d) 0.2</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans2')">View Answer</button>
+            <div id="ans2" class="answer-section">
+                <span class="answer-label">Answer: b) 0.02</span>
+                <div class="solution">
+                    <p><strong>Solution:</strong> Comparing with x = A sin(&omega;t + &phi;), we get &omega; = 100&pi; rad/s.</p>
+                    <div class="formula">T = 2&pi;/&omega; = 2&pi;/(100&pi;) = 2/100 = 0.02 s</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">3</span>
+                What fraction of a wooden raft of density 0.8 g/cc will be outside the sea water of density 1.2 g/cc?
+            </div>
+            <div class="options">
+                <div class="option">a) 2/3</div>
+                <div class="option">b) 1/2</div>
+                <div class="option">c) 2/5</div>
+                <div class="option">d) 1/3</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans3')">View Answer</button>
+            <div id="ans3" class="answer-section">
+                <span class="answer-label">Answer: d) 1/3</span>
+                <div class="solution">
+                    <p><strong>Solution:</strong> By law of floatation:</p>
+                    <div class="formula">
+                    &rho;<sub>raft</sub> &times; V &times; g = &rho;<sub>water</sub> &times; V<sub>sub</sub> &times; g<br>
+                    V<sub>sub</sub>/V = &rho;<sub>raft</sub>/&rho;<sub>water</sub> = 0.8/1.2 = 2/3</div>
+                    <p>Fraction outside = 1 &minus; 2/3 = <strong>1/3</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">4</span>
+                In figure, how much work is done by the system in process AB?
+            </div>
+            <div class="options">
+                <div class="option">a) 4.5 &times; 10&sup3; J</div>
+                <div class="option">b) 6.0 &times; 10&sup3; J</div>
+                <div class="option">c) 6.9 &times; 10&sup3; J</div>
+                <div class="option">d) 7.8 &times; 10&sup3; J</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans4')">View Answer</button>
+            <div id="ans4" class="answer-section">
+                <span class="answer-label">Answer: c) 6.9 &times; 10&sup3; J</span>
+                <div class="solution">
+                    <p><strong>Solution:</strong> Work done = Area under P-V curve (trapezium AB)</p>
+                    <div class="formula">
+                    P<sub>A</sub> = 2.6 &times; 10&sup6; N/m&sup2;, P<sub>B</sub> = 2.0 &times; 10&sup6; N/m&sup2;<br>
+                    V<sub>A</sub> = 1.0 &times; 10&sup3;&sup3; m&sup3;, V<sub>B</sub> = 4.0 &times; 10&sup3;&sup3; m&sup3;<br><br>
+                    W = &frac12;(P<sub>A</sub> + P<sub>B</sub>) &times; (V<sub>B</sub> &minus; V<sub>A</sub>)<br>
+                    W = &frac12;(2.6 + 2.0) &times; 10&sup6; &times; (4.0 &minus; 1.0) &times; 10&sup3;&sup3;<br>
+                    W = 6.9 &times; 10&sup3; J
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">5</span>
+                The diagram shows the pressure volume relationship for a fixed mass of an ideal gas that undergoes a cycle XYZ. In which part(s) of the cycle is external work done on the gas?
+            </div>
+            <div class="options">
+                <div class="option">a) Y &rarr; Z only</div>
+                <div class="option">b) Y &rarr; Z and Z &rarr; X only</div>
+                <div class="option">c) X &rarr; Y and Z &rarr; X only</div>
+                <div class="option">d) X &rarr; Y only</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans5')">View Answer</button>
+            <div id="ans5" class="answer-section">
+                <span class="answer-label">Answer: d) X &rarr; Y only</span>
+                <div class="solution">
+                    <p><strong>Explanation:</strong> External work is done ON the gas when the gas is compressed (volume decreases).</p>
+                    <ul style="margin-left: 1.5rem;">
+                        <li><strong>X &rarr; Y:</strong> Volume decreases (compression) &rarr; Work done <strong>on</strong> gas &check;</li>
+                        <li><strong>Y &rarr; Z:</strong> Volume constant (isochoric) &rarr; No work done</li>
+                        <li><strong>Z &rarr; X:</strong> Volume increases (expansion) &rarr; Work done <strong>by</strong> gas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">6</span>
+                The coefficient of performance of a refrigerator working between the ice point (0&deg;C) and room temperature 27&deg;C is
+            </div>
+            <div class="options">
+                <div class="option">a) 10</div>
+                <div class="option">b) 15</div>
+                <div class="option">c) 20</div>
+                <div class="option">d) 25</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans6')">View Answer</button>
+            <div id="ans6" class="answer-section">
+                <span class="answer-label">Answer: a) 10</span>
+                <div class="solution">
+                    <div class="formula">
+                    T<sub>cold</sub> = 0&deg;C = 273 K<br>
+                    T<sub>hot</sub> = 27&deg;C = 300 K<br><br>
+                    COP = T<sub>cold</sub> / (T<sub>hot</sub> &minus; T<sub>cold</sub>)<br>
+                    COP = 273 / (300 &minus; 273) = 273 / 27 &approx; <strong>10</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">7</span>
+                A diffraction pattern is obtained using a beam of red light. What will be the effect on the diffraction pattern if the red light is replaced by white light?
+            </div>
+            <div class="options">
+                <div class="option">a) All bright fringes become white.</div>
+                <div class="option">b) All bright fringes except central one, becomes white.</div>
+                <div class="option">c) All bright fringes become colorful.</div>
+                <div class="option">d) All bright fringes except central one, becomes colorful.</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans7')">View Answer</button>
+            <div id="ans7" class="answer-section">
+                <span class="answer-label">Answer: d) All bright fringes except central one, becomes colorful.</span>
+                <div class="solution">
+                    <p>The central maximum contains all wavelengths superimposed, so it appears white. Higher-order fringes spread into spectra because fringe position y = n&lambda;D/d depends on wavelength. Each order becomes a rainbow (colorful), with red farthest from center and violet closest.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">8</span>
+                The sound levels of two waves of same frequency in a given medium are 100 dB and 20 dB respectively. How many times is the intensity I<sub>1</sub> greater than I<sub>2</sub>?
+            </div>
+            <div class="options">
+                <div class="option">a) 5</div>
+                <div class="option">b) 8</div>
+                <div class="option">c) 10<sup>5</sup></div>
+                <div class="option">d) 10<sup>8</sup></div>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans8')">View Answer</button>
+            <div id="ans8" class="answer-section">
+                <span class="answer-label">Answer: d) 10<sup>8</sup></span>
+                <div class="solution">
+                    <div class="formula">
+                    &beta;<sub>1</sub> &minus; &beta;<sub>2</sub> = 10 log(I<sub>1</sub>/I<sub>2</sub>)<br>
+                    100 &minus; 20 = 10 log(I<sub>1</sub>/I<sub>2</sub>)<br>
+                    80 = 10 log(I<sub>1</sub>/I<sub>2</sub>)<br>
+                    log(I<sub>1</sub>/I<sub>2</sub>) = 8<br>
+                    I<sub>1</sub>/I<sub>2</sub> = <strong>10<sup>8</sup></strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">9</span>
+                If the emf of a thermocouple, one junction of which is kept at 0&deg;C, is given by E = a&theta; + &frac12;b&theta;&sup2;, where a and b are constants, then the neutral temperature will be
+            </div>
+            <div class="options">
+                <div class="option">a) &minus;a/b</div>
+                <div class="option">b) a/b</div>
+                <div class="option">c) &minus;2a/b</div>
+                <div class="option">d) 2a/b</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans9')">View Answer</button>
+            <div id="ans9" class="answer-section">
+                <span class="answer-label">Answer: a) &minus;a/b</span>
+                <div class="solution">
+                    <p>Neutral temperature is where emf is maximum (dE/d&theta; = 0).</p>
+                    <div class="formula">
+                    E = a&theta; + &frac12;b&theta;&sup2;<br>
+                    dE/d&theta; = a + b&theta; = 0<br>
+                    &theta;<sub>n</sub> = <strong>&minus;a/b</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">10</span>
+                The value of magnetizing field (H) when the magnetic flux density (B) is equal to zero, is called
+            </div>
+            <div class="options">
+                <div class="option">a) Retentivity</div>
+                <div class="option">b) Coercivity</div>
+                <div class="option">c) Curie&apos;s temperature</div>
+                <div class="option">d) Neutral temperature</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans10')">View Answer</button>
+            <div id="ans10" class="answer-section">
+                <span class="answer-label">Answer: b) Coercivity</span>
+                <div class="solution">
+                    <p><strong>Coercivity</strong> is the reverse magnetizing field H required to reduce B to zero after magnetization. Retentivity is the value of B when H = 0.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">11</span>
+                What is the point where the seismic waves start, called?
+            </div>
+            <div class="options">
+                <div class="option">a) Epicenter</div>
+                <div class="option">b) Hypocenter</div>
+                <div class="option">c) Metacenter</div>
+                <div class="option">d) Seismic center</div>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans11')">View Answer</button>
+            <div id="ans11" class="answer-section">
+                <span class="answer-label">Answer: b) Hypocenter</span>
+                <div class="solution">
+                    <p>The <strong>hypocenter</strong> (or focus) is the point within the Earth where an earthquake rupture starts. The <strong>epicenter</strong> is the point directly above it on the Earth&apos;s surface.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- GROUP B -->
+        <div class="group-header">Group B: Short Answer Questions [8 &times; 5 = 40]</div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">12</span>
+                <strong>a)</strong> Define torque. Derive a relation between torque and moment of inertia. <span class="marks">[2]</span>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans12a')">View Answer</button>
+            <div id="ans12a" class="answer-section">
+                <span class="answer-label">Solution:</span>
+                <div class="solution">
+                    <p><strong>Torque:</strong> The turning effect of a force about an axis: &tau; = F &times; r.</p>
+                    <p><strong>Derivation:</strong> For a particle of mass m<sub>i</sub> at distance r<sub>i</sub>:</p>
+                    <div class="formula">
+                    F<sub>i</sub> = m<sub>i</sub>r<sub>i</sub>&alpha;<br>
+                    &tau;<sub>i</sub> = F<sub>i</sub>r<sub>i</sub> = m<sub>i</sub>r<sub>i</sub>&sup2;&alpha;<br>
+                    Total &tau; = &Sigma;m<sub>i</sub>r<sub>i</sub>&sup2;&alpha; = I&alpha;<br>
+                    <strong>&tau; = I&alpha;</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">b) Calculate the radius of gyration of a uniform rod of mass 20 kg and length 30 cm about an axis passing through one end and perpendicular to its length. <span class="marks">[1]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans12b')">View Answer</button>
+                <div id="ans12b" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <div class="formula">
+                        I = ML&sup2;/3 = 20 &times; (0.30)&sup2;/3 = 0.6 kg m&sup2;<br>
+                        K = &radic;(I/M) = &radic;(0.6/20) = &radic;0.03<br>
+                        K = <strong>0.173 m = 17.3 cm</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">c) State and explain the principle of conservation of angular momentum. <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans12c')">View Answer</button>
+                <div id="ans12c" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <p><strong>Principle:</strong> If no external torque acts, total angular momentum remains constant: <strong>I&omega; = constant</strong>.</p>
+                        <p>When a spinning person pulls their arms in, I decreases and &omega; increases proportionally. This explains divers tucking to spin faster.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="or-divider">OR</div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">12 (OR)</span>
+                <strong>a)</strong> Explain why a water drop sticks on glass but mercury does not. <span class="marks">[1]</span>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans12or_a')">View Answer</button>
+            <div id="ans12or_a" class="answer-section">
+                <span class="answer-label">Solution:</span>
+                <div class="solution">
+                    <p><strong>Water:</strong> Adhesive force (water-glass) > Cohesive force. Water spreads and sticks (wetting).</p>
+                    <p><strong>Mercury:</strong> Cohesive force > Adhesive force. Mercury forms droplets and does not stick (non-wetting).</p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">b) Derive and explain the equation of continuity. <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans12or_b')">View Answer</button>
+                <div id="ans12or_b" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <div class="formula">
+                        Mass flow rate is constant:<br>
+                        &rho;A<sub>1</sub>v<sub>1</sub> = &rho;A<sub>2</sub>v<sub>2</sub><br><br>
+                        For incompressible fluid:<br>
+                        <strong>A<sub>1</sub>v<sub>1</sub> = A<sub>2</sub>v<sub>2</sub> = constant</strong>
+                        </div>
+                        <p>Where the tube is narrow, fluid flows faster.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">c) Terminal velocity of a glass ball in glycerin. Densities: glass 2.6 g/cc, glycerin 1.32 g/cc. Viscosity 0.8 poise. Radius 2 mm. <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans12or_c')">View Answer</button>
+                <div id="ans12or_c" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <div class="formula">
+                        v = (2/9) &times; r&sup2;(&rho; &minus; &sigma;)g / &eta;<br>
+                        v = (2/9) &times; (0.2)&sup2; &times; (2.6 &minus; 1.32) &times; 980 / 0.8<br>
+                        v = <strong>13.94 cm/s &approx; 0.14 m/s</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">13</span>
+                <strong>a)</strong> What is simple harmonic motion? <span class="marks">[1]</span>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans13a')">View Answer</button>
+            <div id="ans13a" class="answer-section">
+                <span class="answer-label">Solution:</span>
+                <div class="solution">
+                    <p>SHM is periodic motion where restoring force is directly proportional to displacement and directed toward the mean position: <strong>F = &minus;kx</strong>.</p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">b) Show that velocity in SHM is maximum at mean position and minimum at extreme. <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans13b')">View Answer</button>
+                <div id="ans13b" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <div class="formula">
+                        v = &omega;&radic;(A&sup2; &minus; x&sup2;)<br><br>
+                        At mean (x = 0): v<sub>max</sub> = A&omega;<br>
+                        At extreme (x = A): v<sub>min</sub> = 0
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">c) Chair (42.5 kg) oscillates with period 1.30 s empty and 2.45 s with a person. Find the person&apos;s mass. <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans13c')">View Answer</button>
+                <div id="ans13c" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <div class="formula">
+                        T &prop; &radic;(m/k)<br>
+                        T<sub>2</sub>/T<sub>1</sub> = &radic;((M+m)/M)<br>
+                        2.45/1.30 = &radic;((42.5+m)/42.5)<br>
+                        1.885&sup2; = (42.5+m)/42.5<br>
+                        m = <strong>108.5 kg &approx; 109 kg</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">14</span>
+                <strong>a)</strong> State first law of thermodynamics and derive Mayer&apos;s relation C<sub>p</sub> &minus; C<sub>v</sub> = R. <span class="marks">[3]</span>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans14a')">View Answer</button>
+            <div id="ans14a" class="answer-section">
+                <span class="answer-label">Solution:</span>
+                <div class="solution">
+                    <p><strong>First Law:</strong> dQ = dU + dW = dU + PdV</p>
+                    <p>At constant volume: dQ = C<sub>v</sub>dT = dU</p>
+                    <p>At constant pressure: dQ = C<sub>p</sub>dT = dU + PdV = C<sub>v</sub>dT + RdT</p>
+                    <div class="formula"><strong>C<sub>p</sub> &minus; C<sub>v</sub> = R</strong></div>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">b) Compare efficiency of petrol and diesel engines based on compression ratios. <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans14b')">View Answer</button>
+                <div id="ans14b" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <p>Petrol: r = 7&ndash;10, efficiency &approx; 25&ndash;30%</p>
+                        <p>Diesel: r = 15&ndash;22, efficiency &approx; 35&ndash;45%</p>
+                        <p>Higher compression ratio in diesel engines gives higher thermal efficiency.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">15</span>
+                <strong>a)</strong> What is Doppler&apos;s effect? <span class="marks">[1]</span>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans15a')">View Answer</button>
+            <div id="ans15a" class="answer-section">
+                <span class="answer-label">Solution:</span>
+                <div class="solution">
+                    <p>Apparent change in frequency due to relative motion between source and observer.</p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">b) Derive apparent frequency when observer moves toward stationary source. <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans15b')">View Answer</button>
+                <div id="ans15b" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <div class="formula">
+                        f&apos; = f(v + v<sub>o</sub>)/v
+                        </div>
+                        <p>Relative velocity of sound increases, so observed frequency increases.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">c) Train at 40 km/h sounds whistle 580 Hz. Observer stationary. Speed of sound 1200 km/h. Find observed frequency. <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans15c')">View Answer</button>
+                <div id="ans15c" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <div class="formula">
+                        f&apos; = f &times; v/(v &minus; v<sub>s</sub>)<br>
+                        f&apos; = 580 &times; 1200/(1200 &minus; 40)<br>
+                        f&apos; = 580 &times; 1200/1160<br>
+                        f&apos; = <strong>600 Hz</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="or-divider">OR</div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">15 (OR)</span>
+                <strong>a)</strong> Define harmonics and overtone. <span class="marks">[1]</span>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans15or_a')">View Answer</button>
+            <div id="ans15or_a" class="answer-section">
+                <span class="answer-label">Solution:</span>
+                <div class="solution">
+                    <p><strong>Harmonics:</strong> Integral multiples of fundamental frequency (f, 2f, 3f...).</p>
+                    <p><strong>Overtones:</strong> Frequencies higher than fundamental actually present in a note.</p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">b) Condition for equal fundamental frequencies of closed and open pipe. <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans15or_b')">View Answer</button>
+                <div id="ans15or_b" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <div class="formula">
+                        v/(4L<sub>c</sub>) = v/(2L<sub>o</sub>)<br>
+                        <strong>L<sub>o</sub> = 2L<sub>c</sub></strong>
+                        </div>
+                        <p>Open pipe length must be twice the closed pipe length.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">c) Wavelength at 25&deg;C if f = 256 Hz and v<sub>0</sub> = 330 m/s. <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans15or_c')">View Answer</button>
+                <div id="ans15or_c" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <div class="formula">
+                        v<sub>25</sub> = 330 &times; &radic;(298/273) = 344.8 m/s<br>
+                        &lambda; = v/f = 344.8/256<br>
+                        &lambda; = <strong>1.35 m</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">16</span>
+                <strong>a)</strong> Principle of potentiometer. Why is it called an ideal voltmeter? <span class="marks">[2]</span>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans16a')">View Answer</button>
+            <div id="ans16a" class="answer-section">
+                <span class="answer-label">Solution:</span>
+                <div class="solution">
+                    <p><strong>Principle:</strong> V &prop; L for a uniform wire.</p>
+                    <p><strong>Ideal voltmeter:</strong> At null point, no current is drawn from the cell being measured, so it gives true emf without loading error.</p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">b) Principles behind Kirchhoff&apos;s current and voltage laws. <span class="marks">[1]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans16b')">View Answer</button>
+                <div id="ans16b" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <p><strong>KCL:</strong> Conservation of charge.</p>
+                        <p><strong>KVL:</strong> Conservation of energy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">c) Find current in 2&Omega; resistor using Kirchhoff&apos;s laws. <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans16c')">View Answer</button>
+                <div id="ans16c" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <div class="formula">
+                        Left loop: 35 = 5I<sub>1</sub> + 2I<sub>2</sub> ...(i)<br>
+                        Right loop: 20 = I<sub>1</sub> + 3I<sub>2</sub> ...(ii)<br>
+                        Solving: I<sub>1</sub> = 5 A, I<sub>2</sub> = 5 A<br>
+                        Current in 2&Omega; = I<sub>1</sub> + I<sub>2</sub> = <strong>10 A</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">17</span>
+                <strong>a)</strong> Why does a magnetic field develop around a current-carrying conductor? <span class="marks">[1]</span>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans17a')">View Answer</button>
+            <div id="ans17a" class="answer-section">
+                <span class="answer-label">Solution:</span>
+                <div class="solution">
+                    <p>Moving charges (current) produce a magnetic field. Field lines form concentric circles around the wire; direction is given by the right-hand thumb rule.</p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">b) Use Biot-Savart law to find B at center of circular coil. <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans17b')">View Answer</button>
+                <div id="ans17b" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <div class="formula">
+                        dB = (&mu;<sub>0</sub>/4&pi;) Idl/r&sup2;<br>
+                        Integrating: <strong>B = &mu;<sub>0</sub>NI/(2r)</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">c) Circular coil: N=100, r=10 cm, I=5 A. Find B on axis at 5 cm from centre. <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans17c')">View Answer</button>
+                <div id="ans17c" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <div class="formula">
+                        B = &mu;<sub>0</sub>NIr&sup2;/[2(r&sup2;+x&sup2;)^(3/2)]<br>
+                        B = (4&pi;&times;10<sup>&minus;7</sup>&times;100&times;5&times;0.01)/[2(0.0125)^(3/2)]<br>
+                        B = <strong>2.25 &times; 10<sup>&minus;3</sup> T = 2.25 mT</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">18</span>
+                Energy levels of a hypothetical one-electron atom: E<sub>n</sub> = &minus;13.6/n&sup2; eV.
+                <br><strong>a)</strong> Compute four lowest energy levels and construct energy level diagram. <span class="marks">[2]</span>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans18a')">View Answer</button>
+            <div id="ans18a" class="answer-section">
+                <span class="answer-label">Solution:</span>
+                <div class="solution">
+                    <div class="formula">
+                    E<sub>1</sub> = &minus;13.6/1&sup2; = <strong>&minus;13.6 eV</strong><br>
+                    E<sub>2</sub> = &minus;13.6/4 = <strong>&minus;3.4 eV</strong><br>
+                    E<sub>3</sub> = &minus;13.6/9 = <strong>&minus;1.51 eV</strong><br>
+                    E<sub>4</sub> = &minus;13.6/16 = <strong>&minus;0.85 eV</strong>
+                    </div>
+                    <p>Energy level diagram: n=1 at &minus;13.6 eV (ground), n=2 at &minus;3.4 eV, n=3 at &minus;1.51 eV, n=4 at &minus;0.85 eV, with spacing decreasing as n increases.</p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">b) What is the first excitation potential? <span class="marks">[1]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans18b')">View Answer</button>
+                <div id="ans18b" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <div class="formula">
+                        First excitation potential = E<sub>2</sub> &minus; E<sub>1</sub><br>
+                        = &minus;3.4 &minus; (&minus;13.6) = <strong>10.2 V</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">c) Electrons accelerated through 16.2 V bombard ground-state atoms. What wavelengths are emitted? <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans18c')">View Answer</button>
+                <div id="ans18c" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <p>16.2 eV can excite atoms from n=1 to n=3 (E<sub>3</sub> &minus; E<sub>1</sub> = 12.09 eV) or n=1 to n=4 (E<sub>4</sub> &minus; E<sub>1</sub> = 12.75 eV), but not to n=&infin; (13.6 eV).</p>
+                        <div class="formula">
+                        &lambda; = hc/&Delta;E = 1240 eV-nm / &Delta;E<br><br>
+                        3&rarr;1: &lambda; = 1240/12.09 = <strong>102.6 nm</strong><br>
+                        3&rarr;2: &lambda; = 1240/1.89 = <strong>656 nm</strong><br>
+                        2&rarr;1: &lambda; = 1240/10.2 = <strong>121.6 nm</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">19</span>
+                <strong>a)</strong> Which property of a semiconductor diode permits it to be used as a rectifier? <span class="marks">[1]</span>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans19a')">View Answer</button>
+            <div id="ans19a" class="answer-section">
+                <span class="answer-label">Solution:</span>
+                <div class="solution">
+                    <p>The <strong>unidirectional conductivity</strong> (allowing current in forward bias and blocking in reverse bias) of a p-n junction diode makes it suitable for rectification.</p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">b) Discuss p-n junction diode as a full-wave rectifier. <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans19b')">View Answer</button>
+                <div id="ans19b" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <p>A full-wave rectifier uses a centre-tapped transformer and two diodes (or four diodes in a bridge configuration).</p>
+                        <p>During positive half-cycle, one diode conducts; during negative half-cycle, the other conducts. Both half-cycles are rectified, giving pulsating DC in the same direction. The output frequency is twice the input frequency.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">c) Construct the truth table for the given combination of gates. <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans19c')">View Answer</button>
+                <div id="ans19c" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <p>The circuit has two AND gates feeding into an OR gate: G = AB + CD</p>
+                        <table border="1" cellpadding="6" style="border-collapse: collapse; margin: 0.5rem 0;">
+                            <tr style="background: #edf2f7;"><th>A</th><th>B</th><th>C</th><th>D</th><th>E=AB</th><th>F=CD</th><th>G</th></tr>
+                            <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+                            <tr><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+                            <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                            <tr><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+                            <tr><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+                            <tr><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+                            <tr><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+                            <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GROUP C -->
+        <div class="group-header">Group C: Long Answer Questions [3 &times; 8 = 24]</div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">20</span>
+                <strong>a)</strong> What is interference? Discuss the importance of coherent sources. <span class="marks">[2]</span>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans20a')">View Answer</button>
+            <div id="ans20a" class="answer-section">
+                <span class="answer-label">Solution:</span>
+                <div class="solution">
+                    <p><strong>Interference:</strong> The superposition of two waves resulting in a pattern of alternating bright and dark regions (constructive and destructive interference).</p>
+                    <p><strong>Importance of coherent sources:</strong> Coherent sources maintain a constant phase difference, producing stable and observable interference patterns. Without coherence, the phase difference changes rapidly and the pattern averages out to uniform illumination.</p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">b) Show that width of bright fringe equals width of dark fringe in Young&apos;s double slit experiment. <span class="marks">[3]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans20b')">View Answer</button>
+                <div id="ans20b" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <p>Position of nth bright fringe: y<sub>n</sub><sup>bright</sup> = n&lambda;D/d</p>
+                        <p>Position of nth dark fringe: y<sub>n</sub><sup>dark</sup> = (2n&minus;1)&lambda;D/(2d)</p>
+                        <div class="formula">
+                        Fringe width (bright) = y<sub>n+1</sub><sup>b</sup> &minus; y<sub>n</sub><sup>b</sup> = &lambda;D/d<br>
+                        Fringe width (dark) = y<sub>n+1</sub><sup>d</sup> &minus; y<sub>n</sub><sup>d</sup> = &lambda;D/d<br><br>
+                        <strong>Both fringe widths are equal: &beta; = &lambda;D/d</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">c) Why is a diffraction grating better than double slit for measuring wavelength? <span class="marks">[1]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans20c')">View Answer</button>
+                <div id="ans20c" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <p>A diffraction grating produces sharper, brighter, and widely separated maxima. The angular separation is large and measurable accurately, whereas double-slit fringes are broad and less distinct.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">d) Unpolarized light incident at 55&deg; on glass. Reflected beam is completely polarized. Find refractive index and angle of refraction. <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans20d')">View Answer</button>
+                <div id="ans20d" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <p>By Brewster&apos;s law: &mu; = tan(i<sub>p</sub>)</p>
+                        <div class="formula">
+                        &mu; = tan(55&deg;) = <strong>1.428</strong><br><br>
+                        Also, &mu; = sin(i<sub>p</sub>)/sin(r)<br>
+                        sin(r) = sin(55&deg;)/1.428 = 0.819/1.428 = 0.574<br>
+                        r = <strong>35.0&deg;</strong>
+                        </div>
+                        <p>(Note: i<sub>p</sub> + r = 90&deg; at Brewster angle, so r = 35&deg;)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">21</span>
+                <strong>a)</strong> Define RMS value of alternating current. <span class="marks">[1]</span>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans21a')">View Answer</button>
+            <div id="ans21a" class="answer-section">
+                <span class="answer-label">Solution:</span>
+                <div class="solution">
+                    <p>The <strong>RMS (Root Mean Square) value</strong> of AC is the steady DC current that produces the same heating effect in a given resistor in a given time as the AC does. For sinusoidal current: I<sub>rms</sub> = I<sub>0</sub>/&radic;2.</p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">b) Discuss LCR circuit with phasor diagram to find current and impedance. <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans21b')">View Answer</button>
+                <div id="ans21b" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <p>In an LCR series circuit, voltages across L and C are 180&deg; out of phase. The net reactive voltage is V<sub>L</sub> &minus; V<sub>C</sub>.</p>
+                        <div class="formula">
+                        V = &radic;[V<sub>R</sub>&sup2; + (V<sub>L</sub> &minus; V<sub>C</sub>)&sup2;]<br>
+                        Impedance: <strong>Z = &radic;[R&sup2; + (X<sub>L</sub> &minus; X<sub>C</sub>)&sup2;]</strong><br>
+                        where X<sub>L</sub> = &omega;L, X<sub>C</sub> = 1/(&omega;C)<br><br>
+                        Phase angle: tan&phi; = (X<sub>L</sub> &minus; X<sub>C</sub>)/R<br>
+                        Current: <strong>I = V/Z</strong>
+                        </div>
+                        <p>Phasor diagram: V<sub>R</sub> along x-axis, V<sub>L</sub> upward, V<sub>C</sub> downward. Resultant V is the vector sum.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">c) What is electrical resonance? Obtain expression for resonant frequency. Draw current vs frequency curve. <span class="marks">[3]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans21c')">View Answer</button>
+                <div id="ans21c" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <p><strong>Electrical resonance:</strong> The condition in an LCR circuit when X<sub>L</sub> = X<sub>C</sub>, making the circuit purely resistive and current maximum.</p>
+                        <div class="formula">
+                        X<sub>L</sub> = X<sub>C</sub><br>
+                        &omega;<sub>0</sub>L = 1/(&omega;<sub>0</sub>C)<br>
+                        &omega;<sub>0</sub>&sup2; = 1/(LC)<br>
+                        <strong>f<sub>0</sub> = 1/(2&pi;&radic;LC)</strong>
+                        </div>
+                        <p>Current vs frequency curve: Bell-shaped curve peaking at f<sub>0</sub>. Sharp peak for low resistance (high Q-factor), broad peak for high resistance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">d) LCR circuit: R=25&Omega;, L=30 mH, C=10 &micro;F, E<sub>rms</sub>=220 V, f=50 Hz. Find current. <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans21d')">View Answer</button>
+                <div id="ans21d" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <div class="formula">
+                        X<sub>L</sub> = 2&pi;fL = 2&pi; &times; 50 &times; 0.030 = 9.42 &Omega;<br>
+                        X<sub>C</sub> = 1/(2&pi;fC) = 1/(2&pi; &times; 50 &times; 10&times;10<sup>&minus;6</sup>) = 318.3 &Omega;<br>
+                        Z = &radic;[25&sup2; + (9.42 &minus; 318.3)&sup2;]<br>
+                        Z = &radic;[625 + 95308] = &radic;95933 = 309.7 &Omega;<br><br>
+                        I = V/Z = 220/309.7 = <strong>0.71 A</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="or-divider">OR</div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">21 (OR)</span>
+                <strong>a)</strong> State Lenz&apos;s law and explain demonstration with coil and magnet. <span class="marks">[2]</span>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans21or_a')">View Answer</button>
+            <div id="ans21or_a" class="answer-section">
+                <span class="answer-label">Solution:</span>
+                <div class="solution">
+                    <p><strong>Lenz&apos;s Law:</strong> The induced current always flows in a direction that opposes the change causing it.</p>
+                    <p><strong>Demonstration:</strong> When a bar magnet&apos;s N-pole is pushed toward a coil, induced current creates a N-pole on the near side of the coil, repelling the magnet. When pulled away, it creates a S-pole, attracting the magnet. This opposition requires work, converting mechanical energy to electrical energy.</p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">b) Vehicle brake with aluminium disc and electromagnets. <span class="marks">[3]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans21or_b')">View Answer</button>
+                <div id="ans21or_b" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <p><strong>i) How emf induction causes slowing:</strong> The rotating aluminium disc cuts through the magnetic field of the electromagnets, inducing eddy currents in the disc (Faraday&apos;s law). By Lenz&apos;s law, these currents create a magnetic field that opposes the motion of the disc, producing a braking torque that slows the vehicle.</p>
+                        <p><strong>ii) Why braking increases with speed:</strong> Faster rotation means the disc cuts more magnetic flux per second (greater d&Phi;/dt), inducing larger eddy currents. Since braking force is proportional to eddy current, higher speed produces stronger braking.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">c) Find emf in a conductor: l=20 cm, r=10 cm from axis, B=0.5 T, 1000 rpm. <span class="marks">[3]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans21or_c')">View Answer</button>
+                <div id="ans21or_c" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <div class="formula">
+                        &omega; = 2&pi;N/60 = 2&pi; &times; 1000/60 = 104.7 rad/s<br>
+                        v = r&omega; = 0.10 &times; 104.7 = 10.47 m/s<br><br>
+                        emf = Blv = 0.5 &times; 0.20 &times; 10.47<br>
+                        emf = <strong>1.047 V &approx; 1.05 V</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">22</span>
+                Carbon-14 has half-life 5760 years. Produced by: <sup>14</sup><sub>7</sub>N + <sup>1</sup><sub>0</sub>n &rarr; <sup>14</sup><sub>6</sub>C + X
+                <br><strong>a)</strong> Define half-life and decay constant. Relation between them. <span class="marks">[2]</span>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans22a')">View Answer</button>
+            <div id="ans22a" class="answer-section">
+                <span class="answer-label">Solution:</span>
+                <div class="solution">
+                    <p><strong>Half-life (T<sub>1/2</sub>):</strong> Time for half the radioactive nuclei in a sample to decay.</p>
+                    <p><strong>Decay constant (&lambda;):</strong> Probability of decay per unit time.</p>
+                    <div class="formula">
+                    <strong>T<sub>1/2</sub> = ln(2)/&lambda; = 0.693/&lambda;</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">b) Identify particle X. <span class="marks">[1]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans22b')">View Answer</button>
+                <div id="ans22b" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <p>Balancing mass and atomic numbers: X is a <strong>proton</strong> (<sup>1</sup><sub>1</sub>H or <sup>1</sup><sub>1</sub>p).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">c) What is radio-carbon dating? How to estimate age of ancient objects? <span class="marks">[3]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans22c')">View Answer</button>
+                <div id="ans22c" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <p><strong>Radio-carbon dating:</strong> A method to determine the age of carbon-containing archaeological or geological samples by measuring the remaining C-14 activity.</p>
+                        <p>Living organisms maintain equilibrium C-14 levels. After death, C-14 decays without replenishment. By comparing the activity of a sample to that of living matter, the age is calculated using:</p>
+                        <div class="formula">
+                        N = N<sub>0</sub>e<sup>&minus;&lambda;t</sup><br>
+                        t = (1/&lambda;) ln(N<sub>0</sub>/N) = (T<sub>1/2</sub>/0.693) ln(N<sub>0</sub>/N)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">d) Sample contains 1 &times; 10<sup>22</sup> C-14 nuclei. What is the activity? <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans22d')">View Answer</button>
+                <div id="ans22d" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <div class="formula">
+                        T<sub>1/2</sub> = 5760 years = 5760 &times; 365.25 &times; 24 &times; 3600 s<br>
+                        T<sub>1/2</sub> = 1.817 &times; 10<sup>11</sup> s<br>
+                        &lambda; = 0.693/T<sub>1/2</sub> = 3.81 &times; 10<sup>&minus;12</sup> s<sup>&minus;1</sup><br><br>
+                        Activity A = &lambda;N<br>
+                        A = 3.81 &times; 10<sup>&minus;12</sup> &times; 10<sup>22</sup><br>
+                        A = <strong>3.81 &times; 10<sup>10</sup> Bq</strong><br>
+                        = 3.81 &times; 10<sup>10</sup> / 3.7 &times; 10<sup>10</sup> Ci<br>
+                        A &approx; <strong>1.03 Ci</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="or-divider">OR</div>
+
+        <div class="question-card">
+            <div class="question-text">
+                <span class="question-number">22 (OR)</span>
+                <strong>a)</strong> Modern method of X-ray production.
+                <br>i) Working principle. <span class="marks">[1]</span>
+            </div>
+            <button class="toggle-btn" onclick="toggleAnswer('ans22or_ai')">View Answer</button>
+            <div id="ans22or_ai" class="answer-section">
+                <span class="answer-label">Solution:</span>
+                <div class="solution">
+                    <p>High-speed electrons are accelerated by high voltage and strike a metal target. Their sudden deceleration produces X-rays (bremsstrahlung), and characteristic X-rays are produced when electrons knock out inner-shell electrons.</p>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">ii) Why metal target of high melting point and high atomic weight? <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans22or_aii')">View Answer</button>
+                <div id="ans22or_aii" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <p><strong>High melting point:</strong> Only a small fraction of electron energy becomes X-rays; most becomes heat. High melting point prevents the target from melting (e.g., tungsten: 3422&deg;C).</p>
+                        <p><strong>High atomic weight:</strong> Heavier atoms have more protons, creating stronger nuclear fields for electron deceleration, producing more intense X-rays with higher energy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">iii) How are intensity and quality of X-rays controlled? <span class="marks">[2]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans22or_aiii')">View Answer</button>
+                <div id="ans22or_aiii" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <p><strong>Intensity:</strong> Controlled by filament current (heater current). More current means more thermionic emission, more electrons, more X-rays.</p>
+                        <p><strong>Quality (penetrating power):</strong> Controlled by accelerating voltage (kV). Higher voltage gives electrons more energy, producing shorter wavelength, more penetrating X-rays.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-question">
+                <div class="sub-label">b) Light &lambda;=400 nm on photosensitive material with work function 2.3 eV. Find maximum KE of photoelectrons. <span class="marks">[3]</span></div>
+                <button class="toggle-btn" onclick="toggleAnswer('ans22or_b')">View Answer</button>
+                <div id="ans22or_b" class="answer-section">
+                    <span class="answer-label">Solution:</span>
+                    <div class="solution">
+                        <div class="formula">
+                        E = hc/&lambda; = (6.63&times;10<sup>&minus;34</sup> &times; 3&times;10<sup>8</sup>)/(400&times;10<sup>&minus;9</sup>)<br>
+                        E = 4.97&times;10<sup>&minus;19</sup> J = 3.10 eV<br><br>
+                        KE<sub>max</sub> = E &minus; &phi; = 3.10 &minus; 2.30<br>
+                        KE<sub>max</sub> = <strong>0.80 eV</strong><br>
+                        = 0.80 &times; 1.6&times;10<sup>&minus;19</sup> J<br>
+                        = <strong>1.28 &times; 10<sup>&minus;19</sup> J</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Pre-Board Physics 2081 &mdash; Full Solutions</p>
+            <p>Best of Luck!</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleAnswer(id) {
+            const el = document.getElementById(id);
+            const btn = el.previousElementSibling;
+            if (el.classList.contains('visible')) {
+                el.classList.remove('visible');
+                btn.textContent = 'View Answer';
+            } else {
+                el.classList.add('visible');
+                btn.textContent = 'Hide Answer';
+            }
+        }
+    </script>
+</body>
+</html>
