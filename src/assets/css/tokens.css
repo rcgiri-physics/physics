@@ -13,6 +13,8 @@
   --on-brand-muted: #c5cbef;
   --accent: #ffb300;             /* primary button, focus ring */
   --on-accent: #1c1c1c;
+  --field-on-brand: #ffffff;     /* search box sitting on a brand background */
+  --field-on-brand-text: #1c2233;
 
   /* Content kinds */
   --notes: #1e63d6;  --notes-bg: #e7f0ff;

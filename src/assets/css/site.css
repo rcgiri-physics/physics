@@ -25,6 +25,9 @@ h1, h2, h3 { line-height: 1.25; }
 .nav-search input { width: 240px; padding: 8px 14px; border-radius: 999px; border: 1px solid rgb(255 255 255 / .3);
   background: rgb(255 255 255 / .12); color: #fff; font: inherit; }
 .nav-search input::placeholder { color: #c5cbef; }
+.nav-search input:focus { background: rgb(255 255 255 / .2); border-color: rgb(255 255 255 / .6); outline: none; }
+/* Pages with their own big search box (home, 404, search page) don't need the header one too. */
+body:has(.hero-search, .search-box) .nav-search { display: none; }
 
 /* ---------- Layout ---------- */
 .container { max-width: var(--max); margin: 32px auto; padding: 0 20px; }
@@ -43,7 +46,10 @@ h1, h2, h3 { line-height: 1.25; }
 .hero h1 { margin: 0 0 10px; font-size: clamp(1.8rem, 4vw, 2.6rem); }
 .hero p { margin: 0; max-width: 640px; color: #dfe3ff; font-size: 1.08rem; }
 .hero .hero-search { margin-top: 22px; display: flex; gap: 8px; max-width: 560px; }
-.hero .hero-search input { flex: 1; padding: 12px 16px; border-radius: var(--radius-sm); border: 0; font: inherit; }
+.hero .hero-search input { flex: 1; min-width: 0; padding: 12px 16px; border-radius: var(--radius-sm); border: 0; font: inherit;
+  background: var(--field-on-brand); color: var(--field-on-brand-text);
+  box-shadow: 0 6px 20px rgb(0 0 0 / .18); transition: box-shadow .15s; }
+.hero .hero-search input:focus { outline: none; box-shadow: 0 0 0 3px var(--accent), 0 6px 20px rgb(0 0 0 / .18); }
 .stats { display: flex; gap: 28px; margin-top: 26px; flex-wrap: wrap; }
 .stats b { display: block; font-size: 1.6rem; line-height: 1.1; }
 .stats span { color: var(--on-brand-muted); font-size: .9rem; }
@@ -51,7 +57,9 @@ h1, h2, h3 { line-height: 1.25; }
 /* ---------- Buttons & badges ---------- */
 .btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 18px; border-radius: var(--radius-sm);
   border: 0; font: 600 .95rem var(--font); cursor: pointer; background: var(--accent); color: var(--on-accent); }
-.btn:hover { text-decoration: none; filter: brightness(1.05); }
+.btn { transition: transform .12s, box-shadow .15s, filter .15s; }
+.btn:hover { text-decoration: none; filter: brightness(1.05); box-shadow: 0 6px 18px rgb(0 0 0 / .18); }
+.btn:active { transform: translateY(1px); box-shadow: none; }
 .badge { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
   padding: 2px 9px; border-radius: 999px; background: var(--surface-2); color: var(--muted); }
 .badge.notes { background: var(--notes-bg); color: var(--notes); }
@@ -67,9 +75,9 @@ h1, h2, h3 { line-height: 1.25; }
 /* ---------- Cards ---------- */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 16px; }
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px;
-  box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 8px; transition: transform .15s, border-color .15s; }
-.card:hover { transform: translateY(-2px); border-color: var(--brand-ink); }
-@media (prefers-reduced-motion: reduce) { .card, .card:hover { transition: none; transform: none; } html { scroll-behavior: auto; } }
+  box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 8px; transition: transform .15s, border-color .15s, box-shadow .15s; }
+.card:hover { transform: translateY(-2px); border-color: var(--brand-ink); box-shadow: 0 2px 4px rgb(20 26 60 / .06), 0 14px 32px rgb(20 26 60 / .12); }
+@media (prefers-reduced-motion: reduce) { .btn, .btn:active, .card, .card:hover { transition: none; transform: none; } html { scroll-behavior: auto; } }
 .card h3 { margin: 0; font-size: 1.05rem; }
 .card h3 a { color: var(--text); }
 .card .meta { color: var(--muted); font-size: .86rem; margin-top: auto; }
@@ -99,7 +107,8 @@ h1, h2, h3 { line-height: 1.25; }
 
 /* ---------- Search ---------- */
 .search-box { display: flex; gap: 8px; max-width: 640px; }
-.search-box input { flex: 1; padding: 12px 16px; border: 1px solid var(--border); border-radius: var(--radius-sm);
+.search-box input:focus { outline: none; border-color: var(--brand-ink); box-shadow: 0 0 0 3px var(--brand-100); }
+.search-box input { flex: 1; min-width: 0; padding: 12px 16px; border: 1px solid var(--border); border-radius: var(--radius-sm);
   background: var(--surface); color: var(--text); font: inherit; }
 .filters { display: flex; gap: 8px; margin: 14px 0 22px; flex-wrap: wrap; }
 .filters button { font: 600 .88rem var(--font); padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border);

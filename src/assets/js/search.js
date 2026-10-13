@@ -14,7 +14,9 @@
 
   let items = [];
   try {
-    items = await (await fetch('/assets/search-index.json')).json();
+    const res = await fetch('/assets/search-index.json');
+    if (!res.ok) throw new Error(res.status);
+    items = await res.json();
   } catch (e) {
     results.innerHTML = '<p class="empty">Could not load the search index.</p>';
     return;
@@ -35,10 +37,10 @@
     const hits = items.filter(x => Object.keys(filters).every(k => filters[k] === 'all' || x[k] === filters[k]) &&
       words.every(w => x.haystack.includes(w))).sort(SORTS[sortSel.value] || SORTS.syllabus);
     results.innerHTML = hits.map(x => `
-      <article class="card kind-${x.kind}">
-        <div><span class="badge ${x.kind}">${LABEL[x.kind]}</span></div>
-        <h3><a href="${x.url}">${esc(x.title)}</a></h3>
-        <div class="meta">Grade ${x.grade} · ${esc(x.chapter)}</div>
+      <article class="card kind-${esc(x.kind)}">
+        <div><span class="badge ${esc(x.kind)}">${LABEL[x.kind] || ''}</span></div>
+        <h3><a href="${esc(x.url)}">${esc(x.title)}</a></h3>
+        <div class="meta">Grade ${esc(x.grade)} · ${esc(x.chapter)}</div>
       </article>`).join('') ||
       '<p class="empty">No matching lessons yet. Try a chapter name such as “waves” or “heat”, or clear a filter.</p>';
     countEl.textContent = `${hits.length} result${hits.length === 1 ? '' : 's'}`;
