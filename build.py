@@ -7,6 +7,7 @@ Sources (the only things anyone edits):
     src/content.json           site info + syllabus for each grade
     src/lessons/<slug>.json    an MCQ set (data only)          -> /posts/<slug>.html
     src/lessons/<slug>.html    notes (content-only HTML)       -> /posts/<slug>.html
+    src/papers/<slug>.html     a model question paper          -> /papers/<slug>.html
     src/assets/                shared CSS, JS, images (copied as-is)
     docs/examples/             example files; example-notes.html is built to /styleguide.html
 
@@ -30,6 +31,7 @@ SRC = ROOT / "src"
 OUT = ROOT / "public"
 GRADE_SLUG = {"XI": "grade-xi", "XII": "grade-xii"}
 KIND_LABEL = {"notes": "Notes", "mcq": "MCQs"}
+PAPERS_PAGE = "pages/model-questions.html"
 KIND_ICON = {"notes": "📘", "mcq": "📝"}
 DIFFICULTIES = {"easy", "medium", "hard"}
 # Things content-only notes must not contain: styling and behaviour come from the shared assets.
@@ -143,7 +145,17 @@ def load():
             problems.append(f"src/lessons: '{s}' exists as both .json and .html (both skipped)")
             posts = [p for p in posts if p["slug"] != s]
     posts.sort(key=lambda p: (p.get("date", ""), p["slug"]), reverse=True)
-    return site_data, posts, problems
+    papers = []
+    paper_dir = SRC / "papers"
+    for f in sorted(paper_dir.iterdir()) if paper_dir.is_dir() else []:
+        if f.is_dir() or f.name.startswith("."):
+            continue
+        before = len(problems)
+        meta = read_paper(f, f"src/papers/{f.name}", grades, problems)
+        if meta is not None and len(problems) == before:
+            papers.append(meta)
+    papers.sort(key=lambda p: (p["grade"], -int(p["year"]), p["title"]))
+    return site_data, posts, papers, problems
 
 
 def read_lesson(f, rel, grades, problems):
@@ -174,21 +186,53 @@ def read_lesson(f, rel, grades, problems):
         meta.setdefault("kind", "notes")
         meta["body"] = body
         meta["format"] = "notes"
-        if re.match(r"\s*<!doctype", body, re.I):
-            problems.add(rel, "full web pages are no longer accepted; convert it to content-only notes "
-                              "(docs/prompts/convert-legacy-notes.md)")
-        else:
-            for pattern, what in FORBIDDEN_IN_NOTES:
-                if re.search(pattern, body, re.I):
-                    problems.add(rel, f"notes must not contain {what} — the site stylesheet handles styling")
-            for svg in re.findall(r"<svg\b[^>]*>", body, re.I):
-                if not re.search(r"\bviewBox=", svg):
-                    problems.add(rel, "every <svg> needs a viewBox so it can shrink to fit phone screens")
+        check_notes_body(body, rel, problems)
     if meta.get("kind") not in KIND_LABEL:
         problems.add(rel, f"kind must be 'notes' or 'mcq'")
     validate_meta(meta, rel, grades, problems)
     meta["slug"] = f.stem
     meta["file"] = rel
+    return meta
+
+
+def check_notes_body(body, rel, problems):
+    """Notes and model papers are content-only HTML: styling and behaviour come from the shared assets."""
+    if re.match(r"\s*<!doctype", body, re.I):
+        problems.add(rel, "full web pages are no longer accepted; convert it to content-only notes "
+                          "(docs/prompts/convert-legacy-notes.md)")
+        return
+    for pattern, what in FORBIDDEN_IN_NOTES:
+        if re.search(pattern, body, re.I):
+            problems.add(rel, f"notes must not contain {what} — the site stylesheet handles styling")
+    for svg in re.findall(r"<svg\b[^>]*>", body, re.I):
+        if not re.search(r"\bviewBox=", svg):
+            problems.add(rel, "every <svg> needs a viewBox so it can shrink to fit phone screens")
+
+
+def read_paper(f, rel, grades, problems):
+    """A model question paper: content-only HTML with front matter (title, grade, year, date)."""
+    if f.suffix != ".html":
+        problems.add(rel, "model papers are .html files (see docs/AUTHORING.md)")
+        return None
+    if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", f.stem):
+        problems.add(rel, "file name must be lowercase words joined by hyphens, e.g. grade-xi-model-2081.html")
+    try:
+        text = f.read_text(encoding="utf-8")
+    except UnicodeDecodeError:
+        problems.add(rel, "file is not saved as UTF-8 text")
+        return None
+    meta, body = parse_front_matter(text, rel, problems)
+    for field in ("title", "grade", "year", "date"):
+        if field not in meta:
+            problems.add(rel, f"missing '{field}'")
+    if meta.get("grade") not in grades:
+        problems.add(rel, f"grade must be one of {list(grades)}, got {meta.get('grade')!r}")
+    if not re.fullmatch(r"\d{4}", str(meta.get("year", ""))):
+        problems.add(rel, "year must be four digits, e.g. 2081")
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(meta.get("date", ""))):
+        problems.add(rel, "date must look like 2026-01-31")
+    check_notes_body(body, rel, problems)
+    meta.update(body=body, slug=f.stem, file=rel, kind="paper")
     return meta
 
 
@@ -219,7 +263,8 @@ def asset(rel):
     return f"/assets/{rel}?v={digest}"
 
 
-def shell(data, *, title, body, description=None, path="", current=None, css=(), scripts=(), noindex=False):
+def shell(data, *, title, body, description=None, path="", current=None, css=(), scripts=(), noindex=False, track=None):
+    """track: what this page is, for analytics (kind / grade / chapter / area), read by analytics.js."""
     site = data["site"]
     full_title = f"{title} | {site['name']}" if title != site["name"] else f"{site['name']} — Grade XI & XII Physics"
     desc = description or site["tagline"]
@@ -229,8 +274,9 @@ def shell(data, *, title, body, description=None, path="", current=None, css=(),
         return f'<a href="{href}"{cur}>{label}</a>'
 
     styles = "".join(f'<link rel="stylesheet" href="{asset(f"css/{c}.css")}">\n' for c in ("tokens", "site", *css))
-    js = "".join(f'<script src="{asset(f"js/{s}.js")}" defer></script>\n' for s in scripts)
+    js = "".join(f'<script src="{asset(f"js/{s}.js")}" defer></script>\n' for s in ("analytics", *scripts))
     robots = '<meta name="robots" content="noindex">\n' if noindex else ""
+    track_attrs = "".join(f' data-{k}="{esc(str(v))}"' for k, v in (track or {}).items() if v)
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -246,13 +292,13 @@ def shell(data, *, title, body, description=None, path="", current=None, css=(),
 <meta name="theme-color" content="#1a237e">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 {styles}{js}</head>
-<body>
+<body{track_attrs}>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <nav class="nav" aria-label="Main">
     <a class="brand" href="/"><img src="/assets/favicon.svg" alt="" width="30" height="30"> {esc(site['name'])}</a>
     <div class="nav-links">
-      {nav('/pages/grade-xi.html', 'Grade XI', 'XI')}{nav('/pages/grade-xii.html', 'Grade XII', 'XII')}{nav('/search.html', 'All lessons', 'search')}
+      {nav('/pages/grade-xi.html', 'Grade XI', 'XI')}{nav('/pages/grade-xii.html', 'Grade XII', 'XII')}{nav('/' + PAPERS_PAGE, 'Model Questions', 'papers')}{nav('/search.html', 'All lessons', 'search')}
     </div>
     <form class="nav-search" action="/search.html" role="search"><input type="search" name="q" placeholder="Search topics…" aria-label="Search topics"></form>
   </nav>
@@ -264,7 +310,7 @@ def shell(data, *, title, body, description=None, path="", current=None, css=(),
   <strong>{esc(site['name'])}</strong><span>by {esc(site['author'])} · {esc(site['curriculum'])}</span>
   <span class="copyright">© {date.today().year} {esc(site['author'])}. Original notes and questions; please don't copy or republish them without permission.</span>
   <span class="spacer"></span>
-  <a href="/pages/grade-xi.html">Grade XI</a><a href="/pages/grade-xii.html">Grade XII</a>
+  <a href="/pages/grade-xi.html">Grade XI</a><a href="/pages/grade-xii.html">Grade XII</a><a href="/{PAPERS_PAGE}">Model Questions</a>
   <a href="{site['youtube']}" target="_blank" rel="noopener">YouTube ▶</a>
 </div></footer>
 </body>
@@ -279,6 +325,11 @@ def card(data, post):
   <h3><a href="{post_url(post)}">{esc(post['title'])}</a></h3>
   <div class="meta">Grade {post['grade']} · {esc(chaps)}</div>
 </article>"""
+
+
+def track_of(data, post):
+    ch = chapter_of(data, post)[0]
+    return {"kind": post["kind"], "grade": post["grade"], "chapter": f"{post['grade']} Ch {ch['n']} {ch['title']}", "area": ch["area"]}
 
 
 def related(data, posts, post):
@@ -363,7 +414,7 @@ def build_mcq(data, posts, post):
 {related_block(data, posts, post)}"""
     desc = post.get("description") or f"{post['title']} — Grade {post['grade']} physics MCQ practice with answers and explanations."
     return shell(data, title=post["title"], body=body, description=desc, path=post_url(post)[1:],
-                 current=post["grade"], css=("lesson",), scripts=("quiz",))
+                 current=post["grade"], css=("lesson",), scripts=("quiz",), track=track_of(data, post))
 
 
 def build_notes(data, posts, post, *, path=None, noindex=False):
@@ -398,13 +449,64 @@ def build_notes(data, posts, post, *, path=None, noindex=False):
 {related_block(data, posts, post)}"""
     desc = post.get("description") or f"{post['title']} — Grade {post['grade']} physics notes ({data['site']['curriculum']})."
     return shell(data, title=post["title"], body=body, description=desc, path=path or post_url(post)[1:],
-                 current=post["grade"], css=("lesson",), scripts=("notes",), noindex=noindex)
+                 current=post["grade"], css=("lesson",), scripts=("notes",), noindex=noindex, track=track_of(data, post))
+
+
+def build_paper(data, papers, paper):
+    others = [p for p in papers if p is not paper and p["grade"] == paper["grade"]]
+    facts = " · ".join(esc(str(paper[k])) for k in ("time", "marks") if paper.get(k))
+    lead = f'<p class="lead">{esc(paper["description"])}</p>' if paper.get("description") else ""
+    more = (f'<section class="related"><h2>More Grade {paper["grade"]} papers</h2><div class="grid">'
+            f'{"".join(paper_card(p) for p in others)}</div></section>') if others else ""
+    body = f"""<div class="crumbs"><a href="/">Home</a> › <a href="/{PAPERS_PAGE}">Model Questions</a> › Grade {paper['grade']}</div>
+<header class="lesson-head">
+  <div class="tags"><span class="badge paper">Model paper</span><span class="badge">Grade {paper['grade']}</span><span class="badge">{esc(str(paper['year']))}</span></div>
+  <h1>{esc(paper['title'])}</h1>
+  {lead}
+  <p class="meta">{facts + ' · ' if facts else ''}Updated {paper['date']}</p>
+</header>
+<div class="lesson no-toc">
+<article class="notes-body paper-body">
+{paper['body'].strip()}
+</article>
+</div>
+{more}"""
+    desc = paper.get("description") or f"{paper['title']} — Grade {paper['grade']} physics model question paper ({data['site']['curriculum']})."
+    return shell(data, title=paper["title"], body=body, description=desc, path=f"papers/{paper['slug']}.html",
+                 current="papers", css=("lesson",), scripts=("notes",), track={"kind": "paper", "grade": paper["grade"]})
+
+
+def paper_card(paper):
+    facts = " · ".join(esc(str(paper[k])) for k in ("time", "marks") if paper.get(k))
+    return f"""<article class="card kind-paper">
+  <div><span class="badge paper">Model paper</span> <span class="badge">{esc(str(paper['year']))}</span></div>
+  <h3><a href="/papers/{paper['slug']}.html">{esc(paper['title'])}</a></h3>
+  <div class="meta">Grade {paper['grade']}{' · ' + facts if facts else ''}</div>
+</article>"""
+
+
+def build_papers_page(data, papers):
+    sections = []
+    for g, grade in data["grades"].items():
+        mine = [p for p in papers if p["grade"] == g]
+        cards = "".join(paper_card(p) for p in mine) or '<p class="empty">Model papers for this grade are coming soon.</p>'
+        sections.append(f'<section class="section" id="grade-{g.lower()}"><div class="section-head"><h2>{esc(grade["title"])}</h2></div>'
+                        f'<div class="grid">{cards}</div></section>')
+    body = f"""<div class="crumbs"><a href="/">Home</a> › Model Questions</div>
+<section class="hero">
+  <h1>Model Questions</h1>
+  <p>Full model question papers for Grade XI and XII ({esc(data['site']['curriculum'])}), set to the NEB exam pattern. Try each paper under exam timing, then open the answers.</p>
+  <div class="stats"><div><b>{len(papers)}</b><span>papers</span></div>{''.join(f'<div><b>{sum(p["grade"] == g for p in papers)}</b><span>Grade {g}</span></div>' for g in data['grades'])}</div>
+</section>
+{''.join(sections)}"""
+    return shell(data, title="Model Questions", body=body, path=PAPERS_PAGE, current="papers",
+                 description="Grade XI and XII physics model question papers (NEB) with answers.")
 
 
 
 # ---------------------------------------------------------------- site pages
 
-def build_index(data, posts):
+def build_index(data, posts, papers):
     site = data["site"]
     n_notes = sum(p["kind"] == "notes" for p in posts)
     n_questions = sum(len(p.get("questions", [])) for p in posts)
@@ -428,7 +530,11 @@ def build_index(data, posts):
 </section>
 <section class="section">
   <div class="section-head"><h2>Choose your grade</h2></div>
-  <div class="grade-cards">{''.join(grade_cards)}</div>
+  <div class="grade-cards">{''.join(grade_cards)}<a class="card grade-card kind-paper" href="/{PAPERS_PAGE}">
+  <h3>Model Questions</h3>
+  <p>Full exam papers for Grade XI &amp; XII, with answers</p>
+  <div class="chapter-links"><span class="chip paper">{len(papers)} papers</span></div>
+</a></div>
 </section>
 <section class="section">
   <div class="section-head"><h2>Recently added</h2><a href="/search.html">Browse all →</a></div>
@@ -440,11 +546,12 @@ def build_index(data, posts):
 def build_grade(data, posts, g):
     site, grade = data["site"], data["grades"][g]
     gp = [p for p in posts if p["grade"] == g]
+    areas = "".join(f'<a href="#{slugify(a)}">{esc(a)}</a>' for a in dict.fromkeys(c["area"] for c in grade["syllabus"]))
     out, area = [], None
     for ch in grade["syllabus"]:
         if ch["area"] != area:
             area = ch["area"]
-            out.append(f'<h2 class="area">{esc(area)}</h2>')
+            out.append(f'<h2 class="area" id="{slugify(area)}">{esc(area)}</h2>')
         mine = sorted((p for p in gp if ch["n"] in p["chapters"]), key=lambda p: (p["kind"] != "notes", p["title"]))
         counts = "".join(f'<span class="badge {k}">{sum(p["kind"] == k for p in mine)} {KIND_LABEL[k]}</span>'
                          for k in KIND_LABEL if any(p["kind"] == k for p in mine))
@@ -463,23 +570,35 @@ def build_grade(data, posts, g):
   <p>Complete {esc(site['curriculum'])} syllabus — open a chapter for its topics, notes and MCQ practice.</p>
   <div class="stats"><div><b>{len(grade['syllabus'])}</b><span>chapters</span></div><div><b>{grade['hours']}</b><span>teaching hours</span></div><div><b>{len(gp)}</b><span>lessons</span></div></div>
 </section>
+<nav class="filters" aria-label="Jump to a topic area">{areas}<a href="/{PAPERS_PAGE}#grade-{g.lower()}">Model papers</a></nav>
 {''.join(out)}"""
-    return shell(data, title=grade["title"], body=body, path=f"pages/{GRADE_SLUG[g]}.html", current=g,
+    return shell(data, title=grade["title"], body=body, path=f"pages/{GRADE_SLUG[g]}.html", current=g, track={"grade": g},
                  description=f"{grade['title']} — full NEB syllabus with notes and MCQ practice for every chapter.")
 
 
 def build_search(data):
+    areas = dict.fromkeys(c["area"] for g in data["grades"].values() for c in g["syllabus"])
     body = """<div class="crumbs"><a href="/">Home</a> › All lessons</div>
 <h1>All lessons</h1>
 <form id="search-form" class="search-box" role="search">
   <input id="q" type="search" placeholder="Search topics…" aria-label="Search topics">
   <button class="btn">Search</button>
 </form>
-<div id="filters" class="filters" role="group" aria-label="Filter by type">
-  <button type="button" data-kind="all">All</button><button type="button" data-kind="notes">Notes</button><button type="button" data-kind="mcq">MCQs</button>
+<div id="filters" class="filter-groups">
+  <div class="filters" role="group" aria-label="Type" data-group="kind">
+    <button type="button" data-value="all">All types</button><button type="button" data-value="notes">Notes</button><button type="button" data-value="mcq">MCQs</button><button type="button" data-value="paper">Model papers</button>
+  </div>
+  <div class="filters" role="group" aria-label="Grade" data-group="grade">
+    <button type="button" data-value="all">Both grades</button><button type="button" data-value="XI">Grade XI</button><button type="button" data-value="XII">Grade XII</button>
+  </div>
+  <div class="filters" role="group" aria-label="Topic area" data-group="area">
+    <button type="button" data-value="all">All topics</button>AREAS
+  </div>
+  <label class="sort">Sort <select id="sort"><option value="syllabus">Syllabus order</option><option value="new">Newest first</option><option value="az">A–Z</option></select></label>
 </div>
+<p id="count" class="count" aria-live="polite"></p>
 <h2 class="sr-only">Results</h2>
-<div id="results" class="grid" aria-live="polite"></div>"""
+<div id="results" class="grid"></div>""".replace("AREAS", "".join(f'<button type="button" data-value="{esc(a)}">{esc(a)}</button>' for a in areas))
     return shell(data, title="All lessons", body=body, path="search.html", current="search", scripts=("search",))
 
 
@@ -489,7 +608,7 @@ def build_404(data):
     return shell(data, title="Page not found", body=body, path="404.html", noindex=True)
 
 
-def build_search_index(data, posts):
+def build_search_index(data, posts, papers):
     items = []
     for p in posts:
         chaps = chapter_of(data, p)
@@ -499,14 +618,21 @@ def build_search_index(data, posts):
             words += [c["title"], c["area"], *[plain(t) for t in c["topics"]]]
         items.append({"title": p["title"], "url": post_url(p), "kind": p["kind"], "grade": p["grade"],
                       "chapter": ", ".join(c["title"] for c in chaps), "date": p["date"],
+                      "area": chaps[0]["area"], "order": min(p["chapters"]),
+                      "haystack": re.sub(r"[^a-z0-9 ]+", " ", " ".join(words).lower())})
+    for p in papers:
+        words = [p["title"], p.get("description", ""), "model question paper papers exam", f"grade {p['grade']}", str(p["year"])]
+        items.append({"title": p["title"], "url": f"/papers/{p['slug']}.html", "kind": "paper", "grade": p["grade"],
+                      "chapter": f"Model paper {p['year']}", "date": p["date"], "area": "", "order": 999,
                       "haystack": re.sub(r"[^a-z0-9 ]+", " ", " ".join(words).lower())})
     items.sort(key=lambda x: (x["grade"] != "XI", x["title"]))
     return json.dumps(items, ensure_ascii=False, indent=1) + "\n"
 
 
-def build_sitemap(data, posts):
+def build_sitemap(data, posts, papers):
     site = data["site"]
     rows = [("", None), ("search.html", None)] + [(f"pages/{s}.html", None) for s in GRADE_SLUG.values()]
+    rows += [(PAPERS_PAGE, None)] + [(f"papers/{p['slug']}.html", p["date"]) for p in papers]
     rows += [(post_url(p)[1:], p["date"]) for p in posts]
     urls = "".join(f"  <url><loc>{site['url']}/{u}</loc>{f'<lastmod>{d}</lastmod>' if d else ''}</url>\n" for u, d in rows)
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n'
@@ -545,7 +671,7 @@ def write(rel, text):
 def main():
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-    data, posts, problems = load()
+    data, posts, papers, problems = load()
     if problems:
         print(f"WARNING: {len(problems)} problem(s); the lessons below were SKIPPED and are not on the site:")
         for p in problems:
@@ -553,26 +679,29 @@ def main():
         if "--strict" in sys.argv or "--check" in sys.argv:
             sys.exit(1)
     if "--check" in sys.argv:
-        print(f"OK: {len(posts)} lessons are valid.")
+        print(f"OK: {len(posts)} lessons and {len(papers)} model papers are valid.")
         return
 
     if OUT.exists():
         shutil.rmtree(OUT)
     shutil.copytree(SRC / "assets", OUT / "assets")
-    write("index.html", build_index(data, posts))
+    write("index.html", build_index(data, posts, papers))
     write("search.html", build_search(data))
     write("404.html", build_404(data))
     write("styleguide.html", build_styleguide(data, posts))
-    write("sitemap.xml", build_sitemap(data, posts))
+    write("sitemap.xml", build_sitemap(data, posts, papers))
     write("robots.txt", build_robots(data))
-    write("assets/search-index.json", build_search_index(data, posts))
+    write("assets/search-index.json", build_search_index(data, posts, papers))
+    write(PAPERS_PAGE, build_papers_page(data, papers))
+    for paper in papers:
+        write(f"papers/{paper['slug']}.html", build_paper(data, papers, paper))
     for g, slug in GRADE_SLUG.items():
         write(f"pages/{slug}.html", build_grade(data, posts, g))
     builders = {"mcq": build_mcq, "notes": build_notes}
     for post in posts:
         write(f"posts/{post['slug']}.html", builders[post["format"]](data, posts, post))
     formats = {f: sum(p["format"] == f for p in posts) for f in builders}
-    print(f"Built {len(posts)} lessons into public/ ({formats['mcq']} MCQ sets, {formats['notes']} notes).")
+    print(f"Built {len(posts)} lessons into public/ ({formats['mcq']} MCQ sets, {formats['notes']} notes) and {len(papers)} model papers.")
 
 
 if __name__ == "__main__":

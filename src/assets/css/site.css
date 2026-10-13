@@ -19,7 +19,7 @@ h1, h2, h3 { line-height: 1.25; }
 .brand img { width: 30px; height: 30px; }
 .brand:hover { text-decoration: none; }
 .nav-links { display: flex; gap: 4px; }
-.nav-links a { color: #e3e7ff; font-weight: 600; padding: 6px 12px; border-radius: 999px; }
+.nav-links a { color: #e3e7ff; font-weight: 600; padding: 6px 12px; border-radius: 999px; white-space: nowrap; }
 .nav-links a:hover, .nav-links a[aria-current="page"] { background: rgb(255 255 255 / .14); color: #fff; text-decoration: none; }
 .nav-search { margin-left: auto; }
 .nav-search input { width: 240px; padding: 8px 14px; border-radius: 999px; border: 1px solid rgb(255 255 255 / .3);
@@ -39,7 +39,7 @@ h1, h2, h3 { line-height: 1.25; }
 .hero { background: linear-gradient(135deg, var(--brand-900), var(--brand-600)); color: #fff;
   border-radius: calc(var(--radius) + 6px); padding: 44px 40px; position: relative; overflow: hidden; }
 .hero::after { content: ""; position: absolute; inset: auto -60px -80px auto; width: 320px; height: 320px;
-  border-radius: 50%; border: 36px solid rgb(255 255 255 / .06); }
+  border-radius: 50%; border: 36px solid rgb(255 255 255 / .06); pointer-events: none; }
 .hero h1 { margin: 0 0 10px; font-size: clamp(1.8rem, 4vw, 2.6rem); }
 .hero p { margin: 0; max-width: 640px; color: #dfe3ff; font-size: 1.08rem; }
 .hero .hero-search { margin-top: 22px; display: flex; gap: 8px; max-width: 560px; }
@@ -56,9 +56,11 @@ h1, h2, h3 { line-height: 1.25; }
   padding: 2px 9px; border-radius: 999px; background: var(--surface-2); color: var(--muted); }
 .badge.notes { background: var(--notes-bg); color: var(--notes); }
 .badge.mcq   { background: var(--mcq-bg);   color: var(--mcq); }
+.badge.paper { background: var(--paper-bg); color: var(--paper); }
 .chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; font-size: .88rem; font-weight: 600; }
 .chip.notes { background: var(--notes-bg); color: var(--notes); }
 .chip.mcq   { background: var(--mcq-bg);   color: var(--mcq); }
+.chip.paper { background: var(--paper-bg); color: var(--paper); }
 .chip.video { background: var(--video-bg); color: var(--video); }
 .chip.soon  { background: var(--surface-2); color: var(--muted); font-weight: 500; }
 
@@ -73,6 +75,7 @@ h1, h2, h3 { line-height: 1.25; }
 .card .meta { color: var(--muted); font-size: .86rem; margin-top: auto; }
 .card.kind-notes { border-top: 4px solid var(--notes); }
 .card.kind-mcq   { border-top: 4px solid var(--mcq); }
+.card.kind-paper { border-top: 4px solid var(--paper); }
 
 .grade-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
 .grade-card { padding: 26px; }
@@ -101,7 +104,15 @@ h1, h2, h3 { line-height: 1.25; }
 .filters { display: flex; gap: 8px; margin: 14px 0 22px; flex-wrap: wrap; }
 .filters button { font: 600 .88rem var(--font); padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border);
   background: var(--surface); color: var(--muted); cursor: pointer; }
+.filters a { font: 600 .88rem var(--font); padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--muted); }
+.filters a:hover { border-color: var(--brand-ink); color: var(--brand-ink); text-decoration: none; }
 .filters button[aria-pressed="true"] { background: var(--brand-600); border-color: var(--brand-600); color: #fff; }
+.filter-groups { margin: 14px 0 6px; }
+.filter-groups .filters { margin: 0 0 10px; }
+.sort { color: var(--muted); font-size: .9rem; }
+.sort select { font: inherit; padding: 5px 8px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--surface); color: var(--text); }
+.count { color: var(--muted); font-size: .9rem; margin: 6px 0 14px; }
 .empty { color: var(--muted); }
 
 /* ---------- Footer ---------- */
@@ -113,6 +124,8 @@ h1, h2, h3 { line-height: 1.25; }
 
 @media (max-width: 720px) {
   .site-header { position: static; }
+  .nav-links { flex-wrap: wrap; gap: 2px; margin: 0 -10px; }
+  .nav-links a { padding: 5px 10px; font-size: .92rem; }
   .nav-search { order: 3; width: 100%; margin-left: 0; }
   .nav-search input { width: 100%; }
   .container { padding: 0 14px; margin-top: 20px; }

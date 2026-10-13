@@ -71,6 +71,11 @@
     save();
     show(li, chosen);
     update();
+    if (Object.keys(state).length === items.length && window.pdTrack) {
+      const correct = items.filter(q => state[q.dataset.i] === +q.dataset.answer).length;
+      const pct = Math.round(100 * correct / items.length);
+      window.pdTrack('Quiz finished', { chapter: document.body.dataset.chapter || '', score: pct >= 80 ? '80-100%' : pct >= 50 ? '50-79%' : '0-49%' });
+    }
   });
 
   filter.addEventListener('change', applyFilter);

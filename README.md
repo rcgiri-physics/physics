@@ -17,13 +17,16 @@ src/
   lessons/
     <name>.json              an MCQ set: data only
     <name>.html              notes: content-only HTML with a small metadata block on top
+  papers/
+    <name>.html              a model question paper (Model Questions tab), same format as notes
   assets/
     css/tokens.css           ALL colours, fonts, radii (light + dark mode)
     css/site.css             layout: header, cards, grade pages, search, footer
     css/lesson.css           notes building blocks + quiz
     js/quiz.js               answering, scoring, filters, saved progress
     js/notes.js              "On this page" highlighting + LaTeX (KaTeX)
-    js/search.js             search page
+    js/search.js             search page (type / grade / topic-area filters, sorting)
+    js/analytics.js          Vercel Web Analytics + study events (chapter, quiz finished, searches)
 docs/
   AUTHORING.md               how to write lessons
   prompts/                   prompts for any AI to generate content
@@ -47,6 +50,7 @@ The separation is deliberate:
 | Task | How |
 |---|---|
 | Add a lesson | Add one file to `src/lessons/` ([guide](docs/AUTHORING.md)) |
+| Add a model question paper | Add one file to `src/papers/` ([guide](docs/AUTHORING.md#model-question-papers-srcpapersnamehtml), [prompt](docs/prompts/paper.md)) |
 | Fix a typo in a lesson | Edit the file in `src/lessons/` |
 | Change the syllabus / chapter names | Edit `grades` in `src/content.json` |
 | Change colours | Edit `src/assets/css/tokens.css` |
@@ -89,6 +93,22 @@ no horizontal scrolling, no broken images, no blocked resources, and all maths r
   for a year and still update instantly when changed.
 - **robots.txt** blocks AI-training crawlers (GPTBot, CCBot, ClaudeBot, …) while search engines
   stay allowed; every page carries a © notice.
+
+## Analytics
+
+Every page loads `analytics.js`, which turns on **Vercel Web Analytics** (no cookies, no consent
+banner needed). It does nothing until it is switched on: Vercel project → **Analytics** → **Enable**.
+Page views and top pages then appear in that dashboard. Besides page views it sends three events,
+which appear under **Events**:
+
+| Event | Data | Answers |
+|---|---|---|
+| `Study` | kind, grade, chapter, area | Which chapters and topic areas are studied most; notes vs MCQs vs papers |
+| `Quiz finished` | chapter, score band | Which chapters students finish, and where they score low |
+| `Search` | query | What students look for, including topics the site doesn't cover yet |
+
+Custom events have a monthly limit that depends on the Vercel plan. Locally, events are printed
+to the browser console instead of being sent.
 
 ## Hosting on Vercel (moving from Blogger)
 

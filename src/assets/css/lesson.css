@@ -141,3 +141,9 @@
   .notes-body, .question { box-shadow: none; border: 0; }
   .solution { display: block; } .explanation[hidden] { display: block; }
 }
+
+/* ---------- Model question papers ---------- */
+/* Marks next to a question: <span class="marks">[2]</span>. Group headings are <h2>. */
+.paper-body .marks { float: right; margin-left: 12px; color: var(--muted); font-weight: 700; font-size: .9rem; }
+.paper-body h2 { border-bottom: 2px solid var(--paper); padding-bottom: 4px; }
+.paper-body ol > li { margin: 12px 0; }

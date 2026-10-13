@@ -121,6 +121,31 @@ disappear (several old lessons still use `image.qwenlm.ai` links).
 
 ---
 
+## Model question papers (`src/papers/<name>.html`)
+
+Full exam papers go in **`src/papers/`** (not `src/lessons/`) and appear on the **Model Questions**
+tab, grouped by grade. A paper is written like notes (content-only HTML), with this metadata block:
+
+```
+---
+title: Grade XII Physics Model Question 2082 (Set A)
+grade: XII
+year: 2082
+date: 2026-10-13
+time: 3 hours            (optional)
+marks: Full marks 75     (optional)
+description: …           (optional)
+---
+```
+
+No `chapters` field is needed. Inside, use one `<h2>` per group (A, B, C), numbered `<ol>` lists,
+`<span class="marks">[2]</span>` for marks and `<details class="solution"><summary>Answer</summary> … </details>`
+for answers, which stay hidden until a student opens them. See
+[`examples/example-paper.html`](examples/example-paper.html) and the prompt in
+[`prompts/paper.md`](prompts/paper.md).
+
+---
+
 ## Chapter numbers
 
 Chapter numbers come from `src/content.json` (and are shown on the grade pages).
