@@ -1,5 +1,7 @@
 # Prompt: Notes
 
+**Tip:** the editor in `/admin` → **New notes** has buttons for every building block and a live preview.
+
 Copy everything in the box below into any AI chat. Fill in the lines marked ✏️ first.
 For best results, attach or paste `docs/examples/example-notes.html` as well, as an example of the format.
 

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sign in | Physics Decoded admin</title>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<script src="/assets/js/theme.js"></script>
+<link rel="stylesheet" href="/assets/css/tokens.css">
+<link rel="stylesheet" href="/admin/admin.css">
+<script type="module" src="/admin/login.js"></script>
+</head>
+<body class="login-page">
+<main class="login-card">
+  <a class="login-brand" href="/"><img src="/assets/favicon.svg" alt="" width="40" height="40"> Physics Decoded</a>
+  <h1>Admin sign in</h1>
+  <form id="login" autocomplete="on">
+    <label>Username<input name="username" autocomplete="username" required autofocus></label>
+    <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+    <label class="code" hidden>6-digit code from your authenticator app<input name="code" inputmode="numeric" pattern="\d{6}" autocomplete="one-time-code" maxlength="6"></label>
+    <button class="btn" type="submit">Sign in</button>
+    <p class="status" role="alert" aria-live="assertive"></p>
+  </form>
+  <p class="muted small">This area is for the site's authors. Students don't need an account.</p>
+</main>
+</body>
+</html>

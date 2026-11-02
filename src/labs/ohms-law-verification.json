@@ -1,0 +1,103 @@
+{
+  "title": "Verification of Ohm's law",
+  "grade": "XI",
+  "chapters": [
+    23
+  ],
+  "number": 2,
+  "date": "2026-11-02",
+  "description": "Measure the current through a resistor for several voltages, show that V/I is constant and find the resistance from the V–I graph.",
+  "aim": "To verify Ohm's law and to determine the resistance of a given resistor.",
+  "apparatus": [
+    "Resistor (or a resistance wire) of unknown resistance",
+    "DC ammeter (0–1 A) and DC voltmeter (0–3 V)",
+    "Battery or DC power supply",
+    "Rheostat",
+    "Plug key",
+    "Connecting wires and sandpaper"
+  ],
+  "theory": "<p><strong>Ohm's law</strong> states that the current flowing through a conductor is directly proportional to the potential difference across its ends, provided the temperature and other physical conditions remain constant:</p><div class=\"formula\">\\[ V \\propto I \\quad\\Rightarrow\\quad V = IR \\]<span class=\"where\">where \\(R\\) is the resistance of the conductor, measured in ohms (Ω).</span></div><p>If Ohm's law holds, the graph of \\(V\\) against \\(I\\) is a straight line through the origin, and its slope equals \\(R\\).</p><figure><svg viewBox=\"0 0 260 190\" role=\"img\" aria-label=\"Circuit: battery E, key K, ammeter A and resistor R in series; voltmeter V connected across R\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M30 40H95M105 40H140M162 40H230V66M230 94V120H170M110 120H30V40\"/><path d=\"M95 26v28M105 33v14\"/><circle cx=\"142\" cy=\"40\" r=\"2.5\"/><circle cx=\"160\" cy=\"40\" r=\"2.5\"/><path d=\"M144 39l14-9\"/><circle cx=\"230\" cy=\"80\" r=\"14\"/><rect x=\"110\" y=\"112\" width=\"60\" height=\"16\" rx=\"2\"/><path d=\"M100 120V160H128M152 160H180V120\"/><circle cx=\"140\" cy=\"160\" r=\"12\"/></g><g font-size=\"14\" fill=\"currentColor\" text-anchor=\"middle\"><text x=\"100\" y=\"20\">E</text><text x=\"151\" y=\"24\">K</text><text x=\"230\" y=\"85\">A</text><text x=\"140\" y=\"106\">R</text><text x=\"140\" y=\"165\">V</text></g></svg><figcaption>Ammeter in series with the resistor R; voltmeter in parallel across R; a rheostat (not shown) in series varies the current.</figcaption></figure>",
+  "procedure": [
+    "Clean the ends of the connecting wires with sandpaper and connect the circuit as shown: battery, key, rheostat, ammeter and resistor in series, with the voltmeter in parallel across the resistor.",
+    "Check that the positive terminals of the ammeter and voltmeter are connected towards the positive terminal of the battery.",
+    "Insert the key and adjust the rheostat so that a small current flows. Note the ammeter reading I and the voltmeter reading V.",
+    "Change the rheostat setting to increase the current step by step, and take at least five sets of readings.",
+    "Remove the key between readings so that the resistor does not heat up.",
+    "Calculate V/I for each set and plot a graph of V (y-axis) against I (x-axis)."
+  ],
+  "observations": [
+    {
+      "caption": "Table 1: Current and potential difference (sample readings, for illustration)",
+      "headers": [
+        "S.N.",
+        "Ammeter reading I (A)",
+        "Voltmeter reading V (V)",
+        "R = V/I (Ω)"
+      ],
+      "rows": [
+        [
+          1,
+          "0.10",
+          "0.50",
+          "5.00"
+        ],
+        [
+          2,
+          "0.19",
+          "1.00",
+          "5.26"
+        ],
+        [
+          3,
+          "0.30",
+          "1.50",
+          "5.00"
+        ],
+        [
+          4,
+          "0.41",
+          "2.00",
+          "4.88"
+        ],
+        [
+          5,
+          "0.50",
+          "2.50",
+          "5.00"
+        ]
+      ],
+      "note": "Least count of ammeter: 0.01 A; of voltmeter: 0.05 V. These are sample readings; record your own in the lab."
+    }
+  ],
+  "calculation": "<p>Mean resistance:</p><div class=\"formula\">\\[ R = \\frac{5.00 + 5.26 + 5.00 + 4.88 + 5.00}{5} = 5.03\\ \\Omega \\]</div><p>The V–I graph is a straight line through the origin; its slope (ΔV/ΔI) is about 5.0 Ω, which agrees with the mean value.</p>",
+  "result": "<p>The ratio V/I is constant within experimental error and the V–I graph is a straight line through the origin, so <strong>Ohm's law is verified</strong>. The resistance of the given resistor is <strong>R ≈ 5.0 Ω</strong> (sample readings).</p>",
+  "precautions": [
+    "Connections should be tight and the wire ends clean.",
+    "The ammeter must be in series and the voltmeter in parallel, with correct polarity.",
+    "Pass current only while taking a reading, so the resistor does not heat up.",
+    "Read the meters with the eye directly above the pointer to avoid parallax."
+  ],
+  "errors": [
+    "Heating of the resistor changes its resistance.",
+    "Zero error or parallax error in the meters.",
+    "Loose connections add extra resistance."
+  ],
+  "viva": [
+    {
+      "q": "Is Ohm's law a universal law?",
+      "a": "<p>No. It holds for metallic conductors at constant temperature. Diodes, transistors, electrolytes and gas discharge tubes do not obey it.</p>"
+    },
+    {
+      "q": "Why is the voltmeter connected in parallel?",
+      "a": "<p>A voltmeter measures the potential difference between two points, so it must be connected across them. Its very high resistance means it draws almost no current.</p>"
+    },
+    {
+      "q": "What is the function of a rheostat?",
+      "a": "<p>It changes the resistance in the circuit, and so changes the current flowing through it.</p>"
+    },
+    {
+      "q": "What happens to the resistance of a metal wire when it is heated?",
+      "a": "<p>It increases, because the positive ions vibrate more and the electrons collide with them more often.</p>"
+    }
+  ]
+}

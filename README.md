@@ -1,169 +1,258 @@
 # Physics Decoded
 
-Grade XI & XII physics notes and MCQ practice (NEB Curriculum 2076) by Richesh Sharma —
-<https://richeshsharma.com.np>
+Grade XI & XII physics notes, MCQ practice, model questions and lab practicals (NEB Curriculum 2076)
+by Richesh Sharma — <https://richeshsharma.com.np>
 
-A static website: lesson files go in, a small Python script (`build.py`, standard library only)
-turns them into the finished site, and Vercel publishes it automatically on every push.
+- **The site** is static: content files in `src/` go in, a small Python script (`build.py`, standard library
+  only) turns them into fast HTML pages, and Cloudflare serves them for free.
+- **The admin** (`/admin`) lets authors add MCQ sets, notes, model papers and lab practicals from a phone,
+  with paste-to-import and AI help. Saving makes a commit to this repository, so GitHub stays the single
+  source of truth: every change is versioned, checked by CI, and can be reverted.
+- **A small Cloudflare Worker** runs only for `/admin` and `/api` (sign-in, saving, AI, "Report a mistake",
+  the contact form and anonymous study counters).
 
-**Writing content?** Read [docs/AUTHORING.md](docs/AUTHORING.md). Ready-to-paste AI prompts
-are in [docs/prompts/](docs/prompts/).
+**Writing content?** Read [docs/AUTHORING.md](docs/AUTHORING.md). **Why it is built this way, and what's
+next:** [docs/REDESIGN_PLAN.md](docs/REDESIGN_PLAN.md).
 
 ## How it fits together
 
 ```
-src/
+src/                         ← the only things anyone edits (by hand or through /admin)
   content.json               site name, links, and the full syllabus of each grade
-  lessons/
-    <name>.json              an MCQ set: data only
-    <name>.html              notes: content-only HTML with a small metadata block on top
-  papers/
-    <name>.html              a model question paper (Model Questions tab), same format as notes
-  assets/
-    css/tokens.css           ALL colours, fonts, radii (light + dark mode)
-    css/site.css             layout: header, cards, grade pages, search, footer
-    css/lesson.css           notes building blocks + quiz
-    js/quiz.js               answering, scoring, filters, saved progress
-    js/notes.js              "On this page" highlighting + LaTeX (KaTeX)
-    js/search.js             search page (type / grade / topic-area filters, sorting)
-    js/analytics.js          Vercel Web Analytics + study events (chapter, quiz finished, searches)
-docs/
-  AUTHORING.md               how to write lessons
-  prompts/                   prompts for any AI to generate content
-  examples/example-notes.html  every notes building block (built to /styleguide.html)
-build.py                     validates src/ and builds public/
-vercel.json                  build settings, Blogger redirects, security + cache headers
+  settings.json              ads, analytics, announcement banner, feature switches
+  lessons/<name>.json|html   MCQ sets (data) and notes (content-only HTML)   → /posts/<name>
+  papers/<name>.json         model question papers (structured)               → /papers/<name>
+  labs/<name>.json           lab practicals (structured)                      → /labs/<name>
+  pages/<name>.html          About, Contact, Privacy, Terms, Disclaimer …     → /<name>
+  assets/                    design (css/), behaviour (js/), icons.svg, images (img/)
+admin/                       the admin app (static HTML/JS; shared/ holds rules used by the Worker too)
+worker/                      Cloudflare Worker: auth.js, github.js, ai.js, db.js, schema.sql
+build.py                     validates src/ and builds public/ (pages, sitemap, feed, _headers, _redirects …)
+wrangler.jsonc               Cloudflare configuration
+tests/                       unit tests (npm test)
+docs/                        authoring guide, AI prompts, examples, the redesign plan
 public/                      generated site (not committed)
 ```
 
 The separation is deliberate:
 
-- **Content** (`src/lessons/`) has no styling or scripts, so an AI only has to produce text and data.
+- **Content** has no styling or scripts, so a person, the admin or any AI only has to produce text and data.
 - **Design** (`src/assets/css/`) is shared. Change `tokens.css` and every page changes.
-- **Behaviour** (`src/assets/js/`) is shared. Improve `quiz.js` once and all MCQ sets improve.
-- **Validation** (`build.py`) stops broken files from reaching students. It checks JSON syntax,
-  answer indexes, duplicate options, chapter numbers, dates, and banned tags in notes. Full web
-  pages (the old Blogger format) are rejected, so every lesson shares one design.
+- **Behaviour** (`src/assets/js/`) is shared. Improve `quiz.js` once and all 50+ MCQ sets improve.
+- **Validation** happens three times with the same rules: in the admin as you type, in the Worker before it
+  commits, and in `build.py` (CI runs `build.py --strict`). A file with a problem is **skipped** by the deploy
+  build, so one bad upload can never take the site down.
 
 ## Common tasks
 
 | Task | How |
 |---|---|
-| Add a lesson | Add one file to `src/lessons/` ([guide](docs/AUTHORING.md)) |
-| Add a model question paper | Add one file to `src/papers/` ([guide](docs/AUTHORING.md#model-question-papers-srcpapersnamehtml), [prompt](docs/prompts/paper.md)) |
-| Fix a typo in a lesson | Edit the file in `src/lessons/` |
+| Add an MCQ set, notes, paper or lab | `/admin` → **New …** (or add a file to `src/`, see [AUTHORING](docs/AUTHORING.md)) |
+| Fix a typo | `/admin` → Lessons → open it → Publish changes (or edit the file on GitHub) |
+| Answer a student's report | `/admin` → Inbox |
+| Turn ads on / change the banner | `/admin` → Settings (writes `src/settings.json`) |
 | Change the syllabus / chapter names | Edit `grades` in `src/content.json` |
 | Change colours | Edit `src/assets/css/tokens.css` |
-| Preview locally | `python build.py` then `python -m http.server 8000 -d public` → <http://localhost:8000> |
-| Check files without building | `python build.py --check` |
+| Preview locally | `python build.py --serve` → <http://localhost:8000> (static site only) |
+| Preview with the admin | `npm install`, copy `.dev.vars.example` to `.dev.vars`, then `npm run dev` → <http://localhost:8787/admin> |
+| Check files / run tests | `python build.py --check` · `npm test` |
 
-## Design system
+## Deploying on Cloudflare (free)
+
+Everything below fits Cloudflare's free plan: static pages are served free and without limit, and the Worker
+(admin + small API) gets 100,000 requests a day. D1 (the small database) is free up to 5 GB.
+
+### 1. Create the Worker (once, ~10 minutes)
+
+1. Sign up at [dash.cloudflare.com](https://dash.cloudflare.com). Note your **Account ID** (right sidebar of *Workers & Pages*).
+2. Create an API token: *My Profile → API Tokens → Create Token → template "Edit Cloudflare Workers"*.
+3. In this GitHub repository: *Settings → Secrets and variables → Actions*, add `CLOUDFLARE_API_TOKEN` and
+   `CLOUDFLARE_ACCOUNT_ID`. From now on every push to `main` builds and deploys
+   (`.github/workflows/deploy.yml`). Run it once by hand: *Actions → Deploy to Cloudflare → Run workflow*.
+4. The site is now live at `https://physics-decoded.<your-subdomain>.workers.dev`.
+
+(Alternative: *Workers & Pages → Create → Import a repository* also works with `wrangler.jsonc`; the GitHub
+Action is recommended because the same Python and Node versions run for CI and deploy.)
+
+### 2. Admin accounts and secrets
+
+On your computer, in this folder (`npm install` once):
+
+```bash
+node scripts/admin-user.mjs richesh "Richesh Sharma" admin --totp    # asks for a password (12+ characters)
+node scripts/admin-user.mjs helper "Helper Name" editor               # optional second account
+```
+
+Put the printed objects in a JSON array and save it, plus the other secrets:
+
+```bash
+npx wrangler secret put ADMIN_USERS       # paste: [{"username":"richesh",…},{"username":"helper",…}]
+npx wrangler secret put SESSION_SECRET    # paste: node -e "console.log(require('crypto').randomBytes(32).toString('base64url'))"
+npx wrangler secret put GITHUB_TOKEN      # see below
+```
+
+- `--totp` adds two-factor sign-in: scan the printed secret into Google Authenticator, Aegis or 1Password.
+- **Roles:** `admin` can do everything; `editor` can create and edit lessons, papers and labs, but not delete
+  files, edit site pages or change settings.
+- **GITHUB_TOKEN:** GitHub → *Settings → Developer settings → Fine-grained tokens → Generate*. Repository
+  access: *only this repository*. Permissions: **Contents: Read and write**, **Checks: Read** (for the build
+  status on the dashboard). Set an expiry and renew it when GitHub reminds you.
+- If the repository is not `rcgiri-physics/physics` or the branch is not `main`, change `GITHUB_REPO` /
+  `GITHUB_BRANCH` in `wrangler.jsonc`.
+
+Sign in at `/admin`. Five wrong passwords from one network lock sign-in for 15 minutes.
+
+### 3. AI keys (optional, free)
+
+The admin's AI buttons use [llm-free-cascade](https://github.com/rcgiri-physics/llm-free-cascade): each request
+goes to the first free-tier provider with a key and falls through to the next when one is rate-limited.
+Add any you have (more keys = fewer "busy" messages):
+
+```bash
+npx wrangler secret put GROQ_API_KEY       # console.groq.com
+npx wrangler secret put GEMINI_API_KEY     # aistudio.google.com
+npx wrangler secret put CEREBRAS_API_KEY   # cloud.cerebras.ai
+npx wrangler secret put OPENROUTER_API_KEY # openrouter.ai
+# Cloudflare Workers AI: CLOUDFLARE_API_TOKEN (Workers AI permission) + CLOUDFLARE_ACCOUNT_ID
+```
+
+`npx llm-free-cascade keys` lists every supported provider and where to sign up. Optional:
+`LLM_PROVIDER_ORDER=groq,gemini` (preferred order) and `LLM_CUSTOM_PROVIDERS` (any OpenAI-compatible endpoint).
+Without keys the admin works fully; only the 🤖 buttons are hidden.
+
+### 4. The database (reports, messages, insights)
+
+```bash
+npx wrangler d1 create physics-decoded          # prints a database_id
+# paste it into the d1_databases block in wrangler.jsonc and uncomment the block, then:
+npx wrangler d1 execute physics-decoded --remote --file=worker/schema.sql
+git commit -am "Connect D1" && git push        # deploys with the database
+```
+
+Until then, "Report a mistake" and the contact form politely say they are not available, and Insights is empty.
+
+### 5. Your domain (moving from Vercel)
+
+1. Add the domain to Cloudflare (*Websites → Add a site*, free plan) and change the nameservers at the
+   registrar to the two Cloudflare shows. For `.com.np`, update them at register.com.np.
+2. *Workers & Pages → physics-decoded → Settings → Domains & Routes → Add → Custom domain*:
+   `richeshsharma.com.np` and `www.richeshsharma.com.np`. HTTPS is automatic.
+3. Check the site and `/admin` on the domain, then remove the project from Vercel and delete `vercel.json`
+   (it only exists so the old Vercel deployment keeps working during the move).
+4. *Web Analytics → Add a site* for privacy-friendly page views (automatic for proxied domains; otherwise put
+   the token in Settings).
+5. Google Search Console: add the domain, submit `https://richeshsharma.com.np/sitemap.xml`.
+
+Old addresses keep working through `_redirects` (generated by `build.py`):
+
+| Old URL | Goes to |
+|---|---|
+| `/posts/<slug>.html` (this site before the redesign) | `/posts/<slug>` |
+| `/2026/01/<slug>.html` (Blogger) | `/posts/<slug>` |
+| `/p/grade-xi.html` | `/pages/grade-xi` |
+| `/search/label/Wave-Motion-MCQ` | `/search?q=Wave-Motion-MCQ` |
+| `/<slug>.html` (old root copies) | `/posts/<slug>` |
+
+## Ads (AdSense, student-friendly)
+
+Ads are off until you switch them on in **/admin → Settings**. Where they appear is decided by `build.py`,
+not by Google: at most one in the middle of a long lesson (between two sections, never inside one), one after
+the content, one in the desktop sidebar and one on list pages. None inside a question, none on the legal pages,
+the 404 page or the admin, and **all hidden during a timed test or exam**. Slots load only when scrolled near,
+and the AdSense script only after the student first interacts, so lessons stay fast.
+When AdSense is not set up, has no ad, or is blocked, a **house ad** shows instead (YouTube channel, MCQplex,
+anything you add in Settings), rotated by weight.
+
+To apply for AdSense:
+
+1. The site already has what reviewers look for: About, Contact, Privacy (with the AdSense wording),
+   Terms, Disclaimer and Editorial policy pages, real original content, and a sitemap.
+2. Apply at [adsense.google.com](https://adsense.google.com) with the domain. Put the publisher ID
+   (`ca-pub-…`) in Settings and publish: `build.py` writes `ads.txt` and the verification meta tag.
+3. After approval, create four **display / in-article ad units** and paste their numeric slot IDs into Settings,
+   then tick **Show ads**.
+4. In AdSense → *Blocking controls*, block sensitive categories that are not right for students
+   (dating, gambling, get-rich-quick, alcohol…). In *Privacy & messaging*, turn on the Google consent message
+   for the EEA/UK (required there).
+5. Leave *Auto ads* off for the student-friendly placements above (you can tick it in Settings if you want Google
+   to add more).
+
+**Security note:** Google only supports a nonce-based Content-Security-Policy for AdSense, which a static site
+cannot generate. So while ads are on, `build.py` relaxes the script/frame part of the CSP (the other protections
+stay). With ads off, the strict policy applies. The admin always runs under its own strict policy.
+
+## Protecting the content
+
+Anything a browser can show can be copied, so the aim is to stop bulk copying cheaply without hurting
+students, Google or screen readers (the notes and questions themselves stay readable text):
+
+- **Private repository.** The complete question bank with answer keys lives in GitHub; keep the repository private.
+- **Answer keys are not in the page source.** `build.py` scrambles each MCQ's answer and explanation (and the
+  Group A answers in papers) into a `data-k` attribute; `assets/js/unlock.js` decodes them in the browser.
+  Tools that copy the HTML get questions without answers. The structured data no longer lists answers either.
+  This is obfuscation, not encryption: someone who runs the page's JavaScript can still read them.
+  `tests/protection.test.mjs` checks every page decodes to exactly the source answers.
+- **Credit on copy.** Copying a long passage (200+ characters) from a lesson adds
+  "Source: <title>, Physics Decoded (<address>)". Short copies, such as a formula, are untouched.
+- **Printouts** carry the site name, page address and © line at the bottom.
+- **robots.txt** asks AI-training crawlers to stay out (search engines and AdSense stay allowed).
+- **Cloudflare dashboard (free plan; menu names may differ slightly):**
+  1. *Security → Bots*: turn on **Bot Fight Mode**.
+  2. *AI Crawl Control* (or *Security → Bots → Block AI bots*): **block AI crawlers** on all pages. This
+     enforces what robots.txt only asks.
+  3. *Security → WAF → Rate limiting rules* (one rule is free): for URI path starting with `/posts/`, more than
+     about 60 requests in 10 seconds from one IP → **Block**. Students never hit this; scrapers do.
+  4. *Scrape Shield → Hotlink protection*: on, so other sites can't embed your images.
+- **If someone republishes:** the © notice and Terms of use are on every page; report the copy to their host
+  or to Google (copyright removal request) with the link to your original page and its "Updated" date.
+
+## Analytics
+
+- **Page views:** Cloudflare Web Analytics (no cookies, no consent banner needed).
+- **Study events** (counted by the Worker in D1, anonymous, no identifiers): which chapters are studied, finished
+  quizzes with mode and score band, timed paper attempts, house-ad clicks, and **search terms** — searches for
+  topics the site doesn't cover yet are the best list of what to write next. See them in **/admin → Insights**.
+
+## Design and quality
 
 | Token | Light | Dark | Used for |
 |---|---|---|---|
 | `--brand-600` | `#3949ab` | `#3949ab` | header, hero, footer backgrounds |
 | `--brand-ink` | `#3949ab` | `#aab4ff` | indigo text (headings, numbers) |
-| `--accent` | `#ffb300` | `#ffb300` | primary button, keyboard focus ring |
-| `--notes` | `#1e63d6` | `#7aa7ff` | Notes badges and boxes |
-| `--mcq` / `--good` | `#17753a` | `#5fd08a` | MCQ badges, correct answers, tips |
-| `--video` / `--bad` | `#b3261e` | `#ff8a80` | video links, wrong answers, warnings |
-| `--warn` | `#8a5300` | `#ffc86b` | worked examples, "medium" difficulty |
+| `--accent` | `#ffb300` | `#ffb300` | primary button, focus ring |
+| `--notes` / `--mcq` / `--paper` / `--lab` | blue / green / purple / teal | lighter tints | content-type badges and cards |
 
-System font stack (Segoe UI / Roboto / San Francisco), with no web-font downloads. Dark mode
-follows the device setting. Every text/background pair meets WCAG AA contrast (4.5:1).
+System fonts (no web-font downloads), light/dark following the device with a manual switch, a bottom tab bar
+on phones, 44 px+ touch targets, WCAG AA contrast, skip link, visible focus ring, keyboard-operable quizzes
+(A–D / 1–4 keys), reduced-motion support, print styles (notes, papers with answers, lab sheets), and an offline
+service worker (pages a student opened work without internet; `/offline` lists them).
 
-### Accessibility and quality checks (last run 2026-09-24)
+SEO: clean URLs, canonical tags, Open Graph/Twitter cards with a share image, JSON-LD (WebSite search box,
+Organization, BreadcrumbList, Article/LearningResource for notes and labs, Quiz for MCQ sets and papers,
+FAQPage on the home page), sitemap with `lastmod`, RSS feed (`/feed.xml`), and robots.txt that allows search
+engines and the AdSense crawler but blocks AI-training crawlers.
 
-axe-core (WCAG 2.0/2.1 A + AA) was run on the home, grade, search, MCQ, notes (styleguide) and
-404 pages, in light and dark mode, with quiz answers shown: **0 violations**. Pages have a
-skip link, a visible focus ring, labelled search fields, keyboard-operable quiz buttons,
-reduced-motion support, and no horizontal scrolling at 375px width.
-
-All notes now use the shared design (the 12 Blogger-era pages were converted on 2026-10-06).
-On 2026-10-06 every page was loaded at 360px width with the production Content-Security-Policy:
-no horizontal scrolling, no broken images, no blocked resources, and all maths rendered.
-
-### Security and performance
-
-- **Content-Security-Policy** (`vercel.json`): scripts only from this site and `cdn.jsdelivr.net`
-  (KaTeX), no plugins, no framing by other sites. Pages contain no inline scripts.
-- **Subresource Integrity**: KaTeX is pinned to 0.16.11 and loaded with SRI hashes (`notes.js`),
-  so a tampered CDN file is refused by the browser.
-- **Caching**: CSS/JS links carry a content hash (`?v=…`, added by `build.py`), so they are cached
-  for a year and still update instantly when changed.
-- **robots.txt** blocks AI-training crawlers (GPTBot, CCBot, ClaudeBot, …) while search engines
-  stay allowed; every page carries a © notice.
-
-## Analytics
-
-Every page loads `analytics.js`, which turns on **Vercel Web Analytics** (no cookies, no consent
-banner needed). It does nothing until it is switched on: Vercel project → **Analytics** → **Enable**.
-Page views and top pages then appear in that dashboard. Besides page views it sends three events,
-which appear under **Events**:
-
-| Event | Data | Answers |
-|---|---|---|
-| `Study` | kind, grade, chapter, area | Which chapters and topic areas are studied most; notes vs MCQs vs papers |
-| `Quiz finished` | chapter, score band | Which chapters students finish, and where they score low |
-| `Search` | query | What students look for, including topics the site doesn't cover yet |
-
-Custom events have a monthly limit that depends on the Vercel plan. Locally, events are printed
-to the browser console instead of being sent.
-
-## Hosting on Vercel (moving from Blogger)
-
-`vercel.json` already contains the build settings, so no extra configuration is needed:
-
-1. On [vercel.com](https://vercel.com) → **Add New… → Project** → import this GitHub repository.
-   Leave every setting at its default (Vercel reads `vercel.json`) and deploy.
-2. Check the `*.vercel.app` preview address.
-3. **Settings → Domains** → add `richeshsharma.com.np` (and `www.`). Vercel shows the DNS
-   records to set at the domain registrar. They replace the records that currently point to Blogger.
-4. Once the domain works on Vercel, submit `https://richeshsharma.com.np/sitemap.xml` in
-   Google Search Console.
-
-Old Blogger links keep working through redirects in `vercel.json`:
-
-| Old Blogger URL | Goes to |
-|---|---|
-| `/2026/01/<slug>.html` | `/posts/<slug>.html` |
-| `/p/grade-xi.html` | `/pages/grade-xi.html` |
-| `/search/label/Wave-Motion-MCQ` | `/search.html?q=Wave-Motion-MCQ` |
-| `/search?q=…` | `/search.html?q=…` |
-| `/<slug>.html` (old root copies) | `/posts/<slug>.html` |
-
-Every push to `main` redeploys the site. If a lesson file has an error, that lesson is **skipped**
-(the Vercel build log lists it under `WARNING`) and every other lesson is still published, so one
-bad upload can't freeze the site. The GitHub check (`.github/workflows/check.yml`) runs
-`python build.py --strict`, which fails on any problem, so errors still show up as a red ✗ on GitHub.
+Security: content can't contain scripts, styles, iframes, event attributes or `javascript:` links (checked in
+three places); admin sessions are HMAC-signed `__Host-` cookies (HttpOnly, Secure, SameSite=Strict) that end
+when the password changes; passwords are PBKDF2-SHA256 hashed; optional TOTP two-factor; login throttling;
+admin requests need a custom header and same origin (CSRF protection); the Worker can write only to the content
+folders, and validates every file before committing; uploads are checked by their bytes (PNG/JPEG/WebP only);
+KaTeX is pinned with Subresource Integrity.
 
 ## Known content issues
 
-- **Full web pages are skipped.** A lesson uploaded as a complete web page (`<!DOCTYPE html>`,
-  Tailwind, `<style>`/`<script>`) is left off the site. Until 2026-10-07 such a file stopped the whole
-  build, which froze the live site from 2026-10-02 while 16 lessons were uploaded that way; they were
-  converted on 2026-10-07. Use the prompts in `docs/prompts/` so lessons come out content-only.
-- MCQ options are shown in a fixed shuffled order (`shuffled_options` in `build.py`), because most
-  sets stored the correct answer as option A. Questions with options like "None of these" keep
-  their order.
-- Equations must use `\( … \)` and `\[ … \]`. `$…$` is not rendered (converted pages were rewritten).
-- The interactive simulators and calculators in the uploaded pages (photoelectric tube, AC
-  generator, cathode-ray beam, standing waves, ray tracer, work/collision calculators) were removed,
-  because notes cannot contain scripts. The original pages are in git history (commit `0ff021b`) if
-  they are rebuilt later as shared site components.
-- Their quizzes became MCQ sets: `electromagnetic-induction-quiz-mcq.json`, `magnetism-quiz-mcq.json`,
-  `pipes-strings-quiz-mcq.json`, `refraction-quiz-mcq.json`, `work-energy-and-power-quiz-mcq.json`.
-- `photon.html` was an earlier upload of `photons.html` and was removed (its address redirects).
-- Diagrams with fixed colours sit on a light panel (`<svg class="panel">`) so they stay readable in
-  dark mode. New diagrams should use `currentColor` instead.
-- `thermoelectric-effect-mcq.json` question 12 originally had only one option. Three wrong unit
-  options were added (A/K, W·m, Ω/K), so please review.
-
-## Roadmap
-
-1. Review the 12 converted notes pages (2026-10-06) side by side with the old versions, and
-   tidy box labels or diagrams where needed.
-2. MCQ sets for Grade XI chapters 9–13, then the remaining chapters of both grades.
-3. Keep all images in `src/assets/img/` (no lesson links to external images any more).
-4. Optional later: link YouTube videos per chapter (a `video` field in `content.json`), a "practice
-   test" page that mixes questions from several chapters, and Vercel Web Analytics.
+- MCQ options are shown in a fixed shuffled order (`shuffled_options` in `build.py`), because most sets
+  stored the correct answer as option A. Questions with options like "None of these" keep their order.
+- Equations must use `\( … \)` and `\[ … \]`. `$…$` is not rendered.
+- The Grade XII model paper (`src/papers/grade-xii-model-2082-set-1.json`) was uploaded as a full web page in
+  `src/lessons/`, so it had been skipped since 2026-10-13; it was converted to the structured format on
+  2026-11-02. Three `10³³` typos (should be `10⁻³`) in question 4's solution were corrected; please review.
+- `src/lessons/acoustic-phenomena-set-2-mcq.json` was uploaded to a mistyped path (`src/lessoacoustic-…`)
+  and never published; it is a different 23-question set and is now live as Set 2. A duplicate
+  `electron-mcq.json` in the repository root (same questions as `new-electrons-mcq.json`) was removed.
+- The two lab practicals contain **sample readings for illustration**, labelled as such. Check them before
+  students rely on them.
+- `thermoelectric-effect-mcq.json` question 12 originally had only one option. Three wrong unit options were
+  added (A/K, W·m, Ω/K), so please review.
+- Diagrams with fixed colours sit on a light panel (`<svg class="panel">`) so they stay readable in dark mode.
+  New diagrams should use `currentColor` instead.

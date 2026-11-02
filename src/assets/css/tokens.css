@@ -1,19 +1,24 @@
-/* Physics Decoded — design tokens.
-   The ONLY place colours, fonts and radii are defined. Every other stylesheet uses these variables.
-   Text/background pairs below meet WCAG AA (4.5:1) in both themes. */
+/* Physics Decoded: design tokens.
+   The ONLY place colours, fonts, spacing and radii are defined. Every other stylesheet uses these variables.
+   Text/background pairs meet WCAG AA (4.5:1) in both themes.
+   Theme: follows the device, unless the student picks one with the sun/moon button
+   (theme.js sets <html data-theme="light|dark">). */
 
 :root {
-  /* Brand indigo */
+  /* Brand: deep indigo with a warm amber accent */
+  --brand-950: #121852;
   --brand-900: #1a237e;
   --brand-700: #283593;
   --brand-600: #3949ab;          /* backgrounds (header, hero, buttons) */
   --brand-100: #e8eaf6;          /* tinted backgrounds */
+  --brand-50:  #f3f4fc;
   --brand-ink: #3949ab;          /* brand colour used as TEXT */
-  --on-brand: #ffffff;           /* text on brand backgrounds */
-  --on-brand-muted: #c5cbef;
+  --on-brand: #ffffff;
+  --on-brand-muted: #c9cff3;
   --accent: #ffb300;             /* primary button, focus ring */
+  --accent-strong: #ffa000;
   --on-accent: #1c1c1c;
-  --field-on-brand: #ffffff;     /* search box sitting on a brand background */
+  --field-on-brand: #ffffff;
   --field-on-brand-text: #1c2233;
 
   /* Content kinds */
@@ -21,6 +26,7 @@
   --mcq:   #17753a;  --mcq-bg:   #e3f6ea;
   --video: #b3261e;  --video-bg: #fdecea;
   --paper: #7b1fa2;  --paper-bg: #f3e5f5;
+  --lab:   #00727a;  --lab-bg:   #e0f4f5;
 
   /* Feedback (quizzes, callouts) */
   --good: #17753a;  --good-bg: #e3f6ea;
@@ -31,34 +37,69 @@
   --bg: #f5f6fb;
   --surface: #ffffff;
   --surface-2: #f0f2f9;
+  --surface-3: #e6e9f4;
   --text: #1c2233;
   --muted: #5d6782;
   --border: #dde1ee;
 
-  --radius: 14px;
-  --radius-sm: 8px;
+  /* Shape & depth */
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-xs: 6px;
   --shadow: 0 1px 2px rgb(20 26 60 / .05), 0 6px 20px rgb(20 26 60 / .06);
-  --max: 1160px;
-  --measure: 76ch;               /* comfortable reading width for notes */
-  --font: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --shadow-lg: 0 2px 4px rgb(20 26 60 / .06), 0 16px 36px rgb(20 26 60 / .12);
+
+  /* Layout & type */
+  --max: 1180px;
+  --measure: 74ch;               /* comfortable reading width for notes */
+  --header-h: 64px;
+  --tabbar-h: 0px;               /* set on phones, where the bottom tab bar shows */
+  --font: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif;
+  --font-head: var(--font);
   --mono: ui-monospace, "Cascadia Code", Consolas, monospace;
+  --step--1: clamp(.82rem, .8rem + .1vw, .88rem);
+  --step-0: clamp(1rem, .97rem + .15vw, 1.06rem);
+  --step-1: clamp(1.15rem, 1.08rem + .35vw, 1.3rem);
+  --step-2: clamp(1.35rem, 1.2rem + .7vw, 1.65rem);
+  --step-3: clamp(1.7rem, 1.4rem + 1.4vw, 2.4rem);
+  --step-4: clamp(2rem, 1.5rem + 2.4vw, 3.1rem);
   color-scheme: light;
 }
 
+/* Dark theme: written twice (device setting, and the manual switch) because CSS cannot share one block. */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --brand-100: #262b52;
+  :root:not([data-theme="light"]) {
+    --brand-100: #262b52; --brand-50: #1b1f3d;
     --brand-ink: #aab4ff;
     --notes: #7aa7ff;  --notes-bg: #1b2744;
     --mcq:   #5fd08a;  --mcq-bg:   #16301f;
     --video: #ff8a80;  --video-bg: #3a1c1a;
     --paper: #dcaaff;  --paper-bg: #2e1d40;
+    --lab:   #5fd4dc;  --lab-bg:   #123236;
     --good: #5fd08a;  --good-bg: #16301f;
     --bad:  #ff8a80;  --bad-bg:  #3a1c1a;
     --warn: #ffc86b;  --warn-bg: #3a2c12;
-    --bg: #0f1222; --surface: #171b30; --surface-2: #1e2340;
+    --bg: #0f1222; --surface: #171b30; --surface-2: #1e2340; --surface-3: #262c4f;
     --text: #e6e8f2; --muted: #9aa2bf; --border: #2a3052;
     --shadow: 0 1px 2px rgb(0 0 0 / .3), 0 6px 20px rgb(0 0 0 / .25);
+    --shadow-lg: 0 2px 4px rgb(0 0 0 / .35), 0 16px 36px rgb(0 0 0 / .35);
     color-scheme: dark;
   }
+}
+:root[data-theme="dark"] {
+  --brand-100: #262b52; --brand-50: #1b1f3d;
+  --brand-ink: #aab4ff;
+  --notes: #7aa7ff;  --notes-bg: #1b2744;
+  --mcq:   #5fd08a;  --mcq-bg:   #16301f;
+  --video: #ff8a80;  --video-bg: #3a1c1a;
+  --paper: #dcaaff;  --paper-bg: #2e1d40;
+  --lab:   #5fd4dc;  --lab-bg:   #123236;
+  --good: #5fd08a;  --good-bg: #16301f;
+  --bad:  #ff8a80;  --bad-bg:  #3a1c1a;
+  --warn: #ffc86b;  --warn-bg: #3a2c12;
+  --bg: #0f1222; --surface: #171b30; --surface-2: #1e2340; --surface-3: #262c4f;
+  --text: #e6e8f2; --muted: #9aa2bf; --border: #2a3052;
+  --shadow: 0 1px 2px rgb(0 0 0 / .3), 0 6px 20px rgb(0 0 0 / .25);
+  --shadow-lg: 0 2px 4px rgb(0 0 0 / .35), 0 16px 36px rgb(0 0 0 / .35);
+  color-scheme: dark;
 }

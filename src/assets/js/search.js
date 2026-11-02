@@ -24,7 +24,9 @@
 
   const esc = s => s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const norm = s => s.toLowerCase().replace(/[^a-z0-9 ]+/g, ' ');
-  const LABEL = { notes: 'Notes', mcq: 'MCQ', paper: 'Model paper' };
+  const LABEL = { notes: 'Notes', mcq: 'MCQ', paper: 'Model paper', lab: 'Lab' };
+  const ICONS = {};
+  (document.getElementById('card-icons')?.content || document).querySelectorAll('[data-kind]').forEach(el => { ICONS[el.dataset.kind] = el.innerHTML; });
   const SORTS = {
     syllabus: (a, b) => (a.grade !== b.grade ? (a.grade === 'XI' ? -1 : 1) : a.order - b.order || a.title.localeCompare(b.title)),
     new: (a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title),
@@ -37,13 +39,14 @@
     const hits = items.filter(x => Object.keys(filters).every(k => filters[k] === 'all' || x[k] === filters[k]) &&
       words.every(w => x.haystack.includes(w))).sort(SORTS[sortSel.value] || SORTS.syllabus);
     results.innerHTML = hits.map(x => `
-      <article class="card kind-${esc(x.kind)}">
-        <div><span class="badge ${esc(x.kind)}">${LABEL[x.kind] || ''}</span></div>
+      <article class="card kind-${esc(x.kind)}" data-slug="${esc(x.slug)}">
+        <div class="card-top"><span class="kind-ico">${ICONS[x.kind] || ''}</span><span class="badge ${esc(x.kind)}">${LABEL[x.kind] || ''}</span></div>
         <h3><a href="${esc(x.url)}">${esc(x.title)}</a></h3>
-        <div class="meta">Grade ${esc(x.grade)} · ${esc(x.chapter)}</div>
+        <div class="meta">Grade ${esc(x.grade)} · ${esc(x.chapter)}${x.count ? ' · ' + x.count + ' questions' : ''}</div>
       </article>`).join('') ||
       '<p class="empty">No matching lessons yet. Try a chapter name such as “waves” or “heat”, or clear a filter.</p>';
     countEl.textContent = `${hits.length} result${hits.length === 1 ? '' : 's'}`;
+    showScores();
     filterBar.querySelectorAll('[data-group]').forEach(g =>
       g.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.dataset.value === filters[g.dataset.group])));
     const qs = new URLSearchParams();
@@ -51,6 +54,19 @@
     for (const k in filters) if (filters[k] !== 'all') qs.set(k, filters[k]);
     if (sortSel.value !== 'syllabus') qs.set('sort', sortSel.value);
     history.replaceState(null, '', qs.toString() ? '?' + qs : location.pathname);
+  }
+
+  // Quiz scores saved on this device (site.js does the same for pages built on the server).
+  function showScores() {
+    const progress = (window.pdStore && window.pdStore.get('pd-progress', {})) || {};
+    results.querySelectorAll('[data-slug]').forEach(el => {
+      const p = progress[el.dataset.slug];
+      if (!p || !p.answered) return;
+      const tag = document.createElement('span');
+      tag.className = 'badge score score-tag';
+      tag.textContent = p.answered >= p.total ? `${p.correct}/${p.total}` : `${p.answered}/${p.total} done`;
+      el.appendChild(tag);
+    });
   }
 
   // Report what people search for (once they pause typing), so missing topics show up in analytics.
