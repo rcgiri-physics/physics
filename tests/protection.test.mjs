@@ -4,15 +4,16 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
 
-const root = new URL('..', import.meta.url).pathname;
+const root = fileURLToPath(new URL('..', import.meta.url));
 const win = {};
 vm.runInNewContext(readFileSync(root + 'src/assets/js/unlock.js', 'utf8'), { window: win, atob, TextEncoder, TextDecoder, Uint8Array, Math, JSON });
 const unescape = s => s.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&amp;/g, '&');
 
 test('quiz answers decode correctly and are not in the page source', () => {
-  execFileSync('python3', [root + 'build.py'], { stdio: 'pipe' });
+  execFileSync(process.platform === 'win32' ? 'python' : 'python3', [root + 'build.py'], { stdio: 'pipe' });
   let checked = 0;
   for (const name of readdirSync(root + 'src/lessons').filter(n => n.endsWith('.json'))) {
     const slug = name.replace(/\.json$/, '');

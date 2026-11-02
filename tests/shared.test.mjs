@@ -4,15 +4,16 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 import { validateFile, validateMcqSet, classifyPath, checkHtml, buildFrontMatter, parseFrontMatter, slugify } from '../admin/shared/validate.js';
 import { parseQuestions } from '../admin/shared/parse.js';
 
-const root = new URL('..', import.meta.url).pathname;
+const root = fileURLToPath(new URL('..', import.meta.url));
 const content = JSON.parse(readFileSync(root + 'src/content.json', 'utf8'));
 const syllabus = { grades: Object.fromEntries(Object.entries(content.grades).map(([g, gr]) => [g, { chapters: gr.syllabus.map(c => ({ n: c.n, title: c.title, area: c.area })) }])) };
 
 test('every content file that build.py accepts is also accepted by the admin validator', () => {
-  execFileSync('python3', [root + 'build.py', '--check'], { stdio: 'pipe' });   // throws if build.py finds problems
+  execFileSync(process.platform === 'win32' ? 'python' : 'python3', [root + 'build.py', '--check'], { stdio: 'pipe' });   // throws if build.py finds problems
   for (const dir of ['lessons', 'papers', 'labs', 'pages']) {
     for (const name of readdirSync(root + 'src/' + dir)) {
       const path = `src/${dir}/${name}`;
