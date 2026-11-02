@@ -66,11 +66,20 @@
     toggleBtn.textContent = open ? 'Hide all answers' : 'Show all answers';
   });
 
+  // Group A answers arrive scrambled (data-k): fill in the hidden answer boxes now.
+  const keys = new Map();
+  body.querySelectorAll('.pq-item.mcq[data-k]').forEach(item => {
+    const k = (window.pdUnlock && window.pdUnlock(item.dataset.id, item.dataset.k)) || { a: -1, s: '' };
+    keys.set(item, k);
+    const box = item.querySelector('[data-fill]');
+    if (box) box.innerHTML = k.s;   // built by build.py from the paper file (content-only HTML, already validated)
+  });
+
   // Group A multiple choice: tap an option. In exam mode the choice is only marked; otherwise it is checked at once.
   function revealMcq(item) {
     const chosen = [...item.querySelectorAll('.option')].findIndex(b => b.classList.contains('selected'));
     if (chosen < 0) return;
-    const answer = +item.dataset.answer;
+    const answer = (keys.get(item) || { a: -1 }).a;
     item.querySelectorAll('.option').forEach((b, i) => {
       b.classList.toggle('correct', i === answer);
       b.classList.toggle('wrong', i === chosen && i !== answer);

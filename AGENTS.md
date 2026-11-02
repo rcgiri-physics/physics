@@ -20,3 +20,6 @@ Physics Decoded: a static study site (Python `build.py`, standard library only) 
 - Static pages must not depend on the Worker or D1: every `/api` call degrades gracefully.
 - Ads: placements are decided in `build.py` (`ad_slot`); never inside a question; hidden in `body.focus-mode`.
 - Don't rename published content files: the file name is the URL.
+- MCQ answers/explanations and paper Group A answers are scrambled into `data-k` (`scramble()` in build.py,
+  decoded by `src/assets/js/unlock.js`). Never write them into pages or JSON-LD in plain text;
+  `tests/protection.test.mjs` enforces this.

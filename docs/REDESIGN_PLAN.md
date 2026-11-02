@@ -202,6 +202,11 @@ and corrected, AI use) · footer with study/about columns, © line and **Design 
 suggestions · offline page · web app manifest and icons · share image · RSS · announcement banner · Report a
 mistake · accessibility of new components (labels, focus, keyboard, dialogs).
 
+**Content protection (light, student-friendly):** answer keys and explanations scrambled out of the page
+source and structured data, a source credit on long copies, a credit line on printouts, more AI crawlers in
+robots.txt, and the Cloudflare switches to turn on (README → *Protecting the content*). Full scrambling of
+the text was rejected: it would hide the content from Google, AdSense review and screen readers.
+
 ## 14. Roadmap
 
 ### Phase 2 — content velocity (next 4–6 weeks)

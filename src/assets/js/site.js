@@ -177,6 +177,24 @@
   addEventListener('load', markScrollers);
   setTimeout(markScrollers, 1500);   // after maths has rendered
 
+  // ---------- Credit on copy ----------
+  // Copying a short bit (a formula, a definition) is untouched. Copying a long passage adds where it came from.
+  document.addEventListener('copy', e => {
+    const sel = getSelection();
+    const text = sel ? sel.toString() : '';
+    if (text.length < 200 || !e.clipboardData) return;
+    const node = sel.anchorNode && (sel.anchorNode.nodeType === 1 ? sel.anchorNode : sel.anchorNode.parentElement);
+    if (!node || !node.closest('.notes-body, .quiz, .lesson-head')) return;
+    const url = (document.querySelector('link[rel=canonical]') || location).href;
+    const title = (document.querySelector('h1') || document).textContent.trim();
+    const credit = `Source: ${title}, Physics Decoded (${url})`;
+    const holder = document.createElement('div');
+    holder.appendChild(sel.getRangeAt(0).cloneContents());
+    e.clipboardData.setData('text/plain', text + '\n\n' + credit);
+    e.clipboardData.setData('text/html', holder.innerHTML + `<p>Source: <a href="${url}">${title.replace(/[<>&"]/g, '')}</a>, Physics Decoded</p>`);
+    e.preventDefault();
+  });
+
   // ---------- Offline support ----------
   if ('serviceWorker' in navigator && !/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
     addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));

@@ -24,6 +24,7 @@ the rest of the site from being published. Only the Python standard library is u
 URLs are extensionless (/posts/kinematics). The output is posts/kinematics.html, which
 Cloudflare serves at /posts/kinematics; the old .html addresses redirect there (_redirects).
 """
+import base64
 import functools
 import hashlib
 import html
@@ -642,6 +643,7 @@ def shell(data, *, title, body, description=None, path="/", current=None, css=()
 <main class="container" id="main">
 {body}
 </main>
+<p class="print-credit">Printed from {esc(site['name'])} · {canonical} · © {year} {esc(site['author'])}. For personal study only; please don't republish.</p>
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">
@@ -773,6 +775,27 @@ def shuffled_options(post, i, q):
     return [opts[k] for k in order], order.index(q["answer"])
 
 
+SCRAMBLE_SALT = "pd-k1"
+
+
+def scramble(id_, obj):
+    """Light protection for answer keys: XOR the JSON with a key stream derived from the page and
+    question, then base64. assets/js/unlock.js reverses it in the browser. Keeps plain-HTML scrapers
+    from collecting question + answer pairs; it is obfuscation, not encryption."""
+    M = 0xFFFFFFFF
+    data = json.dumps(obj, ensure_ascii=False, separators=(",", ":")).encode()
+    h = 2166136261
+    for b in f"{SCRAMBLE_SALT}:{id_}".encode():
+        h = ((h ^ b) * 16777619) & M
+    a, out = h, bytearray()
+    for byte in data:
+        a = (a + 0x6D2B79F5) & M
+        t = ((a ^ (a >> 15)) * (1 | a)) & M
+        t = ((t + (((t ^ (t >> 7)) * (61 | t)) & M)) ^ t) & M
+        out.append(byte ^ ((t ^ (t >> 14)) & 255))
+    return base64.b64encode(bytes(out)).decode()
+
+
 def has_math(text):
     return bool(re.search(r"\\\(|\\\[", text))
 
@@ -786,14 +809,14 @@ def build_mcq(data, posts, post):
         math = math or has_math(q["q"] + "".join(options) + q.get("explanation", ""))
         opts = "".join(f'<li><button class="option" type="button" aria-pressed="false"><span class="letter" aria-hidden="true">{"ABCDEF"[j]}</span><span class="opt-text">{esc(o)}</span></button></li>'
                        for j, o in enumerate(options))
-        exp = f"<strong>Explanation:</strong> {esc(q['explanation'])}" if q.get("explanation") else ""
+        key = scramble(f"{post['slug']}:{i}", {"a": answer, "e": q.get("explanation", "")})
         img = (f'<figure class="q-fig"><img src="{esc(q["image"])}" alt="{esc(q.get("image_alt", "Diagram for question " + str(i + 1)))}" loading="lazy"></figure>'
                if q.get("image") else "")
         src = f'<span class="q-source">{esc(q["source"])}</span>' if q.get("source") else ""
-        qs.append(f"""<li class="question" data-i="{i}" data-answer="{answer}" data-difficulty="{diff or ''}">
+        qs.append(f"""<li class="question" data-i="{i}" data-k="{key}" data-difficulty="{diff or ''}">
   <div class="q-head"><p class="q-text"><span class="q-num">{i + 1}.</span> {esc(q['q'])}</p><span class="q-tags">{src}{f'<span class="diff {diff}">{diff}</span>' if diff else ''}</span></div>
   {img}<ol class="options" type="A">{opts}</ol>
-  <div class="explanation" hidden role="status"><span class="verdict"></span> {exp}</div>
+  <div class="explanation" hidden role="status"><span class="verdict"></span> <span class="exp-text"></span></div>
 </li>""")
         if n >= 30 and i == 14 and ads_on(data):
             qs.append(f'<li class="ad-row">{ad_slot(data, "in_article")}</li>')
@@ -826,14 +849,12 @@ def build_mcq(data, posts, post):
 {ad_slot(data, 'end_of_content')}
 {related_block(data, posts, post)}"""
     desc = post.get("description") or f"{post['title']}: Grade {post['grade']} physics MCQ practice with answers and explanations."
-    questions_ld = [{"@type": "Question", "eduQuestionType": "Multiple choice", "text": q["q"],
-                     "acceptedAnswer": {"@type": "Answer", "text": q["options"][q["answer"]]},
-                     **({"suggestedAnswer": [{"@type": "Answer", "text": o} for k, o in enumerate(q["options"]) if k != q["answer"]]}),
-                     } for q in post["questions"]]
+    # Question texts only: the answers are deliberately left out of the page source (see scramble()).
+    questions_ld = [{"@type": "Question", "eduQuestionType": "Multiple choice", "text": q["q"]} for q in post["questions"]]
     quiz_ld = article_ld(data, post, "Quiz", {"learningResourceType": "Practice quiz", "hasPart": questions_ld})
     quiz_ld.pop("headline", None)
     return shell(data, title=post["title"], body=body, description=desc, path=post["url"], current=post["grade"],
-                 css=("lesson",), scripts=("quiz", "math"), track=track_of(data, post), og_type="article", modified=post["date"],
+                 css=("lesson",), scripts=("unlock", "quiz", "math"), track=track_of(data, post), og_type="article", modified=post["date"],
                  ld=(quiz_ld, breadcrumb_ld(data, lesson_trail(data, post))))
 
 
@@ -905,7 +926,7 @@ def paper_trail(paper):
             (paper["title"], None)]
 
 
-def paper_question_html(q, num, is_or=False):
+def paper_question_html(q, num, is_or=False, slug=""):
     label = f'{num}{" (OR)" if is_or else ""}.'
     def sol(text, summary="Answer"):
         return f'<details class="solution"><summary>{summary}</summary><div>{text}</div></details>' if text else ""
@@ -921,23 +942,25 @@ def paper_question_html(q, num, is_or=False):
         opts = "".join(f'<li><button class="option" type="button" aria-pressed="false"><span class="letter" aria-hidden="true">{"abcdef"[j]}</span><span class="opt-text">{esc(o)}</span></button></li>'
                        for j, o in enumerate(q["options"]))
         answer_txt = f'({"abcdef"[q["answer"]]}) {esc(q["options"][q["answer"]])}'
+        key_id = f"{slug}:{num}{'or' if is_or else ''}"
+        key = scramble(key_id, {"a": q["answer"], "s": f"<p><strong>Answer: {answer_txt}</strong></p>" + q.get("solution", "")})
         inner = (f'<p class="pq-text">{q["q"]}</p>{fig(q)}<ol class="options" type="a">{opts}</ol>'
-                 f'{sol(f"<p><strong>Answer: {answer_txt}</strong></p>" + q.get("solution", ""), "Answer")}')
-        return (f'<li class="pq-item mcq" data-answer="{q["answer"]}"><span class="pq-num">{label}</span><div class="pq-body">{inner}</div></li>')
+                 f'<details class="solution"><summary>Answer</summary><div data-fill></div></details>')
+        return (f'<li class="pq-item mcq" data-id="{key_id}" data-k="{key}"><span class="pq-num">{label}</span><div class="pq-body">{inner}</div></li>')
     else:
         inner = f'<div class="pq"><span class="pq-text">{q["q"]}</span><span class="marks">[{q["marks"]:g}]</span></div>{fig(q)}{sol(q.get("solution"), "Solution")}'
     return f'<li class="pq-item"><span class="pq-num">{label}</span><div class="pq-body">{inner}</div></li>'
 
 
-def paper_body_json(paper):
+def paper_body_json(paper, slug=""):
     out, num = [], 0
     for g in paper["groups"]:
         items = []
         for q in g["questions"]:
             num += 1
-            items.append(paper_question_html(q, num))
+            items.append(paper_question_html(q, num, slug=slug))
             if q.get("or"):
-                items.append(f'<li class="or-divider" aria-hidden="true"><span>OR</span></li>{paper_question_html(q["or"], num, True)}')
+                items.append(f'<li class="or-divider" aria-hidden="true"><span>OR</span></li>{paper_question_html(q["or"], num, True, slug)}')
         head = f'<h2 id="{slugify(g["title"])}">{esc(g["title"])}{": " + esc(g["subtitle"]) if g.get("subtitle") else ""}'
         head += f' <span class="group-marks">[{esc(g["marks"])}]</span></h2>' if g.get("marks") else "</h2>"
         instr = f'<p class="instructions">{esc(g["instructions"])}</p>' if g.get("instructions") else ""
@@ -967,7 +990,7 @@ def build_paper(data, papers, paper):
     lead = f'<p class="lead">{esc(paper["description"])}</p>' if paper.get("description") else ""
     more = (f'<section class="related"><h2>More Grade {paper["grade"]} papers</h2><div class="grid">'
             f'{"".join(card(data, p) for p in others)}</div></section>') if others else ""
-    content = paper_body_json(paper) if paper["format"] == "json" else paper["body"].strip()
+    content = paper_body_json(paper, paper["slug"]) if paper["format"] == "json" else paper["body"].strip()
     report = data["settings"].get("features", {}).get("reports", True)
     body = f"""{crumbs_html(paper_trail(paper))}
 <header class="lesson-head">
@@ -996,7 +1019,7 @@ def build_paper(data, papers, paper):
                                                                "timeRequired": f"PT{paper_minutes(paper)}M"})
     ld.pop("headline", None)
     return shell(data, title=paper["title"], body=body, description=desc, path=paper["url"], current="papers", css=("lesson",),
-                 scripts=("paper", "math"), track={"kind": "paper", "grade": paper["grade"]}, og_type="article",
+                 scripts=("unlock", "paper", "math"), track={"kind": "paper", "grade": paper["grade"]}, og_type="article",
                  modified=paper["date"], ld=(ld, breadcrumb_ld(data, paper_trail(paper))))
 
 
@@ -1416,7 +1439,8 @@ def build_feed(data, posts, papers, labs):
 # Crawlers that collect pages to train AI models. Search engines (Googlebot, Bingbot) and the AdSense
 # crawler (Mediapartners-Google) stay allowed.
 AI_CRAWLERS = ["GPTBot", "ChatGPT-User", "CCBot", "Google-Extended", "anthropic-ai", "ClaudeBot", "Claude-Web",
-               "PerplexityBot", "Bytespider", "Amazonbot", "Applebot-Extended", "meta-externalagent", "cohere-ai", "Diffbot"]
+               "PerplexityBot", "Bytespider", "Amazonbot", "Applebot-Extended", "meta-externalagent", "cohere-ai", "Diffbot",
+               "ImagesiftBot", "Timpibot", "omgili", "Omgilibot", "img2dataset", "FacebookBot", "YouBot"]
 
 
 def build_robots(data):
@@ -1627,7 +1651,7 @@ def main():
     for page in pages:
         write(out_path(page["url"]), build_page(data, page))
     core = ["/", "/offline", asset("css/tokens.css"), asset("css/site.css"), asset("css/lesson.css"), asset("icons.svg"),
-            *[asset(f"js/{s}.js") for s in ("theme", "site", "analytics", "math", "notes", "quiz", "paper", "offline")],
+            *[asset(f"js/{s}.js") for s in ("theme", "site", "analytics", "math", "notes", "unlock", "quiz", "paper", "offline")],
             "/assets/favicon.svg", "/manifest.webmanifest"]
     write("sw.js", build_sw(core))
     formats = {f: sum(p["format"] == f for p in posts) for f in builders}

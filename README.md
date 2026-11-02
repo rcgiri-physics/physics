@@ -181,6 +181,31 @@ To apply for AdSense:
 cannot generate. So while ads are on, `build.py` relaxes the script/frame part of the CSP (the other protections
 stay). With ads off, the strict policy applies. The admin always runs under its own strict policy.
 
+## Protecting the content
+
+Anything a browser can show can be copied, so the aim is to stop bulk copying cheaply without hurting
+students, Google or screen readers (the notes and questions themselves stay readable text):
+
+- **Private repository.** The complete question bank with answer keys lives in GitHub; keep the repository private.
+- **Answer keys are not in the page source.** `build.py` scrambles each MCQ's answer and explanation (and the
+  Group A answers in papers) into a `data-k` attribute; `assets/js/unlock.js` decodes them in the browser.
+  Tools that copy the HTML get questions without answers. The structured data no longer lists answers either.
+  This is obfuscation, not encryption: someone who runs the page's JavaScript can still read them.
+  `tests/protection.test.mjs` checks every page decodes to exactly the source answers.
+- **Credit on copy.** Copying a long passage (200+ characters) from a lesson adds
+  "Source: <title>, Physics Decoded (<address>)". Short copies, such as a formula, are untouched.
+- **Printouts** carry the site name, page address and © line at the bottom.
+- **robots.txt** asks AI-training crawlers to stay out (search engines and AdSense stay allowed).
+- **Cloudflare dashboard (free plan; menu names may differ slightly):**
+  1. *Security → Bots*: turn on **Bot Fight Mode**.
+  2. *AI Crawl Control* (or *Security → Bots → Block AI bots*): **block AI crawlers** on all pages. This
+     enforces what robots.txt only asks.
+  3. *Security → WAF → Rate limiting rules* (one rule is free): for URI path starting with `/posts/`, more than
+     about 60 requests in 10 seconds from one IP → **Block**. Students never hit this; scrapers do.
+  4. *Scrape Shield → Hotlink protection*: on, so other sites can't embed your images.
+- **If someone republishes:** the © notice and Terms of use are on every page; report the copy to their host
+  or to Google (copyright removal request) with the link to your original page and its "Updated" date.
+
 ## Analytics
 
 - **Page views:** Cloudflare Web Analytics (no cookies, no consent banner needed).

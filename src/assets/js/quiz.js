@@ -29,7 +29,15 @@
     state = { mode: 'practice', practice: load('pd-quiz-v2:' + slug, {}), test: null };
   }
 
-  const answerOf = li => +li.dataset.answer;
+  // Answers and explanations arrive scrambled (data-k, see unlock.js / build.py scramble()).
+  const keys = new Map(items.map(li => [li, (window.pdUnlock && window.pdUnlock(slug + ':' + li.dataset.i, li.dataset.k)) || { a: -1, e: '' }]));
+  items.forEach(li => {
+    const e = keys.get(li).e;
+    if (!e) return;
+    const box = li.querySelector('.exp-text');
+    box.append(Object.assign(document.createElement('strong'), { textContent: 'Explanation:' }), ' ' + e);
+  });
+  const answerOf = li => keys.get(li).a;
   const answers = () => state.mode === 'test' ? (state.test ? state.test.answers : {}) : state.practice;
   const revealed = () => state.mode === 'practice' || (state.test && state.test.submitted);
   const testRunning = () => state.mode === 'test' && state.test && !state.test.submitted;
