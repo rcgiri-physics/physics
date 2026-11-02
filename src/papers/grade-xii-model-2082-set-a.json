@@ -1,0 +1,61 @@
+{
+  "title": "Grade XII Physics Model Question 2082 (Set A)",
+  "grade": "XII",
+  "year": 2082,
+  "date": "2026-10-13",
+  "time": "3 hours",
+  "description": "Model paper following the NEB specification grid — 11 MCQs, 8 short and 3 long questions.",
+  "groups": [
+    {
+      "title": "Group A",
+      "subtitle": "Multiple choice questions",
+      "marks": "11 × 1 = 11",
+      "questions": [
+        {
+          "q": "The dimensional formula of moment of inertia is",
+          "options": [
+            "[ML²T⁰]",
+            "[MLT⁻²]",
+            "[ML²T⁻²]",
+            "[M⁰L²T⁰]"
+          ],
+          "answer": 0,
+          "solution": "<p>(a) [ML²T⁰], since I = Σmr².</p>"
+        }
+      ]
+    },
+    {
+      "title": "Group B",
+      "subtitle": "Short answer questions",
+      "marks": "8 × 5 = 40",
+      "questions": [
+        {
+          "parts": [
+            {
+              "q": "State the principle of conservation of angular momentum.",
+              "marks": 1,
+              "solution": "<p>If no external torque acts on a system, its total angular momentum stays constant: <strong>Iω = constant</strong>.</p>"
+            },
+            {
+              "q": "A disc of moment of inertia 0.2 kg m² rotates at 10 rad s⁻¹. Find its kinetic energy.",
+              "marks": 2,
+              "solution": "<div class=\"formula\">K = ½Iω² = ½ × 0.2 × (10)² = <strong>10 J</strong></div>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Group C",
+      "subtitle": "Long answer questions",
+      "marks": "3 × 8 = 24",
+      "questions": [
+        {
+          "q": "Derive an expression for the impedance of a series LCR circuit and obtain the condition for resonance.",
+          "marks": 5,
+          "solution": "<div class=\"formula\">Z = √(R² + (X<sub>L</sub> − X<sub>C</sub>)²)</div><p>Resonance when X<sub>L</sub> = X<sub>C</sub>, i.e.</p><div class=\"formula\">f<sub>0</sub> = 1 / (2π√(LC))</div>"
+        }
+      ]
+    }
+  ]
+}
