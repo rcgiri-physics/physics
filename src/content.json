@@ -1,11 +1,18 @@
 {
   "site": {
     "name": "Physics Decoded",
+    "short_name": "Physics Decoded",
     "tagline": "Learn physics with clarity — concepts, calculations, visuals and exam strategies, explained simply.",
     "author": "Richesh Sharma",
     "url": "https://richeshsharma.com.np",
     "youtube": "https://youtube.com/@rsaphysics",
-    "curriculum": "NEB Curriculum 2076"
+    "curriculum": "NEB Curriculum 2076",
+    "email": "",
+    "language": "en",
+    "designer": {
+      "name": "Mcqplex Tech",
+      "url": "https://mcqplex.com"
+    }
   },
   "grades": {
     "XI": {

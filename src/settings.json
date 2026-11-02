@@ -1,0 +1,48 @@
+{
+  "announcement": {
+    "enabled": false,
+    "text": "",
+    "link": ""
+  },
+  "ads": {
+    "enabled": false,
+    "adsense_client": "",
+    "auto_ads": false,
+    "slots": {
+      "in_article": "",
+      "end_of_content": "",
+      "sidebar": "",
+      "list": ""
+    },
+    "house_ads": [
+      {
+        "id": "youtube",
+        "title": "Watch the video lessons",
+        "text": "Every chapter explained step by step on YouTube, free.",
+        "cta": "Open YouTube",
+        "url": "https://youtube.com/@rsaphysics",
+        "weight": 3
+      },
+      {
+        "id": "mcqplex",
+        "title": "Practise more on MCQplex",
+        "text": "Timed NEB tests, smart practice and head-to-head duels.",
+        "cta": "Visit MCQplex",
+        "url": "https://mcqplex.com",
+        "weight": 2
+      }
+    ]
+  },
+  "analytics": {
+    "cloudflare_token": "",
+    "events": true
+  },
+  "features": {
+    "reports": true,
+    "contact_form": true
+  },
+  "verification": {
+    "google": "",
+    "bing": ""
+  }
+}

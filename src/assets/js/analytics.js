@@ -1,25 +1,22 @@
-// Vercel Web Analytics (cookie-free). Page views are counted automatically; the events below
-// add what a page view can't say: which chapter, grade and topic area is being studied,
-// finished quizzes, and what students search for. Results: Vercel dashboard → Analytics.
+// Privacy-friendly analytics, no cookies:
+//  - Page views: Cloudflare Web Analytics (its beacon is added by build.py when settings.json has a
+//    token, or by Cloudflare automatically when Web Analytics is switched on for the site).
+//  - Study events: what a page view can't say (which chapter and topic area is studied, finished quizzes,
+//    what students search for). They are counted, anonymously, by the site's own /api/event endpoint
+//    (worker/), and shown in /admin → Insights. Locally they are printed to the console instead.
 // Each page says what it is through data-* attributes on <body>, written by build.py.
 (function () {
   const local = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 
-  // Shared helper, also used by quiz.js and search.js. Never throws.
+  // Shared helper, also used by quiz.js, paper.js, search.js and ads.js. Never throws.
   window.pdTrack = function (name, data) {
     try {
       if (local) { console.debug('[analytics]', name, data); return; }
-      window.va('event', { name: name, data: data || {} });
+      const body = JSON.stringify({ name: name, data: data || {}, path: location.pathname });
+      if (navigator.sendBeacon) navigator.sendBeacon('/api/event', new Blob([body], { type: 'application/json' }));
+      else fetch('/api/event', { method: 'POST', body: body, headers: { 'Content-Type': 'application/json' }, keepalive: true }).catch(function () {});
     } catch (e) { /* analytics must never break the page */ }
   };
-
-  if (!local) {
-    const s = document.createElement('script');
-    s.src = '/_vercel/insights/script.js';
-    s.defer = true;
-    document.head.appendChild(s);
-  }
 
   document.addEventListener('DOMContentLoaded', function () {
     const d = document.body.dataset;

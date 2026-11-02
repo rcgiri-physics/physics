@@ -1,0 +1,457 @@
+{
+  "title": "Grade XII Physics Model Question 2082 (Set 1)",
+  "grade": "XII",
+  "year": 2082,
+  "date": "2026-10-13",
+  "time": "3 hours",
+  "full_marks": 75,
+  "pass_marks": 30,
+  "description": "A full NEB-pattern Grade XII physics model paper (Groups A, B and C) with worked solutions for every question.",
+  "groups": [
+    {
+      "title": "Group A",
+      "subtitle": "Multiple choice questions",
+      "marks": "11 × 1 = 11",
+      "questions": [
+        {
+          "q": "If a gymnast on a rotating stool with his arms outstretched suddenly lowers his arms,",
+          "options": [
+            "the moment of inertia decreases",
+            "the angular momentum increases",
+            "the angular velocity decreases",
+            "the angular velocity remains constant"
+          ],
+          "answer": 0,
+          "solution": "<p><strong>Explanation:</strong> When the gymnast lowers his arms, the mass distribution moves closer to the axis of rotation. This reduces the moment of inertia (I = Σmr²). Since no external torque acts, angular momentum L = Iω is conserved. As I decreases, ω increases.</p>"
+        },
+        {
+          "q": "The motion of a particle executing simple harmonic motion is given by x = 0.01 sin 100π(t + 0.05), where x is in meters and t in second. The time period in second is",
+          "options": [
+            "0.001",
+            "0.02",
+            "0.1",
+            "0.2"
+          ],
+          "answer": 1,
+          "solution": "<p><strong>Solution:</strong> Comparing with x = A sin(ωt + φ), we get ω = 100π rad/s.</p><div class=\"formula\">T = 2π/ω = 2π/(100π) = 2/100 = 0.02 s</div>"
+        },
+        {
+          "q": "What fraction of a wooden raft of density 0.8 g/cc will be outside the sea water of density 1.2 g/cc?",
+          "options": [
+            "2/3",
+            "1/2",
+            "2/5",
+            "1/3"
+          ],
+          "answer": 3,
+          "solution": "<p><strong>Solution:</strong> By law of floatation:</p><div class=\"formula\"> ρ<sub>raft</sub> × V × g = ρ<sub>water</sub> × V<sub>sub</sub> × g<br> V<sub>sub</sub>/V = ρ<sub>raft</sub>/ρ<sub>water</sub> = 0.8/1.2 = 2/3</div><p>Fraction outside = 1 − 2/3 = <strong>1/3</strong></p>"
+        },
+        {
+          "q": "In figure, how much work is done by the system in process AB?",
+          "options": [
+            "4.5 × 10³ J",
+            "6.0 × 10³ J",
+            "6.9 × 10³ J",
+            "7.8 × 10³ J"
+          ],
+          "answer": 2,
+          "solution": "<p><strong>Solution:</strong> Work done = Area under P-V curve (trapezium AB)</p><div class=\"formula\"> P<sub>A</sub> = 2.6 × 10&amp;sup6; N/m², P<sub>B</sub> = 2.0 × 10&amp;sup6; N/m²<br> V<sub>A</sub> = 1.0 × 10<sup>−3</sup> m³, V<sub>B</sub> = 4.0 × 10<sup>−3</sup> m³<br><br> W = ½(P<sub>A</sub> + P<sub>B</sub>) × (V<sub>B</sub> − V<sub>A</sub>)<br> W = ½(2.6 + 2.0) × 10&amp;sup6; × (4.0 − 1.0) × 10<sup>−3</sup><br> W = 6.9 × 10³ J </div>"
+        },
+        {
+          "q": "The diagram shows the pressure volume relationship for a fixed mass of an ideal gas that undergoes a cycle XYZ. In which part(s) of the cycle is external work done on the gas?",
+          "options": [
+            "Y → Z only",
+            "Y → Z and Z → X only",
+            "X → Y and Z → X only",
+            "X → Y only"
+          ],
+          "answer": 3,
+          "solution": "<p><strong>Explanation:</strong> External work is done ON the gas when the gas is compressed (volume decreases).</p><ul><li><strong>X → Y:</strong> Volume decreases (compression) → Work done <strong>on</strong> gas ✓</li><li><strong>Y → Z:</strong> Volume constant (isochoric) → No work done</li><li><strong>Z → X:</strong> Volume increases (expansion) → Work done <strong>by</strong> gas</li></ul>"
+        },
+        {
+          "q": "The coefficient of performance of a refrigerator working between the ice point (0°C) and room temperature 27°C is",
+          "options": [
+            "10",
+            "15",
+            "20",
+            "25"
+          ],
+          "answer": 0,
+          "solution": "<div class=\"formula\"> T<sub>cold</sub> = 0°C = 273 K<br> T<sub>hot</sub> = 27°C = 300 K<br><br> COP = T<sub>cold</sub> / (T<sub>hot</sub> − T<sub>cold</sub>)<br> COP = 273 / (300 − 273) = 273 / 27 ≈ <strong>10</strong></div>"
+        },
+        {
+          "q": "A diffraction pattern is obtained using a beam of red light. What will be the effect on the diffraction pattern if the red light is replaced by white light?",
+          "options": [
+            "All bright fringes become white.",
+            "All bright fringes except central one, becomes white.",
+            "All bright fringes become colorful.",
+            "All bright fringes except central one, becomes colorful."
+          ],
+          "answer": 3,
+          "solution": "<p>The central maximum contains all wavelengths superimposed, so it appears white. Higher-order fringes spread into spectra because fringe position y = nλD/d depends on wavelength. Each order becomes a rainbow (colorful), with red farthest from center and violet closest.</p>"
+        },
+        {
+          "q": "The sound levels of two waves of same frequency in a given medium are 100 dB and 20 dB respectively. How many times is the intensity I<sub>1</sub> greater than I<sub>2</sub>?",
+          "options": [
+            "5",
+            "8",
+            "105",
+            "108"
+          ],
+          "answer": 3,
+          "solution": "<div class=\"formula\"> β<sub>1</sub> − β<sub>2</sub> = 10 log(I<sub>1</sub>/I<sub>2</sub>)<br> 100 − 20 = 10 log(I<sub>1</sub>/I<sub>2</sub>)<br> 80 = 10 log(I<sub>1</sub>/I<sub>2</sub>)<br> log(I<sub>1</sub>/I<sub>2</sub>) = 8<br> I<sub>1</sub>/I<sub>2</sub> = <strong>10<sup>8</sup></strong></div>"
+        },
+        {
+          "q": "If the emf of a thermocouple, one junction of which is kept at 0°C, is given by E = aθ + ½bθ², where a and b are constants, then the neutral temperature will be",
+          "options": [
+            "−a/b",
+            "a/b",
+            "−2a/b",
+            "2a/b"
+          ],
+          "answer": 0,
+          "solution": "<p>Neutral temperature is where emf is maximum (dE/dθ = 0).</p><div class=\"formula\"> E = aθ + ½bθ²<br> dE/dθ = a + bθ = 0<br> θ<sub>n</sub> = <strong>−a/b</strong></div>"
+        },
+        {
+          "q": "The value of magnetizing field (H) when the magnetic flux density (B) is equal to zero, is called",
+          "options": [
+            "Retentivity",
+            "Coercivity",
+            "Curie's temperature",
+            "Neutral temperature"
+          ],
+          "answer": 1,
+          "solution": "<p><strong>Coercivity</strong> is the reverse magnetizing field H required to reduce B to zero after magnetization. Retentivity is the value of B when H = 0.</p>"
+        },
+        {
+          "q": "What is the point where the seismic waves start, called?",
+          "options": [
+            "Epicenter",
+            "Hypocenter",
+            "Metacenter",
+            "Seismic center"
+          ],
+          "answer": 1,
+          "solution": "<p>The <strong>hypocenter</strong> (or focus) is the point within the Earth where an earthquake rupture starts. The <strong>epicenter</strong> is the point directly above it on the Earth's surface.</p>"
+        }
+      ],
+      "instructions": "Rewrite the correct option of each question."
+    },
+    {
+      "title": "Group B",
+      "subtitle": "Short answer questions",
+      "marks": "8 × 5 = 40",
+      "questions": [
+        {
+          "parts": [
+            {
+              "q": "Define torque. Derive a relation between torque and moment of inertia.",
+              "marks": 2,
+              "solution": "<p><strong>Torque:</strong> The turning effect of a force about an axis: τ = F × r.</p><p><strong>Derivation:</strong> For a particle of mass m<sub>i</sub> at distance r<sub>i</sub>:</p><div class=\"formula\"> F<sub>i</sub> = m<sub>i</sub>r<sub>i</sub>α<br> τ<sub>i</sub> = F<sub>i</sub>r<sub>i</sub> = m<sub>i</sub>r<sub>i</sub>²α<br> Total τ = Σm<sub>i</sub>r<sub>i</sub>²α = Iα<br><strong>τ = Iα</strong></div>"
+            },
+            {
+              "q": "Calculate the radius of gyration of a uniform rod of mass 20 kg and length 30 cm about an axis passing through one end and perpendicular to its length.",
+              "marks": 1,
+              "solution": "<div class=\"formula\"> I = ML²/3 = 20 × (0.30)²/3 = 0.6 kg m²<br> K = √(I/M) = √(0.6/20) = √0.03<br> K = <strong>0.173 m = 17.3 cm</strong></div>"
+            },
+            {
+              "q": "State and explain the principle of conservation of angular momentum.",
+              "marks": 2,
+              "solution": "<p><strong>Principle:</strong> If no external torque acts, total angular momentum remains constant: <strong>Iω = constant</strong>.</p><p>When a spinning person pulls their arms in, I decreases and ω increases proportionally. This explains divers tucking to spin faster.</p>"
+            }
+          ],
+          "or": {
+            "parts": [
+              {
+                "q": "Explain why a water drop sticks on glass but mercury does not.",
+                "marks": 1,
+                "solution": "<p><strong>Water:</strong> Adhesive force (water-glass) &gt; Cohesive force. Water spreads and sticks (wetting).</p><p><strong>Mercury:</strong> Cohesive force &gt; Adhesive force. Mercury forms droplets and does not stick (non-wetting).</p>"
+              },
+              {
+                "q": "Derive and explain the equation of continuity.",
+                "marks": 2,
+                "solution": "<div class=\"formula\"> Mass flow rate is constant:<br> ρA<sub>1</sub>v<sub>1</sub> = ρA<sub>2</sub>v<sub>2</sub><br><br> For incompressible fluid:<br><strong>A<sub>1</sub>v<sub>1</sub> = A<sub>2</sub>v<sub>2</sub> = constant</strong></div><p>Where the tube is narrow, fluid flows faster.</p>"
+              },
+              {
+                "q": "Terminal velocity of a glass ball in glycerin. Densities: glass 2.6 g/cc, glycerin 1.32 g/cc. Viscosity 0.8 poise. Radius 2 mm.",
+                "marks": 2,
+                "solution": "<div class=\"formula\"> v = (2/9) × r²(ρ − σ)g / η<br> v = (2/9) × (0.2)² × (2.6 − 1.32) × 980 / 0.8<br> v = <strong>13.94 cm/s ≈ 0.14 m/s</strong></div>"
+              }
+            ]
+          }
+        },
+        {
+          "parts": [
+            {
+              "q": "What is simple harmonic motion?",
+              "marks": 1,
+              "solution": "<p>SHM is periodic motion where restoring force is directly proportional to displacement and directed toward the mean position: <strong>F = −kx</strong>.</p>"
+            },
+            {
+              "q": "Show that velocity in SHM is maximum at mean position and minimum at extreme.",
+              "marks": 2,
+              "solution": "<div class=\"formula\"> v = ω√(A² − x²)<br><br> At mean (x = 0): v<sub>max</sub> = Aω<br> At extreme (x = A): v<sub>min</sub> = 0 </div>"
+            },
+            {
+              "q": "Chair (42.5 kg) oscillates with period 1.30 s empty and 2.45 s with a person. Find the person's mass.",
+              "marks": 2,
+              "solution": "<div class=\"formula\"> T ∝ √(m/k)<br> T<sub>2</sub>/T<sub>1</sub> = √((M+m)/M)<br> 2.45/1.30 = √((42.5+m)/42.5)<br> 1.885² = (42.5+m)/42.5<br> m = <strong>108.5 kg ≈ 109 kg</strong></div>"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "q": "State first law of thermodynamics and derive Mayer's relation C<sub>p</sub> − C<sub>v</sub> = R.",
+              "marks": 3,
+              "solution": "<p><strong>First Law:</strong> dQ = dU + dW = dU + PdV</p><p>At constant volume: dQ = C<sub>v</sub>dT = dU</p><p>At constant pressure: dQ = C<sub>p</sub>dT = dU + PdV = C<sub>v</sub>dT + RdT</p><div class=\"formula\"><strong>C<sub>p</sub> − C<sub>v</sub> = R</strong></div>"
+            },
+            {
+              "q": "Compare efficiency of petrol and diesel engines based on compression ratios.",
+              "marks": 2,
+              "solution": "<p>Petrol: r = 7–10, efficiency ≈ 25–30%</p><p>Diesel: r = 15–22, efficiency ≈ 35–45%</p><p>Higher compression ratio in diesel engines gives higher thermal efficiency.</p>"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "q": "What is Doppler's effect?",
+              "marks": 1,
+              "solution": "<p>Apparent change in frequency due to relative motion between source and observer.</p>"
+            },
+            {
+              "q": "Derive apparent frequency when observer moves toward stationary source.",
+              "marks": 2,
+              "solution": "<div class=\"formula\"> f' = f(v + v<sub>o</sub>)/v </div><p>Relative velocity of sound increases, so observed frequency increases.</p>"
+            },
+            {
+              "q": "Train at 40 km/h sounds whistle 580 Hz. Observer stationary. Speed of sound 1200 km/h. Find observed frequency.",
+              "marks": 2,
+              "solution": "<div class=\"formula\"> f' = f × v/(v − v<sub>s</sub>)<br> f' = 580 × 1200/(1200 − 40)<br> f' = 580 × 1200/1160<br> f' = <strong>600 Hz</strong></div>"
+            }
+          ],
+          "or": {
+            "parts": [
+              {
+                "q": "Define harmonics and overtone.",
+                "marks": 1,
+                "solution": "<p><strong>Harmonics:</strong> Integral multiples of fundamental frequency (f, 2f, 3f...).</p><p><strong>Overtones:</strong> Frequencies higher than fundamental actually present in a note.</p>"
+              },
+              {
+                "q": "Condition for equal fundamental frequencies of closed and open pipe.",
+                "marks": 2,
+                "solution": "<div class=\"formula\"> v/(4L<sub>c</sub>) = v/(2L<sub>o</sub>)<br><strong>L<sub>o</sub> = 2L<sub>c</sub></strong></div><p>Open pipe length must be twice the closed pipe length.</p>"
+              },
+              {
+                "q": "Wavelength at 25°C if f = 256 Hz and v<sub>0</sub> = 330 m/s.",
+                "marks": 2,
+                "solution": "<div class=\"formula\"> v<sub>25</sub> = 330 × √(298/273) = 344.8 m/s<br> λ = v/f = 344.8/256<br> λ = <strong>1.35 m</strong></div>"
+              }
+            ]
+          }
+        },
+        {
+          "parts": [
+            {
+              "q": "Principle of potentiometer. Why is it called an ideal voltmeter?",
+              "marks": 2,
+              "solution": "<p><strong>Principle:</strong> V ∝ L for a uniform wire.</p><p><strong>Ideal voltmeter:</strong> At null point, no current is drawn from the cell being measured, so it gives true emf without loading error.</p>"
+            },
+            {
+              "q": "Principles behind Kirchhoff's current and voltage laws.",
+              "marks": 1,
+              "solution": "<p><strong>KCL:</strong> Conservation of charge.</p><p><strong>KVL:</strong> Conservation of energy.</p>"
+            },
+            {
+              "q": "Find current in 2Ω resistor using Kirchhoff's laws.",
+              "marks": 2,
+              "solution": "<div class=\"formula\"> Left loop: 35 = 5I<sub>1</sub> + 2I<sub>2</sub> ...(i)<br> Right loop: 20 = I<sub>1</sub> + 3I<sub>2</sub> ...(ii)<br> Solving: I<sub>1</sub> = 5 A, I<sub>2</sub> = 5 A<br> Current in 2Ω = I<sub>1</sub> + I<sub>2</sub> = <strong>10 A</strong></div>"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "q": "Why does a magnetic field develop around a current-carrying conductor?",
+              "marks": 1,
+              "solution": "<p>Moving charges (current) produce a magnetic field. Field lines form concentric circles around the wire; direction is given by the right-hand thumb rule.</p>"
+            },
+            {
+              "q": "Use Biot-Savart law to find B at center of circular coil.",
+              "marks": 2,
+              "solution": "<div class=\"formula\"> dB = (μ<sub>0</sub>/4π) Idl/r²<br> Integrating: <strong>B = μ<sub>0</sub>NI/(2r)</strong></div>"
+            },
+            {
+              "q": "Circular coil: N=100, r=10 cm, I=5 A. Find B on axis at 5 cm from centre.",
+              "marks": 2,
+              "solution": "<div class=\"formula\"> B = μ<sub>0</sub>NIr²/[2(r²+x²)^(3/2)]<br> B = (4π×10<sup>−7</sup>×100×5×0.01)/[2(0.0125)^(3/2)]<br> B = <strong>2.25 × 10<sup>−3</sup> T = 2.25 mT</strong></div>"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "q": "Energy levels of a hypothetical one-electron atom: E<sub>n</sub> = −13.6/n² eV. <br><strong>a)</strong> Compute four lowest energy levels and construct energy level diagram.",
+              "marks": 2,
+              "solution": "<div class=\"formula\"> E<sub>1</sub> = −13.6/1² = <strong>−13.6 eV</strong><br> E<sub>2</sub> = −13.6/4 = <strong>−3.4 eV</strong><br> E<sub>3</sub> = −13.6/9 = <strong>−1.51 eV</strong><br> E<sub>4</sub> = −13.6/16 = <strong>−0.85 eV</strong></div><p>Energy level diagram: n=1 at −13.6 eV (ground), n=2 at −3.4 eV, n=3 at −1.51 eV, n=4 at −0.85 eV, with spacing decreasing as n increases.</p>"
+            },
+            {
+              "q": "What is the first excitation potential?",
+              "marks": 1,
+              "solution": "<div class=\"formula\"> First excitation potential = E<sub>2</sub> − E<sub>1</sub><br> = −3.4 − (−13.6) = <strong>10.2 V</strong></div>"
+            },
+            {
+              "q": "Electrons accelerated through 16.2 V bombard ground-state atoms. What wavelengths are emitted?",
+              "marks": 2,
+              "solution": "<p>16.2 eV can excite atoms from n=1 to n=3 (E<sub>3</sub> − E<sub>1</sub> = 12.09 eV) or n=1 to n=4 (E<sub>4</sub> − E<sub>1</sub> = 12.75 eV), but not to n=∞ (13.6 eV).</p><div class=\"formula\"> λ = hc/ΔE = 1240 eV-nm / ΔE<br><br> 3→1: λ = 1240/12.09 = <strong>102.6 nm</strong><br> 3→2: λ = 1240/1.89 = <strong>656 nm</strong><br> 2→1: λ = 1240/10.2 = <strong>121.6 nm</strong></div>"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "q": "Which property of a semiconductor diode permits it to be used as a rectifier?",
+              "marks": 1,
+              "solution": "<p>The <strong>unidirectional conductivity</strong> (allowing current in forward bias and blocking in reverse bias) of a p-n junction diode makes it suitable for rectification.</p>"
+            },
+            {
+              "q": "Discuss p-n junction diode as a full-wave rectifier.",
+              "marks": 2,
+              "solution": "<p>A full-wave rectifier uses a centre-tapped transformer and two diodes (or four diodes in a bridge configuration).</p><p>During positive half-cycle, one diode conducts; during negative half-cycle, the other conducts. Both half-cycles are rectified, giving pulsating DC in the same direction. The output frequency is twice the input frequency.</p>"
+            },
+            {
+              "q": "Construct the truth table for the given combination of gates.",
+              "marks": 2,
+              "solution": "<p>The circuit has two AND gates feeding into an OR gate: G = AB + CD</p><table><tbody><tr><th>A</th><th>B</th><th>C</th><th>D</th><th>E=AB</th><th>F=CD</th><th>G</th></tr><tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr><tr><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr><tr><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr></tbody></table>"
+            }
+          ]
+        }
+      ],
+      "instructions": "Give short answers to the following questions."
+    },
+    {
+      "title": "Group C",
+      "subtitle": "Long answer questions",
+      "marks": "3 × 8 = 24",
+      "questions": [
+        {
+          "parts": [
+            {
+              "q": "What is interference? Discuss the importance of coherent sources.",
+              "marks": 2,
+              "solution": "<p><strong>Interference:</strong> The superposition of two waves resulting in a pattern of alternating bright and dark regions (constructive and destructive interference).</p><p><strong>Importance of coherent sources:</strong> Coherent sources maintain a constant phase difference, producing stable and observable interference patterns. Without coherence, the phase difference changes rapidly and the pattern averages out to uniform illumination.</p>"
+            },
+            {
+              "q": "Show that width of bright fringe equals width of dark fringe in Young's double slit experiment.",
+              "marks": 3,
+              "solution": "<p>Position of nth bright fringe: y<sub>n</sub><sup>bright</sup> = nλD/d</p><p>Position of nth dark fringe: y<sub>n</sub><sup>dark</sup> = (2n−1)λD/(2d)</p><div class=\"formula\"> Fringe width (bright) = y<sub>n+1</sub><sup>b</sup> − y<sub>n</sub><sup>b</sup> = λD/d<br> Fringe width (dark) = y<sub>n+1</sub><sup>d</sup> − y<sub>n</sub><sup>d</sup> = λD/d<br><br><strong>Both fringe widths are equal: β = λD/d</strong></div>"
+            },
+            {
+              "q": "Why is a diffraction grating better than double slit for measuring wavelength?",
+              "marks": 1,
+              "solution": "<p>A diffraction grating produces sharper, brighter, and widely separated maxima. The angular separation is large and measurable accurately, whereas double-slit fringes are broad and less distinct.</p>"
+            },
+            {
+              "q": "Unpolarized light incident at 55° on glass. Reflected beam is completely polarized. Find refractive index and angle of refraction.",
+              "marks": 2,
+              "solution": "<p>By Brewster's law: μ = tan(i<sub>p</sub>)</p><div class=\"formula\"> μ = tan(55°) = <strong>1.428</strong><br><br> Also, μ = sin(i<sub>p</sub>)/sin(r)<br> sin(r) = sin(55°)/1.428 = 0.819/1.428 = 0.574<br> r = <strong>35.0°</strong></div><p>(Note: i<sub>p</sub> + r = 90° at Brewster angle, so r = 35°)</p>"
+            }
+          ]
+        },
+        {
+          "parts": [
+            {
+              "q": "Define RMS value of alternating current.",
+              "marks": 1,
+              "solution": "<p>The <strong>RMS (Root Mean Square) value</strong> of AC is the steady DC current that produces the same heating effect in a given resistor in a given time as the AC does. For sinusoidal current: I<sub>rms</sub> = I<sub>0</sub>/√2.</p>"
+            },
+            {
+              "q": "Discuss LCR circuit with phasor diagram to find current and impedance.",
+              "marks": 2,
+              "solution": "<p>In an LCR series circuit, voltages across L and C are 180° out of phase. The net reactive voltage is V<sub>L</sub> − V<sub>C</sub>.</p><div class=\"formula\"> V = √[V<sub>R</sub>² + (V<sub>L</sub> − V<sub>C</sub>)²]<br> Impedance: <strong>Z = √[R² + (X<sub>L</sub> − X<sub>C</sub>)²]</strong><br> where X<sub>L</sub> = ωL, X<sub>C</sub> = 1/(ωC)<br><br> Phase angle: tanφ = (X<sub>L</sub> − X<sub>C</sub>)/R<br> Current: <strong>I = V/Z</strong></div><p>Phasor diagram: V<sub>R</sub> along x-axis, V<sub>L</sub> upward, V<sub>C</sub> downward. Resultant V is the vector sum.</p>"
+            },
+            {
+              "q": "What is electrical resonance? Obtain expression for resonant frequency. Draw current vs frequency curve.",
+              "marks": 3,
+              "solution": "<p><strong>Electrical resonance:</strong> The condition in an LCR circuit when X<sub>L</sub> = X<sub>C</sub>, making the circuit purely resistive and current maximum.</p><div class=\"formula\"> X<sub>L</sub> = X<sub>C</sub><br> ω<sub>0</sub>L = 1/(ω<sub>0</sub>C)<br> ω<sub>0</sub>² = 1/(LC)<br><strong>f<sub>0</sub> = 1/(2π√LC)</strong></div><p>Current vs frequency curve: Bell-shaped curve peaking at f<sub>0</sub>. Sharp peak for low resistance (high Q-factor), broad peak for high resistance.</p>"
+            },
+            {
+              "q": "LCR circuit: R=25Ω, L=30 mH, C=10 µF, E<sub>rms</sub>=220 V, f=50 Hz. Find current.",
+              "marks": 2,
+              "solution": "<div class=\"formula\"> X<sub>L</sub> = 2πfL = 2π × 50 × 0.030 = 9.42 Ω<br> X<sub>C</sub> = 1/(2πfC) = 1/(2π × 50 × 10×10<sup>−6</sup>) = 318.3 Ω<br> Z = √[25² + (9.42 − 318.3)²]<br> Z = √[625 + 95308] = √95933 = 309.7 Ω<br><br> I = V/Z = 220/309.7 = <strong>0.71 A</strong></div>"
+            }
+          ],
+          "or": {
+            "parts": [
+              {
+                "q": "State Lenz's law and explain demonstration with coil and magnet.",
+                "marks": 2,
+                "solution": "<p><strong>Lenz's Law:</strong> The induced current always flows in a direction that opposes the change causing it.</p><p><strong>Demonstration:</strong> When a bar magnet's N-pole is pushed toward a coil, induced current creates a N-pole on the near side of the coil, repelling the magnet. When pulled away, it creates a S-pole, attracting the magnet. This opposition requires work, converting mechanical energy to electrical energy.</p>"
+              },
+              {
+                "q": "Vehicle brake with aluminium disc and electromagnets.",
+                "marks": 3,
+                "solution": "<p><strong>i) How emf induction causes slowing:</strong> The rotating aluminium disc cuts through the magnetic field of the electromagnets, inducing eddy currents in the disc (Faraday's law). By Lenz's law, these currents create a magnetic field that opposes the motion of the disc, producing a braking torque that slows the vehicle.</p><p><strong>ii) Why braking increases with speed:</strong> Faster rotation means the disc cuts more magnetic flux per second (greater dΦ/dt), inducing larger eddy currents. Since braking force is proportional to eddy current, higher speed produces stronger braking.</p>"
+              },
+              {
+                "q": "Find emf in a conductor: l=20 cm, r=10 cm from axis, B=0.5 T, 1000 rpm.",
+                "marks": 3,
+                "solution": "<div class=\"formula\"> ω = 2πN/60 = 2π × 1000/60 = 104.7 rad/s<br> v = rω = 0.10 × 104.7 = 10.47 m/s<br><br> emf = Blv = 0.5 × 0.20 × 10.47<br> emf = <strong>1.047 V ≈ 1.05 V</strong></div>"
+              }
+            ]
+          }
+        },
+        {
+          "parts": [
+            {
+              "q": "Carbon-14 has half-life 5760 years. Produced by: <sup>14</sup><sub>7</sub>N + <sup>1</sup><sub>0</sub>n → <sup>14</sup><sub>6</sub>C + X <br><strong>a)</strong> Define half-life and decay constant. Relation between them.",
+              "marks": 2,
+              "solution": "<p><strong>Half-life (T<sub>1/2</sub>):</strong> Time for half the radioactive nuclei in a sample to decay.</p><p><strong>Decay constant (λ):</strong> Probability of decay per unit time.</p><div class=\"formula\"><strong>T<sub>1/2</sub> = ln(2)/λ = 0.693/λ</strong></div>"
+            },
+            {
+              "q": "Identify particle X.",
+              "marks": 1,
+              "solution": "<p>Balancing mass and atomic numbers: X is a <strong>proton</strong> (<sup>1</sup><sub>1</sub>H or <sup>1</sup><sub>1</sub>p).</p>"
+            },
+            {
+              "q": "What is radio-carbon dating? How to estimate age of ancient objects?",
+              "marks": 3,
+              "solution": "<p><strong>Radio-carbon dating:</strong> A method to determine the age of carbon-containing archaeological or geological samples by measuring the remaining C-14 activity.</p><p>Living organisms maintain equilibrium C-14 levels. After death, C-14 decays without replenishment. By comparing the activity of a sample to that of living matter, the age is calculated using:</p><div class=\"formula\"> N = N<sub>0</sub>e<sup>−λt</sup><br> t = (1/λ) ln(N<sub>0</sub>/N) = (T<sub>1/2</sub>/0.693) ln(N<sub>0</sub>/N) </div>"
+            },
+            {
+              "q": "Sample contains 1 × 10<sup>22</sup> C-14 nuclei. What is the activity?",
+              "marks": 2,
+              "solution": "<div class=\"formula\"> T<sub>1/2</sub> = 5760 years = 5760 × 365.25 × 24 × 3600 s<br> T<sub>1/2</sub> = 1.817 × 10<sup>11</sup> s<br> λ = 0.693/T<sub>1/2</sub> = 3.81 × 10<sup>−12</sup> s<sup>−1</sup><br><br> Activity A = λN<br> A = 3.81 × 10<sup>−12</sup> × 10<sup>22</sup><br> A = <strong>3.81 × 10<sup>10</sup> Bq</strong><br> = 3.81 × 10<sup>10</sup> / 3.7 × 10<sup>10</sup> Ci<br> A ≈ <strong>1.03 Ci</strong></div>"
+            }
+          ],
+          "or": {
+            "parts": [
+              {
+                "q": "Modern method of X-ray production. <br>i) Working principle.",
+                "marks": 1,
+                "solution": "<p>High-speed electrons are accelerated by high voltage and strike a metal target. Their sudden deceleration produces X-rays (bremsstrahlung), and characteristic X-rays are produced when electrons knock out inner-shell electrons.</p>"
+              },
+              {
+                "q": "ii) Why metal target of high melting point and high atomic weight?",
+                "marks": 2,
+                "solution": "<p><strong>High melting point:</strong> Only a small fraction of electron energy becomes X-rays; most becomes heat. High melting point prevents the target from melting (e.g., tungsten: 3422°C).</p><p><strong>High atomic weight:</strong> Heavier atoms have more protons, creating stronger nuclear fields for electron deceleration, producing more intense X-rays with higher energy.</p>"
+              },
+              {
+                "q": "iii) How are intensity and quality of X-rays controlled?",
+                "marks": 2,
+                "solution": "<p><strong>Intensity:</strong> Controlled by filament current (heater current). More current means more thermionic emission, more electrons, more X-rays.</p><p><strong>Quality (penetrating power):</strong> Controlled by accelerating voltage (kV). Higher voltage gives electrons more energy, producing shorter wavelength, more penetrating X-rays.</p>"
+              },
+              {
+                "q": "Light λ=400 nm on photosensitive material with work function 2.3 eV. Find maximum KE of photoelectrons.",
+                "marks": 3,
+                "solution": "<div class=\"formula\"> E = hc/λ = (6.63×10<sup>−34</sup> × 3×10<sup>8</sup>)/(400×10<sup>−9</sup>)<br> E = 4.97×10<sup>−19</sup> J = 3.10 eV<br><br> KE<sub>max</sub> = E − φ = 3.10 − 2.30<br> KE<sub>max</sub> = <strong>0.80 eV</strong><br> = 0.80 × 1.6×10<sup>−19</sup> J<br> = <strong>1.28 × 10<sup>−19</sup> J</strong></div>"
+              }
+            ]
+          }
+        }
+      ],
+      "instructions": "Give long answers to the following questions."
+    }
+  ]
+}
