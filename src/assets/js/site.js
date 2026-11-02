@@ -167,6 +167,16 @@
     });
   }
 
+  // Wide tables and formulas scroll sideways on phones: make them reachable with the keyboard (WCAG 2.1.1).
+  function markScrollers() {
+    $$('.notes-body table, .notes-body .table-wrap, .notes-body .formula, .notes-body .katex-display').forEach(el => {
+      const scrolls = el.scrollWidth > el.clientWidth + 1;
+      if (scrolls && !el.hasAttribute('tabindex')) { el.tabIndex = 0; el.setAttribute('role', el.getAttribute('role') || 'region'); el.setAttribute('aria-label', el.getAttribute('aria-label') || 'Scrollable content'); }
+    });
+  }
+  addEventListener('load', markScrollers);
+  setTimeout(markScrollers, 1500);   // after maths has rendered
+
   // ---------- Offline support ----------
   if ('serviceWorker' in navigator && !/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
     addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));

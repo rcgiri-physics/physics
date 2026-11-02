@@ -1,4 +1,4 @@
-name: Check lessons
+name: Check
 
 on:
   push:
@@ -12,5 +12,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Validate and build the site
+      - name: Validate and build the site (fails on any content problem)
         run: python build.py --strict
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - name: Unit tests (admin rules, paste parser, Worker auth and routing)
+        run: npm test
+      - name: Bundle the Worker (no upload)
+        run: npx wrangler deploy --dry-run --outdir .wrangler/dry-run

@@ -1,0 +1,9 @@
+# Copy to .dev.vars for `npm run dev` (wrangler dev). Never commit .dev.vars.
+SESSION_SECRET=change-me-to-a-long-random-string-of-at-least-32-chars
+# node scripts/admin-user.mjs richesh "Richesh Sharma" admin  -> paste the JSON inside [ ]
+ADMIN_USERS=[]
+# Fine-grained token: this repository only, Contents read/write, Checks read
+GITHUB_TOKEN=
+# Any free AI keys you have (llm-free-cascade names)
+GROQ_API_KEY=
+GEMINI_API_KEY=

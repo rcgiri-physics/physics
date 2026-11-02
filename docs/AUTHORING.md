@@ -1,33 +1,53 @@
-# Writing lessons for Physics Decoded
+# Writing content for Physics Decoded
 
-Every lesson is **one file** in `src/lessons/`. The file name becomes the web address:
-`src/lessons/alternating-current.html` → `/posts/alternating-current.html`.
+There are two ways to add or change content. Both end in the same place, a file in `src/`, and both are
+checked by the same rules before anything reaches students.
 
-There are two kinds of lesson:
-
-| Kind | File | What goes in it |
+| | **Admin (`/admin`)** — recommended | **GitHub / files** |
 |---|---|---|
-| **MCQ set** | `<name>.json` | Only data: questions, options, answer, explanation |
-| **Notes** | `<name>.html` | Only content: headings, text, formulas and a few ready-made boxes |
+| Who | Anyone with an admin account | Anyone with access to the repository |
+| How | Forms, a live preview, paste-to-import and AI help, on a phone or a computer | Add or edit a file in `src/` |
+| Checks | Problems are shown as you type; Publish is refused until they are fixed | `build.py` checks on every push; a bad file is skipped and CI shows a red ✗ |
+| Result | A commit to GitHub (with your name), then the site rebuilds in about a minute | Same |
 
-Content files contain **no design**: no colours, fonts, `<style>` or `<script>`. The whole site
-shares one look, defined in `src/assets/css/`. This means you can ask *any* AI to write
-content with the prompts in [`docs/prompts/`](prompts/), and it will look right automatically.
+Content files contain **no design**: no colours, fonts, `<style>` or `<script>`. The whole site shares one
+look, defined in `src/assets/css/`, so content written by hand, in the admin or by any AI looks right automatically.
 
-File names: lowercase words joined by hyphens, e.g. `lenses-mcq.json`, `refraction-through-prisms.html`.
+| Kind | File | Address on the site |
+|---|---|---|
+| MCQ set | `src/lessons/<name>.json` | `/posts/<name>` |
+| Notes | `src/lessons/<name>.html` | `/posts/<name>` |
+| Model question paper | `src/papers/<name>.json` (or `.html`) | `/papers/<name>` |
+| Lab practical | `src/labs/<name>.json` | `/labs/<name>` |
+| Site page (About, Privacy…) | `src/pages/<name>.html` | `/<name>` |
+| Image | `src/assets/img/<name>.webp` (`.png`, `.jpg`) | `/assets/img/<name>.webp` |
+
+File names: lowercase words joined by hyphens, e.g. `lenses-mcq.json`. The file name is the page address,
+so don't rename a published file (old addresses would break).
 
 ---
 
-## Publishing a lesson (on GitHub, no software needed)
+## Using the admin
 
-1. Open the repository on GitHub → `src/lessons` → **Add file → Create new file**.
-2. Name it (e.g. `alternating-current-mcq.json`) and paste the content.
-3. Click **Commit changes**. Vercel rebuilds the site within about a minute.
-4. If something is wrong in the file, **that lesson is left off the site** (everything else still
-   updates). The Vercel build log and the red ✗ on the GitHub commit list every problem in plain
-   English (e.g. `question 12: two options are identical`). Fix the file and it appears on the next build.
+Open `https://<site>/admin` and sign in (accounts: see README → *Admin accounts*).
 
-To check files on your own computer first, run `python build.py --check`.
+- **New MCQ set**: choose the grade and chapter, then add questions in any of four ways:
+  type them; **📋 Paste questions** (numbered questions with `a) b) c) d)` options and an `Ans:` line, from
+  Word, a PDF or a chat — no AI needed); **🤖 Generate with AI**; or **🤖 Convert text with AI** for messy
+  text (it solves missing answers and adds explanations). Each question has **🤖 Check answer**, which asks
+  an AI to solve it independently and tells you if it disagrees.
+- **New notes / pages**: buttons insert every building block (formula, definition, worked example…), with a
+  live preview including the maths.
+- **New model paper**: **NEB template** creates Group A (11 MCQs), B (8 × 5) and C (3 × 8); add OR
+  alternatives; the marks total is checked against full marks. **🤖 Convert pasted paper** turns an existing
+  paper into this format.
+- **New lab practical**: write the title and press **🤖 Draft with AI**, then check and edit every section.
+- **Images**: every editor has an *Upload* button. Photos are shrunk on your phone before upload.
+- **Drafts** are saved in your browser as you type: if the phone dies, reopen the editor and press *Restore*.
+- **Inbox**: “Report a mistake” reports from students and contact-form messages.
+- **Insights**: what students study, finish and search for (searches for missing topics = ideas for new lessons).
+
+AI never publishes anything: its output is loaded into the editor, and a person checks it and presses Publish.
 
 ---
 
@@ -40,6 +60,7 @@ To check files on your own computer first, run `python build.py --check`.
   "chapters": [15],
   "date": "2026-10-01",
   "description": "RMS values, reactance, impedance, resonance and power factor.",
+  "video": "https://youtu.be/…",
   "questions": [
     {
       "q": "The rms value of an alternating current of peak value I₀ is:",
@@ -54,22 +75,24 @@ To check files on your own computer first, run `python build.py --check`.
 
 | Field | Required | Notes |
 |---|---|---|
-| `title` | yes | Shown on the page and in search |
-| `grade` | yes | `"XI"` or `"XII"` |
-| `chapters` | yes | Chapter number(s) from the syllabus (see below), e.g. `[15]` or `[7, 8, 9]` |
-| `date` | yes | `YYYY-MM-DD`; newest lessons appear first on the home page |
-| `description` | no | One sentence shown under the title |
-| `questions[].q` | yes | Question text (plain text; use Unicode such as ω, λ, ², √) |
+| `title`, `grade`, `chapters`, `date` | yes | `grade` is `"XI"` or `"XII"`; `chapters` from the syllabus below, e.g. `[15]`; date `YYYY-MM-DD` |
+| `description` | recommended | One sentence, shown under the title and in Google results |
+| `video` | no | A YouTube link; shown as a click-to-play video under the quiz |
+| `questions[].q` | yes | Question text (Unicode such as ω, λ, ², √; or LaTeX inside `\( … \)`) |
 | `questions[].options` | yes | 2–6 different options; 4 is normal |
 | `questions[].answer` | yes | **Position of the correct option, counting from 0**: 0 = A, 1 = B, 2 = C, 3 = D |
 | `questions[].explanation` | recommended | Shown after the student answers |
 | `questions[].difficulty` | recommended | `"easy"`, `"medium"` or `"hard"` |
+| `questions[].image`, `image_alt` | no | A diagram (`/assets/img/…`) and a description of it for blind students |
+| `questions[].source` | no | e.g. `"NEB 2079"`, shown as a small tag |
+
+Students see each set in **Practice** mode (answer and explanation at once) or **Test** mode (timed, score at the end).
+Options are shown in a fixed shuffled order, so it doesn't matter where you put the correct answer; questions
+with options like "None of these" keep their order.
 
 ---
 
 ## Notes (`.html`)
-
-Start with a metadata block, then write plain HTML content:
 
 ```html
 ---
@@ -78,6 +101,7 @@ grade: XII
 chapters: [15]
 date: 2026-10-01
 description: RMS values, phasors, LCR circuits and resonance.
+video: https://youtu.be/…
 ---
 
 <h2>Introduction</h2>
@@ -103,46 +127,92 @@ Every `<h2>` becomes an entry in the automatic "On this page" menu.
 | `<details class="solution"><summary>Show solution</summary>…</details>` | Hidden solution the student clicks to open |
 | `<ul class="key-points"><li>…</li></ul>` | Tick-mark summary list |
 | `<div class="cols"><div>…</div><div>…</div></div>` | Side-by-side comparison |
-| `<figure><img src="/assets/img/lens.png" alt="…"><figcaption>…</figcaption></figure>` | Image with caption |
+| `<figure><img src="/assets/img/lens.webp" alt="…"><figcaption>…</figcaption></figure>` | Image with caption |
 | `<figure><svg viewBox="…">…</svg><figcaption>…</figcaption></figure>` | Inline SVG diagram (use `stroke="currentColor"` so it works in dark mode) |
 
-**Not allowed in notes:** `<style>`, `<script>`, `<link>`, `style="…"`, `<html>/<head>/<body>`.
-The build rejects them so that every page keeps the same look.
+**Not allowed:** `<style>`, `<script>`, `<link>`, `<iframe>`, `<form>`, `style="…"`, `onclick="…"` and other
+event attributes, `javascript:` links, `<html>/<head>/<body>`, and images from other websites. The build
+rejects them so that every page keeps the same look and stays safe.
 
-**See every block in action:** open `/styleguide.html` on the site. Its source is
-[`docs/examples/example-notes.html`](examples/example-notes.html), and copying that file is
-the fastest way to start new notes.
-
-### Images
-
-Put images in `src/assets/img/` (create the folder the first time) and refer to them as
-`/assets/img/<name>.png`. Do **not** link to images hosted on other websites. They
-disappear (several old lessons still use `image.qwenlm.ai` links).
+**See every block in action:** `/styleguide` on the site. Its source is
+[`docs/examples/example-notes.html`](examples/example-notes.html).
 
 ---
 
-## Model question papers (`src/papers/<name>.html`)
+## Model question papers (`src/papers/<name>.json`)
 
-Full exam papers go in **`src/papers/`** (not `src/lessons/`) and appear on the **Model Questions**
-tab, grouped by grade. A paper is written like notes (content-only HTML), with this metadata block:
+Structured papers are what the admin writes, and what the site can do the most with: automatic numbering,
+OR alternatives, clickable Group A options, a marks total check, and **exam mode** (answers hidden behind a
+countdown timer).
 
+```json
+{
+  "title": "Grade XII Physics Model Question 2082 (Set 1)",
+  "grade": "XII", "year": 2082, "date": "2026-10-13",
+  "time": "3 hours", "full_marks": 75, "pass_marks": 30,
+  "description": "…",
+  "groups": [
+    { "title": "Group A", "subtitle": "Multiple choice questions", "marks": "11 × 1 = 11",
+      "instructions": "Rewrite the correct option of each question.",
+      "questions": [ { "q": "…", "options": ["…", "…", "…", "…"], "answer": 0, "solution": "<p>…</p>" } ] },
+    { "title": "Group B", "subtitle": "Short answer questions", "marks": "8 × 5 = 40",
+      "questions": [
+        { "parts": [ { "q": "Define torque.", "marks": 2, "solution": "<p>…</p>" },
+                     { "q": "…", "marks": 3, "solution": "<p>…</p>" } ],
+          "or": { "q": "…", "marks": 5, "solution": "<p>…</p>" } }
+      ] }
+  ]
+}
 ```
+
+A question is one of: multiple choice (`q`, `options`, `answer`, `solution`; 1 mark), single (`q`, `marks`,
+`solution`) or multi-part (`parts`: each `q`, `marks`, `solution`). Any question may have an `or` alternative
+worth the same marks. If `full_marks` is given, the build checks the marks add up to it. Text and solutions
+may contain the notes building blocks. Prompt: [prompts/paper.md](prompts/paper.md).
+
+The older content-HTML format (front matter + `<h2>` per group, see
+[examples/example-paper.html](examples/example-paper.html)) still works.
+
 ---
-title: Grade XII Physics Model Question 2082 (Set A)
-grade: XII
-year: 2082
-date: 2026-10-13
-time: 3 hours            (optional)
-marks: Full marks 75     (optional)
-description: …           (optional)
----
+
+## Labs (`src/labs/<name>.json`)
+
+```json
+{
+  "title": "Verification of Ohm's law",
+  "grade": "XI", "chapters": [23], "number": 2, "date": "2026-11-02",
+  "description": "…",
+  "aim": "To verify Ohm's law and to determine the resistance of a given resistor.",
+  "apparatus": ["Resistor", "Ammeter (0–1 A)", "…"],
+  "theory": "<p>…</p><div class=\"formula\">\\[ V = IR \\]</div>",
+  "diagram": { "src": "/assets/img/ohms-law-circuit.webp", "alt": "Circuit diagram …", "caption": "…" },
+  "procedure": ["Connect the circuit …", "…"],
+  "observations": [ { "caption": "Table 1: …", "headers": ["S.N.", "I (A)", "V (V)"], "rows": [[1, "0.10", "0.50"]], "note": "…" } ],
+  "calculation": "<p>…</p>", "result": "<p>…</p>", "conclusion": "<p>…</p>",
+  "precautions": ["…"], "errors": ["…"],
+  "viva": [ { "q": "Is Ohm's law universal?", "a": "<p>No…</p>" } ],
+  "video": "https://youtu.be/…"
+}
 ```
 
-No `chapters` field is needed. Inside, use one `<h2>` per group (A, B, C), numbered `<ol>` lists,
-`<span class="marks">[2]</span>` for marks and `<details class="solution"><summary>Answer</summary> … </details>`
-for answers, which stay hidden until a student opens them. See
-[`examples/example-paper.html`](examples/example-paper.html) and the prompt in
-[`prompts/paper.md`](prompts/paper.md).
+Required: `title`, `grade`, `date`, `aim`, `apparatus`, `procedure`. `chapters` is optional but links the
+practical to its chapter on the grade page. Every observation row must have as many cells as the headers.
+Students can print any practical as a clean lab sheet. Prompt: [prompts/lab.md](prompts/lab.md).
+
+---
+
+## Site pages (`src/pages/<name>.html`)
+
+About, Contact, Privacy, Terms, Disclaimer and Editorial policy live here, written like notes with a
+front matter block of `title`, `description` and (optional) `date`. The contact page gets its form
+automatically. Only admins can edit pages in `/admin`.
+
+---
+
+## Site settings (`src/settings.json`)
+
+Edited in `/admin` → **Settings** (admins only): the announcement banner, ads (AdSense ID, slot IDs, house ads),
+analytics, search-engine verification codes, and the report/contact switches. See README → *Ads*.
 
 ---
 
@@ -168,10 +238,6 @@ Chapter numbers come from `src/content.json` (and are shown on the grade pages).
 
 ## Old ("legacy") lessons
 
-The Blogger-era lessons were complete stand-alone web pages with their own styling. All of them
-have been converted to the notes format, and the build now **rejects** full web pages. If you find
-an old page, convert it with [`prompts/convert-legacy-notes.md`](prompts/convert-legacy-notes.md).
-
-Some converted diagrams use fixed colours. They are marked `<svg class="panel" …>`, which puts
-them on a light panel so they stay readable in dark mode. New diagrams should use
-`stroke="currentColor"` instead and need no class.
+The Blogger-era lessons were complete stand-alone web pages. All of them have been converted, and the build
+**rejects** full web pages. If you find an old page, convert it with
+[`prompts/convert-legacy-notes.md`](prompts/convert-legacy-notes.md), or paste its questions into the admin.

@@ -1,0 +1,44 @@
+name: Deploy to Cloudflare
+
+# Builds the site and deploys it with the Worker on every push to main.
+# One-time setup (README → "Deploying on Cloudflare"): add the repository secrets
+# CLOUDFLARE_API_TOKEN (template "Edit Cloudflare Workers") and CLOUDFLARE_ACCOUNT_ID.
+# Until those exist, this workflow does nothing.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      HAS_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+    steps:
+      - name: Skip when Cloudflare is not set up yet
+        if: env.HAS_TOKEN != 'true'
+        run: echo "CLOUDFLARE_API_TOKEN is not set; skipping deploy."
+      - uses: actions/checkout@v4
+        if: env.HAS_TOKEN == 'true'
+      - uses: actions/setup-python@v5
+        if: env.HAS_TOKEN == 'true'
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        if: env.HAS_TOKEN == 'true'
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+        if: env.HAS_TOKEN == 'true'
+      - name: Build and deploy (wrangler runs build.py; a file with a problem is skipped, so one bad upload can't block a deploy)
+        if: env.HAS_TOKEN == 'true'
+        run: npx wrangler deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

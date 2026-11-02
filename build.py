@@ -1325,7 +1325,7 @@ def build_page(data, page):
 {email}{extra}
 </article></div>"""
     page_type = {"about": "AboutPage", "contact": "ContactPage"}.get(page["slug"], "WebPage")
-    return shell(data, title=page["title"], body=body, description=page.get("description"), path=page["url"], ads=False,
+    return shell(data, title=page["title"], body=body, description=page.get("description"), path=page["url"], ads=False, css=("lesson",),
                  ld=({"@type": page_type, "name": page["title"], "url": site["url"] + page["url"]}, breadcrumb_ld(data, trail)))
 
 
@@ -1593,6 +1593,11 @@ def main():
     admin = ROOT / "admin"
     if admin.is_dir():
         shutil.copytree(admin, OUT / "admin")
+        # Point the admin pages at the content-hashed site CSS/JS (those URLs are cached for a year).
+        for page in (OUT / "admin").glob("*.html"):
+            text = page.read_text(encoding="utf-8")
+            text = re.sub(r'(href|src)="/assets/((?:css|js)/[a-z-]+\.(?:css|js))"', lambda m: f'{m.group(1)}="{asset(m.group(2))}"', text)
+            page.write_text(text, encoding="utf-8", newline="\n")
     write("index.html", build_index(data, posts, papers, labs))
     write("search.html", build_search(data))
     write("404.html", build_404(data))

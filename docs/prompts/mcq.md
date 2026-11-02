@@ -1,7 +1,8 @@
 # Prompt: MCQ set
 
-Copy everything in the box below into any AI chat (Claude, ChatGPT, Gemini…).
-Fill in the three lines marked ✏️ first.
+**Easiest:** open `/admin` → **New MCQ set**, choose the chapter and press **🤖 Generate with AI**
+(or paste questions you already have with **📋 Paste questions**, no AI needed). The prompt below is for
+using any AI chat by hand instead: copy everything in the box, and fill in the three lines marked ✏️ first.
 
 ```
 You are writing a multiple-choice question set for "Physics Decoded", a physics study site

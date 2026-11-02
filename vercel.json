@@ -1,9 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "$comment": "Transition only: keeps the current Vercel deployment working until the domain moves to Cloudflare (see README). Delete this file afterwards.",
   "framework": null,
   "installCommand": "",
   "buildCommand": "python3 build.py",
   "outputDirectory": "public",
+  "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
     {
@@ -12,45 +14,28 @@
       "permanent": true
     },
     {
-      "source": "/posts/kinematics-grade-xi-notes.html",
-      "destination": "/posts/kinematics.html",
+      "source": "/posts/kinematics-grade-xi-notes",
+      "destination": "/posts/kinematics",
       "permanent": true
     },
     {
-      "source": "/posts/photon.html",
-      "destination": "/posts/photons.html",
+      "source": "/posts/photon",
+      "destination": "/posts/photons",
       "permanent": true
     },
     {
       "source": "/search/label/:label",
-      "destination": "/search.html?q=:label",
-      "permanent": true
-    },
-    {
-      "source": "/search",
-      "has": [
-        {
-          "type": "query",
-          "key": "q",
-          "value": "(?<q>.*)"
-        }
-      ],
-      "destination": "/search.html?q=:q",
+      "destination": "/search?q=:label",
       "permanent": true
     },
     {
       "source": "/p/:page.html",
-      "destination": "/pages/:page.html",
+      "destination": "/pages/:page",
       "permanent": true
     },
     {
       "source": "/:year(\\d{4})/:month(\\d{2})/:slug.html",
-      "destination": "/posts/:slug.html",
-      "permanent": true
-    },
-    {
-      "source": "/:slug((?!index|search|404|styleguide)[a-z0-9-]+).html",
-      "destination": "/posts/:slug.html",
+      "destination": "/posts/:slug",
       "permanent": true
     },
     {
@@ -65,7 +50,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+          "value": "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' data: https://i.ytimg.com; frame-src https://www.youtube-nocookie.com; connect-src 'self' https://cloudflareinsights.com https://cdn.jsdelivr.net; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
         },
         {
           "key": "X-Content-Type-Options",
@@ -89,7 +74,7 @@
         },
         {
           "key": "Cross-Origin-Opener-Policy",
-          "value": "same-origin"
+          "value": "same-origin-allow-popups"
         }
       ]
     },

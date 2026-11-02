@@ -1,0 +1,22 @@
+{
+  "name": "physics-decoded",
+  "private": true,
+  "description": "Physics Decoded: static site (build.py) + Cloudflare Worker for /admin and /api",
+  "type": "module",
+  "scripts": {
+    "build": "python3 build.py --strict",
+    "dev": "python3 build.py && wrangler dev",
+    "deploy": "python3 build.py --strict && wrangler deploy",
+    "test": "node --test tests/*.test.mjs",
+    "admin-user": "node scripts/admin-user.mjs"
+  },
+  "dependencies": {
+    "llm-free-cascade": "0.10.0"
+  },
+  "devDependencies": {
+    "wrangler": "4.156.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
